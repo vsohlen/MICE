@@ -98,7 +98,7 @@
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="2">
                     <StringItem index="0" value="S&#xf6;k anst&#xe4;lld i ett projekt"/>
-                    <StringItem index="1" value="S&#xf6;k anst&#xe4;lld i n&#xe5;got annat"/>
+                    <StringItem index="1" value="S&#xf6;k anst&#xe4;lld som leder projekt"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -151,18 +151,19 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblErrorMessage" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="392" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="lblHeader1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="cbFunctions1" min="-2" pref="98" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="cbFunctions1" min="-2" pref="194" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="tfsearchField1" min="-2" pref="98" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="btnSearch1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="167" max="32767" attributes="0"/>
+                      <EmptySpace pref="127" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -176,9 +177,11 @@
                           <Component id="tfsearchField1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnSearch1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblErrorMessage" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="222" max="-2" attributes="0"/>
-                      <EmptySpace pref="58" max="32767" attributes="0"/>
+                      <EmptySpace pref="72" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -193,10 +196,10 @@
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                    <StringItem index="0" value="Visa vem som leder ett specifikt projekt (nutid, d&#xe5;tid)"/>
+                    <StringItem index="1" value="Vilka plattformar utvecklas ett spel f&#xf6;r"/>
+                    <StringItem index="2" value="Vilka spelprojekt p&#xe5;g&#xe5;r?"/>
+                    <StringItem index="3" value="Vilka spel har sl&#xe4;ppts?"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -229,6 +232,8 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JLabel" name="lblErrorMessage">
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="panePlatform">
@@ -307,11 +312,8 @@
             <Component class="javax.swing.JComboBox" name="cbFunctions2">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="Vilka spel har sl&#xe4;ppts till plattformen?"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -402,11 +404,9 @@
             <Component class="javax.swing.JComboBox" name="cbFunctions3">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="2">
+                    <StringItem index="0" value="Vilken kompetens har en viss specialist?"/>
+                    <StringItem index="1" value=" "/>
                   </StringArray>
                 </Property>
               </Properties>

@@ -7,12 +7,11 @@ package mice;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import javax.swing.JComboBox;
 import oru.inf.InfDB;
 import oru.inf.InfException;
 
 /**
- *
+ * The constructor of the database-class. Creates a connection to the SQL-database
  * @author Victoria
  */
 
@@ -24,8 +23,8 @@ public class DbClass {
     {
         try
         {
-            String workingDir = System.getProperty("user.dir");
-            idb = new InfDB(workingDir + "\\MICEDB (1).FDB");
+            String workingDir = System.getProperty("user.dir")+ "\\MICEDB.FDB";
+            idb = new InfDB(workingDir);
             System.out.println("Uppkopplingen lyckades");
         }
         catch(InfException e)
@@ -36,28 +35,64 @@ public class DbClass {
     
     /**
      * method for getting a list of which hired who works with a certain projekt
-     */
-    public void getHiredInProject()
+     * @param searchHired
+     * @return     */
+    public ArrayList<String> listHiredInProject(String searchHired)
     {   
-                String sqlFraga = "SELECT BETECKNING FROM SPELPROJEKT "
-                + "WHERE SPELPROJEKT.SID LIKE (SELECT ARBETAR_I.SID FROM ARBETAR_I "
-                + "WHERE ARBETAR_I.AID LIKE (SELECT ANSTALLD.AID FROM ANSTALLD "
-                + "WHERE NAMN LIKE 'My%'))";     ///*searchHired*/ +
+        String sqlFraga = "SELECT BETECKNING FROM SPELPROJEKT"
+                         +  " join ARBETAR_I on SPELPROJEKT.SID = ARBETAR_I.SID"
+                         +  " join ANSTALLD on ARBETAR_I.AID = ANSTALLD.AID"
+                         +  " where ANSTALLD.NAMN like '" + searchHired + "%'";
         
+        ArrayList<String> listHired = new ArrayList<>(); 
+      
         try
         {
-            ArrayList<HashMap<String, String>> hiredProject = idb.fetchRows(sqlFraga);
-            
-            for (int i = 0; i < hiredProject.size(); i++)
+        ArrayList<HashMap<String, String>> hiredProject = idb.fetchRows(sqlFraga);
+
+        for (int i = 0; i < hiredProject.size(); i++)
             {
-                //cbsearchHits.addItem(hiredProject.get(i).get("BETECKNING"));
+              listHired.add(hiredProject.get(i).get("BETECKNING"));
             }
-            System.out.println("IT FREAKING WORKS");
         }
         catch(InfException e)
         {
-            System.out.println("Något gick fel");
             System.out.println(e.getMessage());
+            return null;
         }
+        return listHired;
     }
+    
+    /**
+     * lists the projects as a projectleader leads.
+     * @param searchProject
+     * @return 
+     */
+    public ArrayList<String> listProjects(String searchProject)
+    {
+            String sqlFraga = "select beteckning, startdatum, releasedatum from SPELPROJEKT " +
+                              "join ANSTALLD on ANSTALLD.AID = SPELPROJEKT.AID " +
+                              "where ANSTALLD.NAMN like '" + searchProject + "%'";
+            
+            ArrayList listProjects = new ArrayList<>();
+            
+            try
+            {
+                ArrayList<HashMap<String, String>> leadsProjects = idb.fetchRows(sqlFraga);
+                for(int i = 0; i < leadsProjects.size(); i++)
+                {
+                    listProjects.add(leadsProjects.get(i).get("BETECKNING"));
+                    listProjects.add(leadsProjects.get(i).get("STARTDATUM"));
+                    listProjects.add(leadsProjects.get(i).get("RELEASEDATUM"));
+                }
+            }
+            catch(InfException e)
+            {
+                System.out.println(e.getMessage());
+                return null;
+            }
+            return listProjects;
+    }
+            
 }
+    

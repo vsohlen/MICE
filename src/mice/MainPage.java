@@ -12,12 +12,12 @@ import javax.swing.JComboBox;   //Import of the combobox
  *
  * @author Victoria
  */
-public class BasicVersion extends javax.swing.JFrame {
+public class MainPage extends javax.swing.JFrame {
 
     /**
-     * Creates new form BasicVersion
+     * Creates new form MainPage
      */
-    public BasicVersion() {
+    public MainPage() {
         initComponents();
     }
 
@@ -45,6 +45,7 @@ public class BasicVersion extends javax.swing.JFrame {
         btnSearch1 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tasearchResult1 = new javax.swing.JTextArea();
+        lblErrorMessage = new javax.swing.JLabel();
         panePlatform = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tasearchResult2 = new javax.swing.JTextArea();
@@ -64,7 +65,7 @@ public class BasicVersion extends javax.swing.JFrame {
 
         lblHeader.setText("Välj funktion:");
 
-        cbFunctions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sök anställd i ett projekt", "Sök anställd i något annat" }));
+        cbFunctions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sök anställd i ett projekt", "Sök anställd som leder projekt" }));
 
         btnSearch.setText("Sök");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +118,7 @@ public class BasicVersion extends javax.swing.JFrame {
 
         lblHeader1.setText("Välj funktion:");
 
-        cbFunctions1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbFunctions1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Visa vem som leder ett specifikt projekt (nutid, dåtid)", "Vilka plattformar utvecklas ett spel för", "Vilka spelprojekt pågår?", "Vilka spel har släppts?" }));
 
         tfsearchField1.setText("Sök...");
 
@@ -134,16 +135,17 @@ public class BasicVersion extends javax.swing.JFrame {
             .addGroup(paneProjectLayout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addGroup(paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblErrorMessage)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(paneProjectLayout.createSequentialGroup()
                         .addComponent(lblHeader1)
-                        .addGap(18, 18, 18)
-                        .addComponent(cbFunctions1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbFunctions1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tfsearchField1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnSearch1)))
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
         paneProjectLayout.setVerticalGroup(
             paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,9 +156,11 @@ public class BasicVersion extends javax.swing.JFrame {
                     .addComponent(cbFunctions1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tfsearchField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearch1))
-                .addGap(43, 43, 43)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblErrorMessage)
+                .addGap(23, 23, 23)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         tpMenu.addTab("Spelprojekt", paneProject);
@@ -169,7 +173,7 @@ public class BasicVersion extends javax.swing.JFrame {
 
         tfsearchField2.setText("Sök...");
 
-        cbFunctions2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbFunctions2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vilka spel har släppts till plattformen?" }));
 
         lblHeader2.setText("Välj funktion:");
 
@@ -215,7 +219,7 @@ public class BasicVersion extends javax.swing.JFrame {
 
         tfsearchField3.setText("Sök...");
 
-        cbFunctions3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbFunctions3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vilken kompetens har en viss specialist?", " " }));
 
         lblHeader3.setText("Välj funktion:");
 
@@ -267,19 +271,22 @@ public class BasicVersion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * A method for looking through and choosing which method too use in the combobox
+     * @param evt 
+     */
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-         //DbClass database = new DbClass();
-//       ArrayList<String> enLista = database.listHiredInProject();
         String selectedFunction = cbFunctions.getSelectedItem().toString();
+        Validation valid = new Validation();            //valid.containsString(tfsearchField.getText())
         switch (selectedFunction)
         {
             case "Sök anställd i ett projekt" : 
                 listHired();
                 break;
+            case "Sök anställd som leder projekt":
+                listProjects();
+                break;    
         }
-        
-        
-
     }//GEN-LAST:event_btnSearchActionPerformed
 
     /**
@@ -299,24 +306,28 @@ public class BasicVersion extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BasicVersion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BasicVersion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BasicVersion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BasicVersion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BasicVersion().setVisible(true);
+                new MainPage().setVisible(true);
             }
         });
     }  
     
+    /**
+     * Lists the projects a person is working on.
+     */
     private void listHired ()
     {
         tasearchResult.setText("");
@@ -327,6 +338,39 @@ public class BasicVersion extends javax.swing.JFrame {
         {
             tasearchResult.append(beteckning + "\n");
         }
+    }
+    
+    /**
+     * Lists the projects a person os leading
+     */
+    private void listProjects ()
+    {
+        tasearchResult.setText("");
+        DbClass database = new DbClass();
+        String searchWord = tfsearchField.getText();
+        ArrayList<String> listProject = database.listProjects(searchWord);
+        for (String beteckning: listProject)
+        {
+            tasearchResult.append(beteckning + " ");
+        }
+    }
+    
+    /**
+     * Sets the errormessage
+     * @param text 
+     */
+    public void setErrorMessage(String text)
+    {
+        lblErrorMessage.setText(text);
+    }
+    
+    /**
+     * Gets the searchword
+     * @return 
+     */
+    public String getSearchWord()
+    {
+        return tfsearchField.getText();
     }
         
     
@@ -344,6 +388,7 @@ public class BasicVersion extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JLabel lblErrorMessage;
     private javax.swing.JLabel lblHeader;
     private javax.swing.JLabel lblHeader1;
     private javax.swing.JLabel lblHeader2;

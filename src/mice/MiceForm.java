@@ -23,16 +23,6 @@ public class MiceForm extends javax.swing.JFrame {
     public MiceForm() {
         initComponents();
         
-        try
-        {
-            String workingDir = System.getProperty("user.dir");
-            idb = new InfDB(workingDir + "\\MICEDB (1).FDB");
-            System.out.println("Uppkopplingen lyckades");
-        }
-        catch(InfException e)
-        {
-            System.out.println(e.getMessage());
-        }
     }
 
     /**
@@ -99,7 +89,7 @@ public class MiceForm extends javax.swing.JFrame {
 
     private void btnHiredMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHiredMouseClicked
         // When clicked, send to the limited version of the system.
-        JFrame form = new BasicVersion();
+        JFrame form = new MainPage();
         form.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnHiredMouseClicked

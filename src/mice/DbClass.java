@@ -68,7 +68,7 @@ public class DbClass {
      * @param searchProject
      * @return 
      */
-    public ArrayList<String> listProjects(String searchProject)
+    public ArrayList<HashMap<String, String>> listProjects(String searchProject)
     {
             String sqlFraga = "select beteckning, startdatum, releasedatum from SPELPROJEKT " +
                               "join ANSTALLD on ANSTALLD.AID = SPELPROJEKT.AID " +
@@ -79,20 +79,62 @@ public class DbClass {
             try
             {
                 ArrayList<HashMap<String, String>> leadsProjects = idb.fetchRows(sqlFraga);
-                for(int i = 0; i < leadsProjects.size(); i++)
+                /*for(int i = 0; i < leadsProjects.size(); i++)
                 {
                     listProjects.add(leadsProjects.get(i).get("BETECKNING"));
                     listProjects.add(leadsProjects.get(i).get("STARTDATUM"));
                     listProjects.add(leadsProjects.get(i).get("RELEASEDATUM"));
-                }
+                }*/
+                return leadsProjects;
             }
             catch(InfException e)
             {
                 System.out.println(e.getMessage());
                 return null;
             }
-            return listProjects;
     }
-            
+    
+        /**
+     * Checks if a username and password matches any values in the database.
+     * If yes, return TRUE, if no, return FALSE.
+     * @param username
+     * @param password
+     * @return 
+     */
+    public boolean adminLoginCheck(String username, String password)
+    {
+        //Initiates the uname and pass variables.
+        String uname = "";
+        String pass = "";
+        
+        //Stores a username from the DB where the username matches into a String.
+     String sqlUsername = "Select ANVNAMN from ANSTALLD"
+             + " where ANVNAMN = '" + username + "'";
+     
+     //Stores a password from the DB where username matches in to a String.
+     //Will be used to check towards the parameter password.
+     String sqlPass = "select LOSENORD from ADMINISTRATOR"
+             + " where AID = (select AID from ANSTALLD"
+             + " where ANVNAMN = '" + username + "')";
+     
+     try
+     {
+     uname = idb.fetchSingle(sqlUsername);
+     pass = idb.fetchSingle(sqlPass);
+     }
+     catch(InfException e)
+     {
+         System.out.println(e.getMessage());
+     }
+     
+     boolean response = false;
+     
+     if(username.equals(uname) && password.equals(pass))
+     {
+        response = true;
+     }
+    
+     return response;
+    }
 }
     

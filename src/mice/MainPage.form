@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+    </Container>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -51,43 +57,62 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                              <Component id="lblHeader" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                              <Component id="cbFunctions" min="-2" pref="201" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="tfsearchField" min="-2" pref="98" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="btnSearch" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jScrollPane1" alignment="0" min="-2" pref="431" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="lblHeader" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                                      <Component id="cbFunctions" min="-2" pref="201" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="tfsearchField" min="-2" pref="98" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="btnSearch" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="lblErrorMessage" min="-2" pref="129" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" min="-2" pref="392" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jSeparator1" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="tpSubMenu" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="149" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblHeader" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cbFunctions" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnSearch" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfsearchField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tpSubMenu" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                      <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="lblHeader" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cbFunctions" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnSearch" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfsearchField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="lblErrorMessage" min="-2" pref="23" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="222" max="-2" attributes="0"/>
-                      <EmptySpace pref="62" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="75" max="-2" attributes="0"/>
+                      <EmptySpace pref="86" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblErrorMessage">
+            </Component>
             <Component class="javax.swing.JLabel" name="lblHeader">
               <Properties>
                 <Property name="text" type="java.lang.String" value="V&#xe4;lj funktion:"/>
@@ -96,9 +121,17 @@
             <Component class="javax.swing.JComboBox" name="cbFunctions">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="2">
-                    <StringItem index="0" value="S&#xf6;k anst&#xe4;lld i ett projekt"/>
-                    <StringItem index="1" value="S&#xf6;k anst&#xe4;lld som leder projekt"/>
+                  <StringArray count="10">
+                    <StringItem index="0" value="S&#xf6;k anst&#xe4;lld i ett projekt (A,S)"/>
+                    <StringItem index="1" value="S&#xf6;k anst&#xe4;lld som leder projekt (A,S)"/>
+                    <StringItem index="2" value="&#xc4;ndra information om en anst&#xe4;lld (A)"/>
+                    <StringItem index="3" value="Ta bort anst&#xe4;lld (A)"/>
+                    <StringItem index="4" value="L&#xe4;gg till ny anst&#xe4;lld (A)"/>
+                    <StringItem index="5" value="Uppdatera information om vilken anst&#xe4;lld som projektleder ett projekt (A)"/>
+                    <StringItem index="6" value="Uppdatera information om vilka anst&#xe4;llda som arbetar med ett spelprojekt (A)"/>
+                    <StringItem index="7" value="Uppdatera den anst&#xe4;lldes roll (A)"/>
+                    <StringItem index="8" value=" "/>
+                    <StringItem index="9" value=" "/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -134,6 +167,740 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Container class="javax.swing.JTabbedPane" name="tpSubMenu">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="paneChange">
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="&#xc4;ndra">
+                        <Property name="tabTitle" type="java.lang.String" value="&#xc4;ndra"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="btnChangeHired" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblHeaderChange" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="lblChooseHired" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="cbListAllHired" min="-2" pref="135" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="btnChoose" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace pref="110" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblChangeUsername" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblChangeName" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblChangeMail" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblChangeTelephone" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblChangePassword" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="tfChangeTelephone" max="32767" attributes="0"/>
+                                          <Component id="tfChangeName" max="32767" attributes="0"/>
+                                          <Component id="tfChangeMail" min="-2" pref="97" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="tfChangePassword" max="32767" attributes="0"/>
+                                                  <Component id="tfChangeUsername" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                      <Component id="lblHeaderChange" min="-2" pref="14" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="lblChooseHired" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="cbListAllHired" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnChoose" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="tfChangeName" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblChangeName" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lblChangeTelephone" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="tfChangeTelephone" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lblChangeMail" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="tfChangeMail" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lblChangeUsername" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="tfChangeUsername" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblChangePassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tfChangePassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                              <Component id="btnChangeHired" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="61" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JButton" name="btnChangeHired">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="OK"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="tfChangeUsername">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Anv&#xe4;ndarnamn"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblChangeUsername">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="AnvNamn:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblChangeMail">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Mail:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="tfChangeMail">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Mailadress"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="tfChangeTelephone">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Telefonnummer"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblChangeTelephone">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Telefon: "/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblChangeName">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Namn:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="tfChangeName">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Namn"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblHeaderChange">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="14" style="0"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="&#xc4;ndra anst&#xe4;lld"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblChooseHired">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="V&#xe4;lj en anst&#xe4;lld i listan att &#xe4;ndra information om: "/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="cbListAllHired">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="1">
+                            <StringItem index="0" value="Lista alla anst&#xe4;llda med SQL"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnChoose">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="V&#xe4;lj"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblChangePassword">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="L&#xf6;senord: "/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="tfChangePassword">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="L&#xf6;senord"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="paneRemove">
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="Ta bort">
+                        <Property name="tabTitle" type="java.lang.String" value="Ta bort"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblHeaderRemove" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblNote" min="-2" pref="325" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="lblChooseHired1" max="32767" attributes="0"/>
+                                          <Component id="cbListAllHired1" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="btnRemove" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace pref="272" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <Component id="lblHeaderRemove" min="-2" pref="14" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="lblChooseHired1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="cbListAllHired1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnRemove" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="lblNote" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="115" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="lblChooseHired1">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="V&#xe4;lj anst&#xe4;lld i listan att ta bort ur systemet:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="cbListAllHired1">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="1">
+                            <StringItem index="0" value="Lista med alla anst&#xe4;llda, h&#xe4;mta med SQL"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnRemove">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Ta bort"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblNote">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="OBSERVERA! Du kan ej &#xe4;ndra dig n&#xe4;r du har tagit bort en anst&#xe4;lld"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblHeaderRemove">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="14" style="0"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Ta bort anst&#xe4;lld"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="paneAdd">
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="L&#xe4;gg till">
+                        <Property name="tabTitle" type="java.lang.String" value="L&#xe4;gg till"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="lblGenerateNewAID" max="32767" attributes="0"/>
+                                          <Component id="jScrollPane5" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="btnChoose1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="lblHeaderAdd" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="197" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblAddPassword" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="btnChangeHired1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="lblAddUsername" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblAddName" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblAddMail" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblAddTelephone" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="tfAddTelephone" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="tfAddName" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="tfAddMail" alignment="1" min="-2" pref="97" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="tfAddPassword" max="32767" attributes="0"/>
+                                                      <Component id="tfAddUserName" max="32767" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="tfAddName" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblAddName" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lblAddTelephone" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="tfAddTelephone" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lblAddMail" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="tfAddMail" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lblAddUsername" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="tfAddUserName" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lblAddPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="tfAddPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="btnChangeHired1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="lblHeaderAdd" min="-2" pref="21" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lblGenerateNewAID" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jScrollPane5" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnChoose1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="lblHeaderAdd">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="14" style="0"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="L&#xe4;gg till anst&#xe4;lld"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblGenerateNewAID">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Generera nytt AID"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnChoose1">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="V&#xe4;lj"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblAddName">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Namn:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="tfAddName">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Namn"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblAddTelephone">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Telefon: "/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="tfAddTelephone">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Telefonnummer"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblAddMail">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Mail:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="tfAddMail">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Mailadress"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblAddUsername">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="AnvNamn:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="tfAddUserName">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Anv&#xe4;ndarnamn"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnChangeHired1">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="OK"/>
+                      </Properties>
+                    </Component>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+                      <AuxValues>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                      </AuxValues>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTextPane" name="tpReturnAID">
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Component class="javax.swing.JLabel" name="lblAddPassword">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="L&#xf6;senord:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="tfAddPassword">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="jTextField1"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="paneUpdate">
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="Uppdatera">
+                        <Property name="tabTitle" type="java.lang.String" value="Uppdatera"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="lblChooseHired2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="cbListAllHired2" min="-2" pref="95" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="lblChooseUpgrade" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="cbHiredForm" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="btnConfirmUpdate2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="lblChooseSpecialist" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="cbListAllSpecialists" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="lblChooseGameProject1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                      <Component id="cbListAllGameProjects1" min="-2" pref="90" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="btnConfirmUpdate1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblUpdateHiredInProject" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblUpdateLeader" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="lblChooseGameProject" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="cbListAllGameProjects" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                      <Component id="lblChooseProjectleader" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="cbListAllProjectleaders" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="btnConfirmUpdate" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace pref="119" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                              <Component id="lblUpdateLeader" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblChooseGameProject" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbListAllGameProjects" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblChooseProjectleader" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbListAllProjectleaders" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnConfirmUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblUpdateHiredInProject" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblChooseSpecialist" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbListAllSpecialists" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblChooseGameProject1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbListAllGameProjects1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnConfirmUpdate1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblChooseHired2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbListAllHired2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblChooseUpgrade" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbHiredForm" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnConfirmUpdate2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="78" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="lblChooseGameProject">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="V&#xe4;lj Spelprojekt: "/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="cbListAllGameProjects">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="3">
+                            <StringItem index="0" value="Tetris 4D"/>
+                            <StringItem index="1" value="osv"/>
+                            <StringItem index="2" value="lista med SQL"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblChooseProjectleader">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="V&#xe4;lj projektledare: "/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="cbListAllProjectleaders">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="3">
+                            <StringItem index="0" value="Bo Bullit"/>
+                            <StringItem index="1" value="osv"/>
+                            <StringItem index="2" value="Fixa med SQL"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnConfirmUpdate">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="OK"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblUpdateLeader">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="11" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Uppdatera information om vem som leder ett projekt"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblUpdateHiredInProject">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="11" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Uppdatera information om vilka anst&#xe4;llda som arbetar med ett spelprojekt"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel2">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="11" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Uppdatera den anst&#xe4;lldes roll (A)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblChooseSpecialist">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="V&#xe4;lj Specialist: "/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="cbListAllSpecialists">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="2">
+                            <StringItem index="0" value="Berit n&#xe5;got"/>
+                            <StringItem index="1" value="Fixa med SQL"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblChooseGameProject1">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="V&#xe4;lj Spelprojekt: "/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="cbListAllGameProjects1">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="1">
+                            <StringItem index="0" value="Bar wars"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnConfirmUpdate1">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="OK"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblChooseHired2">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="V&#xe4;lj Anst&#xe4;lld: "/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="cbListAllHired2">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="4">
+                            <StringItem index="0" value="Item 1"/>
+                            <StringItem index="1" value="Item 2"/>
+                            <StringItem index="2" value="Item 3"/>
+                            <StringItem index="3" value="Item 4"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblChooseUpgrade">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="V&#xe4;lj &#xe4;ndring i anst&#xe4;llning:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="cbHiredForm">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="3">
+                            <StringItem index="0" value="Specialist"/>
+                            <StringItem index="1" value="Projektledare"/>
+                            <StringItem index="2" value="Administrat&#xf6;r"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnConfirmUpdate2">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="OK"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JSeparator" name="jSeparator1">
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="paneProject">
@@ -148,11 +915,9 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblErrorMessage" min="-2" max="-2" attributes="0"/>
-                          <Component id="jScrollPane2" min="-2" pref="392" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="lblHeader1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -162,26 +927,30 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="btnSearch1" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jScrollPane2" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="127" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblErrorMessage1" pref="156" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblHeader1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cbFunctions1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfsearchField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnSearch1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblHeader1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cbFunctions1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfsearchField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnSearch1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="lblErrorMessage1" min="-2" pref="33" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lblErrorMessage" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" min="-2" pref="222" max="-2" attributes="0"/>
-                      <EmptySpace pref="72" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jScrollPane2" min="-2" pref="76" max="-2" attributes="0"/>
+                      <EmptySpace pref="338" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -195,11 +964,15 @@
             <Component class="javax.swing.JComboBox" name="cbFunctions1">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Visa vem som leder ett specifikt projekt (nutid, d&#xe5;tid)"/>
-                    <StringItem index="1" value="Vilka plattformar utvecklas ett spel f&#xf6;r"/>
-                    <StringItem index="2" value="Vilka spelprojekt p&#xe5;g&#xe5;r?"/>
-                    <StringItem index="3" value="Vilka spel har sl&#xe4;ppts?"/>
+                  <StringArray count="8">
+                    <StringItem index="0" value="Visa vem som leder/har lett ett specifikt projekt (s&#xf6;k Spel) (A,S)"/>
+                    <StringItem index="1" value="Visa vilka plattformar ett spel utvecklas till (A,S)"/>
+                    <StringItem index="2" value="Lista de spelprojekt som &#xe4;r under utveckling (A,S)"/>
+                    <StringItem index="3" value="Lista de spelprojekt som har sl&#xe4;ppts (A,S)"/>
+                    <StringItem index="4" value="L&#xe4;gg till spelutvecklingsprojekt (A)"/>
+                    <StringItem index="5" value="Uppdatera information om ett specifikt projekt (S&#xf6;k Spel) (A)"/>
+                    <StringItem index="6" value=" "/>
+                    <StringItem index="7" value=" "/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -232,7 +1005,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="lblErrorMessage">
+            <Component class="javax.swing.JLabel" name="lblErrorMessage1">
             </Component>
           </SubComponents>
         </Container>
@@ -249,10 +1022,10 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane3" alignment="0" min="-2" pref="392" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jScrollPane3" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Component id="lblHeader2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="cbFunctions2" min="-2" pref="98" max="-2" attributes="0"/>
@@ -262,23 +1035,23 @@
                               <Component id="btnSearch2" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="167" max="32767" attributes="0"/>
+                      <EmptySpace pref="226" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblHeader2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cbFunctions2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tfsearchField2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnSearch2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" min="-2" pref="222" max="-2" attributes="0"/>
-                      <EmptySpace pref="58" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jScrollPane3" min="-2" pref="74" max="-2" attributes="0"/>
+                      <EmptySpace pref="345" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -312,8 +1085,9 @@
             <Component class="javax.swing.JComboBox" name="cbFunctions2">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="1">
-                    <StringItem index="0" value="Vilka spel har sl&#xe4;ppts till plattformen?"/>
+                  <StringArray count="2">
+                    <StringItem index="0" value="Lista de spel som har sl&#xe4;ppts till plattformen (A,S)"/>
+                    <StringItem index="1" value="Uppdatera information om vilka plattformar ett spelprojekt omfattar (A)"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -341,10 +1115,10 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane4" alignment="0" min="-2" pref="392" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jScrollPane4" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Component id="lblHeader3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="cbFunctions3" min="-2" pref="98" max="-2" attributes="0"/>
@@ -354,23 +1128,23 @@
                               <Component id="btnSearch3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="167" max="32767" attributes="0"/>
+                      <EmptySpace pref="224" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblHeader3" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cbFunctions3" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tfsearchField3" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnSearch3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                      <Component id="jScrollPane4" min="-2" pref="222" max="-2" attributes="0"/>
-                      <EmptySpace pref="58" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane4" min="-2" pref="74" max="-2" attributes="0"/>
+                      <EmptySpace pref="354" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -404,9 +1178,10 @@
             <Component class="javax.swing.JComboBox" name="cbFunctions3">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="2">
-                    <StringItem index="0" value="Vilken kompetens har en viss specialist?"/>
-                    <StringItem index="1" value=" "/>
+                  <StringArray count="3">
+                    <StringItem index="0" value="Lista den kompetens en specifik specialist har (S&#xf6;k anst&#xe4;lld) (A,S)"/>
+                    <StringItem index="1" value="Uppdatera information om vilka dom&#xe4;ner en specialist har kompetens f&#xf6;r (A)"/>
+                    <StringItem index="2" value=" "/>
                   </StringArray>
                 </Property>
               </Properties>

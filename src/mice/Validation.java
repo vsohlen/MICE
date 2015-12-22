@@ -4,31 +4,48 @@
  * and open the template in the editor.
  */
 package mice;
-
+import java.awt.Color;
+import javax.swing.JTextField; 
 /**
  *
  * @author Victoria
  */
 public class Validation {
     
-    
-    
-public static String containsString(String str)
-{
-    MainPage mp = new MainPage();
-    String regex = "^[a-zåäöA-ZÅÄÖ]+$";
-    String match;
-    if (str.matches(regex))
-        {
-            match = "Sökningen körs";
-        }
-    else
+    /**
+     * checks if the textField contains a string of text or not
+     * @param textField
+     * @return 
+     */
+    public static boolean textBoxTextIsRequired (JTextField textField)
     {
-        mp.setErrorMessage("Sökordet måste vara ett namn");
-        match = "Sökordet fungerar inte";
+        if (textField.getText().isEmpty())
+        {
+            textField.requestFocus();
+            textField.setBackground(Color.red);
+            return false;
+        }
+        else
+        {
+            textField.setBackground(Color.white);
+            return true;
+        }
     }
-    return match;
-}
+
+    public static boolean containsString(String str)
+    {
+        String regex = "^[a-zåäöA-ZÅÄÖ]+$";
+        Boolean match;
+        if (str.matches(regex))
+            {
+                match = true;
+            }
+        else
+        {
+            match = false;
+        }
+        return match;
+    }
     
 }
 

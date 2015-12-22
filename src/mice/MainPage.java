@@ -19,6 +19,18 @@ public class MainPage extends javax.swing.JFrame {
      */
     public MainPage() {
         initComponents();
+            lblHeader.setVisible(false);
+            lblChangeName.setVisible(false);
+            lblChangeTelephone.setVisible(false);
+            lblChangeMail.setVisible(false);
+            lblChangeUsername.setVisible(false);
+            tfChangeName.setVisible(false);
+            tfChangeTelephone.setVisible(false);
+            tfChangeMail.setVisible(false);
+            tfChangeUsername.setVisible(false);
+            btnChangeHired.setVisible(false);
+            tpSubMenu.setVisible(false);
+            lblHeaderChange.setVisible(false);
     }
 
     /**
@@ -30,14 +42,76 @@ public class MainPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
         tpMenu = new javax.swing.JTabbedPane();
         paneHired = new javax.swing.JPanel();
+        lblErrorMessage = new javax.swing.JLabel();
         lblHeader = new javax.swing.JLabel();
         cbFunctions = new javax.swing.JComboBox<>();
         btnSearch = new javax.swing.JButton();
         tfsearchField = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tasearchResult = new javax.swing.JTextArea();
+        tpSubMenu = new javax.swing.JTabbedPane();
+        paneChange = new javax.swing.JPanel();
+        btnChangeHired = new javax.swing.JButton();
+        tfChangeUsername = new javax.swing.JTextField();
+        lblChangeUsername = new javax.swing.JLabel();
+        lblChangeMail = new javax.swing.JLabel();
+        tfChangeMail = new javax.swing.JTextField();
+        tfChangeTelephone = new javax.swing.JTextField();
+        lblChangeTelephone = new javax.swing.JLabel();
+        lblChangeName = new javax.swing.JLabel();
+        tfChangeName = new javax.swing.JTextField();
+        lblHeaderChange = new javax.swing.JLabel();
+        lblChooseHired = new javax.swing.JLabel();
+        cbListAllHired = new javax.swing.JComboBox<>();
+        btnChoose = new javax.swing.JButton();
+        lblChangePassword = new javax.swing.JLabel();
+        tfChangePassword = new javax.swing.JTextField();
+        paneRemove = new javax.swing.JPanel();
+        lblChooseHired1 = new javax.swing.JLabel();
+        cbListAllHired1 = new javax.swing.JComboBox<>();
+        btnRemove = new javax.swing.JButton();
+        lblNote = new javax.swing.JLabel();
+        lblHeaderRemove = new javax.swing.JLabel();
+        paneAdd = new javax.swing.JPanel();
+        lblHeaderAdd = new javax.swing.JLabel();
+        lblGenerateNewAID = new javax.swing.JLabel();
+        btnChoose1 = new javax.swing.JButton();
+        lblAddName = new javax.swing.JLabel();
+        tfAddName = new javax.swing.JTextField();
+        lblAddTelephone = new javax.swing.JLabel();
+        tfAddTelephone = new javax.swing.JTextField();
+        lblAddMail = new javax.swing.JLabel();
+        tfAddMail = new javax.swing.JTextField();
+        lblAddUsername = new javax.swing.JLabel();
+        tfAddUserName = new javax.swing.JTextField();
+        btnChangeHired1 = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tpReturnAID = new javax.swing.JTextPane();
+        lblAddPassword = new javax.swing.JLabel();
+        tfAddPassword = new javax.swing.JTextField();
+        paneUpdate = new javax.swing.JPanel();
+        lblChooseGameProject = new javax.swing.JLabel();
+        cbListAllGameProjects = new javax.swing.JComboBox<>();
+        lblChooseProjectleader = new javax.swing.JLabel();
+        cbListAllProjectleaders = new javax.swing.JComboBox<>();
+        btnConfirmUpdate = new javax.swing.JButton();
+        lblUpdateLeader = new javax.swing.JLabel();
+        lblUpdateHiredInProject = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblChooseSpecialist = new javax.swing.JLabel();
+        cbListAllSpecialists = new javax.swing.JComboBox<>();
+        lblChooseGameProject1 = new javax.swing.JLabel();
+        cbListAllGameProjects1 = new javax.swing.JComboBox<>();
+        btnConfirmUpdate1 = new javax.swing.JButton();
+        lblChooseHired2 = new javax.swing.JLabel();
+        cbListAllHired2 = new javax.swing.JComboBox<>();
+        lblChooseUpgrade = new javax.swing.JLabel();
+        cbHiredForm = new javax.swing.JComboBox<>();
+        btnConfirmUpdate2 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
         paneProject = new javax.swing.JPanel();
         lblHeader1 = new javax.swing.JLabel();
         cbFunctions1 = new javax.swing.JComboBox<>();
@@ -45,7 +119,7 @@ public class MainPage extends javax.swing.JFrame {
         btnSearch1 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tasearchResult1 = new javax.swing.JTextArea();
-        lblErrorMessage = new javax.swing.JLabel();
+        lblErrorMessage1 = new javax.swing.JLabel();
         panePlatform = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tasearchResult2 = new javax.swing.JTextArea();
@@ -65,7 +139,7 @@ public class MainPage extends javax.swing.JFrame {
 
         lblHeader.setText("Välj funktion:");
 
-        cbFunctions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sök anställd i ett projekt", "Sök anställd som leder projekt" }));
+        cbFunctions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sök anställd i ett projekt (A,S)", "Sök anställd som leder projekt (A,S)", "Ändra information om en anställd (A)", "Ta bort anställd (A)", "Lägg till ny anställd (A)", "Uppdatera information om vilken anställd som projektleder ett projekt (A)", "Uppdatera information om vilka anställda som arbetar med ett spelprojekt (A)", "Uppdatera den anställdes roll (A)", " ", " " }));
 
         btnSearch.setText("Sök");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -80,6 +154,388 @@ public class MainPage extends javax.swing.JFrame {
         tasearchResult.setRows(5);
         jScrollPane1.setViewportView(tasearchResult);
 
+        btnChangeHired.setText("OK");
+
+        tfChangeUsername.setText("Användarnamn");
+
+        lblChangeUsername.setText("AnvNamn:");
+
+        lblChangeMail.setText("Mail:");
+
+        tfChangeMail.setText("Mailadress");
+
+        tfChangeTelephone.setText("Telefonnummer");
+
+        lblChangeTelephone.setText("Telefon: ");
+
+        lblChangeName.setText("Namn:");
+
+        tfChangeName.setText("Namn");
+
+        lblHeaderChange.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblHeaderChange.setText("Ändra anställd");
+
+        lblChooseHired.setText("Välj en anställd i listan att ändra information om: ");
+
+        cbListAllHired.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lista alla anställda med SQL" }));
+
+        btnChoose.setText("Välj");
+
+        lblChangePassword.setText("Lösenord: ");
+
+        tfChangePassword.setText("Lösenord");
+
+        javax.swing.GroupLayout paneChangeLayout = new javax.swing.GroupLayout(paneChange);
+        paneChange.setLayout(paneChangeLayout);
+        paneChangeLayout.setHorizontalGroup(
+            paneChangeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(paneChangeLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(paneChangeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(paneChangeLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnChangeHired))
+                    .addGroup(paneChangeLayout.createSequentialGroup()
+                        .addGroup(paneChangeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblHeaderChange)
+                            .addGroup(paneChangeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(lblChooseHired)
+                                .addGroup(paneChangeLayout.createSequentialGroup()
+                                    .addComponent(cbListAllHired, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnChoose))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                        .addGroup(paneChangeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblChangeUsername)
+                            .addComponent(lblChangeName)
+                            .addComponent(lblChangeMail)
+                            .addComponent(lblChangeTelephone)
+                            .addComponent(lblChangePassword))
+                        .addGap(26, 26, 26)
+                        .addGroup(paneChangeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(tfChangeTelephone)
+                            .addComponent(tfChangeName)
+                            .addComponent(tfChangeMail, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, paneChangeLayout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addGroup(paneChangeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tfChangePassword)
+                                    .addComponent(tfChangeUsername))))))
+                .addGap(83, 83, 83))
+        );
+        paneChangeLayout.setVerticalGroup(
+            paneChangeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(paneChangeLayout.createSequentialGroup()
+                .addGroup(paneChangeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(paneChangeLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(lblHeaderChange, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblChooseHired)
+                        .addGap(11, 11, 11)
+                        .addGroup(paneChangeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbListAllHired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnChoose)))
+                    .addGroup(paneChangeLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(paneChangeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfChangeName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblChangeName))
+                        .addGap(8, 8, 8)
+                        .addGroup(paneChangeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblChangeTelephone)
+                            .addComponent(tfChangeTelephone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(paneChangeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblChangeMail)
+                            .addComponent(tfChangeMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(paneChangeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblChangeUsername)
+                            .addComponent(tfChangeUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paneChangeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblChangePassword)
+                    .addComponent(tfChangePassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11)
+                .addComponent(btnChangeHired)
+                .addContainerGap(61, Short.MAX_VALUE))
+        );
+
+        tpSubMenu.addTab("Ändra", paneChange);
+
+        lblChooseHired1.setText("Välj anställd i listan att ta bort ur systemet:");
+
+        cbListAllHired1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lista med alla anställda, hämta med SQL" }));
+
+        btnRemove.setText("Ta bort");
+
+        lblNote.setText("OBSERVERA! Du kan ej ändra dig när du har tagit bort en anställd");
+
+        lblHeaderRemove.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblHeaderRemove.setText("Ta bort anställd");
+
+        javax.swing.GroupLayout paneRemoveLayout = new javax.swing.GroupLayout(paneRemove);
+        paneRemove.setLayout(paneRemoveLayout);
+        paneRemoveLayout.setHorizontalGroup(
+            paneRemoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(paneRemoveLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(paneRemoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblHeaderRemove)
+                    .addComponent(lblNote, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(paneRemoveLayout.createSequentialGroup()
+                        .addGroup(paneRemoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblChooseHired1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbListAllHired1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnRemove)))
+                .addContainerGap(272, Short.MAX_VALUE))
+        );
+        paneRemoveLayout.setVerticalGroup(
+            paneRemoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(paneRemoveLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(lblHeaderRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblChooseHired1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(paneRemoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbListAllHired1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRemove))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblNote)
+                .addContainerGap(115, Short.MAX_VALUE))
+        );
+
+        tpSubMenu.addTab("Ta bort", paneRemove);
+
+        lblHeaderAdd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblHeaderAdd.setText("Lägg till anställd");
+
+        lblGenerateNewAID.setText("Generera nytt AID");
+
+        btnChoose1.setText("Välj");
+
+        lblAddName.setText("Namn:");
+
+        tfAddName.setText("Namn");
+
+        lblAddTelephone.setText("Telefon: ");
+
+        tfAddTelephone.setText("Telefonnummer");
+
+        lblAddMail.setText("Mail:");
+
+        tfAddMail.setText("Mailadress");
+
+        lblAddUsername.setText("AnvNamn:");
+
+        tfAddUserName.setText("Användarnamn");
+
+        btnChangeHired1.setText("OK");
+
+        jScrollPane5.setViewportView(tpReturnAID);
+
+        lblAddPassword.setText("Lösenord:");
+
+        tfAddPassword.setText("jTextField1");
+
+        javax.swing.GroupLayout paneAddLayout = new javax.swing.GroupLayout(paneAdd);
+        paneAdd.setLayout(paneAddLayout);
+        paneAddLayout.setHorizontalGroup(
+            paneAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneAddLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(paneAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(paneAddLayout.createSequentialGroup()
+                        .addGroup(paneAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblGenerateNewAID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnChoose1))
+                    .addComponent(lblHeaderAdd))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 197, Short.MAX_VALUE)
+                .addGroup(paneAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblAddPassword)
+                    .addGroup(paneAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnChangeHired1, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneAddLayout.createSequentialGroup()
+                            .addGroup(paneAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblAddUsername)
+                                .addComponent(lblAddName)
+                                .addComponent(lblAddMail)
+                                .addComponent(lblAddTelephone))
+                            .addGap(26, 26, 26)
+                            .addGroup(paneAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(tfAddTelephone)
+                                .addComponent(tfAddName)
+                                .addComponent(tfAddMail, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, paneAddLayout.createSequentialGroup()
+                                    .addGap(1, 1, 1)
+                                    .addGroup(paneAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(tfAddPassword)
+                                        .addComponent(tfAddUserName)))))))
+                .addGap(83, 83, 83))
+        );
+        paneAddLayout.setVerticalGroup(
+            paneAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(paneAddLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(paneAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(paneAddLayout.createSequentialGroup()
+                        .addGroup(paneAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfAddName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAddName))
+                        .addGap(8, 8, 8)
+                        .addGroup(paneAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblAddTelephone)
+                            .addComponent(tfAddTelephone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(paneAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblAddMail)
+                            .addComponent(tfAddMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(paneAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblAddUsername)
+                            .addComponent(tfAddUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(paneAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblAddPassword)
+                            .addComponent(tfAddPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnChangeHired1)
+                        .addGap(24, 24, 24))
+                    .addGroup(paneAddLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lblHeaderAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblGenerateNewAID)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(paneAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnChoose1))
+                        .addGap(119, 119, 119))))
+        );
+
+        tpSubMenu.addTab("Lägg till", paneAdd);
+
+        lblChooseGameProject.setText("Välj Spelprojekt: ");
+
+        cbListAllGameProjects.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tetris 4D", "osv", "lista med SQL" }));
+
+        lblChooseProjectleader.setText("Välj projektledare: ");
+
+        cbListAllProjectleaders.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bo Bullit", "osv", "Fixa med SQL" }));
+
+        btnConfirmUpdate.setText("OK");
+
+        lblUpdateLeader.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblUpdateLeader.setText("Uppdatera information om vem som leder ett projekt");
+
+        lblUpdateHiredInProject.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblUpdateHiredInProject.setText("Uppdatera information om vilka anställda som arbetar med ett spelprojekt");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setText("Uppdatera den anställdes roll (A)");
+
+        lblChooseSpecialist.setText("Välj Specialist: ");
+
+        cbListAllSpecialists.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Berit något", "Fixa med SQL" }));
+
+        lblChooseGameProject1.setText("Välj Spelprojekt: ");
+
+        cbListAllGameProjects1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bar wars" }));
+
+        btnConfirmUpdate1.setText("OK");
+
+        lblChooseHired2.setText("Välj Anställd: ");
+
+        cbListAllHired2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        lblChooseUpgrade.setText("Välj ändring i anställning:");
+
+        cbHiredForm.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Specialist", "Projektledare", "Administratör" }));
+
+        btnConfirmUpdate2.setText("OK");
+
+        javax.swing.GroupLayout paneUpdateLayout = new javax.swing.GroupLayout(paneUpdate);
+        paneUpdate.setLayout(paneUpdateLayout);
+        paneUpdateLayout.setHorizontalGroup(
+            paneUpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(paneUpdateLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(paneUpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(paneUpdateLayout.createSequentialGroup()
+                        .addComponent(lblChooseHired2)
+                        .addGap(18, 18, 18)
+                        .addComponent(cbListAllHired2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblChooseUpgrade)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cbHiredForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnConfirmUpdate2))
+                    .addGroup(paneUpdateLayout.createSequentialGroup()
+                        .addComponent(lblChooseSpecialist)
+                        .addGap(18, 18, 18)
+                        .addComponent(cbListAllSpecialists, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(lblChooseGameProject1)
+                        .addGap(26, 26, 26)
+                        .addComponent(cbListAllGameProjects1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnConfirmUpdate1))
+                    .addComponent(jLabel2)
+                    .addComponent(lblUpdateHiredInProject)
+                    .addComponent(lblUpdateLeader)
+                    .addGroup(paneUpdateLayout.createSequentialGroup()
+                        .addComponent(lblChooseGameProject)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cbListAllGameProjects, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(lblChooseProjectleader)
+                        .addGap(18, 18, 18)
+                        .addComponent(cbListAllProjectleaders, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnConfirmUpdate)))
+                .addContainerGap(119, Short.MAX_VALUE))
+        );
+        paneUpdateLayout.setVerticalGroup(
+            paneUpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(paneUpdateLayout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addComponent(lblUpdateLeader)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paneUpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblChooseGameProject)
+                    .addComponent(cbListAllGameProjects, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblChooseProjectleader)
+                    .addComponent(cbListAllProjectleaders, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnConfirmUpdate))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblUpdateHiredInProject)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paneUpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblChooseSpecialist)
+                    .addComponent(cbListAllSpecialists, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblChooseGameProject1)
+                    .addComponent(cbListAllGameProjects1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnConfirmUpdate1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paneUpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblChooseHired2)
+                    .addComponent(cbListAllHired2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblChooseUpgrade)
+                    .addComponent(cbHiredForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnConfirmUpdate2))
+                .addContainerGap(78, Short.MAX_VALUE))
+        );
+
+        tpSubMenu.addTab("Uppdatera", paneUpdate);
+
         javax.swing.GroupLayout paneHiredLayout = new javax.swing.GroupLayout(paneHired);
         paneHired.setLayout(paneHiredLayout);
         paneHiredLayout.setHorizontalGroup(
@@ -87,38 +543,51 @@ public class MainPage extends javax.swing.JFrame {
             .addGroup(paneHiredLayout.createSequentialGroup()
                 .addGroup(paneHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(paneHiredLayout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(lblHeader)
-                        .addGap(4, 4, 4)
-                        .addComponent(cbFunctions, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfsearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnSearch))
+                        .addGap(20, 20, 20)
+                        .addGroup(paneHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(paneHiredLayout.createSequentialGroup()
+                                .addComponent(lblHeader)
+                                .addGap(4, 4, 4)
+                                .addComponent(cbFunctions, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfsearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnSearch)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblErrorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(paneHiredLayout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(149, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addGroup(paneHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tpSubMenu))))
+                .addContainerGap())
         );
         paneHiredLayout.setVerticalGroup(
             paneHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paneHiredLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(paneHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblHeader)
-                    .addComponent(cbFunctions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearch)
-                    .addComponent(tfsearchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(79, 79, 79)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addComponent(tpSubMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(paneHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(paneHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblHeader)
+                        .addComponent(cbFunctions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSearch)
+                        .addComponent(tfsearchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblErrorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         tpMenu.addTab("Anställd", paneHired);
 
         lblHeader1.setText("Välj funktion:");
 
-        cbFunctions1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Visa vem som leder ett specifikt projekt (nutid, dåtid)", "Vilka plattformar utvecklas ett spel för", "Vilka spelprojekt pågår?", "Vilka spel har släppts?" }));
+        cbFunctions1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Visa vem som leder/har lett ett specifikt projekt (sök Spel) (A,S)", "Visa vilka plattformar ett spel utvecklas till (A,S)", "Lista de spelprojekt som är under utveckling (A,S)", "Lista de spelprojekt som har släppts (A,S)", "Lägg till spelutvecklingsprojekt (A)", "Uppdatera information om ett specifikt projekt (Sök Spel) (A)", " ", " " }));
 
         tfsearchField1.setText("Sök...");
 
@@ -133,10 +602,8 @@ public class MainPage extends javax.swing.JFrame {
         paneProjectLayout.setHorizontalGroup(
             paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paneProjectLayout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addGroup(paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblErrorMessage)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addGroup(paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(paneProjectLayout.createSequentialGroup()
                         .addComponent(lblHeader1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -144,23 +611,26 @@ public class MainPage extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tfsearchField1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnSearch1)))
-                .addContainerGap(127, Short.MAX_VALUE))
+                        .addComponent(btnSearch1))
+                    .addComponent(jScrollPane2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblErrorMessage1, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                .addContainerGap())
         );
         paneProjectLayout.setVerticalGroup(
             paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paneProjectLayout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addGroup(paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblHeader1)
-                    .addComponent(cbFunctions1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfsearchField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearch1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblErrorMessage)
-                .addGap(23, 23, 23)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addGroup(paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblHeader1)
+                        .addComponent(cbFunctions1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfsearchField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSearch1))
+                    .addComponent(lblErrorMessage1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(338, Short.MAX_VALUE))
         );
 
         tpMenu.addTab("Spelprojekt", paneProject);
@@ -173,7 +643,7 @@ public class MainPage extends javax.swing.JFrame {
 
         tfsearchField2.setText("Sök...");
 
-        cbFunctions2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vilka spel har släppts till plattformen?" }));
+        cbFunctions2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lista de spel som har släppts till plattformen (A,S)", "Uppdatera information om vilka plattformar ett spelprojekt omfattar (A)" }));
 
         lblHeader2.setText("Välj funktion:");
 
@@ -182,9 +652,9 @@ public class MainPage extends javax.swing.JFrame {
         panePlatformLayout.setHorizontalGroup(
             panePlatformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panePlatformLayout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addGroup(panePlatformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
+                .addGroup(panePlatformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane3)
                     .addGroup(panePlatformLayout.createSequentialGroup()
                         .addComponent(lblHeader2)
                         .addGap(18, 18, 18)
@@ -193,20 +663,20 @@ public class MainPage extends javax.swing.JFrame {
                         .addComponent(tfsearchField2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnSearch2)))
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(226, Short.MAX_VALUE))
         );
         panePlatformLayout.setVerticalGroup(
             panePlatformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panePlatformLayout.createSequentialGroup()
-                .addGap(78, 78, 78)
+                .addGap(35, 35, 35)
                 .addGroup(panePlatformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblHeader2)
                     .addComponent(cbFunctions2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tfsearchField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearch2))
-                .addGap(43, 43, 43)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(345, Short.MAX_VALUE))
         );
 
         tpMenu.addTab("Plattform", panePlatform);
@@ -219,7 +689,7 @@ public class MainPage extends javax.swing.JFrame {
 
         tfsearchField3.setText("Sök...");
 
-        cbFunctions3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vilken kompetens har en viss specialist?", " " }));
+        cbFunctions3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lista den kompetens en specifik specialist har (Sök anställd) (A,S)", "Uppdatera information om vilka domäner en specialist har kompetens för (A)", " " }));
 
         lblHeader3.setText("Välj funktion:");
 
@@ -228,9 +698,9 @@ public class MainPage extends javax.swing.JFrame {
         paneCompetenceLayout.setHorizontalGroup(
             paneCompetenceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paneCompetenceLayout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addGroup(paneCompetenceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addGroup(paneCompetenceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane4)
                     .addGroup(paneCompetenceLayout.createSequentialGroup()
                         .addComponent(lblHeader3)
                         .addGap(18, 18, 18)
@@ -239,20 +709,20 @@ public class MainPage extends javax.swing.JFrame {
                         .addComponent(tfsearchField3, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnSearch3)))
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(224, Short.MAX_VALUE))
         );
         paneCompetenceLayout.setVerticalGroup(
             paneCompetenceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paneCompetenceLayout.createSequentialGroup()
-                .addGap(78, 78, 78)
+                .addGap(31, 31, 31)
                 .addGroup(paneCompetenceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblHeader3)
                     .addComponent(cbFunctions3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tfsearchField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearch3))
-                .addGap(43, 43, 43)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(354, Short.MAX_VALUE))
         );
 
         tpMenu.addTab("Kompetensdomän", paneCompetence);
@@ -277,15 +747,20 @@ public class MainPage extends javax.swing.JFrame {
      */
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         String selectedFunction = cbFunctions.getSelectedItem().toString();
-        Validation valid = new Validation();            //valid.containsString(tfsearchField.getText())
+               //valid.containsString(tfsearchField.getText())
         switch (selectedFunction)
         {
-            case "Sök anställd i ett projekt" : 
+            case "Sök anställd i ett projekt (A,S)" :
                 listHired();
+                hideChangeFields();
                 break;
-            case "Sök anställd som leder projekt":
+            case "Sök anställd som leder projekt (A,S)":
                 listProjects();
-                break;    
+                hideChangeFields();
+                break;  
+            case "Ändra information om en anställd (A)":
+                showChangeFields();
+                
         }
     }//GEN-LAST:event_btnSearchActionPerformed
 
@@ -321,6 +796,7 @@ public class MainPage extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainPage().setVisible(true);
+                
             }
         });
     }  
@@ -330,13 +806,22 @@ public class MainPage extends javax.swing.JFrame {
      */
     private void listHired ()
     {
-        tasearchResult.setText("");
-        DbClass database = new DbClass();
         String searchWord = tfsearchField.getText();
-        ArrayList<String> listHired = database.listHiredInProject(searchWord);
-        for(String beteckning: listHired)
+        DbClass database = new DbClass();
+        tasearchResult.setText("");
+        boolean validation = Validation.containsString(searchWord);
+        if (!Validation.textBoxTextIsRequired(tfsearchField) && validation)
         {
-            tasearchResult.append(beteckning + "\n");
+            lblErrorMessage.setText("");
+            ArrayList<String> listHired = database.listHiredInProject(searchWord);
+            for(String beteckning: listHired)
+            {
+                tasearchResult.append(beteckning + "\n");
+            }
+        }
+        else
+        {
+            lblErrorMessage.setText("Använd endast a-ö, A-Ö");
         }
     }
     
@@ -345,14 +830,68 @@ public class MainPage extends javax.swing.JFrame {
      */
     private void listProjects ()
     {
-        tasearchResult.setText("");
-        DbClass database = new DbClass();
-        String searchWord = tfsearchField.getText();
-        ArrayList<String> listProject = database.listProjects(searchWord);
-        for (String beteckning: listProject)
+         String searchWord = tfsearchField.getText();
+         DbClass database = new DbClass();
+         tasearchResult.setText("");
+         boolean validation = Validation.containsString(searchWord);
+        if (!Validation.textBoxTextIsRequired(tfsearchField) && validation)
         {
-            tasearchResult.append(beteckning + " ");
+            lblErrorMessage.setText("");
+            ArrayList<HashMap<String, String>> listProject = database.listProjects(searchWord);
+            for(int i = 0; i < listProject.size(); i++)
+            {
+                String beteckningen = listProject.get(i).get("BETECKNING");
+                String startdatumet = listProject.get(i).get("STARTDATUM");
+                String releasedatumet = listProject.get(i).get("RELEASEDATUM");
+                tasearchResult.append(beteckningen + " " + startdatumet + " " + releasedatumet + "\n");
+            }
         }
+        else
+        {
+            lblErrorMessage.setText("Använd endast a-ö, A-Ö");
+        }
+    }
+    
+    private void showChangeFields()
+    {
+        lblHeader.setVisible(true);
+        lblChangeName.setVisible(true);
+        lblChangeTelephone.setVisible(true);
+        lblChangeMail.setVisible(true);
+        lblChangeUsername.setVisible(true);
+        tfChangeName.setVisible(true);
+        tfChangeTelephone.setVisible(true);
+        tfChangeMail.setVisible(true);
+        tfChangeUsername.setVisible(true);
+        btnChangeHired.setVisible(true);
+        btnChangeHired.setVisible(true);
+        tpSubMenu.setVisible(true);
+        lblHeaderChange.setVisible(true);
+        lblChangePassword.setVisible(true);
+        tfChangePassword.setVisible(true);
+        tasearchResult.setVisible(false);
+        jScrollPane1.setVisible(false);
+    }
+    
+    private void hideChangeFields()
+    {
+        lblHeader.setVisible(false);
+        lblChangeName.setVisible(false);
+        lblChangeTelephone.setVisible(false);
+        lblChangeMail.setVisible(false);
+        lblChangeUsername.setVisible(false);
+        tfChangeName.setVisible(false);
+        tfChangeTelephone.setVisible(false);
+        tfChangeMail.setVisible(false);
+        tfChangeUsername.setVisible(false);
+        btnChangeHired.setVisible(false);
+        btnChangeHired.setVisible(false);
+        tpSubMenu.setVisible(false);
+        lblHeaderChange.setVisible(false);
+        lblChangePassword.setVisible(false);
+        tfChangePassword.setVisible(false);
+        tasearchResult.setVisible(true);
+        jScrollPane1.setVisible(true);
     }
     
     /**
@@ -361,7 +900,7 @@ public class MainPage extends javax.swing.JFrame {
      */
     public void setErrorMessage(String text)
     {
-        lblErrorMessage.setText(text);
+        lblErrorMessage1.setText(text);
     }
     
     /**
@@ -376,6 +915,14 @@ public class MainPage extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnChangeHired;
+    private javax.swing.JButton btnChangeHired1;
+    private javax.swing.JButton btnChoose;
+    private javax.swing.JButton btnChoose1;
+    private javax.swing.JButton btnConfirmUpdate;
+    private javax.swing.JButton btnConfirmUpdate1;
+    private javax.swing.JButton btnConfirmUpdate2;
+    private javax.swing.JButton btnRemove;
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnSearch1;
     private javax.swing.JButton btnSearch2;
@@ -384,27 +931,81 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbFunctions1;
     private javax.swing.JComboBox<String> cbFunctions2;
     private javax.swing.JComboBox<String> cbFunctions3;
+    private javax.swing.JComboBox<String> cbHiredForm;
+    private javax.swing.JComboBox<String> cbListAllGameProjects;
+    private javax.swing.JComboBox<String> cbListAllGameProjects1;
+    private javax.swing.JComboBox<String> cbListAllHired;
+    private javax.swing.JComboBox<String> cbListAllHired1;
+    private javax.swing.JComboBox<String> cbListAllHired2;
+    private javax.swing.JComboBox<String> cbListAllProjectleaders;
+    private javax.swing.JComboBox<String> cbListAllSpecialists;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lblAddMail;
+    private javax.swing.JLabel lblAddName;
+    private javax.swing.JLabel lblAddPassword;
+    private javax.swing.JLabel lblAddTelephone;
+    private javax.swing.JLabel lblAddUsername;
+    private javax.swing.JLabel lblChangeMail;
+    private javax.swing.JLabel lblChangeName;
+    private javax.swing.JLabel lblChangePassword;
+    private javax.swing.JLabel lblChangeTelephone;
+    private javax.swing.JLabel lblChangeUsername;
+    private javax.swing.JLabel lblChooseGameProject;
+    private javax.swing.JLabel lblChooseGameProject1;
+    private javax.swing.JLabel lblChooseHired;
+    private javax.swing.JLabel lblChooseHired1;
+    private javax.swing.JLabel lblChooseHired2;
+    private javax.swing.JLabel lblChooseProjectleader;
+    private javax.swing.JLabel lblChooseSpecialist;
+    private javax.swing.JLabel lblChooseUpgrade;
     private javax.swing.JLabel lblErrorMessage;
+    private javax.swing.JLabel lblErrorMessage1;
+    private javax.swing.JLabel lblGenerateNewAID;
     private javax.swing.JLabel lblHeader;
     private javax.swing.JLabel lblHeader1;
     private javax.swing.JLabel lblHeader2;
     private javax.swing.JLabel lblHeader3;
+    private javax.swing.JLabel lblHeaderAdd;
+    private javax.swing.JLabel lblHeaderChange;
+    private javax.swing.JLabel lblHeaderRemove;
+    private javax.swing.JLabel lblNote;
+    private javax.swing.JLabel lblUpdateHiredInProject;
+    private javax.swing.JLabel lblUpdateLeader;
+    private javax.swing.JPanel paneAdd;
+    private javax.swing.JPanel paneChange;
     private javax.swing.JPanel paneCompetence;
     private javax.swing.JPanel paneHired;
     private javax.swing.JPanel panePlatform;
     private javax.swing.JPanel paneProject;
+    private javax.swing.JPanel paneRemove;
+    private javax.swing.JPanel paneUpdate;
     private javax.swing.JTextArea tasearchResult;
     private javax.swing.JTextArea tasearchResult1;
     private javax.swing.JTextArea tasearchResult2;
     private javax.swing.JTextArea tasearchResult3;
+    private javax.swing.JTextField tfAddMail;
+    private javax.swing.JTextField tfAddName;
+    private javax.swing.JTextField tfAddPassword;
+    private javax.swing.JTextField tfAddTelephone;
+    private javax.swing.JTextField tfAddUserName;
+    private javax.swing.JTextField tfChangeMail;
+    private javax.swing.JTextField tfChangeName;
+    private javax.swing.JTextField tfChangePassword;
+    private javax.swing.JTextField tfChangeTelephone;
+    private javax.swing.JTextField tfChangeUsername;
     private javax.swing.JTextField tfsearchField;
     private javax.swing.JTextField tfsearchField1;
     private javax.swing.JTextField tfsearchField2;
     private javax.swing.JTextField tfsearchField3;
     private javax.swing.JTabbedPane tpMenu;
+    private javax.swing.JTextPane tpReturnAID;
+    private javax.swing.JTabbedPane tpSubMenu;
     // End of variables declaration//GEN-END:variables
 }

@@ -85,6 +85,9 @@ public class MiceForm extends javax.swing.JFrame {
 
     private void btnAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdminMouseClicked
         // When clicked, send to admin login
+        JFrame form = new LogIn();
+        form.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnAdminMouseClicked
 
     private void btnHiredMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHiredMouseClicked

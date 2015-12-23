@@ -186,40 +186,34 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="lblHeaderChange" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="btnChangeHired" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblHeaderChange" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="lblChooseHired" min="-2" max="-2" attributes="0"/>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="cbListAllHired" min="-2" pref="135" max="-2" attributes="0"/>
-                                                  <EmptySpace max="32767" attributes="0"/>
-                                                  <Component id="btnChoose" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="btnChangeHired" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="lblChooseHired" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="cbListAllHired" min="-2" pref="135" max="-2" attributes="0"/>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="btnChooseChange" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
                                               </Group>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace pref="110" max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblChangeUsername" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblChangeName" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblChangeMail" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblChangeTelephone" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblChangePassword" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="tfChangeTelephone" max="32767" attributes="0"/>
-                                          <Component id="tfChangeName" max="32767" attributes="0"/>
-                                          <Component id="tfChangeMail" min="-2" pref="97" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="tfChangePassword" max="32767" attributes="0"/>
-                                                  <Component id="tfChangeUsername" max="32767" attributes="0"/>
+                                                  <Component id="lblChangeName" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblChangeMail" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblChangeTelephone" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="tfChangeTelephone" max="32767" attributes="0"/>
+                                                  <Component id="tfChangeName" max="32767" attributes="0"/>
+                                                  <Component id="tfChangeMail" min="-2" pref="97" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -232,20 +226,21 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <Component id="lblHeaderChange" min="-2" pref="14" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                                      <Component id="lblHeaderChange" min="-2" pref="14" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
                                       <Component id="lblChooseHired" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="cbListAllHired" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btnChoose" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnChooseChange" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
+                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                                      <Component id="btnChangeHired" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="tfChangeName" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="lblChangeName" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -260,21 +255,9 @@
                                           <Component id="lblChangeMail" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="tfChangeMail" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="lblChangeUsername" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tfChangeUsername" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblChangePassword" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tfChangePassword" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                              <Component id="btnChangeHired" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="61" max="32767" attributes="0"/>
+                              <EmptySpace pref="67" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -283,16 +266,6 @@
                     <Component class="javax.swing.JButton" name="btnChangeHired">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="OK"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="tfChangeUsername">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Anv&#xe4;ndarnamn"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="lblChangeUsername">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="AnvNamn:"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblChangeMail">
@@ -341,29 +314,20 @@
                     <Component class="javax.swing.JComboBox" name="cbListAllHired">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="1">
-                            <StringItem index="0" value="Lista alla anst&#xe4;llda med SQL"/>
-                          </StringArray>
+                          <StringArray count="0"/>
                         </Property>
                       </Properties>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
                     </Component>
-                    <Component class="javax.swing.JButton" name="btnChoose">
+                    <Component class="javax.swing.JButton" name="btnChooseChange">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="V&#xe4;lj"/>
                       </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="lblChangePassword">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="L&#xf6;senord: "/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="tfChangePassword">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="L&#xf6;senord"/>
-                      </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnChooseChangeMouseClicked"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>

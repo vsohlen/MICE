@@ -70,28 +70,20 @@ public class DbClass {
      */
     public ArrayList<HashMap<String, String>> listProjects(String searchProject)
     {
-            String sqlFraga = "select beteckning, startdatum, releasedatum from SPELPROJEKT " +
-                              "join ANSTALLD on ANSTALLD.AID = SPELPROJEKT.AID " +
-                              "where ANSTALLD.NAMN like '" + searchProject + "%'";
-            
-            ArrayList listProjects = new ArrayList<>();
-            
-            try
-            {
-                ArrayList<HashMap<String, String>> leadsProjects = idb.fetchRows(sqlFraga);
-                /*for(int i = 0; i < leadsProjects.size(); i++)
-                {
-                    listProjects.add(leadsProjects.get(i).get("BETECKNING"));
-                    listProjects.add(leadsProjects.get(i).get("STARTDATUM"));
-                    listProjects.add(leadsProjects.get(i).get("RELEASEDATUM"));
-                }*/
-                return leadsProjects;
-            }
-            catch(InfException e)
-            {
-                System.out.println(e.getMessage());
-                return null;
-            }
+        String sqlFraga = "select beteckning, startdatum, releasedatum from SPELPROJEKT " +
+                          "join ANSTALLD on ANSTALLD.AID = SPELPROJEKT.AID " +
+                          "where ANSTALLD.NAMN like '" + searchProject + "%'";
+
+        try
+        {
+            ArrayList<HashMap<String, String>> leadsProjects = idb.fetchRows(sqlFraga);
+            return leadsProjects;
+        }
+        catch(InfException e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
     
         /**
@@ -136,5 +128,61 @@ public class DbClass {
     
      return response;
     }
+    
+    /**
+     * Updates all info about the hired person at once. No field is aloud to be left empty
+     *                      //Validate so that no field can be empty in the vadlidation-class
+     * @param setName
+     * @param setPhone
+     * @param setMail
+     * @param AID
+     */
+    public void changeHired(String setName, String setPhone, String setMail, int AID)
+    {
+        String sqlFraga = "update ANSTALLD " +
+                          "set Namn = '" + setName + "', Telefon = '" + setPhone + "' Mail = '" + setMail + "'" +
+                          "where AID = " + AID;
+        try 
+        {
+            idb.update(sqlFraga);
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public ArrayList<HashMap<String, String>> listAllHired()
+    {
+        String sqlFraga = "select * from ANSTALLD";
+        
+        try
+        {
+           ArrayList<HashMap<String, String>> allHired = idb.fetchRows(sqlFraga);
+           return allHired;
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+    
+    public HashMap<String, String> listHired(int aid)
+    {
+        String sqlFraga = "select * from ANSTALLD where aid = " + aid + ";";
+        try
+        {
+            HashMap<String, String> aboutHired= idb.fetchRow(sqlFraga);
+            return aboutHired; 
+            
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+                    
 }
     

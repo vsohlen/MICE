@@ -140,7 +140,7 @@ public class DbClass {
     public void changeHired(String setName, String setPhone, String setMail, int AID)
     {
         String sqlFraga = "update ANSTALLD " +
-                          "set Namn = '" + setName + "', Telefon = '" + setPhone + "' Mail = '" + setMail + "'" +
+                          "set Namn = '" + setName + "', Telefon = '" + setPhone + "', Mail = '" + setMail + "'" +
                           "where AID = " + AID;
         try 
         {

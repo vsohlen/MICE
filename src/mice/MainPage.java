@@ -961,14 +961,14 @@ public class MainPage extends javax.swing.JFrame {
         {
             case "Sök anställd i ett projekt (A,S)" :
                 listHired();
-                hideHiredExtraFields();
+                hideHiredChangeFields();
                 break;
             case "Sök anställd som leder projekt (A,S)":
                 listProjects();
-                hideHiredExtraFields();
+                hideHiredChangeFields();
                 break;  
             case "Ändra information om en anställd (A)":
-                showHiredExtraFields();
+                showHiredChangeFields();
                 addHiredToCB();
                 
                 
@@ -1056,7 +1056,7 @@ public class MainPage extends javax.swing.JFrame {
         DbClass database = new DbClass();
         tasearchResult.setText("");
         boolean validation = Validation.containsString(searchWord);
-        if (!Validation.textBoxTextIsRequired(tfsearchField) && validation)
+        if (Validation.textBoxTextIsRequired(tfsearchField) && validation)
         {
             lblErrorMessageHired.setText("");
             ArrayList<String> listHired = database.listHiredInProject(searchWord);
@@ -1080,7 +1080,7 @@ public class MainPage extends javax.swing.JFrame {
          DbClass database = new DbClass();
          tasearchResult.setText("");
          boolean validation = Validation.containsString(searchWord);
-        if (!Validation.textBoxTextIsRequired(tfsearchField) && validation)
+        if (Validation.textBoxTextIsRequired(tfsearchField) && validation)
         {
             lblErrorMessageHired.setText("");
             ArrayList<HashMap<String, String>> listProject = database.listProjects(searchWord);
@@ -1145,9 +1145,8 @@ public class MainPage extends javax.swing.JFrame {
     /**
      * Shows the fields about a Hired when someone with full access is logged in
      */
-    private void showHiredExtraFields()
+    private void showHiredChangeFields()
     {
-        lblHeader.setVisible(true);
         lblChangeNameHired.setVisible(true);
         lblChangeTelephoneHired.setVisible(true);
         lblChangeMailHired.setVisible(true);
@@ -1160,9 +1159,6 @@ public class MainPage extends javax.swing.JFrame {
         separatorHired.setVisible(true);        //<--
         paneHired.setVisible(true);
         lblErrorMessageHired.setVisible(true);
-        cbFunctions.setVisible(true);
-        btnSearch.setVisible(true);
-        tfsearchField.setVisible(true);
         paneChangeHired.setVisible(true);
         lblChooseHired.setVisible(true);
 	cbListAllHired.setVisible(true);
@@ -1215,9 +1211,8 @@ public class MainPage extends javax.swing.JFrame {
     /**
      * Hides the fields about a Hired when someone without full access is using the program
      */
-    private void hideHiredExtraFields()
+    private void hideHiredChangeFields()
     {              
-        lblHeader.setVisible(false);
         lblChangeNameHired.setVisible(false);
         lblChangeTelephoneHired.setVisible(false);
         lblChangeMailHired.setVisible(false);
@@ -1230,9 +1225,6 @@ public class MainPage extends javax.swing.JFrame {
         separatorHired.setVisible(false);
         paneHired.setVisible(false);
         lblErrorMessageHired.setVisible(false);
-        cbFunctions.setVisible(false);
-        btnSearch.setVisible(false);
-        tfsearchField.setVisible(false);
         paneChangeHired.setVisible(false);
         lblChooseHired.setVisible(false);
 	cbListAllHired.setVisible(false);

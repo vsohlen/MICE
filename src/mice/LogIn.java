@@ -116,15 +116,16 @@ public class LogIn extends javax.swing.JFrame {
         if(checker == true)
         {
         lblWelcomeOrError.setText("Välkommen " + tempUsername + ".");
+        JFrame form = new MainPage();
+        form.setVisible(true);
+        this.setVisible(false);
         }
         else
         {
          lblWelcomeOrError.setText("Fel användarnamn eller lösenord.");
         }
         
-        JFrame form = new MainPage();
-        form.setVisible(true);
-        this.setVisible(false);
+        
     }//GEN-LAST:event_btnLoginMouseClicked
 
     /**

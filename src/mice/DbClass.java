@@ -129,6 +129,24 @@ public class DbClass {
      return response;
     }
     
+    public void deleteHired(String aid, String name)
+    {
+       String sqlFraga = "delete from anstalld "
+               + "where namn = '" + name + "' and aid = '" + aid + "';";
+       
+        try 
+        {
+            idb.update(sqlFraga);
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+        }
+    
+    }
+    
+    
+    
     /**
      * Updates all info about the hired person at once. No field is aloud to be left empty
      *                      //Validate so that no field can be empty in the vadlidation-class
@@ -168,6 +186,79 @@ public class DbClass {
         }
     }
     
+    /**
+     Lists all the specialists.
+     */
+    public ArrayList<HashMap<String, String>> listAllSpecialists()
+    {
+        String sqlFraga = "select anstalld.aid, anstalld.namn "
+                + "from ANSTALLD JOIN SPECIALIST on SPECIALIST.AID = ANSTALLD.AID";
+        
+        try
+        {
+           ArrayList<HashMap<String, String>> allHired = idb.fetchRows(sqlFraga);
+           return allHired;
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+    
+    public void updateSpecialistProject(String specialist, String project)
+    {
+        String sqlFraga ="insert into ARBETAR_I " 
+               + "(AID, SID) "
+               + "values((select anstalld.AID from anstalld "
+               + "where namn = '" + specialist + "'), (select spelprojekt.sid from spelprojekt "
+               + "where spelprojekt.BETECKNING = '" + project + "'))";
+        
+        try
+	{
+            idb.insert(sqlFraga);
+	}
+	catch (InfException e)
+	{
+		System.out.println(e.getMessage());
+	}
+    }
+    
+     public void deleteSpecialistProject(String specialist, String project)
+    {
+        String sqlFraga ="delete from ARBETAR_I " 
+               + "where AID = (select anstalld.AID from anstalld "
+               + "where namn = '" + specialist + "') and SID = (select spelprojekt.sid from spelprojekt "
+               + "where spelprojekt.BETECKNING = '" + project + "')";
+        
+        try
+	{
+            idb.delete(sqlFraga);
+	}
+	catch (InfException e)
+	{
+		System.out.println(e.getMessage());
+	}
+    }
+    
+    public ArrayList<HashMap<String, String>> listAllProjects()			
+{
+	String sqlFraga = "select * from SPELPROJEKT";
+	
+	try
+	{
+		ArrayList<HashMap<String, String>> allProjects = idb.fetchRows(sqlFraga);
+		return allProjects;
+	}
+	catch (InfException e)
+	{
+		System.out.println(e.getMessage());
+		return null;
+	}
+}
+
+
+    
     public HashMap<String, String> listHired(int aid)
     {
         String sqlFraga = "select * from ANSTALLD where aid = " + aid + ";";
@@ -183,6 +274,8 @@ public class DbClass {
             return null;
         }
     }
+    
+    
                     
 }
     

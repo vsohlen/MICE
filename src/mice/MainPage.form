@@ -81,7 +81,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="tpSubMenuHired" max="32767" attributes="0"/>
+                              <Component id="tpSubMenuHired" pref="632" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -107,7 +107,7 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="spHired" min="-2" pref="75" max="-2" attributes="0"/>
-                      <EmptySpace pref="74" max="32767" attributes="0"/>
+                      <EmptySpace pref="65" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -194,31 +194,30 @@
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="btnChangeHired" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="lblChooseHired" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="lblChooseHired" min="-2" max="-2" attributes="0"/>
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="cbListAllHired" min="-2" pref="135" max="-2" attributes="0"/>
-                                                      <EmptySpace max="32767" attributes="0"/>
-                                                      <Component id="btnChooseChangeHired" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="lblChangeNameHired" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="lblChangeMailHired" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="lblChangeTelephoneHired" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="tfChangeTelephoneHired" max="32767" attributes="0"/>
-                                                  <Component id="tfChangeNameHired" max="32767" attributes="0"/>
-                                                  <Component id="tfChangeMailHired" min="-2" pref="97" max="-2" attributes="0"/>
-                                              </Group>
+                                              <Component id="cbListAllHired" min="-2" pref="135" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="btnChooseChangeHired" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
+                                      <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblChangeNameHired" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblChangeMailHired" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblChangeTelephoneHired" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="tfChangeTelephoneHired" max="32767" attributes="0"/>
+                                          <Component id="tfChangeNameHired" max="32767" attributes="0"/>
+                                          <Component id="tfChangeMailHired" min="-2" pref="97" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="20" max="32767" attributes="0"/>
+                                      <Component id="btnChangeHired" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
@@ -259,7 +258,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="67" max="32767" attributes="0"/>
+                              <EmptySpace pref="76" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -348,21 +347,32 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblHeaderRemove" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblNote" min="-2" pref="325" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="lblChooseHiredRemove" max="32767" attributes="0"/>
-                                          <Component id="cbListAllHiredRemove" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblHeaderRemove" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblNote" min="-2" pref="325" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="lblChooseHiredRemove" max="32767" attributes="0"/>
+                                                  <Component id="cbListAllHiredRemove" max="32767" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="btnRemove" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="btnRemove" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblTestNamn" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblTestAid" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="272" max="32767" attributes="0"/>
+                              <EmptySpace pref="277" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -380,7 +390,11 @@
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="lblNote" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="115" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="lblTestAid" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="lblTestNamn" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="67" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -407,6 +421,10 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Ta bort"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnRemoveMouseClicked"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoveActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblNote">
                       <Properties>
@@ -419,6 +437,16 @@
                           <Font name="Tahoma" size="14" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Ta bort anst&#xe4;lld"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblTestAid">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="testAid"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblTestNamn">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="testNamn"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -445,7 +473,7 @@
                                   <Component id="lblHeaderAdd" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="btnChooseAdd" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="251" max="32767" attributes="0"/>
+                              <EmptySpace pref="256" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="lblAddPassword" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -635,18 +663,37 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="lblChooseHiredPosition" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="cbListAllHiredPosition" min="-2" pref="95" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="lblChooseUpgrade" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="cbHiredForm" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="btnConfirmUpdatePosition" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="lblChooseHiredPosition" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="cbListAllHiredPosition" min="-2" pref="95" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="lblChooseUpgrade" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="cbHiredForm" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="btnConfirmUpdatePosition" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="lblUpdateHiredPosition" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblUpdateHiredInProject" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblUpdateLeader" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Component id="lblChooseGameProject" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="cbListAllGameProjects" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                              <Component id="lblChooseProjectleader" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="cbListAllProjectleaders" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="btnConfirmUpdate" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
-                                  <Group type="102" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
                                       <Component id="lblChooseSpecialist" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="cbListAllSpecialists" min="-2" max="-2" attributes="0"/>
@@ -654,25 +701,13 @@
                                       <Component id="lblChooseGameProjectUpdate" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                       <Component id="cbListAllGameProjectsUpdate" min="-2" pref="90" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="btnConfirmUpdateHired" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="lblUpdateHiredPosition" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblUpdateHiredInProject" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblUpdateLeader" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Component id="lblChooseGameProject" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="cbListAllGameProjects" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                      <Component id="lblChooseProjectleader" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="cbListAllProjectleaders" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="btnConfirmUpdate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnConfirmUpdateRemoved" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="btnConfirmUpdateHired" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="119" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -698,6 +733,7 @@
                                   <Component id="lblChooseGameProjectUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="cbListAllGameProjectsUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="btnConfirmUpdateHired" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnConfirmUpdateRemoved" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="lblUpdateHiredPosition" min="-2" max="-2" attributes="0"/>
@@ -709,7 +745,7 @@
                                   <Component id="cbHiredForm" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="btnConfirmUpdatePosition" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="78" max="32767" attributes="0"/>
+                              <EmptySpace pref="87" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -819,8 +855,11 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnConfirmUpdateHired">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="OK"/>
+                        <Property name="text" type="java.lang.String" value="L&#xe4;gg till"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnConfirmUpdateHiredMouseClicked"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblChooseHiredPosition">
                       <Properties>
@@ -865,6 +904,14 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="OK"/>
                       </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnConfirmUpdateRemoved">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Ta bort"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnConfirmUpdateRemovedMouseClicked"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -1017,7 +1064,7 @@
                                           <Component id="lblInfoTextAddGameProject" min="-2" max="-2" attributes="0"/>
                                           <Component id="lblHeaderAddGameProject" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="168" max="32767" attributes="0"/>
+                                      <EmptySpace pref="173" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="lblGpAddName" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="lblGpAddReleaseDate" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -1163,10 +1210,10 @@
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="lblHeaderChangeGameProject" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="494" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="499" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="0" pref="16" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="21" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="lblChooseGame" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
@@ -1342,7 +1389,7 @@
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="lblErrorMessagePlatform" pref="156" max="32767" attributes="0"/>
+                      <Component id="lblErrorMessagePlatform" pref="161" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -1442,7 +1489,7 @@
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="lblErrorMessageCompetence" pref="156" max="32767" attributes="0"/>
+                      <Component id="lblErrorMessageCompetence" pref="161" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   </Group>
               </Group>

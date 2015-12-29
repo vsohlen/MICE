@@ -129,10 +129,10 @@ public class DbClass {
      return response;
     }
     
-    public void deleteHired(String aid, String name)
+    public void deleteHired(String aid)
     {
        String sqlFraga = "delete from anstalld "
-               + "where namn = '" + name + "' and aid = '" + aid + "';";
+               + "where aid = " + aid + ";";
        
         try 
         {
@@ -274,6 +274,48 @@ public class DbClass {
             return null;
         }
     }
+    
+    /**
+*Generates a new AID to be used when adding a new hired
+     * @return 
+*/
+    public int generateAID ()
+    {
+    try 
+        {
+            int newAID = Integer.parseInt(idb.getAutoIncrement("ANSTALLD", "AID"));
+            return newAID;
+        }
+    catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return -1;
+        }
+    }
+    
+    /**
+* Adds a new hired in the database
+     * @param newAID
+     * @param name
+     * @param phone
+     * @param mail
+     * @param username
+*/
+public void addHired(int newAID, String name, String phone, String mail, String username)
+{
+	String sqlFraga = "insert into ANSTALLD " + 
+			  "(AID, NAMN, TELEFON, MAIL, ANVNAMN) " + 
+			  "values (" + 5 + ", '" + name + "', '" + phone + "', '" + mail + ", " + username + ")";
+					  
+	try 
+	{
+		idb.insert(sqlFraga);
+	}
+	catch(InfException e)
+	{
+		System.out.println(e.getMessage());
+	}
+}
     
     
                     

@@ -6,7 +6,7 @@
 package mice;
 
 import java.util.*; //Import of the java util package
-import javax.swing.JComboBox;   //Import of the combobox
+
 
 /**
  *
@@ -19,20 +19,11 @@ public class MainPage extends javax.swing.JFrame {
      */
     public MainPage() {
         initComponents();
-            lblHeader.setVisible(true);
-            lblChangeNameHired.setVisible(true);
-            lblChangeTelephoneHired.setVisible(true);
-            lblChangeMailHired.setVisible(true);
-            tfChangeNameHired.setVisible(true);
-            tfChangeTelephoneHired.setVisible(true);
-            tfChangeMailHired.setVisible(true);
-            btnChangeHired.setVisible(true);
-            tpSubMenuHired.setVisible(true);
-            lblHeaderChangeHired.setVisible(true);
             listHiredToCBRemove();
             //Fills in combo boxes with data.
             addProjectsToCBUpdate();
             addSpecialistToCBUpdate();
+            hideHiredChangeFields();
     }
 
     /**
@@ -77,8 +68,6 @@ public class MainPage extends javax.swing.JFrame {
         lblTestNamn = new javax.swing.JLabel();
         paneAddHired = new javax.swing.JPanel();
         lblHeaderAdd = new javax.swing.JLabel();
-        lblGenerateNewAID = new javax.swing.JLabel();
-        btnChooseAdd = new javax.swing.JButton();
         lblAddName = new javax.swing.JLabel();
         tfAddName = new javax.swing.JTextField();
         lblAddTelephone = new javax.swing.JLabel();
@@ -88,10 +77,6 @@ public class MainPage extends javax.swing.JFrame {
         lblAddUsername = new javax.swing.JLabel();
         tfAddUserName = new javax.swing.JTextField();
         btnChangeHiredAdd = new javax.swing.JButton();
-        spHiredAdd = new javax.swing.JScrollPane();
-        tpReturnAID = new javax.swing.JTextPane();
-        lblAddPassword = new javax.swing.JLabel();
-        tfAddPassword = new javax.swing.JTextField();
         paneUpdateHired = new javax.swing.JPanel();
         lblChooseGameProject = new javax.swing.JLabel();
         cbListAllGameProjects = new javax.swing.JComboBox<>();
@@ -223,10 +208,7 @@ public class MainPage extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(paneChangeHiredLayout.createSequentialGroup()
-                        .addComponent(lblHeaderChangeHired)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(paneChangeHiredLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 5, Short.MAX_VALUE)
                         .addGroup(paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblChooseHired)
                             .addGroup(paneChangeHiredLayout.createSequentialGroup()
@@ -244,8 +226,10 @@ public class MainPage extends javax.swing.JFrame {
                             .addComponent(tfChangeNameHired)
                             .addComponent(tfChangeMailHired, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, paneChangeHiredLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnChangeHired)))
+                        .addGroup(paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblHeaderChangeHired, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnChangeHired, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(83, 83, 83))
         );
         paneChangeHiredLayout.setVerticalGroup(
@@ -288,11 +272,6 @@ public class MainPage extends javax.swing.JFrame {
         btnRemove.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnRemoveMouseClicked(evt);
-            }
-        });
-        btnRemove.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRemoveActionPerformed(evt);
             }
         });
 
@@ -354,10 +333,6 @@ public class MainPage extends javax.swing.JFrame {
         lblHeaderAdd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblHeaderAdd.setText("Lägg till anställd");
 
-        lblGenerateNewAID.setText("Generera nytt AID");
-
-        btnChooseAdd.setText("Generera");
-
         lblAddName.setText("Namn:");
 
         tfAddName.setText("Namn");
@@ -376,88 +351,60 @@ public class MainPage extends javax.swing.JFrame {
 
         btnChangeHiredAdd.setText("OK");
 
-        spHiredAdd.setViewportView(tpReturnAID);
-
-        lblAddPassword.setText("Lösenord:");
-
-        tfAddPassword.setText("jTextField1");
-
         javax.swing.GroupLayout paneAddHiredLayout = new javax.swing.GroupLayout(paneAddHired);
         paneAddHired.setLayout(paneAddHiredLayout);
         paneAddHiredLayout.setHorizontalGroup(
             paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneAddHiredLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
+            .addGroup(paneAddHiredLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lblGenerateNewAID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(spHiredAdd))
                     .addComponent(lblHeaderAdd)
-                    .addComponent(btnChooseAdd))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 256, Short.MAX_VALUE)
-                .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblAddPassword)
                     .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(btnChangeHiredAdd, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneAddHiredLayout.createSequentialGroup()
-                            .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblAddUsername)
-                                .addComponent(lblAddName)
-                                .addComponent(lblAddMail)
-                                .addComponent(lblAddTelephone))
-                            .addGap(26, 26, 26)
+                            .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(paneAddHiredLayout.createSequentialGroup()
+                                    .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lblAddUsername)
+                                        .addComponent(lblAddMail)
+                                        .addComponent(lblAddTelephone))
+                                    .addGap(26, 26, 26))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, paneAddHiredLayout.createSequentialGroup()
+                                    .addComponent(lblAddName)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                             .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(tfAddTelephone)
                                 .addComponent(tfAddName)
                                 .addComponent(tfAddMail, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, paneAddHiredLayout.createSequentialGroup()
                                     .addGap(1, 1, 1)
-                                    .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(tfAddPassword)
-                                        .addComponent(tfAddUserName)))))))
-                .addGap(83, 83, 83))
+                                    .addComponent(tfAddUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(444, Short.MAX_VALUE))
         );
         paneAddHiredLayout.setVerticalGroup(
             paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paneAddHiredLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(paneAddHiredLayout.createSequentialGroup()
-                        .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfAddName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblAddName))
-                        .addGap(8, 8, 8)
-                        .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblAddTelephone)
-                            .addComponent(tfAddTelephone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblAddMail)
-                            .addComponent(tfAddMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblAddUsername)
-                            .addComponent(tfAddUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(paneAddHiredLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lblHeaderAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblGenerateNewAID)
-                        .addGap(10, 10, 10)
-                        .addComponent(btnChooseAdd)))
+                .addGap(17, 17, 17)
+                .addComponent(lblHeaderAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfAddName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAddName))
+                .addGap(8, 8, 8)
+                .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAddTelephone)
+                    .addComponent(tfAddTelephone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAddMail)
+                    .addComponent(tfAddMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAddUsername)
+                    .addComponent(tfAddUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(paneAddHiredLayout.createSequentialGroup()
-                        .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblAddPassword)
-                            .addComponent(tfAddPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnChangeHiredAdd)
-                        .addGap(24, 24, 24))
-                    .addGroup(paneAddHiredLayout.createSequentialGroup()
-                        .addComponent(spHiredAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addComponent(btnChangeHiredAdd)
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         tpSubMenuHired.addTab("Lägg till", paneAddHired);
@@ -749,11 +696,6 @@ public class MainPage extends javax.swing.JFrame {
         lblChooseGame.setText("Välj ett spel i listan att ändra information om: ");
 
         btnChooseChangeGameProject.setText("Välj");
-        btnChooseChangeGameProject.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnChooseChangeGameProjectMouseClicked(evt);
-            }
-        });
 
         btnChangeGameProject.setText("OK");
 
@@ -1020,6 +962,21 @@ public class MainPage extends javax.swing.JFrame {
             case "Ändra information om en anställd (A)":
                 showHiredChangeFields();
                 addHiredToCB();
+                String currentHired = cbListAllHired.getSelectedItem().toString();
+                int aid = Integer.parseInt(currentHired.split(",")[0]);
+                changeInfoAboutHired(aid);
+                break;
+            case "Ta bort anställd (A)" :
+                showHiredRemoveFields();
+                showHiredChangeFields();
+                String thisHired = cbListAllHiredRemove.getSelectedItem().toString();
+                String deleteAID = (thisHired.split(",")[0]);
+                removeHired(deleteAID);
+                break;
+            case "Lägg till ny anställd (A)" :
+                showHiredAddFields();
+                addNewHired();
+                break;
                 
                 
         }
@@ -1056,25 +1013,25 @@ public class MainPage extends javax.swing.JFrame {
         changeInfoAboutHired(aid);
     }//GEN-LAST:event_btnChangeHiredMouseClicked
 
-    private void btnChooseChangeGameProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChooseChangeGameProjectMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnChooseChangeGameProjectMouseClicked
-
     private void btnRemoveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRemoveMouseClicked
-        //Remove the person selected in the combobox.
-      DbClass database = new DbClass();
-        
         String currentHired = cbListAllHiredRemove.getSelectedItem().toString();
         String deleteAID = (currentHired.split(",")[0]);
-        String deleteName = (currentHired.split(",")[1]);
-        database.deleteHired(deleteAID, deleteName);
-        lblTestAid.setText(deleteAID);
-        lblTestNamn.setText(deleteName);
-        
-        
-     
+        removeHired(deleteAID);
     }//GEN-LAST:event_btnRemoveMouseClicked
-private void listHiredToCBRemove()
+
+    /**
+     * lets u delete a hired person
+     * @param deleteAID 
+     */
+    private void removeHired (String deleteAID)
+    {
+      //Remove the person selected in the combobox.
+      DbClass database = new DbClass();
+                
+        database.deleteHired(deleteAID);
+    }
+    
+    private void listHiredToCBRemove()
     {
    DbClass database = new DbClass();
         //Fetches the names of all of the staff, and holds all info in a cb.
@@ -1088,10 +1045,6 @@ private void listHiredToCBRemove()
     }
     
     
-    private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRemoveActionPerformed
-
     private void btnConfirmUpdateHiredMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmUpdateHiredMouseClicked
         // Update a specialist to show a new project said specialist is working on.  
         DbClass database = new DbClass();
@@ -1112,7 +1065,8 @@ private void listHiredToCBRemove()
         database.deleteSpecialistProject(specialist, project);
         
     }//GEN-LAST:event_btnConfirmUpdateRemovedMouseClicked
-public void addProjectsToCBUpdate()			
+
+    public void addProjectsToCBUpdate()			
 {       //Adds all the projects a specialist can work on to a cb.
 	DbClass database = new DbClass();
 	
@@ -1137,9 +1091,7 @@ public void addSpecialistToCBUpdate()
 		cbListAllSpecialists.addItem(namn);
 	}
 }
-    
-    
-    
+
     /**
      * @param args the command line arguments
      */
@@ -1271,174 +1223,228 @@ public void addSpecialistToCBUpdate()
             System.out.println("nope");
         }
     }
-
+    
+    /**
+* Throws the new info about a hired to the database-class
+*/
+public void addNewHired ()
+{
+	DbClass database = new DbClass();
+	
+        int newAID = database.generateAID();
+	
+        //Gets the info from the textboxes
+        String name =  tfAddName.getText();
+        String phone = tfAddTelephone.getText();
+        String mail = tfAddMail.getText();
+				
+		//Create a username based on the firstnames first letter, the lastnames first and last letter.
+		String firstname = name.split(" ")[0];
+		String lastname = name.split(" ")[1];
+		String sistaBokstaven = name.substring(name.length()-1, name.length());
+		String username = firstname.substring(0,1) + lastname.substring(0,1) + sistaBokstaven;
+		
+		//checks if there is any text in the textfields and then adds the text in them to the database
+        if (Validation.textBoxTextIsRequired(tfAddName) && Validation.textBoxTextIsRequired(tfAddTelephone) && Validation.textBoxTextIsRequired(tfAddMail))
+        {
+            database.addHired(newAID, name, phone, mail, username);
+            System.out.println(name + " är nu tillagd!");
+        }
+        else
+        {
+            System.out.println("nope");
+        }
+    }
+  
     /**
      * Shows the fields about a Hired when someone with full access is logged in
      */
     private void showHiredChangeFields()
     {
-        lblChangeNameHired.setVisible(true);
-        lblChangeTelephoneHired.setVisible(true);
-        lblChangeMailHired.setVisible(true);
-        tfChangeNameHired.setVisible(true);
-        tfChangeTelephoneHired.setVisible(true);
-        tfChangeMailHired.setVisible(true);
-        btnChangeHired.setVisible(true);
-        tpSubMenuHired.setVisible(true);        //<--
-        lblHeaderChangeHired.setVisible(true);
-        separatorHired.setVisible(true);        //<--
-        paneHired.setVisible(true);
-        lblErrorMessageHired.setVisible(true);
         paneChangeHired.setVisible(true);
-        lblChooseHired.setVisible(true);
+	tpSubMenuHired.setVisible(true);
+	lblHeaderChangeHired.setVisible(true);
+	lblChooseHired.setVisible(true);
 	cbListAllHired.setVisible(true);
 	btnChooseChangeHired.setVisible(true);
-        lblChooseHiredRemove.setVisible(true);
-	cbListAllHiredRemove.setVisible(true);
-	btnRemove.setVisible(true);
-	lblNote.setVisible(true);
-	lblHeaderRemove.setVisible(true);
-        lblHeaderAdd.setVisible(true);
-	lblGenerateNewAID.setVisible(true);
-	btnChooseAdd.setVisible(true);
-	lblAddName.setVisible(true);
-	tfAddName.setVisible(true);
-	lblAddTelephone.setVisible(true);
-	tfAddTelephone.setVisible(true);
-	lblAddMail.setVisible(true);
-	tfAddMail.setVisible(true);
-	lblAddUsername.setVisible(true);
-	tfAddUserName.setVisible(true);
-	btnChangeHiredAdd.setVisible(true);
-	tpReturnAID.setVisible(true);
-	lblAddPassword.setVisible(true);
-	tfAddPassword.setVisible(true);
-        paneUpdateHired.setVisible(true);
-	lblChooseGameProject.setVisible(true);
-	cbListAllGameProjects.setVisible(true);
-	lblChooseProjectleader.setVisible(true);
-	cbListAllProjectleaders.setVisible(true);
-	btnConfirmUpdate.setVisible(true);
-	lblUpdateLeader.setVisible(true);
-	lblUpdateHiredInProject.setVisible(true);
-	lblUpdateHiredPosition.setVisible(true);
-	lblChooseSpecialist.setVisible(true);
-	cbListAllSpecialists.setVisible(true);
-	lblChooseGameProjectUpdate.setVisible(true);
-	cbListAllGameProjectsUpdate.setVisible(true);
-	btnConfirmUpdateHired.setVisible(true);
-	lblChooseHiredPosition.setVisible(true);
-	cbListAllHiredPosition.setVisible(true);
-	lblChooseUpgrade.setVisible(true);
-	cbHiredForm.setVisible(true);
-	btnConfirmUpdatePosition.setVisible(true);
-	separatorHired.setVisible(true);
-        tasearchResult.setVisible(false);
-        spHired.setVisible(false);
-        spHiredAdd.setVisible(false);
+	lblChangeNameHired.setVisible(true);
+	tfChangeNameHired.setVisible(true);
+	lblChangeTelephoneHired.setVisible(true);
+	tfChangeTelephoneHired.setVisible(true);
+	lblChangeMailHired.setVisible(true);
+	tfChangeMailHired.setVisible(true);
+	btnChangeHired.setVisible(true);
     }
     
     /**
      * Hides the fields about a Hired when someone without full access is using the program
      */
     private void hideHiredChangeFields()
-    {              
-        lblChangeNameHired.setVisible(false);
-        lblChangeTelephoneHired.setVisible(false);
-        lblChangeMailHired.setVisible(false);
-        tfChangeNameHired.setVisible(false);
-        tfChangeTelephoneHired.setVisible(false);
-        tfChangeMailHired.setVisible(false);
-        btnChangeHired.setVisible(false);
-        tpSubMenuHired.setVisible(false);
-        lblHeaderChangeHired.setVisible(false);
-        separatorHired.setVisible(false);
-        paneHired.setVisible(false);
-        lblErrorMessageHired.setVisible(false);
+    {     
         paneChangeHired.setVisible(false);
-        lblChooseHired.setVisible(false);
+	tpSubMenuHired.setVisible(false);
+	lblHeaderChangeHired.setVisible(false);
+	lblChooseHired.setVisible(false);
 	cbListAllHired.setVisible(false);
 	btnChooseChangeHired.setVisible(false);
-        lblChooseHiredRemove.setVisible(false);
+	lblChangeNameHired.setVisible(false);
+	tfChangeNameHired.setVisible(false);
+	lblChangeTelephoneHired.setVisible(false);
+	tfChangeTelephoneHired.setVisible(false);
+	lblChangeMailHired.setVisible(false);
+	tfChangeMailHired.setVisible(false);
+	btnChangeHired.setVisible(false);
+    }
+    
+    /**
+     * Shows the fields for removing a Hired when someone with full access is using the program
+     */
+    private void showHiredRemoveFields ()
+    {
+	tpSubMenuHired.setVisible(true);
+	paneRemoveHired.setVisible(true);
+	lblChooseHiredRemove.setVisible(true);
+	cbListAllHiredRemove.setVisible(true);
+	btnRemove.setVisible(true);
+	lblNote.setVisible(true);
+	lblHeaderRemove.setVisible(true);
+    }
+
+    /**
+     * Hides the fields for removing a Hired when someone without full access is using the program
+     */
+    private void hideHiredRemoveFields ()
+    {
+	tpSubMenuHired.setVisible(false);
+	paneRemoveHired.setVisible(false);
+	lblChooseHiredRemove.setVisible(false);
 	cbListAllHiredRemove.setVisible(false);
 	btnRemove.setVisible(false);
 	lblNote.setVisible(false);
 	lblHeaderRemove.setVisible(false);
-        lblHeaderAdd.setVisible(false);
-	lblGenerateNewAID.setVisible(false);
-	btnChooseAdd.setVisible(false);
+    }
+
+    /**
+     * Shows the fields for adding a hired when someone with full access is using the program
+     */
+    private void showHiredAddFields ()
+    {
+	tpSubMenuHired.setVisible(true);
+	lblHeaderAdd.setVisible(true);
+	paneAddHired.setVisible(true);
+	tfAddMail.setVisible(true);
+	lblAddName.setVisible(true);
+	tfAddName.setVisible(true);
+	lblAddTelephone.setVisible(true);
+	tfAddTelephone.setVisible(true);
+	lblAddMail.setVisible(true);
+	lblAddUsername.setVisible(true);
+	tfAddUserName.setVisible(true);
+	btnChangeHiredAdd.setVisible(true);
+    }
+
+    /**
+     * Hides the fields for adding a hired when someone without full access is using the program
+     */
+    private void hideHiredAddFields ()
+    {
+	tpSubMenuHired.setVisible(false);
+	lblHeaderAdd.setVisible(false);
+	paneAddHired.setVisible(false);
+	tfAddMail.setVisible(false);
 	lblAddName.setVisible(false);
 	tfAddName.setVisible(false);
 	lblAddTelephone.setVisible(false);
 	tfAddTelephone.setVisible(false);
 	lblAddMail.setVisible(false);
-	tfAddMail.setVisible(false);
 	lblAddUsername.setVisible(false);
 	tfAddUserName.setVisible(false);
 	btnChangeHiredAdd.setVisible(false);
-	tpReturnAID.setVisible(false);
-	lblAddPassword.setVisible(false);
-	tfAddPassword.setVisible(false);
-        paneUpdateHired.setVisible(false);
+    }
+    
+    /**
+     * Shows the fields for updating a Hired when someone with full access is using the program
+     */
+    private void showHiredUpdateFields ()
+    {
+	tpSubMenuHired.setVisible(true);
+	paneUpdateHired.setVisible(true);
+	lblChooseGameProject.setVisible(true);
+	cbListAllGameProjects.setVisible(true);
+	lblChooseProjectleader.setVisible(true);
+	cbListAllProjectleaders.setVisible(true);
+	btnConfirmUpdate.setVisible(true);
+	lblUpdateLeader.setVisible(true);
+        lblErrorMessagePlatform.setVisible(true);
+    }
+
+    /**
+     * Hides the fields for updating a Hired when someone without full access is using the program
+     */
+    private void hideHiredUpdateFields ()
+    {
+	tpSubMenuHired.setVisible(false);
+	paneUpdateHired.setVisible(false);
 	lblChooseGameProject.setVisible(false);
 	cbListAllGameProjects.setVisible(false);
 	lblChooseProjectleader.setVisible(false);
 	cbListAllProjectleaders.setVisible(false);
 	btnConfirmUpdate.setVisible(false);
 	lblUpdateLeader.setVisible(false);
-	lblUpdateHiredInProject.setVisible(false);
-	lblUpdateHiredPosition.setVisible(false);
-	lblChooseSpecialist.setVisible(false);
-	cbListAllSpecialists.setVisible(false);
-	lblChooseGameProjectUpdate.setVisible(false);
-	cbListAllGameProjectsUpdate.setVisible(false);
-	btnConfirmUpdateHired.setVisible(false);
-	lblChooseHiredPosition.setVisible(false);
-	cbListAllHiredPosition.setVisible(false);
-	lblChooseUpgrade.setVisible(false);
-	cbHiredForm.setVisible(false);
-	btnConfirmUpdatePosition.setVisible(false);
-	separatorHired.setVisible(false);
-        tasearchResult.setVisible(true);
-        spHired.setVisible(true);
-        spHiredAdd.setVisible(true);
+        lblErrorMessagePlatform.setVisible(false);
+    }
+
+    /**
+     * shows the fields for adding a gameproject when someone with full access is using the program
+     */
+    private void showGpAddFields ()
+    {
+	tpSubMenuGameProject.setVisible(true);
+	paneAddGameProject.setVisible(true);
+	lblHeaderAddGameProject.setVisible(true);
+	lblInfoTextAddGameProject.setVisible(true);
+	spGameProjectAdd.setVisible(false);
+	tpReturnNewSID.setVisible(true);
+	btnGenerateSID.setVisible(true);
+	lblGpAddName.setVisible(true);
+	tfGpAddName.setVisible(true);
+	lblGpAddStartDate.setVisible(true);
+	tfAddGpStartDate.setVisible(true);
+	tfAddGpReleaseDate.setVisible(true);
+	lblGpAddReleaseDate.setVisible(true);
+	btnAddGameProject.setVisible(true);
     }
     
     /**
-     * Shows the fields for changing a gameProject when someone with full access is logged in
+     * Hides the fields for adding a gameproject when someone without full access is using the program
      */
-    private void showGpFields()
+    private void hideGpAddFields ()
     {
-        paneProject.setVisible(true);
-        paneAddGameProject.setVisible(true);
-        paneChangeGameProject.setVisible(true);
-        separatorGameProject.setVisible(true);
-        lblHeaderAddGameProject.setVisible(true);
-        lblInfoTextAddGameProject.setVisible(true);
-        btnGenerateSID.setVisible(true);
-        tpReturnNewSID.setVisible(true);
-        lblGpAddName.setVisible(true);
-        tfGpAddName.setVisible(true);
-        lblGpAddStartDate.setVisible(true);
-        tfAddGpStartDate.setVisible(true);
-        lblGpAddReleaseDate.setVisible(true);
-        tfAddGpReleaseDate.setVisible(true);
-        btnAddGameProject.setVisible(true);
-        lblHeaderChangeGameProject.setVisible(true);
-        lblChooseGame.setVisible(true);        
-        lblHeaderGameProject.setVisible(true);
-	cbFunctionsGameProject.setVisible(true);
-	tfsearchFieldGameProject.setVisible(true);
-	btnSearchGameProject.setVisible(true);
-	tasearchResultGameProject.setVisible(true);
-	lblErrorMessageGameProject.setVisible(true);
-        lblHeaderGameProject.setVisible(true);
-	cbFunctionsGameProject.setVisible(true);
-	tfsearchFieldGameProject.setVisible(true);
-	btnSearchGameProject.setVisible(true);
-	tasearchResultGameProject.setVisible(true);
-	lblErrorMessageGameProject.setVisible(true);
-        cbListAllGames.setVisible(true);
+	tpSubMenuGameProject.setVisible(false);
+	paneAddGameProject.setVisible(false);
+	lblHeaderAddGameProject.setVisible(false);
+	lblInfoTextAddGameProject.setVisible(false);
+	spGameProjectAdd.setVisible(true);
+	tpReturnNewSID.setVisible(false);
+	btnGenerateSID.setVisible(false);
+	lblGpAddName.setVisible(false);
+	tfGpAddName.setVisible(false);
+	lblGpAddStartDate.setVisible(false);
+	tfAddGpStartDate.setVisible(false);
+	tfAddGpReleaseDate.setVisible(false);
+	lblGpAddReleaseDate.setVisible(false);
+	btnAddGameProject.setVisible(false);
+	}
+    
+    /**
+     * Shows the fields for changing a Gameproject when someone with full access is using the program
+     */
+    private void showGpChangeFields()
+    {
+	paneChangeGameProject.setVisible(true);
+	lblHeaderChangeGameProject.setVisible(true);
+	lblChooseGame.setVisible(true);
+	cbListAllGames.setVisible(true);
 	btnChooseChangeGameProject.setVisible(true);
 	btnChangeGameProject.setVisible(true);
 	tfChangeGpReleaseDate.setVisible(true);
@@ -1447,133 +1453,26 @@ public void addSpecialistToCBUpdate()
 	tfChangeGpStartDate.setVisible(true);
 	tfGpChangeName.setVisible(true);
 	lblGpChangeName.setVisible(true);
-       	lblGpAddReleaseDate.setVisible(true);
-        tpSubMenuGameProject.setVisible(true);
-        spGameProject.setVisible(false);
-        spGameProjectAdd.setVisible(false);
-        tasearchResultGameProject.setVisible(false);
-        
     }
-    
+
     /**
-     * Hides the fields for changing a gameProject when someone without full access is using the program
+     * Hides the fields for changing a gameproject when someone without full access is using the program
      */
-    private void hideGpFields()
+    private void hideGpChangeFields()
     {
-        paneProject.setVisible(false);
-        paneAddGameProject.setVisible(false);
-        paneChangeGameProject.setVisible(false);
-        separatorGameProject.setVisible(false);
-        lblHeaderAddGameProject.setVisible(false);
-        lblInfoTextAddGameProject.setVisible(false);
-        btnGenerateSID.setVisible(false);
-        tpReturnNewSID.setVisible(false);
-        lblGpAddName.setVisible(false);
-        tfGpAddName.setVisible(false);
-        lblGpAddStartDate.setVisible(false);
-        tfAddGpStartDate.setVisible(false);
-        lblGpAddReleaseDate.setVisible(false);
-        tfAddGpReleaseDate.setVisible(false);
-        btnAddGameProject.setVisible(false);
-        lblHeaderChangeGameProject.setVisible(false);
-        lblChooseGame.setVisible(false);        
-        lblHeaderGameProject.setVisible(false);
-	cbFunctionsGameProject.setVisible(false);
-	tfsearchFieldGameProject.setVisible(false);
-	btnSearchGameProject.setVisible(false);
-	tasearchResultGameProject.setVisible(false);
-	lblErrorMessageGameProject.setVisible(false);
-        lblHeaderGameProject.setVisible(false);
-	cbFunctionsGameProject.setVisible(false);
-	tfsearchFieldGameProject.setVisible(false);
-	btnSearchGameProject.setVisible(false);
-	tasearchResultGameProject.setVisible(false);
-	lblErrorMessageGameProject.setVisible(false);
-        cbListAllGames.setVisible(false);
-	btnChooseChangeGameProject.setVisible(false);
-	btnChangeGameProject.setVisible(false);
-	tfChangeGpReleaseDate.setVisible(false);
-	lblGpChangeReleaseDate.setVisible(false);
-	lblGpChangeStartDate.setVisible(false);
-	tfChangeGpStartDate.setVisible(false);
-	tfGpChangeName.setVisible(false);
-	lblGpChangeName.setVisible(false);
-       	lblGpAddReleaseDate.setVisible(false);
-        tpSubMenuGameProject.setVisible(false);
-        spGameProject.setVisible(true);
-        spGameProjectAdd.setVisible(true);
-        tasearchResultGameProject.setVisible(true);
+	paneChangeGameProject.setVisible(true);
+	lblHeaderChangeGameProject.setVisible(true);
+	lblChooseGame.setVisible(true);
+	cbListAllGames.setVisible(true);
+	btnChooseChangeGameProject.setVisible(true);
+	btnChangeGameProject.setVisible(true);
+	tfChangeGpReleaseDate.setVisible(true);
+	lblGpChangeReleaseDate.setVisible(true);
+	lblGpChangeStartDate.setVisible(true);
+	tfChangeGpStartDate.setVisible(true);
+	tfGpChangeName.setVisible(true);
+	lblGpChangeName.setVisible(true);
     }
-    
-    /**
-     * Shows the fieldsfor changing a platform when someone with full access is using th eprogram
-     */
-    private void showPlatformExtraFields()
-    {
-        panePlatform.setVisible(true);
-	tasearchResultPlatform.setVisible(true);
-	btnSearchPlatform.setVisible(true);
-	tfsearchFieldPlatform.setVisible(true);
-	cbFunctionsPlatform.setVisible(true);
-	lblHeaderPlatform.setVisible(true);
-	lblErrorMessagePlatform.setVisible(true);
-        
-        tasearchResultPlatform.setVisible(false);
-        spPlatform.setVisible(false);
-    }
-    
-    /**
-     * hides the fields for changing a platform when someone without full access is using th eprogram
-     */
-    private void hidePlatformExtraFields()
-    {
-        panePlatform.setVisible(false);
-	tasearchResultPlatform.setVisible(false);
-	btnSearchPlatform.setVisible(false);
-	tfsearchFieldPlatform.setVisible(false);
-	cbFunctionsPlatform.setVisible(false);
-	lblHeaderPlatform.setVisible(false);
-	lblErrorMessagePlatform.setVisible(false);
-        
-        tasearchResultPlatform.setVisible(true);
-        spPlatform.setVisible(true);
-    }
-    
-    /**
-     * shows the fields for changing a competence when someone with full access is using th eprogram
-     */
-    private void showCompetenceExtraFields()
-    {
-        paneCompetence.setVisible(true);
-	tasearchResultCompetence.setVisible(true);
-	btnSearchCompetence.setVisible(true);
-	tfsearchFieldCompetence.setVisible(true);
-	cbFunctionsCompetence.setVisible(true);
-	lblHeaderCompetence.setVisible(true);
-	lblErrorMessageCompetence.setVisible(true);
-        
-        tasearchResultCompetence.setVisible(false);
-        spCompetence.setVisible(false);
-    }
-    
-    /**
-     * hides the fields for changing a competence when someone without full access is using th eprogram
-     */
-    private void hideCompetenceExtraFields()
-    {
-        paneCompetence.setVisible(false);
-	tasearchResultCompetence.setVisible(false);
-	btnSearchCompetence.setVisible(false);
-	tfsearchFieldCompetence.setVisible(false);
-	cbFunctionsCompetence.setVisible(false);
-	lblHeaderCompetence.setVisible(false);
-	lblErrorMessageCompetence.setVisible(false);
-        
-        tasearchResultCompetence.setVisible(true);
-        spCompetence.setVisible(true);
-    }
-    
-    
     
     /**
      * Sets the errormessage
@@ -1600,7 +1499,6 @@ public void addSpecialistToCBUpdate()
     private javax.swing.JButton btnChangeGameProject;
     private javax.swing.JButton btnChangeHired;
     private javax.swing.JButton btnChangeHiredAdd;
-    private javax.swing.JButton btnChooseAdd;
     private javax.swing.JButton btnChooseChangeGameProject;
     private javax.swing.JButton btnChooseChangeHired;
     private javax.swing.JButton btnConfirmUpdate;
@@ -1629,7 +1527,6 @@ public void addSpecialistToCBUpdate()
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblAddMail;
     private javax.swing.JLabel lblAddName;
-    private javax.swing.JLabel lblAddPassword;
     private javax.swing.JLabel lblAddTelephone;
     private javax.swing.JLabel lblAddUsername;
     private javax.swing.JLabel lblChangeMailHired;
@@ -1648,7 +1545,6 @@ public void addSpecialistToCBUpdate()
     private javax.swing.JLabel lblErrorMessageGameProject;
     private javax.swing.JLabel lblErrorMessageHired;
     private javax.swing.JLabel lblErrorMessagePlatform;
-    private javax.swing.JLabel lblGenerateNewAID;
     private javax.swing.JLabel lblGpAddName;
     private javax.swing.JLabel lblGpAddReleaseDate;
     private javax.swing.JLabel lblGpAddStartDate;
@@ -1687,7 +1583,6 @@ public void addSpecialistToCBUpdate()
     private javax.swing.JScrollPane spGameProject;
     private javax.swing.JScrollPane spGameProjectAdd;
     private javax.swing.JScrollPane spHired;
-    private javax.swing.JScrollPane spHiredAdd;
     private javax.swing.JScrollPane spPlatform;
     private javax.swing.JTextArea tasearchResult;
     private javax.swing.JTextArea tasearchResultCompetence;
@@ -1697,7 +1592,6 @@ public void addSpecialistToCBUpdate()
     private javax.swing.JTextField tfAddGpStartDate;
     private javax.swing.JTextField tfAddMail;
     private javax.swing.JTextField tfAddName;
-    private javax.swing.JTextField tfAddPassword;
     private javax.swing.JTextField tfAddTelephone;
     private javax.swing.JTextField tfAddUserName;
     private javax.swing.JTextField tfChangeGpReleaseDate;
@@ -1712,7 +1606,6 @@ public void addSpecialistToCBUpdate()
     private javax.swing.JTextField tfsearchFieldGameProject;
     private javax.swing.JTextField tfsearchFieldPlatform;
     private javax.swing.JTabbedPane tpMenu;
-    private javax.swing.JTextPane tpReturnAID;
     private javax.swing.JTextPane tpReturnNewSID;
     private javax.swing.JTabbedPane tpSubMenuGameProject;
     private javax.swing.JTabbedPane tpSubMenuHired;

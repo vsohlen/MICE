@@ -188,12 +188,8 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="lblHeaderChangeHired" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="5" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="lblChooseHired" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" attributes="0">
@@ -216,8 +212,11 @@
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="20" max="32767" attributes="0"/>
-                                      <Component id="btnChangeHired" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="lblHeaderChangeHired" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnChangeHired" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
@@ -423,7 +422,6 @@
                       </Properties>
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnRemoveMouseClicked"/>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoveActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblNote">
@@ -463,100 +461,71 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="lblGenerateNewAID" max="32767" attributes="0"/>
-                                      <Component id="spHiredAdd" max="32767" attributes="0"/>
-                                  </Group>
                                   <Component id="lblHeaderAdd" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnChooseAdd" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace pref="256" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblAddPassword" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                                       <Component id="btnChangeHiredAdd" alignment="1" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="lblAddUsername" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblAddName" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblAddMail" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblAddTelephone" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="lblAddUsername" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="lblAddMail" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="lblAddTelephone" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="lblAddName" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
-                                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                               <Component id="tfAddTelephone" alignment="1" max="32767" attributes="0"/>
                                               <Component id="tfAddName" alignment="1" max="32767" attributes="0"/>
                                               <Component id="tfAddMail" alignment="1" min="-2" pref="97" max="-2" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="tfAddPassword" max="32767" attributes="0"/>
-                                                      <Component id="tfAddUserName" max="32767" attributes="0"/>
-                                                  </Group>
+                                                  <Component id="tfAddUserName" min="-2" pref="96" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                              <EmptySpace pref="444" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="tfAddName" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblAddName" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="lblAddTelephone" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tfAddTelephone" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="lblAddMail" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tfAddMail" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="lblAddUsername" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tfAddUserName" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="lblHeaderAdd" min="-2" pref="21" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="lblGenerateNewAID" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                      <Component id="btnChooseAdd" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                              <Component id="lblHeaderAdd" min="-2" pref="21" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="tfAddName" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblAddName" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblAddTelephone" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tfAddTelephone" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblAddMail" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tfAddMail" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblAddUsername" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tfAddUserName" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="lblAddPassword" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tfAddPassword" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="btnChangeHiredAdd" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="spHiredAdd" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="119" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <Component id="btnChangeHiredAdd" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="57" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -568,16 +537,6 @@
                           <Font name="Tahoma" size="14" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="L&#xe4;gg till anst&#xe4;lld"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="lblGenerateNewAID">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Generera nytt AID"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="btnChooseAdd">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Generera"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblAddName">
@@ -623,27 +582,6 @@
                     <Component class="javax.swing.JButton" name="btnChangeHiredAdd">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="OK"/>
-                      </Properties>
-                    </Component>
-                    <Container class="javax.swing.JScrollPane" name="spHiredAdd">
-                      <AuxValues>
-                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                      </AuxValues>
-
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                      <SubComponents>
-                        <Component class="javax.swing.JTextPane" name="tpReturnAID">
-                        </Component>
-                      </SubComponents>
-                    </Container>
-                    <Component class="javax.swing.JLabel" name="lblAddPassword">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="L&#xf6;senord:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="tfAddPassword">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jTextField1"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -1315,9 +1253,6 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="V&#xe4;lj"/>
                       </Properties>
-                      <Events>
-                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnChooseChangeGameProjectMouseClicked"/>
-                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="btnChangeGameProject">
                       <Properties>

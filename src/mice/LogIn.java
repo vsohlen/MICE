@@ -12,12 +12,14 @@ import javax.swing.JFrame;
  * @author Victoria
  */
 public class LogIn extends javax.swing.JFrame {
-
+    private boolean isAdmin;
+    
     /**
      * Creates new form LogIn
      */
     public LogIn() {
         initComponents();
+        isAdmin = false;
     }
 
     /**
@@ -119,6 +121,7 @@ public class LogIn extends javax.swing.JFrame {
         JFrame form = new MainPage();
         form.setVisible(true);
         this.setVisible(false);
+        isAdmin = true;
         }
         else
         {

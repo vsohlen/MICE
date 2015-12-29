@@ -47,6 +47,27 @@ public class Validation {
         return match;
     }
     
+     public static boolean checkName(String name1, String name2)
+  {
+       boolean match;
+        
+        String firstName = name1;
+        String lastName = name2;
+        
+        if (firstName.length() < 2 && lastName.length() < 2 && firstName.contains("\\s+") && lastName.contains("\\s+"))
+        {  
+            match = false;
+        }
+        else
+        {
+            
+            match = true;
+        }
+        
+        return match;
+  
+  }
+    
 }
 
 

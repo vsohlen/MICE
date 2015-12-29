@@ -78,6 +78,7 @@ public class DbClass {
         {
             ArrayList<HashMap<String, String>> leadsProjects = idb.fetchRows(sqlFraga);
             return leadsProjects;
+            
         }
         catch(InfException e)
         {
@@ -129,14 +130,14 @@ public class DbClass {
      return response;
     }
     
-    public void deleteHired(String aid)
+    public void deleteHired(String deleteAID)
     {
        String sqlFraga = "delete from anstalld "
-               + "where aid = " + aid + ";";
+               + "where aid = " + deleteAID + ";";
        
         try 
         {
-            idb.update(sqlFraga);
+            idb.delete(sqlFraga);
         }
         catch (InfException e)
         {
@@ -301,11 +302,11 @@ public class DbClass {
      * @param mail
      * @param username
 */
-public void addHired(int newAID, String name, String phone, String mail, String username)
-{
+    public void addHired(int newAID, String name, String phone, String mail, String username)
+    {
 	String sqlFraga = "insert into ANSTALLD " + 
 			  "(AID, NAMN, TELEFON, MAIL, ANVNAMN) " + 
-			  "values (" + 5 + ", '" + name + "', '" + phone + "', '" + mail + ", " + username + ")";
+			  "values (" + newAID + ", '" + name + "', '" + phone + "', '" + mail + "', '" + username + "')";
 					  
 	try 
 	{
@@ -315,7 +316,71 @@ public void addHired(int newAID, String name, String phone, String mail, String 
 	{
 		System.out.println(e.getMessage());
 	}
-}
+    }
+
+    /**
+    * Lists all leaders from the database
+     * @return 
+    */
+    public ArrayList<HashMap<String, String>> listAllLeaders()			//DbClass
+    {
+	String sqlFraga = "select * from ANSTALLD " +
+			  "JOIN PROJEKTLEDARE on ANSTALLD.AID = PROJEKTLEDARE.AID";
+	
+	try
+	{
+		ArrayList<HashMap<String, String>> allLeaders = idb.fetchRows(sqlFraga);
+		return allLeaders;
+	}
+	catch (InfException e)
+	{
+		System.out.println(e.getMessage());
+		return null;
+	}
+    }
+    
+    /**
+    * updates the hired to the database
+     * @param aid
+     * @param game
+    */
+    public void updateHired(int aid, String game)			//DbClass
+    {
+	String sqlFraga = "update SPELPROJEKT " + 
+                          "set aid = " + aid +  
+                          " where beteckning = '" + game + "';";
+	try 
+	{
+		idb.update(sqlFraga);
+	}
+	catch(InfException e)
+	{
+		System.out.println(e.getMessage());
+	}
+    }
+    
+    /**
+    *Lists a leader from the database
+     * @param aid
+     * @return 
+    */
+    public HashMap<String, String> listALeader(int aid)			//DbClass
+    {
+	String sqlFraga = "select * from ANSTALLD " +
+					  "JOIN PROJEKTLEDARE on PROJEKTLEDARE.AID = ANSTALLD.AID " + 
+					  "where anstalld.aid =" + aid + ";";
+	
+	try 
+	{
+		HashMap<String, String> aHired = idb.fetchRow(sqlFraga);
+		return aHired;
+	}
+	catch (InfException e)
+	{
+		System.out.println(e.getMessage());
+		return null;
+	}
+    }
     
     
                     

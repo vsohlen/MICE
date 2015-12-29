@@ -72,6 +72,7 @@
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="lblErrorMessageHired" min="-2" pref="129" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="lblFunctionError" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
@@ -81,7 +82,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="tpSubMenuHired" pref="632" max="32767" attributes="0"/>
+                              <Component id="tpSubMenuHired" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -107,7 +108,9 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="spHired" min="-2" pref="75" max="-2" attributes="0"/>
-                      <EmptySpace pref="65" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="lblFunctionError" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="40" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -123,17 +126,15 @@
             <Component class="javax.swing.JComboBox" name="cbFunctions">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="10">
+                  <StringArray count="8">
                     <StringItem index="0" value="S&#xf6;k anst&#xe4;lld i ett projekt (A,S)"/>
                     <StringItem index="1" value="S&#xf6;k anst&#xe4;lld som leder projekt (A,S)"/>
                     <StringItem index="2" value="&#xc4;ndra information om en anst&#xe4;lld (A)"/>
                     <StringItem index="3" value="Ta bort anst&#xe4;lld (A)"/>
                     <StringItem index="4" value="L&#xe4;gg till ny anst&#xe4;lld (A)"/>
-                    <StringItem index="5" value="Uppdatera information om vilken anst&#xe4;lld som projektleder ett projekt (A)"/>
-                    <StringItem index="6" value="Uppdatera information om vilka anst&#xe4;llda som arbetar med ett spelprojekt (A)"/>
-                    <StringItem index="7" value="Uppdatera den anst&#xe4;lldes roll (A)"/>
-                    <StringItem index="8" value=" "/>
-                    <StringItem index="9" value=" "/>
+                    <StringItem index="5" value="Uppdatera anst&#xe4;lld (A)"/>
+                    <StringItem index="6" value=" "/>
+                    <StringItem index="7" value=" "/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -347,28 +348,17 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblHeaderRemove" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblNote" min="-2" pref="325" max="-2" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="lblChooseHiredRemove" max="32767" attributes="0"/>
-                                                  <Component id="cbListAllHiredRemove" max="32767" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="btnRemove" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                  <Component id="lblHeaderRemove" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblNote" min="-2" pref="325" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="lblChooseHiredRemove" max="32767" attributes="0"/>
+                                          <Component id="cbListAllHiredRemove" max="32767" attributes="0"/>
                                       </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblTestNamn" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblTestAid" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="btnRemove" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace pref="277" max="32767" attributes="0"/>
@@ -389,11 +379,7 @@
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="lblNote" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="lblTestAid" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="lblTestNamn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="67" max="32767" attributes="0"/>
+                              <EmptySpace pref="124" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -407,9 +393,7 @@
                     <Component class="javax.swing.JComboBox" name="cbListAllHiredRemove">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="1">
-                            <StringItem index="0" value="Lista med alla anst&#xe4;llda, h&#xe4;mta med SQL"/>
-                          </StringArray>
+                          <StringArray count="0"/>
                         </Property>
                       </Properties>
                       <AuxValues>
@@ -437,16 +421,6 @@
                         <Property name="text" type="java.lang.String" value="Ta bort anst&#xe4;lld"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="lblTestAid">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="testAid"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="lblTestNamn">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="testNamn"/>
-                      </Properties>
-                    </Component>
                   </SubComponents>
                 </Container>
                 <Container class="javax.swing.JPanel" name="paneAddHired">
@@ -463,7 +437,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="lblHeaderAdd" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                                       <Component id="btnChangeHiredAdd" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -471,27 +445,27 @@
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Group type="102" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="lblAddUsername" alignment="0" min="-2" max="-2" attributes="0"/>
                                                       <Component id="lblAddMail" alignment="0" min="-2" max="-2" attributes="0"/>
                                                       <Component id="lblAddTelephone" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="lblAddName" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblAddFirstName" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                               <Component id="tfAddTelephone" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="tfAddName" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="tfAddFirstName" alignment="1" max="32767" attributes="0"/>
                                               <Component id="tfAddMail" alignment="1" min="-2" pref="97" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                                                  <Component id="tfAddUserName" min="-2" pref="96" max="-2" attributes="0"/>
-                                              </Group>
                                           </Group>
                                       </Group>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="lblAddLastName" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="tfAddLastName" min="-2" pref="97" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace pref="444" max="32767" attributes="0"/>
@@ -505,10 +479,15 @@
                               <Component id="lblHeaderAdd" min="-2" pref="21" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="tfAddName" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblAddName" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tfAddFirstName" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblAddFirstName" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="tfAddLastName" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblAddLastName" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="lblAddTelephone" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="tfAddTelephone" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -518,14 +497,9 @@
                                   <Component id="lblAddMail" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="tfAddMail" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblAddUsername" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tfAddUserName" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="btnChangeHiredAdd" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="57" max="32767" attributes="0"/>
+                              <EmptySpace pref="63" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -539,14 +513,14 @@
                         <Property name="text" type="java.lang.String" value="L&#xe4;gg till anst&#xe4;lld"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="lblAddName">
+                    <Component class="javax.swing.JLabel" name="lblAddFirstName">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Namn:"/>
+                        <Property name="text" type="java.lang.String" value="F&#xf6;rnamn:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="tfAddName">
+                    <Component class="javax.swing.JTextField" name="tfAddFirstName">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Namn"/>
+                        <Property name="text" type="java.lang.String" value="F&#xf6;rnamn"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblAddTelephone">
@@ -569,19 +543,22 @@
                         <Property name="text" type="java.lang.String" value="Mailadress"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="lblAddUsername">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="AnvNamn:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="tfAddUserName">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Anv&#xe4;ndarnamn"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JButton" name="btnChangeHiredAdd">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="OK"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnChangeHiredAddMouseClicked"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblAddLastName">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Efternamn:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="tfAddLastName">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Efternamn"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -697,11 +674,7 @@
                     <Component class="javax.swing.JComboBox" name="cbListAllGameProjects">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="3">
-                            <StringItem index="0" value="Tetris 4D"/>
-                            <StringItem index="1" value="osv"/>
-                            <StringItem index="2" value="lista med SQL"/>
-                          </StringArray>
+                          <StringArray count="0"/>
                         </Property>
                       </Properties>
                       <AuxValues>
@@ -716,11 +689,7 @@
                     <Component class="javax.swing.JComboBox" name="cbListAllProjectleaders">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="3">
-                            <StringItem index="0" value="Bo Bullit"/>
-                            <StringItem index="1" value="osv"/>
-                            <StringItem index="2" value="Fixa med SQL"/>
-                          </StringArray>
+                          <StringArray count="0"/>
                         </Property>
                       </Properties>
                       <AuxValues>
@@ -731,6 +700,9 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="OK"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnConfirmUpdateMouseClicked"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblUpdateLeader">
                       <Properties>
@@ -764,10 +736,7 @@
                     <Component class="javax.swing.JComboBox" name="cbListAllSpecialists">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Berit n&#xe5;got"/>
-                            <StringItem index="1" value="Fixa med SQL"/>
-                          </StringArray>
+                          <StringArray count="0"/>
                         </Property>
                       </Properties>
                       <AuxValues>
@@ -782,9 +751,7 @@
                     <Component class="javax.swing.JComboBox" name="cbListAllGameProjectsUpdate">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="1">
-                            <StringItem index="0" value="Bar wars"/>
-                          </StringArray>
+                          <StringArray count="0"/>
                         </Property>
                       </Properties>
                       <AuxValues>
@@ -807,12 +774,7 @@
                     <Component class="javax.swing.JComboBox" name="cbListAllHiredPosition">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="4">
-                            <StringItem index="0" value="Item 1"/>
-                            <StringItem index="1" value="Item 2"/>
-                            <StringItem index="2" value="Item 3"/>
-                            <StringItem index="3" value="Item 4"/>
-                          </StringArray>
+                          <StringArray count="0"/>
                         </Property>
                       </Properties>
                       <AuxValues>
@@ -827,11 +789,7 @@
                     <Component class="javax.swing.JComboBox" name="cbHiredForm">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="3">
-                            <StringItem index="0" value="Specialist"/>
-                            <StringItem index="1" value="Projektledare"/>
-                            <StringItem index="2" value="Administrat&#xf6;r"/>
-                          </StringArray>
+                          <StringArray count="0"/>
                         </Property>
                       </Properties>
                       <AuxValues>
@@ -856,6 +814,11 @@
               </SubComponents>
             </Container>
             <Component class="javax.swing.JSeparator" name="separatorHired">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblFunctionError">
+              <Properties>
+                <Property name="text" type="java.lang.String" value=" "/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

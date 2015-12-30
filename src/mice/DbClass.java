@@ -382,7 +382,35 @@ public class DbClass {
 	}
     }
     
+    public void insertToSpecialist (int aid)
+    {
+        String sqlFraga = "insert into specialist " +
+                          "values (" + aid + ");";
+        
+        try 
+        {
+            idb.insert(sqlFraga);
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
     
-                    
+    public void insertToProjectleader (int aid)
+    {
+        String sqlFraga = "insert into PROJEKTLEDARE " +
+                          "values (" + aid + ");";
+        
+        try 
+        {
+            idb.insert(sqlFraga);
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+          
 }
     

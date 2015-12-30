@@ -48,7 +48,7 @@ public class Validation {
     }
     
      public static boolean checkName(String name1, String name2)
-  {
+    {
        boolean match;
         
         String firstName = name1;
@@ -66,40 +66,45 @@ public class Validation {
         
         return match;
   
-  }
-     
-     
+    }
      /**
-      * public void updateHiredForm()
-{
-	DbClass database = new DbClass();
-        
-		//add the hired staff to an existing cb
-        ArrayList<HashMap<String, String>> allHired = database.listAllHired();
-        for (int i = 0; i < allHired.size(); i++)
+      * checks the mail if its valid
+      * @param mail
+      * @return 
+      */  
+     public static boolean checkMail(String mail)
+    {
+      String regex = "^[a-zåäöA-ZÅÄÖ0-9.-]+@[a-zåäöA-ZÅÄÖ0-9.-]+\\.[A-Z]{2,6}+$";
+        boolean match;
+        if (mail.matches(regex))
+            {
+                match = true;
+            }
+        else
         {
-            String aid = allHired.get(i).get("AID");
-            String name = allHired.get(i).get("NAMN");
-            cbListAllPosition.addItem(aid + ", " + name);
+            match = false;
         }
-		
-	//Add all the employment-states to a cb
-	String employment = cbHiredForm.getSelectedItem().toString();
-	switch (employment)
-	{
-		case "Specialist" :
-			break;
-		case "Administratör" :
-			lblAddPassword.setVisible(true);
-			tfPassword.setVisible(true);
-			btnConfirmNewPassword.setVisible(true);
-			break;
-		case "Projektledare" :
-			break;
-	}
-}
-      */
-    
+        return match;
+    }
+    /**
+     * checks the in-phonenumber
+     * @param number
+     * @return 
+    */
+    public static boolean checkNumber(String number)
+    {
+    String regex = "^[0-9]+$";
+        boolean match;
+        if (number.matches(regex) && !number.contains("\\s+"))
+            {
+                match = true;
+            }
+        else
+        {
+            match = false;
+        }
+        return match;
+    }
 }
 
 

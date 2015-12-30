@@ -95,6 +95,9 @@ public class MainPage extends javax.swing.JFrame {
         cbHiredForm = new javax.swing.JComboBox<>();
         btnConfirmUpdatePosition = new javax.swing.JButton();
         btnConfirmUpdateRemoved = new javax.swing.JButton();
+        lblErrorMessageHiredProjekt = new javax.swing.JLabel();
+        lblErrorMessageHiredGP = new javax.swing.JLabel();
+        lblErrorMessageHiredUpdate = new javax.swing.JLabel();
         separatorHired = new javax.swing.JSeparator();
         lblFunctionError = new javax.swing.JLabel();
         paneProject = new javax.swing.JPanel();
@@ -258,7 +261,7 @@ public class MainPage extends javax.swing.JFrame {
                         .addGroup(paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblChangeMailHired)
                             .addComponent(tfChangeMailHired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         tpSubMenuHired.addTab("Ändra", paneChangeHired);
@@ -307,7 +310,7 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(btnRemove))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblNote)
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         tpSubMenuHired.addTab("Ta bort", paneRemoveHired);
@@ -391,7 +394,7 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(tfAddMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnChangeHiredAdd)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         tpSubMenuHired.addTab("Lägg till", paneAddHired);
@@ -431,7 +434,14 @@ public class MainPage extends javax.swing.JFrame {
 
         lblChooseUpgrade.setText("Välj ändring i anställning:");
 
+        cbHiredForm.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Specialist", "Projektledare" }));
+
         btnConfirmUpdatePosition.setText("OK");
+        btnConfirmUpdatePosition.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnConfirmUpdatePositionMouseClicked(evt);
+            }
+        });
 
         btnConfirmUpdateRemoved.setText("Ta bort");
         btnConfirmUpdateRemoved.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -439,6 +449,12 @@ public class MainPage extends javax.swing.JFrame {
                 btnConfirmUpdateRemovedMouseClicked(evt);
             }
         });
+
+        lblErrorMessageHiredProjekt.setText("jLabel1");
+
+        lblErrorMessageHiredGP.setText("jLabel1");
+
+        lblErrorMessageHiredUpdate.setText("jLabel1");
 
         javax.swing.GroupLayout paneUpdateHiredLayout = new javax.swing.GroupLayout(paneUpdateHired);
         paneUpdateHired.setLayout(paneUpdateHiredLayout);
@@ -449,43 +465,50 @@ public class MainPage extends javax.swing.JFrame {
                 .addGroup(paneUpdateHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(paneUpdateHiredLayout.createSequentialGroup()
                         .addGroup(paneUpdateHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblUpdateHiredPosition)
+                            .addComponent(lblUpdateHiredInProject)
                             .addGroup(paneUpdateHiredLayout.createSequentialGroup()
                                 .addComponent(lblChooseHiredPosition)
                                 .addGap(18, 18, 18)
                                 .addComponent(cbListAllHiredPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(lblChooseUpgrade)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(32, 32, 32)
                                 .addComponent(cbHiredForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnConfirmUpdatePosition))
-                            .addComponent(lblUpdateHiredPosition)
-                            .addComponent(lblUpdateHiredInProject)
-                            .addComponent(lblUpdateLeader)
-                            .addGroup(paneUpdateHiredLayout.createSequentialGroup()
-                                .addComponent(lblChooseGameProject)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cbListAllGameProjects, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(31, 31, 31)
-                                .addComponent(lblChooseProjectleader)
-                                .addGap(18, 18, 18)
-                                .addComponent(cbListAllProjectleaders, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnConfirmUpdate)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(btnConfirmUpdatePosition)))
+                        .addContainerGap(102, Short.MAX_VALUE))
                     .addGroup(paneUpdateHiredLayout.createSequentialGroup()
-                        .addComponent(lblChooseSpecialist)
-                        .addGap(18, 18, 18)
-                        .addComponent(cbListAllSpecialists, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addComponent(lblChooseGameProjectUpdate)
-                        .addGap(26, 26, 26)
-                        .addComponent(cbListAllGameProjectsUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnConfirmUpdateRemoved)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnConfirmUpdateHired)
-                        .addGap(56, 56, 56))))
+                        .addGroup(paneUpdateHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblErrorMessageHiredUpdate)
+                            .addComponent(lblErrorMessageHiredGP)
+                            .addGroup(paneUpdateHiredLayout.createSequentialGroup()
+                                .addGroup(paneUpdateHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(paneUpdateHiredLayout.createSequentialGroup()
+                                        .addComponent(lblChooseSpecialist)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(cbListAllSpecialists, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(35, 35, 35)
+                                        .addComponent(lblChooseGameProjectUpdate)
+                                        .addGap(26, 26, 26)
+                                        .addComponent(cbListAllGameProjectsUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnConfirmUpdateRemoved))
+                                    .addComponent(lblErrorMessageHiredProjekt)
+                                    .addComponent(lblUpdateLeader)
+                                    .addGroup(paneUpdateHiredLayout.createSequentialGroup()
+                                        .addComponent(lblChooseGameProject)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(cbListAllGameProjects, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(31, 31, 31)
+                                        .addComponent(lblChooseProjectleader)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(cbListAllProjectleaders, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnConfirmUpdate)))
+                                .addGap(28, 28, 28)
+                                .addComponent(btnConfirmUpdateHired)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         paneUpdateHiredLayout.setVerticalGroup(
             paneUpdateHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -500,6 +523,8 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(cbListAllProjectleaders, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnConfirmUpdate))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblErrorMessageHiredProjekt)
+                .addGap(14, 14, 14)
                 .addComponent(lblUpdateHiredInProject)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(paneUpdateHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -510,6 +535,8 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(btnConfirmUpdateHired)
                     .addComponent(btnConfirmUpdateRemoved))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblErrorMessageHiredGP)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblUpdateHiredPosition)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(paneUpdateHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -518,7 +545,9 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(lblChooseUpgrade)
                     .addComponent(cbHiredForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnConfirmUpdatePosition))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblErrorMessageHiredUpdate)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         tpSubMenuHired.addTab("Uppdatera", paneUpdateHired);
@@ -574,7 +603,7 @@ public class MainPage extends javax.swing.JFrame {
                 .addComponent(spHired, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblFunctionError)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         tpMenu.addTab("Anställd", paneHired);
@@ -1019,7 +1048,7 @@ public class MainPage extends javax.swing.JFrame {
      * lets u delete a hired person
      * @param deleteAID 
      */
-    private void removeHired (String deleteAID)
+    private void removeHired (String deleteAID)             //Validering krävs 
     {
       //Remove the person selected in the combobox.
       DbClass database = new DbClass();
@@ -1050,6 +1079,8 @@ public class MainPage extends javax.swing.JFrame {
         addProjectsToCB();
         cbListAllHired.removeAllItems();
         addHiredToCB();
+        cbListAllHiredPosition.removeAllItems();
+        addHiredPosition();
     }
     
     
@@ -1081,18 +1112,20 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnChangeHiredAddMouseClicked
 
     private void btnConfirmUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmUpdateMouseClicked
-        /**String currentLeader = cbListAllProjectleaders.getSelectedItem().toString();
-	String currentGame = cbListAllGameProjects.getSelectedItem().toString();
-	int aid = Integer.parseInt(currentLeader.split(",")[0]);
-	String game = currentGame.split(",")[1];*/
-	updateHired();
+        updateHired();
     }//GEN-LAST:event_btnConfirmUpdateMouseClicked
 
+    private void btnConfirmUpdatePositionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmUpdatePositionMouseClicked
+        //update the employee's employment-form
+        updateHiredForm();
+        updateCBs();
+    }//GEN-LAST:event_btnConfirmUpdatePositionMouseClicked
+
     /**
-* calls the database updateHired-methos and sends the new info to it.
-*/
-public void updateHired()
-{
+    * calls the database updateHired-methos and sends the new info to it.
+    */
+    public void updateHired()             //Validering krävs 
+    {
 	DbClass database = new DbClass();
 	String currentLeader = cbListAllProjectleaders.getSelectedItem().toString();
 	String currentGame = cbListAllGameProjects.getSelectedItem().toString();
@@ -1119,10 +1152,10 @@ public void updateHired()
             {
 		System.out.println("Ett felmeddelande här");
             }
-}
+    }
     
     public void addProjectsToCBUpdate()			
-{       //Adds all the projects a specialist can work on to a cb.
+    {       //Adds all the projects a specialist can work on to a cb.
 	DbClass database = new DbClass();
 	
 	ArrayList<HashMap<String, String>> allProjects = database.listAllProjects();
@@ -1132,10 +1165,64 @@ public void updateHired()
 		String beteckning = allProjects.get(i).get("BETECKNING");
 		cbListAllGameProjectsUpdate.addItem(sid + "," + beteckning);
 	}
-}
+    }
     
-        public void addProjectsToCB()			
-{       //Adds all the projects a specialist can work on to a cb.
+    
+    public void updateHiredForm()             //Validering krävs 
+    {
+	
+	//Add all the employment-states to a cb
+	String employment = cbHiredForm.getSelectedItem().toString();
+	switch (employment)
+	{
+		case "Specialist" :
+                    updateEmploymentToSpecialist();
+                    break;
+		case "Projektledare" :
+                    updateEmploymentToProjectleader();
+                    break;
+	}
+    }
+    
+    public void updateEmploymentToSpecialist ()             //Validering krävs      
+    {
+        DbClass database = new DbClass();
+        
+        String currentEmployee = cbListAllHiredPosition.getSelectedItem().toString();
+        int aid = Integer.parseInt(currentEmployee.split(",")[0]);
+        if (!currentEmployee.isEmpty())
+        {
+            database.insertToSpecialist(aid);
+            lblErrorMessageHiredUpdate.setText("Uppdateringen utförd");
+        }
+        else 
+        {
+            lblErrorMessageHiredUpdate.setText("Uppdateringen utfördes ej");
+        }
+             
+    }
+    
+    public void updateEmploymentToProjectleader()             //Validering krävs 
+    {
+        DbClass database = new DbClass();
+        String currentEmployee = cbListAllHiredPosition.getSelectedItem().toString();
+        int aid = Integer.parseInt(currentEmployee.split(",")[0]);
+        
+        if(!currentEmployee.isEmpty())
+        {
+            database.insertToProjectleader(aid);
+            lblErrorMessageHiredUpdate.setText("Uppdateringen utförd");
+        }
+        else 
+        {
+            lblErrorMessageHiredUpdate.setText("Uppdateringen utfördes ej");
+        }
+        
+    }
+      
+    
+    public void addProjectsToCB()			
+    {       //Adds all the projects a specialist can work on to a cb.
 	DbClass database = new DbClass();
 	
 	ArrayList<HashMap<String, String>> allProjects = database.listAllProjects();
@@ -1145,10 +1232,10 @@ public void updateHired()
 		String beteckning = allProjects.get(i).get("BETECKNING");
 		cbListAllGameProjects.addItem(sid + ", " + beteckning);
 	}
-}
+    }
 
-public void addSpecialistToCBUpdate()			
-{       //Adds all the projects a specialist can work on to a cb.
+    public void addSpecialistToCBUpdate()			
+    {       //Adds all the projects a specialist can work on to a cb.
 	DbClass database = new DbClass();
 	
 	ArrayList<HashMap<String, String>> allProjects = database.listAllSpecialists();
@@ -1158,7 +1245,20 @@ public void addSpecialistToCBUpdate()
 		String namn = allProjects.get(i).get("NAMN");
 		cbListAllSpecialists.addItem(namn);
 	}
-}
+    }
+    
+    public void addHiredPosition()
+    {
+        DbClass database = new DbClass();
+        
+        ArrayList<HashMap<String, String>> allHiredPosition = database.listAllHired();
+        for(int i = 0; i < allHiredPosition.size(); i++)
+        {
+            String aid = allHiredPosition.get(i).get("AID");
+            String namn = allHiredPosition.get(i).get("NAMN");
+            cbListAllHiredPosition.addItem(aid + "," + namn);
+        }
+    }
 
     /**
      * @param args the command line arguments
@@ -1200,7 +1300,7 @@ public void addSpecialistToCBUpdate()
     /**
      * Lists the projects a person is working on.
      */
-    private void listHired ()
+    private void listHired ()             //Validering krävs 
     {
         String searchWord = tfsearchField.getText();
         DbClass database = new DbClass();
@@ -1224,7 +1324,7 @@ public void addSpecialistToCBUpdate()
     /**
      * Lists the projects a person os leading
      */
-    private void listProjects ()
+    private void listProjects ()             //Validering krävs 
     {
          String searchWord = tfsearchField.getText();
          DbClass database = new DbClass();
@@ -1277,7 +1377,7 @@ public void addSpecialistToCBUpdate()
      * Lets you change information about the choosen one(Harry Potter-reference).
      * @param AID 
      */
-    private void changeInfoAboutHired (int AID)
+    private void changeInfoAboutHired (int AID)             //Validering krävs 
     {
         DbClass database = new DbClass();
         HashMap<String, String> hired = database.listHired(AID);
@@ -1302,31 +1402,32 @@ public void addSpecialistToCBUpdate()
     }
     
     /**
-* Throws the new info about a hired to the database-class
-*/
-public void addNewHired ()
-{
+    * Throws the new info about a hired to the database-class
+    */
+    public void addNewHired ()             //Validering krävs 
+    {
 	DbClass database = new DbClass();
 	
         int newAID = database.generateAID();
         String firstname = tfAddFirstName.getText();
         String lastname = tfAddLastName.getText();
+        String phone = tfAddTelephone.getText();
+        String mail = tfAddMail.getText();
 	
-        //Gets the info from the textboxes
-        if (Validation.containsString(firstname) && Validation.containsString(lastname) && Validation.checkName(firstname, lastname))
+        //Gets the info from the textboxes and validates it
+        if (Validation.containsString(firstname) && Validation.containsString(lastname) && Validation.checkName(firstname, lastname) && Validation.checkNumber(phone) && Validation.checkMail(mail))
         {
             firstname =  tfAddFirstName.getText(); 
             lastname = tfAddLastName.getText();
+            phone = tfAddTelephone.getText();
+            mail = tfAddMail.getText();
         }
-        String phone = tfAddTelephone.getText();
-        String mail = tfAddMail.getText();
 				
-		//Create a username based on the firstnames first letter, the lastnames first and last letter.
-		String sistaBokstaven = lastname.substring(lastname.length()-1, lastname.length());
-		String username = firstname.substring(0,1) + lastname.substring(0,1) + sistaBokstaven;
-                
+	//Create a username based on the firstnames first letter, the lastnames first and last letter.
+	String sistaBokstaven = lastname.substring(lastname.length()-1, lastname.length());
+	String username = firstname.substring(0,1) + lastname.substring(0,1) + sistaBokstaven;       
 		
-		//checks if there is any text in the textfields and then adds the text in them to the database
+	//checks if there is any text in the textfields and then adds the text in them to the database
         if (Validation.textBoxTextIsRequired(tfAddFirstName) && Validation.textBoxTextIsRequired(tfAddLastName) && Validation.textBoxTextIsRequired(tfAddTelephone) && Validation.textBoxTextIsRequired(tfAddMail))
         {
             String name = firstname + " " + lastname;
@@ -1459,6 +1560,9 @@ public void addNewHired ()
 	btnConfirmUpdate.setVisible(true);
 	lblUpdateLeader.setVisible(true);
         lblErrorMessagePlatform.setVisible(true);
+        lblErrorMessageHiredProjekt.setVisible(true);
+        lblErrorMessageHiredGP.setVisible(true);
+        lblErrorMessageHiredUpdate.setVisible(true);
     }
 
     /**
@@ -1475,6 +1579,9 @@ public void addNewHired ()
 	btnConfirmUpdate.setVisible(false);
 	lblUpdateLeader.setVisible(false);
         lblErrorMessagePlatform.setVisible(false);
+        lblErrorMessageHiredProjekt.setVisible(false);
+        lblErrorMessageHiredGP.setVisible(false);
+        lblErrorMessageHiredUpdate.setVisible(false);
     }
 
     /**
@@ -1627,6 +1734,9 @@ public void addNewHired ()
     private javax.swing.JLabel lblErrorMessageCompetence;
     private javax.swing.JLabel lblErrorMessageGameProject;
     private javax.swing.JLabel lblErrorMessageHired;
+    private javax.swing.JLabel lblErrorMessageHiredGP;
+    private javax.swing.JLabel lblErrorMessageHiredProjekt;
+    private javax.swing.JLabel lblErrorMessageHiredUpdate;
     private javax.swing.JLabel lblErrorMessagePlatform;
     private javax.swing.JLabel lblFunctionError;
     private javax.swing.JLabel lblGpAddName;

@@ -344,11 +344,11 @@ public class DbClass {
      * @param aid
      * @param game
     */
-    public void updateHired(int aid, String game)			//DbClass
+    public void updateHired(int aid, int gameId)			//DbClass
     {
 	String sqlFraga = "update SPELPROJEKT " + 
                           "set aid = " + aid +  
-                          " where beteckning = '" + game + "';";
+                          " where SID = " + gameId + ";";
 	try 
 	{
 		idb.update(sqlFraga);

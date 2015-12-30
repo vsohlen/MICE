@@ -67,6 +67,38 @@ public class Validation {
         return match;
   
   }
+     
+     
+     /**
+      * public void updateHiredForm()
+{
+	DbClass database = new DbClass();
+        
+		//add the hired staff to an existing cb
+        ArrayList<HashMap<String, String>> allHired = database.listAllHired();
+        for (int i = 0; i < allHired.size(); i++)
+        {
+            String aid = allHired.get(i).get("AID");
+            String name = allHired.get(i).get("NAMN");
+            cbListAllPosition.addItem(aid + ", " + name);
+        }
+		
+	//Add all the employment-states to a cb
+	String employment = cbHiredForm.getSelectedItem().toString();
+	switch (employment)
+	{
+		case "Specialist" :
+			break;
+		case "Administratör" :
+			lblAddPassword.setVisible(true);
+			tfPassword.setVisible(true);
+			btnConfirmNewPassword.setVisible(true);
+			break;
+		case "Projektledare" :
+			break;
+	}
+}
+      */
     
 }
 

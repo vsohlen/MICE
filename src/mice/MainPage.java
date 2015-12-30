@@ -1091,13 +1091,13 @@ public class MainPage extends javax.swing.JFrame {
     /**
 * calls the database updateHired-methos and sends the new info to it.
 */
-public void updateHired()           //FRÅGA JOHANNNNNNNNNN
+public void updateHired()
 {
 	DbClass database = new DbClass();
 	String currentLeader = cbListAllProjectleaders.getSelectedItem().toString();
 	String currentGame = cbListAllGameProjects.getSelectedItem().toString();
 	int aid = Integer.parseInt(currentLeader.split(",")[0]);
-	String game = currentGame.split(",")[1];
+	int game = Integer.parseInt(currentGame.split(",")[0]);
         //String theLeaders = cbListAllProjectleaders.getSelectedItem().toString();
         boolean match = false;
         

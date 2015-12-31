@@ -92,7 +92,7 @@ public class MiceForm extends javax.swing.JFrame {
 
     private void btnHiredMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHiredMouseClicked
         // When clicked, send to the limited version of the system.
-        JFrame form = new MainPage();
+        JFrame form = new MainPage(false);
         form.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnHiredMouseClicked

@@ -12,14 +12,16 @@ import javax.swing.JFrame;
  * @author Victoria
  */
 public class LogIn extends javax.swing.JFrame {
-    private boolean isAdmin;
+    
     
     /**
      * Creates new form LogIn
      */
     public LogIn() {
         initComponents();
-        isAdmin = false;
+        
+        tfAdminUsername.setText("ppt");
+        pfPassword.setText("H8hJKK");
     }
 
     /**
@@ -106,7 +108,7 @@ public class LogIn extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
-        // Compare the Username and password to the stored values in the database
+       // Compare the Username and password to the stored values in the database
         // and move forward if match, show error message if no match.
         DbClass database = new DbClass();
         
@@ -118,10 +120,9 @@ public class LogIn extends javax.swing.JFrame {
         if(checker == true)
         {
         lblWelcomeOrError.setText("Välkommen " + tempUsername + ".");
-        JFrame form = new MainPage();
+        JFrame form = new MainPage(true);
         form.setVisible(true);
         this.setVisible(false);
-        isAdmin = true;
         }
         else
         {

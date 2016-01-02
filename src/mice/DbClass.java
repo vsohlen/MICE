@@ -364,7 +364,7 @@ public class DbClass {
      * @param aid
      * @return 
     */
-    public HashMap<String, String> listALeader(int aid)			//DbClass
+    public HashMap<String, String> listALeader(int aid)	
     {
 	String sqlFraga = "select * from ANSTALLD " +
 					  "JOIN PROJEKTLEDARE on PROJEKTLEDARE.AID = ANSTALLD.AID " + 
@@ -409,6 +409,45 @@ public class DbClass {
         catch (InfException e)
         {
             System.out.println(e.getMessage());
+        }
+    }
+    
+    public ArrayList<HashMap<String, String>> listLeaderOnProject (int gameID)
+    {
+        String sqlFraga = "select namn from ANSTALLD\n" +
+                          "join PROJEKTLEDARE on ANSTALLD.AID = PROJEKTLEDARE.AID\n" +
+                          "join SPELPROJEKT on PROJEKTLEDARE.AID = SPELPROJEKT.AID\n" +
+                          "where sid = " + gameID + ";";
+        try
+        {
+            
+            ArrayList<HashMap<String, String>> allLeadersInProject = idb.fetchRows(sqlFraga);
+            return allLeadersInProject;
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+        
+    }
+    
+    public ArrayList<HashMap<String, String>> listPlatformsForGames (String searchWord)
+    {
+        String sqlFraga = "select BENAMNING from PLATTFORM " +
+                          "join INNEFATTAR on PLATTFORM.PID = INNEFATTAR.PID " +
+                          "join SPELPROJEKT on INNEFATTAR.SID = SPELPROJEKT.SID " +
+                          "where SPELPROJEKT.BETECKNING like '" + searchWord + "%';";
+        
+        try
+        {
+            ArrayList<HashMap<String, String>> platformsForGames = idb.fetchRows(sqlFraga);
+            return platformsForGames;
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return null;
         }
     }
           

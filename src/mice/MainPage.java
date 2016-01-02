@@ -133,10 +133,6 @@ public class MainPage extends javax.swing.JFrame {
         tpSubMenuGameProject = new javax.swing.JTabbedPane();
         paneAddGameProject = new javax.swing.JPanel();
         lblHeaderAddGameProject = new javax.swing.JLabel();
-        lblInfoTextAddGameProject = new javax.swing.JLabel();
-        spGameProjectAdd = new javax.swing.JScrollPane();
-        tpReturnNewSID = new javax.swing.JTextPane();
-        btnGenerateSID = new javax.swing.JButton();
         lblGpAddName = new javax.swing.JLabel();
         tfGpAddName = new javax.swing.JTextField();
         lblGpAddStartDate = new javax.swing.JLabel();
@@ -157,6 +153,7 @@ public class MainPage extends javax.swing.JFrame {
         tfGpChangeName = new javax.swing.JTextField();
         lblGpChangeName = new javax.swing.JLabel();
         separatorGameProject = new javax.swing.JSeparator();
+        cbAllGameProjects = new javax.swing.JComboBox<>();
         panePlatform = new javax.swing.JPanel();
         spPlatform = new javax.swing.JScrollPane();
         tasearchResultPlatform = new javax.swing.JTextArea();
@@ -599,13 +596,10 @@ public class MainPage extends javax.swing.JFrame {
                         .addComponent(lblErrorMessageHired, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(paneHiredLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(paneHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(paneHiredLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(separatorHired))
-                    .addGroup(paneHiredLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(tpSubMenuHired)))
+                    .addComponent(separatorHired)
+                    .addComponent(tpSubMenuHired))
                 .addContainerGap())
         );
         paneHiredLayout.setVerticalGroup(
@@ -635,9 +629,20 @@ public class MainPage extends javax.swing.JFrame {
 
         lblHeaderGameProject.setText("Välj funktion:");
 
+        cbFunctionsGameProject.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbFunctionsGameProjectActionPerformed(evt);
+            }
+        });
+
         tfsearchFieldGameProject.setText("Sök...");
 
         btnSearchGameProject.setText("Sök");
+        btnSearchGameProject.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchGameProjectActionPerformed(evt);
+            }
+        });
 
         tasearchResultGameProject.setColumns(20);
         tasearchResultGameProject.setRows(5);
@@ -645,12 +650,6 @@ public class MainPage extends javax.swing.JFrame {
 
         lblHeaderAddGameProject.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblHeaderAddGameProject.setText("Lägg till ett nytt projekt!");
-
-        lblInfoTextAddGameProject.setText("Generera ett nytt spelprojektsID:");
-
-        spGameProjectAdd.setViewportView(tpReturnNewSID);
-
-        btnGenerateSID.setText("Generera");
 
         lblGpAddName.setText("Beteckning:");
 
@@ -671,14 +670,13 @@ public class MainPage extends javax.swing.JFrame {
         paneAddGameProjectLayout.setHorizontalGroup(
             paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paneAddGameProjectLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addContainerGap()
                 .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblHeaderAddGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(paneAddGameProjectLayout.createSequentialGroup()
-                        .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnGenerateSID)
-                            .addComponent(lblInfoTextAddGameProject)
-                            .addComponent(lblHeaderAddGameProject))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 298, Short.MAX_VALUE)
+                        .addGap(148, 148, 148)
+                        .addComponent(btnAddGameProject))
+                    .addGroup(paneAddGameProjectLayout.createSequentialGroup()
                         .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblGpAddName)
                             .addComponent(lblGpAddReleaseDate)
@@ -687,42 +685,29 @@ public class MainPage extends javax.swing.JFrame {
                         .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(tfAddGpStartDate)
                             .addComponent(tfGpAddName)
-                            .addComponent(tfAddGpReleaseDate, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(paneAddGameProjectLayout.createSequentialGroup()
-                        .addComponent(spGameProjectAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAddGameProject)))
-                .addGap(68, 68, 68))
+                            .addComponent(tfAddGpReleaseDate, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(547, Short.MAX_VALUE))
         );
         paneAddGameProjectLayout.setVerticalGroup(
             paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(paneAddGameProjectLayout.createSequentialGroup()
-                .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(paneAddGameProjectLayout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(lblHeaderAddGameProject)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblInfoTextAddGameProject)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnGenerateSID)
-                        .addGap(13, 13, 13)
-                        .addComponent(spGameProjectAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(paneAddGameProjectLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfGpAddName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblGpAddName))
-                        .addGap(8, 8, 8)
-                        .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblGpAddStartDate)
-                            .addComponent(tfAddGpStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblGpAddReleaseDate)
-                            .addComponent(tfAddGpReleaseDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAddGameProject)))
-                .addContainerGap(30, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneAddGameProjectLayout.createSequentialGroup()
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addComponent(lblHeaderAddGameProject)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfGpAddName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblGpAddName))
+                .addGap(8, 8, 8)
+                .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblGpAddStartDate)
+                    .addComponent(tfAddGpStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblGpAddReleaseDate)
+                    .addComponent(tfAddGpReleaseDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnAddGameProject)
+                .addContainerGap())
         );
 
         tpSubMenuGameProject.addTab("Lägg till", paneAddGameProject);
@@ -834,8 +819,10 @@ public class MainPage extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addComponent(tfsearchFieldGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(cbAllGameProjects, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
                 .addComponent(btnSearchGameProject)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblErrorMessageGameProject, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(21, 21, 21))
             .addGroup(paneProjectLayout.createSequentialGroup()
@@ -851,15 +838,19 @@ public class MainPage extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addComponent(separatorGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21)
-                .addGroup(paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(paneProjectLayout.createSequentialGroup()
+                        .addGroup(paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblHeaderGameProject)
+                                .addComponent(cbFunctionsGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfsearchFieldGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblErrorMessageGameProject, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(spGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblHeaderGameProject)
-                        .addComponent(cbFunctionsGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(tfsearchFieldGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnSearchGameProject))
-                    .addComponent(lblErrorMessageGameProject, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(spGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSearchGameProject)
+                        .addComponent(cbAllGameProjects, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(132, 132, 132))
         );
 
@@ -1130,6 +1121,8 @@ public class MainPage extends javax.swing.JFrame {
         addHiredToCB();
         cbListAllHiredPosition.removeAllItems();
         addHiredPosition();
+        cbAllGameProjects.removeAllItems();
+        addGameProjectsToCB();
     }
     
     
@@ -1219,6 +1212,82 @@ public class MainPage extends javax.swing.JFrame {
             btnSearch.setText("Gå");
         }
     }//GEN-LAST:event_cbFunctionsActionPerformed
+
+    private void btnSearchGameProjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchGameProjectActionPerformed
+        String selectedFunction = cbFunctionsGameProject.getSelectedItem().toString();
+               
+        switch (selectedFunction)
+        {
+            case "Visa vem som leder/har lett ett specifikt projekt" :
+                showLeader();
+                updateCBs();
+                break;
+            case "Visa vilka plattformar ett spel utvecklas till":
+                //Anropa metod som listar de plattformar ett spel utvecklas till
+                break;  
+            case "Lista de spelprojekt som är under utveckling":
+                //Anropa metod som listar de projekt som är under utveckling
+                
+                break;
+            case "Lista de spelprojekt som har släppts" :
+                //Anropa metod osm listar de spel som har släppts
+                
+                break;
+            case "Lägg till spelutvecklingsprojekt" :
+                showGpAddFields();
+                hideGpChangeFields();
+                tpSubMenuGameProject.setSelectedIndex(0);
+                break;
+            case "Uppdatera information om ett specifikt projekt" : 
+                showGpChangeFields();
+                hideGpAddFields();
+                updateCBs();
+                tpSubMenuGameProject.setSelectedIndex(1);
+                break;       
+        }
+    }//GEN-LAST:event_btnSearchGameProjectActionPerformed
+
+    private void cbFunctionsGameProjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFunctionsGameProjectActionPerformed
+        //changes the btn text based on what action is selected and hides/shows the search-field
+        
+        String selectedFunction = cbFunctionsGameProject.getSelectedItem().toString();
+        
+        switch (selectedFunction)
+        {
+            case "Visa vem som leder/har lett ett specifikt projekt" :
+                tfsearchFieldGameProject.setVisible(false);
+                btnSearchGameProject.setText("OK");
+                cbAllGameProjects.setVisible(true);
+                addProjectsToCB();
+                break;
+            case "Visa vilka plattformar ett spel utvecklas till" :
+                tfsearchFieldGameProject.setVisible(true);
+                btnSearchGameProject.setText("OK");
+                cbAllGameProjects.setVisible(false);
+                break;
+            case "Lista de spelprojekt som är under utveckling" :
+                tfsearchFieldGameProject.setVisible(true);
+                btnSearchGameProject.setText("OK");
+                cbAllGameProjects.setVisible(false);
+                break;
+            case "Lista de spelprojekt som har släppts" :
+                tfsearchFieldGameProject.setVisible(true);
+                btnSearchGameProject.setText("OK");
+                cbAllGameProjects.setVisible(false);
+                break;
+            case "Lägg till spelutvecklingsprojekt" :
+                tfsearchFieldGameProject.setVisible(false);
+                btnSearchGameProject.setText("Gå");
+                cbAllGameProjects.setVisible(false);
+                break;
+            case "Uppdatera information om ett specifikt projekt" :
+                tfsearchFieldGameProject.setVisible(false);
+                btnSearchGameProject.setText("Gå");
+                cbAllGameProjects.setVisible(false);
+                break;
+        }
+      
+    }//GEN-LAST:event_cbFunctionsGameProjectActionPerformed
 
     /**
     * calls the database updateHired-methos and sends the new info to it.
@@ -1403,10 +1472,9 @@ public class MainPage extends javax.swing.JFrame {
         String searchWord = tfsearchField.getText();
         DbClass database = new DbClass();
         tasearchResult.setText("");
-        boolean validation = Validation.containsString(searchWord);
-        if (Validation.textBoxTextIsRequired(tfsearchField) && validation)
+        lblErrorMessageHired.setText("");
+        if (Validation.textBoxTextIsRequired(tfsearchField) && Validation.containsString(searchWord))
         {
-            lblErrorMessageHired.setText("");
             ArrayList<String> listHired = database.listHiredInProject(searchWord);
             for(String beteckning: listHired)
             {
@@ -1416,6 +1484,49 @@ public class MainPage extends javax.swing.JFrame {
         else
         {
             lblErrorMessageHired.setText("Använd endast a-ö, A-Ö");
+        }
+    }
+    
+    /**
+     * Shows who has been leading a specific project
+     */
+    private void showLeader ()
+    {
+        String currentGame = cbAllGameProjects.getSelectedItem().toString();
+        int gameID = Integer.parseInt(currentGame.split(",")[0]);
+        
+        DbClass database = new DbClass ();
+        tasearchResultGameProject.setText("");
+        lblErrorMessageGameProject.setText("");
+        
+        
+            ArrayList<HashMap<String, String>> listLeader = database.listLeaderOnProject(gameID);
+            for (int i = 0; i < listLeader.size(); i++)
+            {
+                String leader = listLeader.get(i).get("NAMN");
+                tasearchResultGameProject.append(leader + "\n");
+            }
+    }
+            
+    /**
+     * lists all the platforms a game is made for
+     */
+    /*private void listPlatforms()
+    {
+                TYP HÄR GICK MIN HJÄRNA SÖNDER
+    }*/
+    
+    
+    public void addGameProjectsToCB ()
+    {
+        DbClass database = new DbClass();
+        
+        ArrayList<HashMap<String, String>> allProjects = database.listAllProjects();
+        for (int i = 0; i < allProjects.size(); i++)
+        {
+            String sid = allProjects.get(i).get("SID");
+            String gameName = allProjects.get(i).get("BETECKNING");
+            cbAllGameProjects.addItem(sid + "," + gameName);
         }
     }
     
@@ -1467,7 +1578,7 @@ public class MainPage extends javax.swing.JFrame {
         {
             String aid = allHired.get(i).get("AID");
             String name = allHired.get(i).get("NAMN");
-            cbListAllHired.addItem(aid + ", " + name);
+            cbListAllHired.addItem(aid + "," + name);
         }
     }
     
@@ -1690,10 +1801,6 @@ public class MainPage extends javax.swing.JFrame {
 	tpSubMenuGameProject.setVisible(true);
 	paneAddGameProject.setVisible(true);
 	lblHeaderAddGameProject.setVisible(true);
-	lblInfoTextAddGameProject.setVisible(true);
-	spGameProjectAdd.setVisible(false);
-	tpReturnNewSID.setVisible(true);
-	btnGenerateSID.setVisible(true);
 	lblGpAddName.setVisible(true);
 	tfGpAddName.setVisible(true);
 	lblGpAddStartDate.setVisible(true);
@@ -1711,10 +1818,6 @@ public class MainPage extends javax.swing.JFrame {
 	tpSubMenuGameProject.setVisible(false);
 	paneAddGameProject.setVisible(false);
 	lblHeaderAddGameProject.setVisible(false);
-	lblInfoTextAddGameProject.setVisible(false);
-	spGameProjectAdd.setVisible(true);
-	tpReturnNewSID.setVisible(false);
-	btnGenerateSID.setVisible(false);
 	lblGpAddName.setVisible(false);
 	tfGpAddName.setVisible(false);
 	lblGpAddStartDate.setVisible(false);
@@ -1761,24 +1864,7 @@ public class MainPage extends javax.swing.JFrame {
 	tfGpChangeName.setVisible(true);
 	lblGpChangeName.setVisible(true);
     }
-    
-    /**
-     * Sets the errormessage
-     * @param text 
-     */
-    public void setErrorMessage(String text)
-    {
-        lblErrorMessageGameProject.setText(text);
-    }
-    
-    /**
-     * Gets the searchword
-     * @return 
-     */
-    public String getSearchWord()
-    {
-        return tfsearchField.getText();
-    }
+
         
     
     
@@ -1793,12 +1879,12 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JButton btnConfirmUpdateHired;
     private javax.swing.JButton btnConfirmUpdatePosition;
     private javax.swing.JButton btnConfirmUpdateRemoved;
-    private javax.swing.JButton btnGenerateSID;
     private javax.swing.JButton btnRemove;
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnSearchCompetence;
     private javax.swing.JButton btnSearchGameProject;
     private javax.swing.JButton btnSearchPlatform;
+    private javax.swing.JComboBox<String> cbAllGameProjects;
     private javax.swing.JComboBox<String> cbFunctions;
     private javax.swing.JComboBox<String> cbFunctionsCompetence;
     private javax.swing.JComboBox<String> cbFunctionsGameProject;
@@ -1852,7 +1938,6 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel lblHeaderGameProject;
     private javax.swing.JLabel lblHeaderPlatform;
     private javax.swing.JLabel lblHeaderRemove;
-    private javax.swing.JLabel lblInfoTextAddGameProject;
     private javax.swing.JLabel lblNote;
     private javax.swing.JLabel lblUpdateHiredInProject;
     private javax.swing.JLabel lblUpdateHiredPosition;
@@ -1871,7 +1956,6 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JSeparator separatorHired;
     private javax.swing.JScrollPane spCompetence;
     private javax.swing.JScrollPane spGameProject;
-    private javax.swing.JScrollPane spGameProjectAdd;
     private javax.swing.JScrollPane spHired;
     private javax.swing.JScrollPane spPlatform;
     private javax.swing.JTextArea tasearchResult;
@@ -1896,7 +1980,6 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JTextField tfsearchFieldGameProject;
     private javax.swing.JTextField tfsearchFieldPlatform;
     private javax.swing.JTabbedPane tpMenu;
-    private javax.swing.JTextPane tpReturnNewSID;
     private javax.swing.JTabbedPane tpSubMenuGameProject;
     private javax.swing.JTabbedPane tpSubMenuHired;
     // End of variables declaration//GEN-END:variables

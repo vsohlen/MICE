@@ -75,15 +75,10 @@
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="separatorHired" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="tpSubMenuHired" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="separatorHired" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tpSubMenuHired" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -879,8 +874,10 @@
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Component id="tfsearchFieldGameProject" min="-2" pref="98" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="cbAllGameProjects" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Component id="btnSearchGameProject" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="lblErrorMessageGameProject" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   </Group>
@@ -899,17 +896,24 @@
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Component id="separatorGameProject" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblHeaderGameProject" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cbFunctionsGameProject" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tfsearchFieldGameProject" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnSearchGameProject" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="lblHeaderGameProject" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbFunctionsGameProject" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tfsearchFieldGameProject" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="lblErrorMessageGameProject" pref="23" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="spGameProject" min="-2" pref="76" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="lblErrorMessageGameProject" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnSearchGameProject" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cbAllGameProjects" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="spGameProject" min="-2" pref="76" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -927,6 +931,9 @@
                   <StringArray count="0"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbFunctionsGameProjectActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
@@ -940,6 +947,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="S&#xf6;k"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchGameProjectActionPerformed"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="spGameProject">
               <AuxValues>
@@ -975,15 +985,14 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="btnGenerateSID" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblInfoTextAddGameProject" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblHeaderAddGameProject" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace pref="298" max="32767" attributes="0"/>
+                                  <Component id="lblHeaderAddGameProject" min="-2" pref="157" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
+                                      <Component id="btnAddGameProject" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="lblGpAddName" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="lblGpAddReleaseDate" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -996,51 +1005,34 @@
                                           <Component id="tfAddGpReleaseDate" alignment="1" min="-2" pref="97" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="spGameProjectAdd" min="-2" pref="81" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="btnAddGameProject" min="-2" max="-2" attributes="0"/>
-                                  </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                              <EmptySpace pref="547" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                      <Component id="lblHeaderAddGameProject" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="lblInfoTextAddGameProject" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="btnGenerateSID" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                                      <Component id="spGameProjectAdd" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="tfGpAddName" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblGpAddName" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="lblGpAddStartDate" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tfAddGpStartDate" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="lblGpAddReleaseDate" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tfAddGpReleaseDate" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="btnAddGameProject" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace pref="17" max="32767" attributes="0"/>
+                              <Component id="lblHeaderAddGameProject" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="tfGpAddName" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblGpAddName" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="30" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblGpAddStartDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tfAddGpStartDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblGpAddReleaseDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tfAddGpReleaseDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnAddGameProject" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1052,27 +1044,6 @@
                           <Font name="Tahoma" size="14" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="L&#xe4;gg till ett nytt projekt!"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="lblInfoTextAddGameProject">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Generera ett nytt spelprojektsID:"/>
-                      </Properties>
-                    </Component>
-                    <Container class="javax.swing.JScrollPane" name="spGameProjectAdd">
-                      <AuxValues>
-                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                      </AuxValues>
-
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                      <SubComponents>
-                        <Component class="javax.swing.JTextPane" name="tpReturnNewSID">
-                        </Component>
-                      </SubComponents>
-                    </Container>
-                    <Component class="javax.swing.JButton" name="btnGenerateSID">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Generera"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblGpAddName">
@@ -1275,6 +1246,16 @@
               </SubComponents>
             </Container>
             <Component class="javax.swing.JSeparator" name="separatorGameProject">
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cbAllGameProjects">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>

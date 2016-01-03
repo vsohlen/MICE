@@ -158,10 +158,17 @@ public class MainPage extends javax.swing.JFrame {
         spPlatform = new javax.swing.JScrollPane();
         tasearchResultPlatform = new javax.swing.JTextArea();
         btnSearchPlatform = new javax.swing.JButton();
-        tfsearchFieldPlatform = new javax.swing.JTextField();
         cbFunctionsPlatform = new javax.swing.JComboBox<>();
         lblHeaderPlatform = new javax.swing.JLabel();
         lblErrorMessagePlatform = new javax.swing.JLabel();
+        sepPlatform = new javax.swing.JSeparator();
+        lblPlatformUpdateHeader = new javax.swing.JLabel();
+        lblChoosePlatform = new javax.swing.JLabel();
+        cbListAllPlatforms = new javax.swing.JComboBox<>();
+        lblChooseGameProjectPlatform = new javax.swing.JLabel();
+        cbListAllGamesPlatform = new javax.swing.JComboBox<>();
+        btnConfirmUpdatePlatform = new javax.swing.JButton();
+        cbListPlatforms = new javax.swing.JComboBox<>();
         paneCompetence = new javax.swing.JPanel();
         spCompetence = new javax.swing.JScrollPane();
         tasearchResultCompetence = new javax.swing.JTextArea();
@@ -718,8 +725,18 @@ public class MainPage extends javax.swing.JFrame {
         lblChooseGame.setText("Välj ett spel i listan att ändra information om: ");
 
         btnChooseChangeGameProject.setText("Välj");
+        btnChooseChangeGameProject.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnChooseChangeGameProjectMouseClicked(evt);
+            }
+        });
 
         btnChangeGameProject.setText("OK");
+        btnChangeGameProject.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnChangeGameProjectMouseClicked(evt);
+            }
+        });
 
         tfChangeGpReleaseDate.setText("ÅÅÅÅ.MM.DD");
 
@@ -744,14 +761,13 @@ public class MainPage extends javax.swing.JFrame {
                         .addComponent(lblHeaderChangeGameProject)
                         .addGap(0, 624, Short.MAX_VALUE))
                     .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                        .addGap(0, 146, Short.MAX_VALUE)
-                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblChooseGame)
+                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
                                 .addComponent(cbListAllGames, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnChooseChangeGameProject)))
-                        .addGap(125, 125, 125)
+                                .addGap(34, 34, 34)
+                                .addComponent(btnChooseChangeGameProject))
+                            .addComponent(lblChooseGame))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
                                 .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -772,8 +788,8 @@ public class MainPage extends javax.swing.JFrame {
             paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(lblHeaderChangeGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblHeaderChangeGameProject)
+                .addGap(3, 3, 3)
                 .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
                         .addComponent(lblChooseGame)
@@ -861,45 +877,102 @@ public class MainPage extends javax.swing.JFrame {
         spPlatform.setViewportView(tasearchResultPlatform);
 
         btnSearchPlatform.setText("Sök");
+        btnSearchPlatform.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchPlatformActionPerformed(evt);
+            }
+        });
 
-        tfsearchFieldPlatform.setText("Sök...");
+        cbFunctionsPlatform.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbFunctionsPlatformActionPerformed(evt);
+            }
+        });
 
         lblHeaderPlatform.setText("Välj funktion:");
+
+        lblPlatformUpdateHeader.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblPlatformUpdateHeader.setText("Uppdatera plattform");
+
+        lblChoosePlatform.setText("Välj plattform: ");
+
+        lblChooseGameProjectPlatform.setText("Välj spelprojekt: ");
+
+        btnConfirmUpdatePlatform.setText("OK");
+        btnConfirmUpdatePlatform.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnConfirmUpdatePlatformMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panePlatformLayout = new javax.swing.GroupLayout(panePlatform);
         panePlatform.setLayout(panePlatformLayout);
         panePlatformLayout.setHorizontalGroup(
             panePlatformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panePlatformLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addGap(31, 31, 31)
                 .addGroup(panePlatformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(panePlatformLayout.createSequentialGroup()
                         .addComponent(lblHeaderPlatform)
                         .addGap(18, 18, 18)
                         .addComponent(cbFunctionsPlatform, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(spPlatform, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfsearchFieldPlatform, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(cbListPlatforms, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
                 .addComponent(btnSearchPlatform)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblErrorMessagePlatform, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                .addGap(52, 52, 52))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(panePlatformLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(sepPlatform)
+                .addContainerGap())
+            .addGroup(panePlatformLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(panePlatformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panePlatformLayout.createSequentialGroup()
+                        .addComponent(lblChoosePlatform)
+                        .addGap(28, 28, 28)
+                        .addComponent(cbListAllPlatforms, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(lblChooseGameProjectPlatform)
+                        .addGap(45, 45, 45)
+                        .addComponent(cbListAllGamesPlatform, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(btnConfirmUpdatePlatform)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblErrorMessagePlatform, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(panePlatformLayout.createSequentialGroup()
+                        .addComponent(lblPlatformUpdateHeader)
+                        .addGap(52, 615, Short.MAX_VALUE))))
         );
         panePlatformLayout.setVerticalGroup(
             panePlatformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panePlatformLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
+                .addComponent(lblPlatformUpdateHeader)
+                .addGap(17, 17, 17)
                 .addGroup(panePlatformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panePlatformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblHeaderPlatform)
-                        .addComponent(cbFunctionsPlatform, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(tfsearchFieldPlatform, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnSearchPlatform))
-                    .addComponent(lblErrorMessagePlatform, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
-                .addComponent(spPlatform, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(340, Short.MAX_VALUE))
+                    .addGroup(panePlatformLayout.createSequentialGroup()
+                        .addGroup(panePlatformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panePlatformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblChoosePlatform)
+                                .addComponent(cbListAllPlatforms, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblChooseGameProjectPlatform)
+                                .addComponent(cbListAllGamesPlatform, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnConfirmUpdatePlatform))
+                        .addGap(18, 18, 18)
+                        .addComponent(sepPlatform, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(panePlatformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblHeaderPlatform)
+                            .addComponent(cbFunctionsPlatform, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSearchPlatform)
+                            .addComponent(cbListPlatforms, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(16, 16, 16)
+                        .addComponent(spPlatform, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblErrorMessagePlatform, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(244, Short.MAX_VALUE))
         );
 
         tpMenu.addTab("Plattform", panePlatform);
@@ -1123,6 +1196,12 @@ public class MainPage extends javax.swing.JFrame {
         addHiredPosition();
         cbAllGameProjects.removeAllItems();
         addGameProjectsToCB();
+        cbListAllPlatforms.removeAllItems();
+        addPlatformsToUpdateCB();
+        cbListPlatforms.removeAllItems();
+        addPlatformsToCB();
+        cbListAllGamesPlatform.removeAllItems();
+        addGamesPlatformToCB();
     }
     
     
@@ -1189,7 +1268,7 @@ public class MainPage extends javax.swing.JFrame {
      * @param evt 
      */
     private void btnChangeHiredMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChangeHiredMouseClicked
-        String currentHired = cbListAllHired.getSelectedItem().toString();      //Det här med kod-duplicering.. Kolla "btnChooseChangeMouseClicked metoden...
+        String currentHired = cbListAllHired.getSelectedItem().toString();
         int aid = Integer.parseInt(currentHired.split(",")[0]);
         changeInfoAboutHired(aid);
     }//GEN-LAST:event_btnChangeHiredMouseClicked
@@ -1223,26 +1302,26 @@ public class MainPage extends javax.swing.JFrame {
                 updateCBs();
                 break;
             case "Visa vilka plattformar ett spel utvecklas till":
-                //Anropa metod som listar de plattformar ett spel utvecklas till
+                listPlatforms();
                 break;  
-            case "Lista de spelprojekt som är under utveckling":
+            case "Lista de spelprojekt som är under utveckling":        //Anton
                 //Anropa metod som listar de projekt som är under utveckling
                 
                 break;
-            case "Lista de spelprojekt som har släppts" :
+            case "Lista de spelprojekt som har släppts" :       //Anton
                 //Anropa metod osm listar de spel som har släppts
                 
                 break;
-            case "Lägg till spelutvecklingsprojekt" :
+            case "Lägg till spelutvecklingsprojekt" :       //Implementera
                 showGpAddFields();
                 hideGpChangeFields();
                 tpSubMenuGameProject.setSelectedIndex(0);
                 break;
-            case "Uppdatera information om ett specifikt projekt" : 
+            case "Uppdatera information om ett specifikt projekt" :         //Implementera
                 showGpChangeFields();
-                hideGpAddFields();
-                updateCBs();
                 tpSubMenuGameProject.setSelectedIndex(1);
+                addGamesToCB();
+                updateCBs();
                 break;       
         }
     }//GEN-LAST:event_btnSearchGameProjectActionPerformed
@@ -1258,20 +1337,21 @@ public class MainPage extends javax.swing.JFrame {
                 tfsearchFieldGameProject.setVisible(false);
                 btnSearchGameProject.setText("OK");
                 cbAllGameProjects.setVisible(true);
-                addProjectsToCB();
+                addGameProjectsToCB();
                 break;
             case "Visa vilka plattformar ett spel utvecklas till" :
                 tfsearchFieldGameProject.setVisible(true);
+                tfsearchFieldGameProject.setText("Sök spel..");
                 btnSearchGameProject.setText("OK");
                 cbAllGameProjects.setVisible(false);
                 break;
             case "Lista de spelprojekt som är under utveckling" :
-                tfsearchFieldGameProject.setVisible(true);
+                tfsearchFieldGameProject.setVisible(false);
                 btnSearchGameProject.setText("OK");
                 cbAllGameProjects.setVisible(false);
                 break;
             case "Lista de spelprojekt som har släppts" :
-                tfsearchFieldGameProject.setVisible(true);
+                tfsearchFieldGameProject.setVisible(false);
                 btnSearchGameProject.setText("OK");
                 cbAllGameProjects.setVisible(false);
                 break;
@@ -1288,6 +1368,73 @@ public class MainPage extends javax.swing.JFrame {
         }
       
     }//GEN-LAST:event_cbFunctionsGameProjectActionPerformed
+
+    private void btnChooseChangeGameProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChooseChangeGameProjectMouseClicked
+        // Gets all the existing data about a game and fills the text-fields
+        
+        String choosenGame = cbListAllGames.getSelectedItem().toString();
+        int sid = Integer.parseInt(choosenGame.split(",")[0]);
+
+        DbClass database = new DbClass();
+
+        //populate textfields with existing data
+        HashMap<String, String> games = database.listProject(sid);
+        
+        String name = games.get("BETECKNING");
+        tfGpChangeName.setText(name);
+        String startDate = games.get("STARTDATUM");
+        tfChangeGpStartDate.setText(startDate);
+        String releaseDate = games.get("RELASEDATUM");
+        tfChangeGpReleaseDate.setText(releaseDate);
+    }//GEN-LAST:event_btnChooseChangeGameProjectMouseClicked
+
+    private void btnChangeGameProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChangeGameProjectMouseClicked
+        // Changes the info about the game
+        String currentGames = cbListAllGames.getSelectedItem().toString();      //Det här med kod-duplicering.. Kolla "btnChooseChangeMouseClicked metoden...
+        int sid = Integer.parseInt(currentGames.split(",")[0]);
+        changeInfoAboutGame(sid);
+    }//GEN-LAST:event_btnChangeGameProjectMouseClicked
+
+    private void cbFunctionsPlatformActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFunctionsPlatformActionPerformed
+        String selectedFunction = cbFunctionsPlatform.getSelectedItem().toString();
+               
+        switch (selectedFunction)
+        {
+            case "Lista de spel som har släppts till plattformen" :
+                cbListPlatforms.setVisible(true);
+                btnSearchPlatform.setText("OK");
+                hidePlatformUpdateFields();
+                addPlatformsToCB();
+                break;
+            case "Uppdatera information om vilka plattformar ett spelprojekt omfattar" :
+                cbListPlatforms.setVisible(false);
+                btnSearchPlatform.setText("Gå");
+                break;
+        }
+    }//GEN-LAST:event_cbFunctionsPlatformActionPerformed
+
+    private void btnSearchPlatformActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchPlatformActionPerformed
+        String selectedFunction = cbFunctionsPlatform.getSelectedItem().toString();
+               
+        switch (selectedFunction)
+        {
+            case "Uppdatera information om vilka plattformar ett spelprojekt omfattar" :
+                showPlatformUpdateFields();
+                addPlatformsToUpdateCB();
+                addGamesPlatformToCB();
+                updateCBs();
+                break;
+            case "Lista de spel som har släppts till plattformen" :
+                hidePlatformUpdateFields();
+                listGameForPlatform();
+                updateCBs();
+                break;
+        }
+    }//GEN-LAST:event_btnSearchPlatformActionPerformed
+
+    private void btnConfirmUpdatePlatformMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmUpdatePlatformMouseClicked
+        updatePlatformGame();
+    }//GEN-LAST:event_btnConfirmUpdatePlatformMouseClicked
 
     /**
     * calls the database updateHired-methos and sends the new info to it.
@@ -1388,6 +1535,17 @@ public class MainPage extends javax.swing.JFrame {
         
     }
       
+    public void addPlatformsToUpdateCB()
+    {
+        DbClass database = new DbClass();
+        ArrayList<HashMap<String, String>> allPlatforms = database.listPlatforms();
+        for (int i = 0; i<allPlatforms.size(); i++)
+        {
+            String pid = allPlatforms.get(i).get("PID");
+            String benamning = allPlatforms.get(i).get("BENAMNING");
+            cbListAllPlatforms.addItem(pid + "," + benamning);
+        }
+    }
     
     public void addProjectsToCB()			
     {       //Adds all the projects a specialist can work on to a cb.
@@ -1398,19 +1556,59 @@ public class MainPage extends javax.swing.JFrame {
 	{
 		String sid = allProjects.get(i).get("SID");
 		String beteckning = allProjects.get(i).get("BETECKNING");
-		cbListAllGameProjects.addItem(sid + ", " + beteckning);
+		cbListAllGameProjects.addItem(sid + "," + beteckning);
+	}
+    }
+    
+    public void addPlatformsToCB ()
+    {
+        DbClass database = new DbClass();
+        
+        ArrayList<HashMap<String, String>> allPlatforms = database.listPlatforms();
+	for (int i = 0; i < allPlatforms.size(); i++)
+	{
+		String pid = allPlatforms.get(i).get("PID");
+		String benamning = allPlatforms.get(i).get("BENAMNING");
+		cbListPlatforms.addItem(pid + "," + benamning);
+	}
+    }
+    
+    public void addGamesPlatformToCB()
+    {
+        DbClass database = new DbClass();
+        
+        ArrayList<HashMap<String,String>> allGames = database.listAllProjects();
+        for(int i = 0; i<allGames.size(); i++)
+        {
+            String sid = allGames.get(i).get("SID");
+            String beteckning = allGames.get(i).get("BETECKNING");
+            cbListAllGamesPlatform.addItem(sid + "," + beteckning);
+        }
+    }
+    
+    public void addGamesToCB()
+    {
+        
+	DbClass database = new DbClass();
+	
+	ArrayList<HashMap<String, String>> allProjects = database.listAllProjects();
+	for (int i = 0; i < allProjects.size(); i++)
+	{
+		String sid = allProjects.get(i).get("SID");
+		String beteckning = allProjects.get(i).get("BETECKNING");
+		cbListAllGames.addItem(sid + "," + beteckning);
 	}
     }
 
     public void addSpecialistToCBUpdate()			
-    {       //Adds all the projects a specialist can work on to a cb.
+    {      
 	DbClass database = new DbClass();
 	
-	ArrayList<HashMap<String, String>> allProjects = database.listAllSpecialists();
-	for (int i = 0; i < allProjects.size(); i++)
+	ArrayList<HashMap<String, String>> allSpecialists = database.listAllSpecialists();
+	for (int i = 0; i < allSpecialists.size(); i++)
 	{
 		//String sid = allProjects.get(i).get("SID");
-		String namn = allProjects.get(i).get("NAMN");
+		String namn = allSpecialists.get(i).get("NAMN");
 		cbListAllSpecialists.addItem(namn);
 	}
     }
@@ -1496,9 +1694,7 @@ public class MainPage extends javax.swing.JFrame {
         int gameID = Integer.parseInt(currentGame.split(",")[0]);
         
         DbClass database = new DbClass ();
-        tasearchResultGameProject.setText("");
-        lblErrorMessageGameProject.setText("");
-        
+        tasearchResultGameProject.setText("");        
         
             ArrayList<HashMap<String, String>> listLeader = database.listLeaderOnProject(gameID);
             for (int i = 0; i < listLeader.size(); i++)
@@ -1511,10 +1707,44 @@ public class MainPage extends javax.swing.JFrame {
     /**
      * lists all the platforms a game is made for
      */
-    /*private void listPlatforms()
+    private void listPlatforms()
     {
-                TYP HÄR GICK MIN HJÄRNA SÖNDER
-    }*/
+        String searchWord = tfsearchFieldGameProject.getText();
+        DbClass database = new DbClass();
+        tasearchResultGameProject.setText("");
+        lblErrorMessageGameProject.setText("");
+        ArrayList<HashMap<String, String>> listPlatform = database.listPlatformsForGames(searchWord);
+        
+        if (Validation.textBoxTextIsRequired(tfsearchFieldGameProject) && Validation.containsString(searchWord))
+        {
+            
+            for(int i = 0; i < listPlatform.size(); i++)
+            {
+                String beteckning = listPlatform.get(i).get("BENAMNING");
+                tasearchResultGameProject.append(beteckning + "\n");
+            }
+        }
+        else
+        {
+            lblErrorMessageGameProject.setText("Använd endast a-ö, A-Ö");
+        }
+    }
+    
+    private void listGameForPlatform ()
+    {
+        String currentPlatform = cbListPlatforms.getSelectedItem().toString();
+        int PID = Integer.parseInt(currentPlatform.split(",")[0]);
+        
+        DbClass database = new DbClass ();
+        tasearchResultPlatform.setText("");
+        
+            ArrayList<HashMap<String, String>> listGame = database.listGamesForPlatform(PID);
+            for (int i = 0; i < listGame.size(); i++)
+            {
+                String game = listGame.get(i).get("BETECKNING");
+                tasearchResultPlatform.append(game + "\n");
+            }
+    }
     
     
     public void addGameProjectsToCB ()
@@ -1583,7 +1813,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Lets you change information about the choosen one(Harry Potter-reference).
+     * Lets you change information about the choosen one.
      * @param AID 
      */
     private void changeInfoAboutHired (int AID)             //Validering krävs 
@@ -1602,6 +1832,33 @@ public class MainPage extends javax.swing.JFrame {
         if (!setName.equals(existingName) || !setPhone.equals(existingTelephone) || !setMail.equals(existingMail))
         {
             database.changeHired(setName, setPhone, setMail, AID);
+            System.out.println("Ändring genomförd");
+        }
+        else
+        {
+            System.out.println("nope");
+        }
+    }
+    
+    /**
+     * Lets you change information about the choosen game
+     */
+    private void changeInfoAboutGame (int sid)
+    {
+        DbClass database = new DbClass();
+        HashMap<String, String> game = database.listProject(sid);
+        
+        
+        //Gets the current name from the database
+        String existingName = game.get("BETECKNING");
+        String setName = tfGpChangeName.getText();
+        String existingStartDate = game.get("STARTDATUM");
+        String setStartDate = tfChangeGpStartDate.getText();
+        String existingRelease = game.get("RELEASEDATUM");
+        String setRelease = tfChangeGpReleaseDate.getText();
+        if (!setName.equals(existingName) || !setStartDate.equals(existingStartDate) || !setRelease.equals(existingRelease))
+        {
+            database.changeGame(setName, setStartDate, setRelease, sid);
             System.out.println("Ändring genomförd");
         }
         else
@@ -1645,8 +1902,33 @@ public class MainPage extends javax.swing.JFrame {
         }
         else
         {
-            System.out.println("nope");
+            System.out.println("Personen kunde inte läggas till");
         }
+    }
+    
+    /**
+     * Updates the platforms a game is developed for
+     */
+    private void updatePlatformGame()
+    {
+        String currentGame = cbListAllGamesPlatform.getSelectedItem().toString();
+        int sid = Integer.parseInt(currentGame.split(",")[0]);
+        String currentPlatform = cbListAllPlatforms.getSelectedItem().toString();
+        int pid = Integer.parseInt(currentPlatform.split(",")[0]);
+        DbClass database = new DbClass();
+        lblErrorMessagePlatform.setText("");
+       
+        if (!database.doesExistInInnefattar(sid, pid))
+        {
+            database.insertGamePlatform(sid, pid);
+            lblErrorMessagePlatform.setText("Ändringen genomförd");
+        }
+        else
+        {
+            lblErrorMessagePlatform.setText("Ändringen kunde inte genomföras");
+        }
+        
+        
     }
   
     /**
@@ -1832,6 +2114,7 @@ public class MainPage extends javax.swing.JFrame {
      */
     private void showGpChangeFields()
     {
+        tpSubMenuGameProject.setVisible(true);
 	paneChangeGameProject.setVisible(true);
 	lblHeaderChangeGameProject.setVisible(true);
 	lblChooseGame.setVisible(true);
@@ -1864,7 +2147,34 @@ public class MainPage extends javax.swing.JFrame {
 	tfGpChangeName.setVisible(true);
 	lblGpChangeName.setVisible(true);
     }
+    
+    /**
+     * Shows the fields for changing a Platform when someone with full access is using the program
+     */
+    private void showPlatformUpdateFields ()
+    {
+        lblPlatformUpdateHeader.setVisible(true);
+        lblChoosePlatform.setVisible(true);
+        cbListAllPlatforms.setVisible(true);
+        lblChooseGameProjectPlatform.setVisible(true);
+        cbListAllGamesPlatform.setVisible(true);
+        btnConfirmUpdatePlatform.setVisible(true);
+    }
+    
+    /**
+     * Hides the fields for changing a platform when someone without full access is using the program
+     */
+    private void hidePlatformUpdateFields ()
+    {
+        lblPlatformUpdateHeader.setVisible(false);
+        lblChoosePlatform.setVisible(false);
+        cbListAllPlatforms.setVisible(false);
+        lblChooseGameProjectPlatform.setVisible(false);
+        cbListAllGamesPlatform.setVisible(false);
+        btnConfirmUpdatePlatform.setVisible(false);
+    }
 
+    
         
     
     
@@ -1877,6 +2187,7 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JButton btnChooseChangeHired;
     private javax.swing.JButton btnConfirmUpdate;
     private javax.swing.JButton btnConfirmUpdateHired;
+    private javax.swing.JButton btnConfirmUpdatePlatform;
     private javax.swing.JButton btnConfirmUpdatePosition;
     private javax.swing.JButton btnConfirmUpdateRemoved;
     private javax.swing.JButton btnRemove;
@@ -1893,11 +2204,14 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbListAllGameProjects;
     private javax.swing.JComboBox<String> cbListAllGameProjectsUpdate;
     private javax.swing.JComboBox<String> cbListAllGames;
+    private javax.swing.JComboBox<String> cbListAllGamesPlatform;
     private javax.swing.JComboBox<String> cbListAllHired;
     private javax.swing.JComboBox<String> cbListAllHiredPosition;
     private javax.swing.JComboBox<String> cbListAllHiredRemove;
+    private javax.swing.JComboBox<String> cbListAllPlatforms;
     private javax.swing.JComboBox<String> cbListAllProjectleaders;
     private javax.swing.JComboBox<String> cbListAllSpecialists;
+    private javax.swing.JComboBox<String> cbListPlatforms;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblAddFirstName;
     private javax.swing.JLabel lblAddLastName;
@@ -1908,10 +2222,12 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel lblChangeTelephoneHired;
     private javax.swing.JLabel lblChooseGame;
     private javax.swing.JLabel lblChooseGameProject;
+    private javax.swing.JLabel lblChooseGameProjectPlatform;
     private javax.swing.JLabel lblChooseGameProjectUpdate;
     private javax.swing.JLabel lblChooseHired;
     private javax.swing.JLabel lblChooseHiredPosition;
     private javax.swing.JLabel lblChooseHiredRemove;
+    private javax.swing.JLabel lblChoosePlatform;
     private javax.swing.JLabel lblChooseProjectleader;
     private javax.swing.JLabel lblChooseSpecialist;
     private javax.swing.JLabel lblChooseUpgrade;
@@ -1939,6 +2255,7 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel lblHeaderPlatform;
     private javax.swing.JLabel lblHeaderRemove;
     private javax.swing.JLabel lblNote;
+    private javax.swing.JLabel lblPlatformUpdateHeader;
     private javax.swing.JLabel lblUpdateHiredInProject;
     private javax.swing.JLabel lblUpdateHiredPosition;
     private javax.swing.JLabel lblUpdateLeader;
@@ -1952,6 +2269,7 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JPanel paneProject;
     private javax.swing.JPanel paneRemoveHired;
     private javax.swing.JPanel paneUpdateHired;
+    private javax.swing.JSeparator sepPlatform;
     private javax.swing.JSeparator separatorGameProject;
     private javax.swing.JSeparator separatorHired;
     private javax.swing.JScrollPane spCompetence;
@@ -1978,7 +2296,6 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JTextField tfsearchField;
     private javax.swing.JTextField tfsearchFieldCompetence;
     private javax.swing.JTextField tfsearchFieldGameProject;
-    private javax.swing.JTextField tfsearchFieldPlatform;
     private javax.swing.JTabbedPane tpMenu;
     private javax.swing.JTabbedPane tpSubMenuGameProject;
     private javax.swing.JTabbedPane tpSubMenuHired;

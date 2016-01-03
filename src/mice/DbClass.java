@@ -149,8 +149,7 @@ public class DbClass {
     
     
     /**
-     * Updates all info about the hired person at once. No field is aloud to be left empty
-     *                      //Validate so that no field can be empty in the vadlidation-class
+     * Updates all info about the hired person at once. 
      * @param setName
      * @param setPhone
      * @param setMail
@@ -162,6 +161,25 @@ public class DbClass {
                           "set Namn = '" + setName + "', Telefon = '" + setPhone + "', Mail = '" + setMail + "'" +
                           "where AID = " + AID;
         try 
+        {
+            idb.update(sqlFraga);
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    /**
+     * Updates all info about a game at once
+     */
+    public void changeGame (String setName, String setStartDate, String setRelease, int sid)
+    {
+        String sqlFraga = "update SPELPROJEKT " + 
+                          "set BETECKNING = '" + setName + "', STARTDATUM = '" + setStartDate + "', RELEASEDATUM = '" + setRelease + "' " +
+                          "where SID = " + sid + ";";
+        
+        try
         {
             idb.update(sqlFraga);
         }
@@ -268,6 +286,24 @@ public class DbClass {
             HashMap<String, String> aboutHired= idb.fetchRow(sqlFraga);
             return aboutHired; 
             
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+    
+    /**
+     * returns a hashmap with a gameproject based on the SID
+     */
+    public HashMap<String, String> listProject (int sid)
+    {
+        String sqlFraga = "select * from SPELPROJEKT where sid = " + sid + ";";
+        try 
+        {
+            HashMap<String, String> aboutProject = idb.fetchRow(sqlFraga);
+            return aboutProject;
         }
         catch (InfException e)
         {
@@ -448,6 +484,77 @@ public class DbClass {
         {
             System.out.println(e.getMessage());
             return null;
+        }
+    }
+    
+    public ArrayList<HashMap<String, String>> listPlatforms ()
+    {
+        String sqlFraga = "select * from PLATTFORM";
+        
+        try 
+        {
+            ArrayList<HashMap<String, String>> platforms = idb.fetchRows(sqlFraga);
+            return platforms;
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+    
+    public ArrayList<HashMap<String, String>> listGamesForPlatform(int pid)
+    {
+        String sqlFraga = "select beteckning from SPELPROJEKT " +
+                          "join INNEFATTAR on SPELPROJEKT.SID = INNEFATTAR.SID " +
+                          "join PLATTFORM on INNEFATTAR.PID = PLATTFORM.PID " +
+                          "where PLATTFORM.PID = " + pid + ";";
+        
+        try 
+        {
+            ArrayList<HashMap<String, String>> gamePlatform = idb.fetchRows(sqlFraga);
+            return gamePlatform;
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+    
+    public void insertGamePlatform(int sid, int pid)
+    {
+        String sqlFraga = "insert into INNEFATTAR " +
+                          "values (" + sid + ", " + pid + ")";
+        
+        try
+        {
+            idb.insert(sqlFraga);
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public boolean doesExistInInnefattar (int sid, int pid)
+    {
+        String sqlFraga = "select * from INNEFATTAR " +
+                          "where sid = " + sid + " and pid = " + pid + ";";
+        boolean match = false;
+        try
+        {
+            String gamePlatform = idb.fetchSingle(sqlFraga);
+            if (gamePlatform != null)
+            {
+                match = true;
+            }
+            return match;
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return match;
         }
     }
           

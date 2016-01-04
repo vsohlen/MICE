@@ -131,15 +131,6 @@ public class MainPage extends javax.swing.JFrame {
         tasearchResultGameProject = new javax.swing.JTextArea();
         lblErrorMessageGameProject = new javax.swing.JLabel();
         tpSubMenuGameProject = new javax.swing.JTabbedPane();
-        paneAddGameProject = new javax.swing.JPanel();
-        lblHeaderAddGameProject = new javax.swing.JLabel();
-        lblGpAddName = new javax.swing.JLabel();
-        tfGpAddName = new javax.swing.JTextField();
-        lblGpAddStartDate = new javax.swing.JLabel();
-        tfAddGpStartDate = new javax.swing.JTextField();
-        tfAddGpReleaseDate = new javax.swing.JTextField();
-        lblGpAddReleaseDate = new javax.swing.JLabel();
-        btnAddGameProject = new javax.swing.JButton();
         paneChangeGameProject = new javax.swing.JPanel();
         lblHeaderChangeGameProject = new javax.swing.JLabel();
         lblChooseGame = new javax.swing.JLabel();
@@ -152,6 +143,28 @@ public class MainPage extends javax.swing.JFrame {
         tfChangeGpStartDate = new javax.swing.JTextField();
         tfGpChangeName = new javax.swing.JTextField();
         lblGpChangeName = new javax.swing.JLabel();
+        paneAddGameProject = new javax.swing.JPanel();
+        lblHeaderAddGameProject = new javax.swing.JLabel();
+        lblGpAddName = new javax.swing.JLabel();
+        tfGpAddName = new javax.swing.JTextField();
+        lblGpAddStartDate = new javax.swing.JLabel();
+        lblGpAddReleaseDate = new javax.swing.JLabel();
+        btnAddGameProject = new javax.swing.JButton();
+        lblAddDay = new javax.swing.JLabel();
+        cbStartDateDay = new javax.swing.JComboBox<>();
+        lblAddMonth = new javax.swing.JLabel();
+        cbStartDateMonth = new javax.swing.JComboBox<>();
+        lblDateYear = new javax.swing.JLabel();
+        tfStartDateYear = new javax.swing.JTextField();
+        lblAddDayRelease = new javax.swing.JLabel();
+        cbReleaseDateDay = new javax.swing.JComboBox<>();
+        lblAddMonthRelease = new javax.swing.JLabel();
+        cbReleaseDateMonth = new javax.swing.JComboBox<>();
+        lblDateYearRelease = new javax.swing.JLabel();
+        tfReleaseDateYear = new javax.swing.JTextField();
+        cbNewProjLeader = new javax.swing.JComboBox<>();
+        lblChooseLeaderAddGP = new javax.swing.JLabel();
+        lblAddProjectText = new javax.swing.JLabel();
         separatorGameProject = new javax.swing.JSeparator();
         cbAllGameProjects = new javax.swing.JComboBox<>();
         panePlatform = new javax.swing.JPanel();
@@ -655,70 +668,6 @@ public class MainPage extends javax.swing.JFrame {
         tasearchResultGameProject.setRows(5);
         spGameProject.setViewportView(tasearchResultGameProject);
 
-        lblHeaderAddGameProject.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblHeaderAddGameProject.setText("Lägg till ett nytt projekt!");
-
-        lblGpAddName.setText("Beteckning:");
-
-        tfGpAddName.setText("Namn");
-
-        lblGpAddStartDate.setText("Startdatum:");
-
-        tfAddGpStartDate.setText("ÅÅÅÅ.MM.DD");
-
-        tfAddGpReleaseDate.setText("ÅÅÅÅ.MM.DD");
-
-        lblGpAddReleaseDate.setText("Releasedatum:");
-
-        btnAddGameProject.setText("OK");
-
-        javax.swing.GroupLayout paneAddGameProjectLayout = new javax.swing.GroupLayout(paneAddGameProject);
-        paneAddGameProject.setLayout(paneAddGameProjectLayout);
-        paneAddGameProjectLayout.setHorizontalGroup(
-            paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(paneAddGameProjectLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblHeaderAddGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(paneAddGameProjectLayout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addComponent(btnAddGameProject))
-                    .addGroup(paneAddGameProjectLayout.createSequentialGroup()
-                        .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblGpAddName)
-                            .addComponent(lblGpAddReleaseDate)
-                            .addComponent(lblGpAddStartDate))
-                        .addGap(26, 26, 26)
-                        .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(tfAddGpStartDate)
-                            .addComponent(tfGpAddName)
-                            .addComponent(tfAddGpReleaseDate, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(547, Short.MAX_VALUE))
-        );
-        paneAddGameProjectLayout.setVerticalGroup(
-            paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneAddGameProjectLayout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
-                .addComponent(lblHeaderAddGameProject)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfGpAddName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblGpAddName))
-                .addGap(8, 8, 8)
-                .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblGpAddStartDate)
-                    .addComponent(tfAddGpStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblGpAddReleaseDate)
-                    .addComponent(tfAddGpReleaseDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnAddGameProject)
-                .addContainerGap())
-        );
-
-        tpSubMenuGameProject.addTab("Lägg till", paneAddGameProject);
-
         lblHeaderChangeGameProject.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblHeaderChangeGameProject.setText("Ändra spelprojekt");
 
@@ -815,6 +764,140 @@ public class MainPage extends javax.swing.JFrame {
         );
 
         tpSubMenuGameProject.addTab("Ändra", paneChangeGameProject);
+
+        lblHeaderAddGameProject.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblHeaderAddGameProject.setText("Lägg till ett nytt projekt!");
+
+        lblGpAddName.setText("Beteckning:");
+
+        tfGpAddName.setText("Namn");
+
+        lblGpAddStartDate.setText("Startdatum:");
+
+        lblGpAddReleaseDate.setText("Releasedatum:");
+
+        btnAddGameProject.setText("OK");
+        btnAddGameProject.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAddGameProjectMouseClicked(evt);
+            }
+        });
+
+        lblAddDay.setText("Dag:");
+
+        cbStartDateDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+
+        lblAddMonth.setText("Månad:");
+
+        cbStartDateMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+
+        lblDateYear.setText("År:");
+
+        tfStartDateYear.setText("ÅÅÅÅ");
+
+        lblAddDayRelease.setText("Dag:");
+
+        cbReleaseDateDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+
+        lblAddMonthRelease.setText("Månad:");
+
+        cbReleaseDateMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+
+        lblDateYearRelease.setText("År:");
+
+        tfReleaseDateYear.setText("ÅÅÅÅ");
+
+        lblChooseLeaderAddGP.setText("Välj projektledare:");
+
+        javax.swing.GroupLayout paneAddGameProjectLayout = new javax.swing.GroupLayout(paneAddGameProject);
+        paneAddGameProject.setLayout(paneAddGameProjectLayout);
+        paneAddGameProjectLayout.setHorizontalGroup(
+            paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(paneAddGameProjectLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblHeaderAddGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(paneAddGameProjectLayout.createSequentialGroup()
+                        .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblGpAddName)
+                            .addComponent(lblGpAddReleaseDate)
+                            .addComponent(lblGpAddStartDate)
+                            .addComponent(lblChooseLeaderAddGP))
+                        .addGap(26, 26, 26)
+                        .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(paneAddGameProjectLayout.createSequentialGroup()
+                                .addComponent(cbNewProjLeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(243, 243, 243)
+                                .addComponent(btnAddGameProject))
+                            .addComponent(tfGpAddName, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAddDay)
+                            .addGroup(paneAddGameProjectLayout.createSequentialGroup()
+                                .addComponent(lblAddDayRelease)
+                                .addGap(39, 39, 39)
+                                .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(paneAddGameProjectLayout.createSequentialGroup()
+                                        .addComponent(cbReleaseDateDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(lblAddMonthRelease)
+                                        .addGap(36, 36, 36)
+                                        .addComponent(cbReleaseDateMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(51, 51, 51)
+                                        .addComponent(lblDateYearRelease)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tfReleaseDateYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(paneAddGameProjectLayout.createSequentialGroup()
+                                        .addComponent(cbStartDateDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(35, 35, 35)
+                                        .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(paneAddGameProjectLayout.createSequentialGroup()
+                                                .addComponent(lblAddMonth)
+                                                .addGap(36, 36, 36)
+                                                .addComponent(cbStartDateMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(lblAddProjectText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(51, 51, 51)
+                                        .addComponent(lblDateYear)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tfStartDateYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addContainerGap(267, Short.MAX_VALUE))
+        );
+        paneAddGameProjectLayout.setVerticalGroup(
+            paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneAddGameProjectLayout.createSequentialGroup()
+                .addContainerGap(28, Short.MAX_VALUE)
+                .addComponent(lblHeaderAddGameProject)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfGpAddName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblGpAddName)
+                    .addComponent(lblAddProjectText))
+                .addGap(8, 8, 8)
+                .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblGpAddStartDate)
+                    .addComponent(lblAddDay)
+                    .addComponent(cbStartDateDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAddMonth)
+                    .addComponent(cbStartDateMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDateYear)
+                    .addComponent(tfStartDateYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblGpAddReleaseDate)
+                    .addComponent(lblAddDayRelease)
+                    .addComponent(cbReleaseDateDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAddMonthRelease)
+                    .addComponent(cbReleaseDateMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDateYearRelease)
+                    .addComponent(tfReleaseDateYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAddGameProject)
+                    .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblChooseLeaderAddGP)
+                        .addComponent(cbNewProjLeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(12, 12, 12))
+        );
+
+        tpSubMenuGameProject.addTab("Lägg till", paneAddGameProject);
 
         javax.swing.GroupLayout paneProjectLayout = new javax.swing.GroupLayout(paneProject);
         paneProject.setLayout(paneProjectLayout);
@@ -1202,6 +1285,15 @@ public class MainPage extends javax.swing.JFrame {
         addPlatformsToCB();
         cbListAllGamesPlatform.removeAllItems();
         addGamesPlatformToCB();
+        cbNewProjLeader.removeAllItems();
+        addLeadersToCbNewProjLeader();
+        cbListAllGames.removeAllItems();
+        addGamesToCB();
+    }
+    
+    public void clearTFs()
+    {
+        tasearchResultGameProject.setText("");
     }
     
     
@@ -1304,17 +1396,23 @@ public class MainPage extends javax.swing.JFrame {
             case "Visa vilka plattformar ett spel utvecklas till":
                 listPlatforms();
                 break;  
-            case "Lista de spelprojekt som är under utveckling":        //Anton
+             case "Lista de spelprojekt som är under utveckling":
                 //Anropa metod som listar de projekt som är under utveckling
-                
+                updateCBs();
+                clearTFs();
+                listProjectsUnderDevelopment(); 
+                cbFunctionsGameProject.setSelectedIndex(1);
                 break;
-            case "Lista de spelprojekt som har släppts" :       //Anton
-                //Anropa metod osm listar de spel som har släppts
-                
+            case "Lista de spelprojekt som har släppts" :
+                //Anropa metod som listar de spel som har släppts
+                updateCBs();
+                clearTFs();
+                listReleases(); 
+                cbFunctionsGameProject.setSelectedIndex(0);
                 break;
-            case "Lägg till spelutvecklingsprojekt" :       //Implementera
+            case "Lägg till spelutvecklingsprojekt" :
                 showGpAddFields();
-                hideGpChangeFields();
+                updateCBs();
                 tpSubMenuGameProject.setSelectedIndex(0);
                 break;
             case "Uppdatera information om ett specifikt projekt" :         //Implementera
@@ -1384,7 +1482,7 @@ public class MainPage extends javax.swing.JFrame {
         tfGpChangeName.setText(name);
         String startDate = games.get("STARTDATUM");
         tfChangeGpStartDate.setText(startDate);
-        String releaseDate = games.get("RELASEDATUM");
+        String releaseDate = games.get("RELEASEDATUM");
         tfChangeGpReleaseDate.setText(releaseDate);
     }//GEN-LAST:event_btnChooseChangeGameProjectMouseClicked
 
@@ -1435,6 +1533,11 @@ public class MainPage extends javax.swing.JFrame {
     private void btnConfirmUpdatePlatformMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmUpdatePlatformMouseClicked
         updatePlatformGame();
     }//GEN-LAST:event_btnConfirmUpdatePlatformMouseClicked
+
+    private void btnAddGameProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddGameProjectMouseClicked
+        //Lägg till nytt spelprojekt.
+        addNewProject();
+    }//GEN-LAST:event_btnAddGameProjectMouseClicked
 
     /**
     * calls the database updateHired-methos and sends the new info to it.
@@ -1786,14 +1889,62 @@ public class MainPage extends javax.swing.JFrame {
             }
             else
             {
-                lblFunctionError.setText("Personen arbetar inte med några projekt");
+                lblFunctionError.setText("Personen arbetar inte med några projekt, prova sök igen, och var noga med gemener och versaler");
                 
             }
         }
         else
         {
-            lblErrorMessageHired.setText("Använd endast a-ö, A-Ö");
+            lblErrorMessageHired.setText("Använd endast a-ö, A-Ö, var noga med versaler och gemener");
         }
+    }
+    
+    public void addLeadersToCbNewProjLeader()			
+    {       //Adds a new leader to the selected project
+	DbClass database = new DbClass();
+	
+	ArrayList<HashMap<String, String>> allProjects = database.listAllLeaders();
+	for (int i = 0; i < allProjects.size(); i++)
+	{
+		//String sid = allProjects.get(i).get("SID");
+		String namn = allProjects.get(i).get("NAMN");
+		cbNewProjLeader.addItem(namn);
+	}
+    }
+    
+    /**
+     * A method that lists all games that have been released.
+     */
+    
+    private void listReleases()             
+    {
+         DbClass database = new DbClass();
+            
+            ArrayList<HashMap<String, String>> listReleases = database.listReleasedGames();
+
+                for(int i = 0; i < listReleases.size(); i++)
+                {
+                    String beteckningen = listReleases.get(i).get("BETECKNING");
+                    String sid = listReleases.get(i).get("SID");
+                    tasearchResultGameProject.append(sid + " " + beteckningen + "\n");
+                }       
+    }
+    
+    /**
+     * A method that lists all games that are under development
+     */
+     private void listProjectsUnderDevelopment()             
+    {
+         DbClass database = new DbClass();
+            
+            ArrayList<HashMap<String, String>> listDeveloping = database.listUnderDevelopment();
+
+                for(int i = 0; i < listDeveloping.size(); i++)
+                {
+                    String beteckningen = listDeveloping.get(i).get("BETECKNING");
+                    String sid = listDeveloping.get(i).get("SID");
+                    tasearchResultGameProject.append(sid + " " + beteckningen + "\n");
+                }       
     }
     
     /**
@@ -1843,28 +1994,114 @@ public class MainPage extends javax.swing.JFrame {
     /**
      * Lets you change information about the choosen game
      */
-    private void changeInfoAboutGame (int sid)
+    private void changeInfoAboutGame (int sid)                  //VALIDERING
     {
-        DbClass database = new DbClass();
-        HashMap<String, String> game = database.listProject(sid);
-        
-        
-        //Gets the current name from the database
-        String existingName = game.get("BETECKNING");
-        String setName = tfGpChangeName.getText();
-        String existingStartDate = game.get("STARTDATUM");
-        String setStartDate = tfChangeGpStartDate.getText();
-        String existingRelease = game.get("RELEASEDATUM");
-        String setRelease = tfChangeGpReleaseDate.getText();
-        if (!setName.equals(existingName) || !setStartDate.equals(existingStartDate) || !setRelease.equals(existingRelease))
+        try
         {
-            database.changeGame(setName, setStartDate, setRelease, sid);
-            System.out.println("Ändring genomförd");
+            DbClass database = new DbClass();
+            HashMap<String, String> game = database.listProject(sid);
+        
+        
+            //Gets the current name from the database
+            String existingName = game.get("BETECKNING");
+            String setName = tfGpChangeName.getText();
+            String existingStartDate = game.get("STARTDATUM");
+            String setStartDate = tfChangeGpStartDate.getText();
+            String existingRelease = game.get("RELEASEDATUM");
+            String setRelease = tfChangeGpReleaseDate.getText();
+            if (!setName.equals(existingName) || !setStartDate.equals(existingStartDate) || !setRelease.equals(existingRelease))
+            {
+                database.changeGame(setName, setStartDate, setRelease, sid);
+                System.out.println("Ändring genomförd");
+            }
+            else
+            {
+                System.out.println("nope");
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+        
+    }
+    
+     /**
+     * Adds a new project to the database. Validates name and dates.
+     */
+    public void addNewProject()            
+    {
+	DbClass database = new DbClass();
+	
+        int newSID = database.generateSID();
+        
+        String beteckning = tfGpAddName.getText();
+       
+        //Gets the combo box values and puts them in strings.
+        //Reason for having this separate from the added strings is that we
+        //are going to use these in multiple places.
+        int startDay = Integer.parseInt(cbStartDateDay.getSelectedItem().toString());
+        int startMonth = Integer.parseInt(cbStartDateMonth.getSelectedItem().toString());
+        int startYear = Integer.parseInt(tfStartDateYear.getText());
+        
+        int releaseDay = Integer.parseInt(cbReleaseDateDay.getSelectedItem().toString());
+        int releaseMonth = Integer.parseInt(cbReleaseDateMonth.getSelectedItem().toString());
+        int releaseYear = Integer.parseInt(tfReleaseDateYear.getText());
+        
+        //Adds the combo box values in to one date, x2.
+        String startDatum = startDay + "." + startMonth + "." + startYear;
+        String releaseDatum = releaseDay + "." + releaseMonth + "." + releaseYear;
+        
+        //Adds the combo box values in to one number, to check dates.
+        int startDatumTotal = startDay + startMonth + startYear;
+        int releaseDatumTotal = releaseDay + releaseMonth + releaseYear;
+        
+       // Checks if the name allready exists in the database.
+        boolean nameExists = false;
+        
+            ArrayList<HashMap<String, String>> listProjectNames = database.listAllProjectNames();
+
+                for(int i = 0; i < listProjectNames.size(); i++)
+                {
+                    String beteckningen = listProjectNames.get(i).get("BETECKNING");
+                    
+                    if (beteckningen.equals(beteckning))
+                    {
+                        nameExists = true;
+                    }
+                }  
+        
+        String strLeaderAID = "";
+        
+        //Adds a new leader to the project.
+        ArrayList<HashMap<String, String>> listLeaders = database.listAllLeaders();
+
+                for(int i = 0; i < listLeaders.size(); i++)
+                {
+                    //Gets the current name.
+                    String leaderName = listLeaders.get(i).get("NAMN");
+                    
+                    //Compares the combo box name to the current leader in the loop.
+                    //if it's a match, it sets the strLeaderAID to that leaders AID.
+                    if (cbNewProjLeader.getSelectedItem().toString().equals(leaderName))
+                    {
+                    strLeaderAID = listLeaders.get(i).get("AID");
+                    }
+                } 
+        
+        //Sets the leaders AID that was fetched from the loop to int.
+        int leaderAID = Integer.parseInt(strLeaderAID);
+        
+        if (startDatumTotal < releaseDatumTotal && nameExists == false)
+        {
+             database.addProject(newSID, beteckning, startDatum, releaseDatum, leaderAID);
+            lblAddProjectText.setText(beteckning + " är nu tillagd!");
         }
         else
         {
-            System.out.println("nope");
-        }
+            lblAddProjectText.setText(beteckning + " kunde inte läggas till. \n"
+                    + "Se till att namnet är unikt och att startdatumet är innan releasedatumet.");
+        }  
     }
     
     /**
@@ -2086,10 +2323,23 @@ public class MainPage extends javax.swing.JFrame {
 	lblGpAddName.setVisible(true);
 	tfGpAddName.setVisible(true);
 	lblGpAddStartDate.setVisible(true);
-	tfAddGpStartDate.setVisible(true);
-	tfAddGpReleaseDate.setVisible(true);
 	lblGpAddReleaseDate.setVisible(true);
 	btnAddGameProject.setVisible(true);
+        lblAddDay.setVisible(true);
+        cbStartDateDay.setVisible(true);
+        lblAddMonth.setVisible(true);
+        cbStartDateMonth.setVisible(true);
+        lblDateYear.setVisible(true);
+        tfStartDateYear.setVisible(true);
+        lblAddDayRelease.setVisible(true);
+        cbReleaseDateDay.setVisible(true);
+        lblAddMonthRelease.setVisible(true);
+        cbReleaseDateMonth.setVisible(true);
+        lblDateYearRelease.setVisible(true);
+        tfReleaseDateYear.setVisible(true);
+        cbNewProjLeader.setVisible(true);
+        lblChooseLeaderAddGP.setVisible(true);
+        lblAddProjectText.setVisible(true);
     }
     
     /**
@@ -2103,10 +2353,23 @@ public class MainPage extends javax.swing.JFrame {
 	lblGpAddName.setVisible(false);
 	tfGpAddName.setVisible(false);
 	lblGpAddStartDate.setVisible(false);
-	tfAddGpStartDate.setVisible(false);
-	tfAddGpReleaseDate.setVisible(false);
 	lblGpAddReleaseDate.setVisible(false);
 	btnAddGameProject.setVisible(false);
+        lblAddDay.setVisible(false);
+        cbStartDateDay.setVisible(false);
+        lblAddMonth.setVisible(false);
+        cbStartDateMonth.setVisible(false);
+        lblDateYear.setVisible(false);
+        tfStartDateYear.setVisible(false);
+        lblAddDayRelease.setVisible(false);
+        cbReleaseDateDay.setVisible(false);
+        lblAddMonthRelease.setVisible(false);
+        cbReleaseDateMonth.setVisible(false);
+        lblDateYearRelease.setVisible(false);
+        tfReleaseDateYear.setVisible(false);
+        cbNewProjLeader.setVisible(false);
+        lblChooseLeaderAddGP.setVisible(false);
+        lblAddProjectText.setVisible(false);
 	}
     
     /**
@@ -2212,10 +2475,20 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbListAllProjectleaders;
     private javax.swing.JComboBox<String> cbListAllSpecialists;
     private javax.swing.JComboBox<String> cbListPlatforms;
+    private javax.swing.JComboBox<String> cbNewProjLeader;
+    private javax.swing.JComboBox<String> cbReleaseDateDay;
+    private javax.swing.JComboBox<String> cbReleaseDateMonth;
+    private javax.swing.JComboBox<String> cbStartDateDay;
+    private javax.swing.JComboBox<String> cbStartDateMonth;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lblAddDay;
+    private javax.swing.JLabel lblAddDayRelease;
     private javax.swing.JLabel lblAddFirstName;
     private javax.swing.JLabel lblAddLastName;
     private javax.swing.JLabel lblAddMail;
+    private javax.swing.JLabel lblAddMonth;
+    private javax.swing.JLabel lblAddMonthRelease;
+    private javax.swing.JLabel lblAddProjectText;
     private javax.swing.JLabel lblAddTelephone;
     private javax.swing.JLabel lblChangeMailHired;
     private javax.swing.JLabel lblChangeNameHired;
@@ -2227,10 +2500,13 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel lblChooseHired;
     private javax.swing.JLabel lblChooseHiredPosition;
     private javax.swing.JLabel lblChooseHiredRemove;
+    private javax.swing.JLabel lblChooseLeaderAddGP;
     private javax.swing.JLabel lblChoosePlatform;
     private javax.swing.JLabel lblChooseProjectleader;
     private javax.swing.JLabel lblChooseSpecialist;
     private javax.swing.JLabel lblChooseUpgrade;
+    private javax.swing.JLabel lblDateYear;
+    private javax.swing.JLabel lblDateYearRelease;
     private javax.swing.JLabel lblErrorMessageCompetence;
     private javax.swing.JLabel lblErrorMessageGameProject;
     private javax.swing.JLabel lblErrorMessageHired;
@@ -2281,8 +2557,6 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JTextArea tasearchResultGameProject;
     private javax.swing.JTextArea tasearchResultPlatform;
     private javax.swing.JTextField tfAddFirstName;
-    private javax.swing.JTextField tfAddGpReleaseDate;
-    private javax.swing.JTextField tfAddGpStartDate;
     private javax.swing.JTextField tfAddLastName;
     private javax.swing.JTextField tfAddMail;
     private javax.swing.JTextField tfAddTelephone;
@@ -2293,6 +2567,8 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JTextField tfChangeTelephoneHired;
     private javax.swing.JTextField tfGpAddName;
     private javax.swing.JTextField tfGpChangeName;
+    private javax.swing.JTextField tfReleaseDateYear;
+    private javax.swing.JTextField tfStartDateYear;
     private javax.swing.JTextField tfsearchField;
     private javax.swing.JTextField tfsearchFieldCompetence;
     private javax.swing.JTextField tfsearchFieldGameProject;

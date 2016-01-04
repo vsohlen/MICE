@@ -557,6 +557,96 @@ public class DbClass {
             return match;
         }
     }
+    
+    /**Generates a new SID to be used when adding a new project
+     * @return 
+    */
+    public int generateSID ()
+    {
+    try 
+        {
+            int newSID = Integer.parseInt(idb.getAutoIncrement("SPELPROJEKT", "SID"));
+            return newSID;
+        }
+    catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return -1;
+        }
+    }
+    
+     public void addProject(int newSID, String beteckning, String startdatum, String releasedatum, int leaderAID)
+    {
+	String sqlFraga = "insert into  SPELPROJEKT" + 
+			  "(SID, BETECKNING, STARTDATUM, RELEASEDATUM, AID) " + 
+			  "values (" + newSID + ", '" + beteckning + "', '" + startdatum + "', '" + releasedatum + "'," + leaderAID + ")";
+					  
+	try 
+	{
+		idb.insert(sqlFraga);
+	}
+	catch(InfException e)
+	{
+		System.out.println(e.getMessage());
+	}
+    }
+
+
+ public ArrayList<HashMap<String, String>> listAllProjectNames()			
+{
+	String sqlFraga = "select * from SPELPROJEKT";
+	
+	try
+	{
+		ArrayList<HashMap<String, String>> allProjectNames = idb.fetchRows(sqlFraga);
+		return allProjectNames;
+	}
+	catch (InfException e)
+	{
+		System.out.println(e.getMessage());
+		return null;
+	}
+}
+
+
+
+
+  public ArrayList<HashMap<String, String>> listReleasedGames()
+    {
+        String sqlFraga = "select sid, beteckning from SPELPROJEKT\n" +
+                          "where releasedatum < CURRENT_DATE;";
+        
+        try
+        {
+            ArrayList<HashMap<String, String>> ReleasedGames = idb.fetchRows(sqlFraga);
+            return ReleasedGames;
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    
+    }
+    
+    public ArrayList<HashMap<String, String>> listUnderDevelopment()
+    {
+        String sqlFraga = "select sid, beteckning from SPELPROJEKT\n" +
+                          "where releasedatum > CURRENT_DATE;";
+        
+        try
+        {
+            ArrayList<HashMap<String, String>> ReleasedGames = idb.fetchRows(sqlFraga);
+            return ReleasedGames;
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    
+    }
+
           
 }
     

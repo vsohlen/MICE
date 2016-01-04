@@ -14,7 +14,8 @@ import java.util.*; //Import of the java util package
  */
 public class MainPage extends javax.swing.JFrame {
 
-    private boolean isAdmin;
+    private boolean isAdmin;        //a field that  decides what the user have access to
+    
     /**
      * Creates new form MainPage
      * @param isAdmin
@@ -491,12 +492,6 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
-        lblErrorMessageHiredProjekt.setText("jLabel1");
-
-        lblErrorMessageHiredGP.setText("jLabel1");
-
-        lblErrorMessageHiredUpdate.setText("jLabel1");
-
         javax.swing.GroupLayout paneUpdateHiredLayout = new javax.swing.GroupLayout(paneUpdateHired);
         paneUpdateHired.setLayout(paneUpdateHiredLayout);
         paneUpdateHiredLayout.setHorizontalGroup(
@@ -588,7 +583,7 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(btnConfirmUpdatePosition))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblErrorMessageHiredUpdate)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         tpSubMenuHired.addTab("Uppdatera", paneUpdateHired);
@@ -1127,37 +1122,44 @@ public class MainPage extends javax.swing.JFrame {
      * @param evt 
      */
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        String selectedFunction = cbFunctions.getSelectedItem().toString();
-               //valid.containsString(tfsearchField.getText())
-        switch (selectedFunction)
+        try
         {
-            case "Sök anställd i ett projekt" :
-                listHired();
-                hideHiredChangeFields();
-                break;
-            case "Sök anställd som leder projekt":
-                listProjects();
-                hideHiredChangeFields();
-                break;  
-            case "Ändra information om en anställd":
-                showHiredChangeFields();
-                updateCBs();
-                tpSubMenuHired.setSelectedIndex(0);
-                break;
-            case "Ta bort anställd" :
-                showHiredRemoveFields();
-                tpSubMenuHired.setSelectedIndex(1);
-                break;
-            case "Lägg till ny anställd" :
-                showHiredAddFields();
-                tpSubMenuHired.setSelectedIndex(2);
-                break;
-            case "Uppdatera anställd" : 
-                showHiredUpdateFields();
-                showHiredChangeFields();
-                updateCBs();
-                tpSubMenuHired.setSelectedIndex(3);
-                break;       
+            String selectedFunction = cbFunctions.getSelectedItem().toString();
+                   //valid.containsString(tfsearchField.getText())
+            switch (selectedFunction)
+            {
+                case "Sök anställd i ett projekt" :
+                    listHired();
+                    hideHiredChangeFields();
+                    break;
+                case "Sök anställd som leder projekt":
+                    listProjects();
+                    hideHiredChangeFields();
+                    break;  
+                case "Ändra information om en anställd":
+                    showHiredChangeFields();
+                    updateCBs();
+                    tpSubMenuHired.setSelectedIndex(0);
+                    break;
+                case "Ta bort anställd" :
+                    showHiredRemoveFields();
+                    tpSubMenuHired.setSelectedIndex(1);
+                    break;
+                case "Lägg till ny anställd" :
+                    showHiredAddFields();
+                    tpSubMenuHired.setSelectedIndex(2);
+                    break;
+                case "Uppdatera anställd" : 
+                    showHiredUpdateFields();
+                    showHiredChangeFields();
+                    updateCBs();
+                    tpSubMenuHired.setSelectedIndex(3);
+                    break;       
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
         }
     }//GEN-LAST:event_btnSearchActionPerformed
 
@@ -1166,78 +1168,167 @@ public class MainPage extends javax.swing.JFrame {
     */
     public void addProjectleadersToCB()
     {
-	DbClass database = new DbClass();
+        try
+        {
+            DbClass database = new DbClass();
 	
-	ArrayList<HashMap<String, String>> allLeaders = database.listAllLeaders();
-	for (int i = 0; i < allLeaders.size(); i++)
-	{
-		String aid = allLeaders.get(i).get("AID");
-		String name = allLeaders.get(i).get("NAMN");
-		cbListAllProjectleaders.addItem(aid + ", " + name);
-	}
+            ArrayList<HashMap<String, String>> allLeaders = database.listAllLeaders();
+            for (int i = 0; i < allLeaders.size(); i++)
+            {
+                String aid = allLeaders.get(i).get("AID");
+                String name = allLeaders.get(i).get("NAMN");
+                cbListAllProjectleaders.addItem(aid + ", " + name);
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
     
+    /**
+     * Set the access on FunctionsHired
+     */
     public void initAdminFunctionsHired()
     {
-        
-        cbFunctions.addItem("Ändra information om en anställd");
-        cbFunctions.addItem("Ta bort anställd");
-        cbFunctions.addItem("Lägg till ny anställd");
-        cbFunctions.addItem("Uppdatera anställd");
+        try
+        {
+            cbFunctions.addItem("Ändra information om en anställd");
+            cbFunctions.addItem("Ta bort anställd");
+            cbFunctions.addItem("Lägg till ny anställd");
+            cbFunctions.addItem("Uppdatera anställd");
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
     
+    /**
+     * Set the access on FunctionsHired
+     */
     public void initHiredFunctionsHired()
     {
-        
-        cbFunctions.addItem("Sök anställd som leder projekt");
-        cbFunctions.addItem("Sök anställd i ett projekt");
+        try
+        {
+            cbFunctions.addItem("Sök anställd som leder projekt");
+            cbFunctions.addItem("Sök anställd i ett projekt");
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
     
+    /**
+     * Set the access on FunctionsGP
+     */
     public void initAdminFunctionsGameProject ()
     {
-        
-        cbFunctionsGameProject.addItem("Lägg till spelutvecklingsprojekt");
-        cbFunctionsGameProject.addItem("Uppdatera information om ett specifikt projekt");
+        try
+        {
+            cbFunctionsGameProject.addItem("Lägg till spelutvecklingsprojekt");
+            cbFunctionsGameProject.addItem("Uppdatera information om ett specifikt projekt");
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
     
+    /**
+     * Set the access on FunctionsGP
+     */
     public void initHiredFunctionsGameProject ()
     {
-        
-        cbFunctionsGameProject.addItem("Lista de spelprojekt som har släppts");
-        cbFunctionsGameProject.addItem("Lista de spelprojekt som är under utveckling");
-        cbFunctionsGameProject.addItem("Visa vilka plattformar ett spel utvecklas till");
-        cbFunctionsGameProject.addItem("Visa vem som leder/har lett ett specifikt projekt");
+        try
+        {
+            cbFunctionsGameProject.addItem("Lista de spelprojekt som har släppts");
+            cbFunctionsGameProject.addItem("Lista de spelprojekt som är under utveckling");
+            cbFunctionsGameProject.addItem("Visa vilka plattformar ett spel utvecklas till");
+            cbFunctionsGameProject.addItem("Visa vem som leder/har lett ett specifikt projekt");
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
     
+    /**
+     * Set the access on FunctionsPlatform
+     */
     public void initAdminFunctionsPlatform ()
     {
-        
-        cbFunctionsPlatform.addItem("Uppdatera information om vilka plattformar ett spelprojekt omfattar");
+        try
+        {
+            cbFunctionsPlatform.addItem("Uppdatera information om vilka plattformar ett spelprojekt omfattar");
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
     
+    /**
+     * Set the access on FunctionsPlatform
+     */
     public void initHiredFunctionsPlatform ()
     {
-        
-        cbFunctionsPlatform.addItem("Lista de spel som har släppts till plattformen");
+        try
+        {
+            cbFunctionsPlatform.addItem("Lista de spel som har släppts till plattformen");
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
     
+    /**
+     * Set the access on FunctionsCompetence
+     */
     public void initAdminFunctionsCompetence ()
     {
-        
-        cbFunctionsCompetence.addItem("Uppdatera information om vilka domäner en specialist har kompetens för");
+        try
+        {
+            cbFunctionsCompetence.addItem("Uppdatera information om vilka domäner en specialist har kompetens för");
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
     
+    /**
+     * Set the access on FunctionsCompetence
+     */
     public void initHiredFunctionsCompetence ()
     {
-        
-        cbFunctionsCompetence.addItem("Lista den kompetens en specifik specialist har");
+        try
+        {
+            cbFunctionsCompetence.addItem("Lista den kompetens en specifik specialist har");
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
     
+    /**
+     * button for the remove-hired-function
+     */
     private void btnRemoveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRemoveMouseClicked
-        String currentHired = cbListAllHiredRemove.getSelectedItem().toString();
-        String deleteAID = (currentHired.split(",")[0]);
-        removeHired(deleteAID);
-        updateCBs();
+        try
+        {
+            String currentHired = cbListAllHiredRemove.getSelectedItem().toString();
+            String deleteAID = (currentHired.split(",")[0]);
+            removeHired(deleteAID);
+            updateCBs();
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }//GEN-LAST:event_btnRemoveMouseClicked
 
     /**
@@ -1246,92 +1337,185 @@ public class MainPage extends javax.swing.JFrame {
      */
     private void removeHired (String deleteAID)             //Validering krävs 
     {
-      //Remove the person selected in the combobox.
-      DbClass database = new DbClass();
-                
-        database.deleteHired(deleteAID);
+        try
+        {
+            //Remove the person selected in the combobox.
+            DbClass database = new DbClass();
+
+            database.deleteHired(deleteAID);
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }          
     
+    /**
+     * Adds items to a combobox
+     */
     private void listHiredToCBRemove()
     {
-   DbClass database = new DbClass();
-        //Fetches the names of all of the staff, and holds all info in a cb.
-        ArrayList<HashMap<String, String>> allHired = database.listAllHired();
-        for (int i = 0; i < allHired.size(); i++)
+        try
         {
-            String aid = allHired.get(i).get("AID");
-            String name = allHired.get(i).get("NAMN");
-            cbListAllHiredRemove.addItem(aid + ", " + name);
+            DbClass database = new DbClass();
+            //Fetches the names of all of the staff, and holds all info in a cb.
+            ArrayList<HashMap<String, String>> allHired = database.listAllHired();
+            for (int i = 0; i < allHired.size(); i++)
+            {
+                String aid = allHired.get(i).get("AID");
+                String name = allHired.get(i).get("NAMN");
+                cbListAllHiredRemove.addItem(aid + ", " + name);
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
         }
     }
     
+    /**
+     * Update all the comboboxes, so that the latset changes always are showing
+     */
     public void updateCBs ()
     {
-        cbListAllHiredRemove.removeAllItems();
-        listHiredToCBRemove();
-        cbListAllProjectleaders.removeAllItems();
-        addProjectleadersToCB();
-        cbListAllGameProjects.removeAllItems();
-        addProjectsToCB();
-        cbListAllHired.removeAllItems();
-        addHiredToCB();
-        cbListAllHiredPosition.removeAllItems();
-        addHiredPosition();
-        cbAllGameProjects.removeAllItems();
-        addGameProjectsToCB();
-        cbListAllPlatforms.removeAllItems();
-        addPlatformsToUpdateCB();
-        cbListPlatforms.removeAllItems();
-        addPlatformsToCB();
-        cbListAllGamesPlatform.removeAllItems();
-        addGamesPlatformToCB();
-        cbNewProjLeader.removeAllItems();
-        addLeadersToCbNewProjLeader();
-        cbListAllGames.removeAllItems();
-        addGamesToCB();
+        try
+        {
+            cbListAllHiredRemove.removeAllItems();
+            listHiredToCBRemove();
+            cbListAllProjectleaders.removeAllItems();
+            addProjectleadersToCB();
+            cbListAllGameProjects.removeAllItems();
+            addProjectsToCB();
+            cbListAllHired.removeAllItems();
+            addHiredToCB();
+            cbListAllHiredPosition.removeAllItems();
+            addHiredPosition();
+            cbAllGameProjects.removeAllItems();
+            addGameProjectsToCB();
+            cbListAllPlatforms.removeAllItems();
+            addPlatformsToUpdateCB();
+            cbListPlatforms.removeAllItems();
+            addPlatformsToCB();
+            cbListAllGamesPlatform.removeAllItems();
+            addGamesPlatformToCB();
+            cbNewProjLeader.removeAllItems();
+            addLeadersToCbNewProjLeader();
+            cbListAllGames.removeAllItems();
+            addGamesToCB();
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
     
+    /**
+     * clears the textfields so that the latest changes are showing
+     */
     public void clearTFs()
     {
-        tasearchResultGameProject.setText("");
+        try
+        {
+            tasearchResultGameProject.setText("");
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
     
-    
+    /**
+     * button for confirming an update of an employee
+     * @param evt 
+     */
     private void btnConfirmUpdateHiredMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmUpdateHiredMouseClicked
-        // Update a specialist to show a new project said specialist is working on.  
-        DbClass database = new DbClass();
-        
-        String specialist = cbListAllSpecialists.getSelectedItem().toString();
-        String project = cbListAllGameProjectsUpdate.getSelectedItem().toString();
-        database.updateSpecialistProject(specialist, project);
-        
+        try
+        {
+            // Update a specialist to show a new project said specialist is working on.  
+            DbClass database = new DbClass();
+
+            String specialist = cbListAllSpecialists.getSelectedItem().toString();
+            int aid = Integer.parseInt(specialist.split(",")[0]);
+            String project = cbListAllGameProjectsUpdate.getSelectedItem().toString();
+            int sid = Integer.parseInt(project.split(",")[0]);
+            database.updateSpecialistProject(aid, sid);
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }//GEN-LAST:event_btnConfirmUpdateHiredMouseClicked
 
+    /**
+     * button for confirming an remove of an emlpoyee
+     * @param evt 
+     */
     private void btnConfirmUpdateRemovedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmUpdateRemovedMouseClicked
-        // Update a specialist to show a project that the specialist is no longer
-        //working on.
-        DbClass database = new DbClass();
-         
-        String specialist = cbListAllSpecialists.getSelectedItem().toString();
-        String project = cbListAllGameProjectsUpdate.getSelectedItem().toString();
-        database.deleteSpecialistProject(specialist, project);
-        
+        try
+        {
+            // Update a specialist to show a project that the specialist is no longer
+            //working on.
+            DbClass database = new DbClass();
+
+            String specialist = cbListAllSpecialists.getSelectedItem().toString();
+            int aid = Integer.parseInt(specialist.split(",")[0]);
+            String project = cbListAllGameProjectsUpdate.getSelectedItem().toString();
+            int sid = Integer.parseInt(project.split(",")[0]);
+            database.deleteSpecialistProject(aid, sid);
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }//GEN-LAST:event_btnConfirmUpdateRemovedMouseClicked
 
+    /**
+     * butten that changes/adds an employee
+     * @param evt 
+     */
     private void btnChangeHiredAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChangeHiredAddMouseClicked
-        //add a hired person
-        addNewHired();
-        updateCBs();
+        try
+        {
+            //add a hired person
+            addNewHired();
+            updateCBs();
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }//GEN-LAST:event_btnChangeHiredAddMouseClicked
 
+    /**
+    *button for confirming an update of an employee 
+    * @param evt 
+    */
     private void btnConfirmUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmUpdateMouseClicked
-        updateHired();
+        try
+        {
+            updateHired();
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }//GEN-LAST:event_btnConfirmUpdateMouseClicked
 
+    /**
+     * button for confirming an employmentform
+     * @param evt 
+     */
     private void btnConfirmUpdatePositionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmUpdatePositionMouseClicked
-        //update the employee's employment-form
-        updateHiredForm();
-        updateCBs();
+        try
+        {
+            //update the employee's employment-form
+            updateHiredForm();
+            updateCBs();
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }//GEN-LAST:event_btnConfirmUpdatePositionMouseClicked
 
     /**
@@ -1339,20 +1523,26 @@ public class MainPage extends javax.swing.JFrame {
      * @param evt 
      */
     private void btnChooseChangeHiredMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChooseChangeHiredMouseClicked
-        String currentHired = cbListAllHired.getSelectedItem().toString();
-        int aid = Integer.parseInt(currentHired.split(",")[0]);
+        try
+        {
+            String currentHired = cbListAllHired.getSelectedItem().toString();
+            int aid = Integer.parseInt(currentHired.split(",")[0]);
 
-        DbClass database = new DbClass();
+            DbClass database = new DbClass();
 
-        //populate textfields with existing data
-        HashMap<String, String> hired = database.listHired(aid);
-        String name = hired.get("NAMN");
-        tfChangeNameHired.setText(name);
-        String phone = hired.get("TELEFON");
-        tfChangeTelephoneHired.setText(phone);
-        String mail = hired.get("MAIL");
-        tfChangeMailHired.setText(mail);
-
+            //populate textfields with existing data
+            HashMap<String, String> hired = database.listHired(aid);
+            String name = hired.get("NAMN");
+            tfChangeNameHired.setText(name);
+            String phone = hired.get("TELEFON");
+            tfChangeTelephoneHired.setText(phone);
+            String mail = hired.get("MAIL");
+            tfChangeMailHired.setText(mail);
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }//GEN-LAST:event_btnChooseChangeHiredMouseClicked
 
     /**
@@ -1360,35 +1550,59 @@ public class MainPage extends javax.swing.JFrame {
      * @param evt 
      */
     private void btnChangeHiredMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChangeHiredMouseClicked
-        String currentHired = cbListAllHired.getSelectedItem().toString();
-        int aid = Integer.parseInt(currentHired.split(",")[0]);
-        changeInfoAboutHired(aid);
+        try
+        {
+            String currentHired = cbListAllHired.getSelectedItem().toString();
+            int aid = Integer.parseInt(currentHired.split(",")[0]);
+            changeInfoAboutHired(aid);
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }//GEN-LAST:event_btnChangeHiredMouseClicked
 
+    /**
+     * Event on a combobox that fixes changes beteween different fields and buttons etc
+     * @param evt 
+     */
     private void cbFunctionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFunctionsActionPerformed
-        String selectedText = cbFunctions.getSelectedItem().toString();
-        if (selectedText.equals("Sök anställd som leder projekt"))
+        try
         {
-            tfsearchField.setVisible(true);
-            btnSearch.setText("OK");
-        }    
-        else if (selectedText.equals("Sök anställd i ett projekt"))
-        {
-            tfsearchField.setVisible(true);
-            btnSearch.setText("OK");
+            String selectedText = cbFunctions.getSelectedItem().toString();
+            if (selectedText.equals("Sök anställd som leder projekt"))
+            {
+                tfsearchField.setVisible(true);
+                btnSearch.setText("OK");
+            }    
+            else if (selectedText.equals("Sök anställd i ett projekt"))
+            {
+                tfsearchField.setVisible(true);
+                btnSearch.setText("OK");
+            }
+            else
+            {
+                tfsearchField.setVisible(false);
+                btnSearch.setText("Gå");
+            }
         }
-        else
+        catch(Exception e)
         {
-            tfsearchField.setVisible(false);
-            btnSearch.setText("Gå");
+            System.out.println(e.getMessage());
         }
     }//GEN-LAST:event_cbFunctionsActionPerformed
 
+    /**
+     * Button for choosing what action to perform in the gameproject-tab
+     * @param evt 
+     */
     private void btnSearchGameProjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchGameProjectActionPerformed
-        String selectedFunction = cbFunctionsGameProject.getSelectedItem().toString();
-               
-        switch (selectedFunction)
+        try
         {
+            String selectedFunction = cbFunctionsGameProject.getSelectedItem().toString();
+               
+            switch (selectedFunction)
+            {
             case "Visa vem som leder/har lett ett specifikt projekt" :
                 showLeader();
                 updateCBs();
@@ -1421,9 +1635,18 @@ public class MainPage extends javax.swing.JFrame {
                 addGamesToCB();
                 updateCBs();
                 break;       
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
         }
     }//GEN-LAST:event_btnSearchGameProjectActionPerformed
 
+    /**
+     * Event for deciding different changes based on different functions
+     * @param evt 
+     */
     private void cbFunctionsGameProjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFunctionsGameProjectActionPerformed
         //changes the btn text based on what action is selected and hides/shows the search-field
         
@@ -1467,76 +1690,143 @@ public class MainPage extends javax.swing.JFrame {
       
     }//GEN-LAST:event_cbFunctionsGameProjectActionPerformed
 
+    /**
+     * button that chooses what gameproject to change
+     * @param evt 
+     */
     private void btnChooseChangeGameProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChooseChangeGameProjectMouseClicked
-        // Gets all the existing data about a game and fills the text-fields
+        try
+        {
+            // Gets all the existing data about a game and fills the text-fields
         
-        String choosenGame = cbListAllGames.getSelectedItem().toString();
-        int sid = Integer.parseInt(choosenGame.split(",")[0]);
+            String choosenGame = cbListAllGames.getSelectedItem().toString();
+            int sid = Integer.parseInt(choosenGame.split(",")[0]);
 
-        DbClass database = new DbClass();
+            DbClass database = new DbClass();
 
-        //populate textfields with existing data
-        HashMap<String, String> games = database.listProject(sid);
-        
-        String name = games.get("BETECKNING");
-        tfGpChangeName.setText(name);
-        String startDate = games.get("STARTDATUM");
-        tfChangeGpStartDate.setText(startDate);
-        String releaseDate = games.get("RELEASEDATUM");
-        tfChangeGpReleaseDate.setText(releaseDate);
+            //populate textfields with existing data
+            HashMap<String, String> games = database.listProject(sid);
+
+            String name = games.get("BETECKNING");
+            tfGpChangeName.setText(name);
+            String startDate = games.get("STARTDATUM");
+            tfChangeGpStartDate.setText(startDate);
+            String releaseDate = games.get("RELEASEDATUM");
+            tfChangeGpReleaseDate.setText(releaseDate);
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }//GEN-LAST:event_btnChooseChangeGameProjectMouseClicked
 
+    /**
+     * button that performes the changes on a gameproject
+     * @param evt 
+     */
     private void btnChangeGameProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChangeGameProjectMouseClicked
-        // Changes the info about the game
-        String currentGames = cbListAllGames.getSelectedItem().toString();      //Det här med kod-duplicering.. Kolla "btnChooseChangeMouseClicked metoden...
-        int sid = Integer.parseInt(currentGames.split(",")[0]);
-        changeInfoAboutGame(sid);
+        try
+        {
+           // Changes the info about the game
+            String currentGames = cbListAllGames.getSelectedItem().toString();  
+            int sid = Integer.parseInt(currentGames.split(",")[0]);
+            changeInfoAboutGame(sid); 
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }//GEN-LAST:event_btnChangeGameProjectMouseClicked
 
+    /**
+     * Event on a combobox that decides different settings based on which function that is choosed
+     * @param evt 
+     */
     private void cbFunctionsPlatformActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFunctionsPlatformActionPerformed
-        String selectedFunction = cbFunctionsPlatform.getSelectedItem().toString();
-               
-        switch (selectedFunction)
+        
+        try
         {
-            case "Lista de spel som har släppts till plattformen" :
-                cbListPlatforms.setVisible(true);
-                btnSearchPlatform.setText("OK");
-                hidePlatformUpdateFields();
-                addPlatformsToCB();
-                break;
-            case "Uppdatera information om vilka plattformar ett spelprojekt omfattar" :
-                cbListPlatforms.setVisible(false);
-                btnSearchPlatform.setText("Gå");
-                break;
+            String selectedFunction = cbFunctionsPlatform.getSelectedItem().toString();
+               
+            switch (selectedFunction)
+            {
+                case "Lista de spel som har släppts till plattformen" :
+                    cbListPlatforms.setVisible(true);
+                    btnSearchPlatform.setText("OK");
+                    hidePlatformUpdateFields();
+                    addPlatformsToCB();
+                    break;
+                case "Uppdatera information om vilka plattformar ett spelprojekt omfattar" :
+                    cbListPlatforms.setVisible(false);
+                    btnSearchPlatform.setText("Gå");
+                    break;
+            }    
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
         }
     }//GEN-LAST:event_cbFunctionsPlatformActionPerformed
 
+    /**
+     * butten that shows what different actions you can perform on the platform-tab
+     * @param evt 
+     */
     private void btnSearchPlatformActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchPlatformActionPerformed
-        String selectedFunction = cbFunctionsPlatform.getSelectedItem().toString();
-               
-        switch (selectedFunction)
+        try
         {
-            case "Uppdatera information om vilka plattformar ett spelprojekt omfattar" :
-                showPlatformUpdateFields();
-                addPlatformsToUpdateCB();
-                addGamesPlatformToCB();
-                updateCBs();
-                break;
-            case "Lista de spel som har släppts till plattformen" :
-                hidePlatformUpdateFields();
-                listGameForPlatform();
-                updateCBs();
-                break;
+            String selectedFunction = cbFunctionsPlatform.getSelectedItem().toString();
+               
+            switch (selectedFunction)
+            {
+                case "Uppdatera information om vilka plattformar ett spelprojekt omfattar" :
+                    showPlatformUpdateFields();
+                    addPlatformsToUpdateCB();
+                    addGamesPlatformToCB();
+                    updateCBs();
+                    break;
+                case "Lista de spel som har släppts till plattformen" :
+                    hidePlatformUpdateFields();
+                    listGameForPlatform();
+                    updateCBs();
+                    break;
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
         }
     }//GEN-LAST:event_btnSearchPlatformActionPerformed
 
+    /**
+     * button for confirming an update for the platform
+     * @param evt 
+     */
     private void btnConfirmUpdatePlatformMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmUpdatePlatformMouseClicked
-        updatePlatformGame();
+        try
+        {
+            updatePlatformGame();
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }//GEN-LAST:event_btnConfirmUpdatePlatformMouseClicked
 
+    /**
+     * button for adding a new gameproject
+     * @param evt 
+     */
     private void btnAddGameProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddGameProjectMouseClicked
-        //Lägg till nytt spelprojekt.
-        addNewProject();
+        try
+        {
+            //Lägg till nytt spelprojekt.
+            addNewProject();
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }//GEN-LAST:event_btnAddGameProjectMouseClicked
 
     /**
@@ -1544,188 +1834,301 @@ public class MainPage extends javax.swing.JFrame {
     */
     public void updateHired()             //Validering krävs 
     {
-	DbClass database = new DbClass();
-	String currentLeader = cbListAllProjectleaders.getSelectedItem().toString();
-	String currentGame = cbListAllGameProjects.getSelectedItem().toString();
-	int aid = Integer.parseInt(currentLeader.split(",")[0]);
-	int game = Integer.parseInt(currentGame.split(",")[0]);
-        //String theLeaders = cbListAllProjectleaders.getSelectedItem().toString();
-        boolean match = false;
-        
-	HashMap<String, String> thisLeader = database.listALeader(aid);
-	for (String leader: thisLeader.keySet())
+        try
         {
-            if (!currentLeader.equals(leader))
+            DbClass database = new DbClass();
+            String currentLeader = cbListAllProjectleaders.getSelectedItem().toString();
+            String currentGame = cbListAllGameProjects.getSelectedItem().toString();
+            int aid = Integer.parseInt(currentLeader.split(",")[0]);
+            int game = Integer.parseInt(currentGame.split(",")[0]);
+            boolean match = false;
+
+            HashMap<String, String> thisLeader = database.listALeader(aid);
+            for (String leader: thisLeader.keySet())
             {
-                match = true;
+                if (!currentLeader.equals(leader))
+                {
+                    match = true;
+                }
             }
-        }
-        
-        if(match)
+            if(match)
             {
-		database.updateHired(aid, game);
-		System.out.println("Uppdateringen utförd");
+                database.updateHired(aid, game);
+                System.out.println("Uppdateringen utförd");
             }
             else
             {
-		System.out.println("Ett felmeddelande här");
+                System.out.println("Ett felmeddelande här");
             }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
     
+    /**
+     * adds items to a combobox
+     */
     public void addProjectsToCBUpdate()			
-    {       //Adds all the projects a specialist can work on to a cb.
-	DbClass database = new DbClass();
-	
-	ArrayList<HashMap<String, String>> allProjects = database.listAllProjects();
-	for (int i = 0; i < allProjects.size(); i++)
-	{
-		String sid = allProjects.get(i).get("SID");
-		String beteckning = allProjects.get(i).get("BETECKNING");
-		cbListAllGameProjectsUpdate.addItem(sid + "," + beteckning);
-	}
+    {   
+        try
+        {
+            //Adds all the projects a specialist can work on to a cb.
+            DbClass database = new DbClass();
+
+            ArrayList<HashMap<String, String>> allProjects = database.listAllProjects();
+            for (int i = 0; i < allProjects.size(); i++)
+            {
+                String sid = allProjects.get(i).get("SID");
+                String beteckning = allProjects.get(i).get("BETECKNING");
+                cbListAllGameProjectsUpdate.addItem(sid + "," + beteckning);
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
     
-    
+    /**
+     * updates the employment-form
+     */
     public void updateHiredForm()             //Validering krävs 
     {
-	
-	//Add all the employment-states to a cb
-	String employment = cbHiredForm.getSelectedItem().toString();
-	switch (employment)
-	{
-		case "Specialist" :
-                    updateEmploymentToSpecialist();
-                    break;
-		case "Projektledare" :
-                    updateEmploymentToProjectleader();
-                    break;
-	}
+	try
+        {
+            //Add all the employment-states to a cb
+            String employment = cbHiredForm.getSelectedItem().toString();
+            switch (employment)
+            {
+            case "Specialist" :
+                updateEmploymentToSpecialist();
+                break;
+            case "Projektledare" :
+                updateEmploymentToProjectleader();
+                break;
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
     
+    /**
+     * updates the employment to specialist
+     */
     public void updateEmploymentToSpecialist ()             //Validering krävs      
     {
-        DbClass database = new DbClass();
+        try
+        {
+            DbClass database = new DbClass();
         
-        String currentEmployee = cbListAllHiredPosition.getSelectedItem().toString();
-        int aid = Integer.parseInt(currentEmployee.split(",")[0]);
-        if (!currentEmployee.isEmpty())
-        {
-            database.insertToSpecialist(aid);
-            lblErrorMessageHiredUpdate.setText("Uppdateringen utförd");
+            String currentEmployee = cbListAllHiredPosition.getSelectedItem().toString();
+            int aid = Integer.parseInt(currentEmployee.split(",")[0]);
+            if (!currentEmployee.isEmpty())
+            {
+                database.insertToSpecialist(aid);
+                lblErrorMessageHiredUpdate.setText("Uppdateringen utförd");
+            }
+            else 
+            {
+                lblErrorMessageHiredUpdate.setText("Uppdateringen utfördes ej");
+            }
         }
-        else 
+        catch (Exception e)
         {
-            lblErrorMessageHiredUpdate.setText("Uppdateringen utfördes ej");
-        }
-             
+            System.out.println();
+        }   
     }
     
+    /**
+     * updates the employment tp projectleader
+     */
     public void updateEmploymentToProjectleader()             //Validering krävs 
     {
-        DbClass database = new DbClass();
-        String currentEmployee = cbListAllHiredPosition.getSelectedItem().toString();
-        int aid = Integer.parseInt(currentEmployee.split(",")[0]);
-        
-        if(!currentEmployee.isEmpty())
+        try
         {
-            database.insertToProjectleader(aid);
-            lblErrorMessageHiredUpdate.setText("Uppdateringen utförd");
+            DbClass database = new DbClass();
+            String currentEmployee = cbListAllHiredPosition.getSelectedItem().toString();
+            int aid = Integer.parseInt(currentEmployee.split(",")[0]);
+
+            if(!currentEmployee.isEmpty())
+            {
+                database.insertToProjectleader(aid);
+                lblErrorMessageHiredUpdate.setText("Uppdateringen utförd");
+            }
+            else 
+            {
+                lblErrorMessageHiredUpdate.setText("Uppdateringen utfördes ej");
+            }
         }
-        else 
+        catch (Exception e)
         {
-            lblErrorMessageHiredUpdate.setText("Uppdateringen utfördes ej");
+            System.out.println(e.getMessage());
         }
-        
     }
       
+    /**
+     * add items to a combobox
+     */
     public void addPlatformsToUpdateCB()
     {
-        DbClass database = new DbClass();
-        ArrayList<HashMap<String, String>> allPlatforms = database.listPlatforms();
-        for (int i = 0; i<allPlatforms.size(); i++)
+        try
         {
-            String pid = allPlatforms.get(i).get("PID");
-            String benamning = allPlatforms.get(i).get("BENAMNING");
-            cbListAllPlatforms.addItem(pid + "," + benamning);
+            DbClass database = new DbClass();
+            ArrayList<HashMap<String, String>> allPlatforms = database.listPlatforms();
+            for (int i = 0; i<allPlatforms.size(); i++)
+            {
+                String pid = allPlatforms.get(i).get("PID");
+                String benamning = allPlatforms.get(i).get("BENAMNING");
+                cbListAllPlatforms.addItem(pid + "," + benamning);
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
         }
     }
     
+    /**
+     * add items to a combobox
+     */
     public void addProjectsToCB()			
-    {       //Adds all the projects a specialist can work on to a cb.
-	DbClass database = new DbClass();
-	
-	ArrayList<HashMap<String, String>> allProjects = database.listAllProjects();
-	for (int i = 0; i < allProjects.size(); i++)
-	{
-		String sid = allProjects.get(i).get("SID");
-		String beteckning = allProjects.get(i).get("BETECKNING");
-		cbListAllGameProjects.addItem(sid + "," + beteckning);
-	}
+    {       
+        try
+        {
+            //Adds all the projects a specialist can work on to a cb.
+            DbClass database = new DbClass();
+
+            ArrayList<HashMap<String, String>> allProjects = database.listAllProjects();
+            for (int i = 0; i < allProjects.size(); i++)
+            {
+                String sid = allProjects.get(i).get("SID");
+                String beteckning = allProjects.get(i).get("BETECKNING");
+                cbListAllGameProjects.addItem(sid + "," + beteckning);
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
     
+    /**
+     * add items to a combobox
+     */
     public void addPlatformsToCB ()
     {
-        DbClass database = new DbClass();
-        
-        ArrayList<HashMap<String, String>> allPlatforms = database.listPlatforms();
-	for (int i = 0; i < allPlatforms.size(); i++)
-	{
-		String pid = allPlatforms.get(i).get("PID");
-		String benamning = allPlatforms.get(i).get("BENAMNING");
-		cbListPlatforms.addItem(pid + "," + benamning);
-	}
-    }
-    
-    public void addGamesPlatformToCB()
-    {
-        DbClass database = new DbClass();
-        
-        ArrayList<HashMap<String,String>> allGames = database.listAllProjects();
-        for(int i = 0; i<allGames.size(); i++)
+        try
         {
-            String sid = allGames.get(i).get("SID");
-            String beteckning = allGames.get(i).get("BETECKNING");
-            cbListAllGamesPlatform.addItem(sid + "," + beteckning);
+            DbClass database = new DbClass();
+        
+            ArrayList<HashMap<String, String>> allPlatforms = database.listPlatforms();
+            for (int i = 0; i < allPlatforms.size(); i++)
+            {
+                    String pid = allPlatforms.get(i).get("PID");
+                    String benamning = allPlatforms.get(i).get("BENAMNING");
+                    cbListPlatforms.addItem(pid + "," + benamning);
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
         }
     }
     
-    public void addGamesToCB()
+    /**
+     * add items to a combobox
+     */
+    public void addGamesPlatformToCB()
     {
+        try
+        {
+            DbClass database = new DbClass();
         
-	DbClass database = new DbClass();
-	
-	ArrayList<HashMap<String, String>> allProjects = database.listAllProjects();
-	for (int i = 0; i < allProjects.size(); i++)
-	{
-		String sid = allProjects.get(i).get("SID");
-		String beteckning = allProjects.get(i).get("BETECKNING");
-		cbListAllGames.addItem(sid + "," + beteckning);
-	}
-    }
-
-    public void addSpecialistToCBUpdate()			
-    {      
-	DbClass database = new DbClass();
-	
-	ArrayList<HashMap<String, String>> allSpecialists = database.listAllSpecialists();
-	for (int i = 0; i < allSpecialists.size(); i++)
-	{
-		//String sid = allProjects.get(i).get("SID");
-		String namn = allSpecialists.get(i).get("NAMN");
-		cbListAllSpecialists.addItem(namn);
-	}
+            ArrayList<HashMap<String,String>> allGames = database.listAllProjects();
+            for(int i = 0; i<allGames.size(); i++)
+            {
+                String sid = allGames.get(i).get("SID");
+                String beteckning = allGames.get(i).get("BETECKNING");
+                cbListAllGamesPlatform.addItem(sid + "," + beteckning);
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
     
+    /**
+     * add items to a combobox
+     */
+    public void addGamesToCB()
+    {
+        try
+        {
+            DbClass database = new DbClass();
+	
+            ArrayList<HashMap<String, String>> allProjects = database.listAllProjects();
+            for (int i = 0; i < allProjects.size(); i++)
+            {
+                    String sid = allProjects.get(i).get("SID");
+                    String beteckning = allProjects.get(i).get("BETECKNING");
+                    cbListAllGames.addItem(sid + "," + beteckning);
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    /**
+     * add items to a combobox
+     */
+    public void addSpecialistToCBUpdate()			
+    {      
+        try
+        {
+            DbClass database = new DbClass();
+	
+            ArrayList<HashMap<String, String>> allSpecialists = database.listAllSpecialists();
+            for (int i = 0; i < allSpecialists.size(); i++)
+            {
+                    //String sid = allProjects.get(i).get("SID");
+                    String namn = allSpecialists.get(i).get("NAMN");
+                    String aid = allSpecialists.get(i).get("AID");
+                    cbListAllSpecialists.addItem(aid + "," + namn);
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    /**
+     * changes the position of a hired
+     */
     public void addHiredPosition()
     {
-        DbClass database = new DbClass();
-        
-        ArrayList<HashMap<String, String>> allHiredPosition = database.listAllHired();
-        for(int i = 0; i < allHiredPosition.size(); i++)
+        try
         {
-            String aid = allHiredPosition.get(i).get("AID");
-            String namn = allHiredPosition.get(i).get("NAMN");
-            cbListAllHiredPosition.addItem(aid + "," + namn);
+            DbClass database = new DbClass();
+        
+            ArrayList<HashMap<String, String>> allHiredPosition = database.listAllHired();
+            for(int i = 0; i < allHiredPosition.size(); i++)
+            {
+                String aid = allHiredPosition.get(i).get("AID");
+                String namn = allHiredPosition.get(i).get("NAMN");
+                cbListAllHiredPosition.addItem(aid + "," + namn);
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -1770,21 +2173,28 @@ public class MainPage extends javax.swing.JFrame {
      */
     private void listHired ()             //Validering krävs 
     {
-        String searchWord = tfsearchField.getText();
-        DbClass database = new DbClass();
-        tasearchResult.setText("");
-        lblErrorMessageHired.setText("");
-        if (Validation.textBoxTextIsRequired(tfsearchField) && Validation.containsString(searchWord))
+        try
         {
-            ArrayList<String> listHired = database.listHiredInProject(searchWord);
-            for(String beteckning: listHired)
+            String searchWord = tfsearchField.getText();
+            DbClass database = new DbClass();
+            tasearchResult.setText("");
+            lblErrorMessageHired.setText("");
+            if (Validation.textBoxTextIsRequired(tfsearchField) && Validation.containsString(searchWord))
             {
-                tasearchResult.append(beteckning + "\n");
+                ArrayList<String> listHired = database.listHiredInProject(searchWord);
+                for(String beteckning: listHired)
+                {
+                    tasearchResult.append(beteckning + "\n");
+                }
+            }
+            else
+            {
+                lblErrorMessageHired.setText("Använd endast a-ö, A-Ö");
             }
         }
-        else
+        catch(Exception e)
         {
-            lblErrorMessageHired.setText("Använd endast a-ö, A-Ö");
+            System.out.println(e.getMessage());
         }
     }
     
@@ -1793,18 +2203,26 @@ public class MainPage extends javax.swing.JFrame {
      */
     private void showLeader ()
     {
-        String currentGame = cbAllGameProjects.getSelectedItem().toString();
-        int gameID = Integer.parseInt(currentGame.split(",")[0]);
+        try
+        {
+            String currentGame = cbAllGameProjects.getSelectedItem().toString();
+            int gameID = Integer.parseInt(currentGame.split(",")[0]);
+
+            DbClass database = new DbClass ();
+            tasearchResultGameProject.setText("");        
+
+                ArrayList<HashMap<String, String>> listLeader = database.listLeaderOnProject(gameID);
+                for (int i = 0; i < listLeader.size(); i++)
+                {
+                    String leader = listLeader.get(i).get("NAMN");
+                    tasearchResultGameProject.append(leader + "\n");
+                }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
         
-        DbClass database = new DbClass ();
-        tasearchResultGameProject.setText("");        
-        
-            ArrayList<HashMap<String, String>> listLeader = database.listLeaderOnProject(gameID);
-            for (int i = 0; i < listLeader.size(); i++)
-            {
-                String leader = listLeader.get(i).get("NAMN");
-                tasearchResultGameProject.append(leader + "\n");
-            }
     }
             
     /**
@@ -1812,54 +2230,81 @@ public class MainPage extends javax.swing.JFrame {
      */
     private void listPlatforms()
     {
-        String searchWord = tfsearchFieldGameProject.getText();
-        DbClass database = new DbClass();
-        tasearchResultGameProject.setText("");
-        lblErrorMessageGameProject.setText("");
-        ArrayList<HashMap<String, String>> listPlatform = database.listPlatformsForGames(searchWord);
-        
-        if (Validation.textBoxTextIsRequired(tfsearchFieldGameProject) && Validation.containsString(searchWord))
+        try 
         {
-            
-            for(int i = 0; i < listPlatform.size(); i++)
+            String searchWord = tfsearchFieldGameProject.getText();
+            DbClass database = new DbClass();
+            tasearchResultGameProject.setText("");
+            lblErrorMessageGameProject.setText("");
+            ArrayList<HashMap<String, String>> listPlatform = database.listPlatformsForGames(searchWord);
+
+            if (Validation.textBoxTextIsRequired(tfsearchFieldGameProject) && Validation.containsString(searchWord))
             {
-                String beteckning = listPlatform.get(i).get("BENAMNING");
-                tasearchResultGameProject.append(beteckning + "\n");
+
+                for(int i = 0; i < listPlatform.size(); i++)
+                {
+                    String beteckning = listPlatform.get(i).get("BENAMNING");
+                    tasearchResultGameProject.append(beteckning + "\n");
+                }
+            }
+            else
+            {
+                lblErrorMessageGameProject.setText("Använd endast a-ö, A-Ö");
             }
         }
-        else
+        catch (Exception e)
         {
-            lblErrorMessageGameProject.setText("Använd endast a-ö, A-Ö");
+            System.out.println(e.getMessage());
         }
     }
     
+    /**
+     * lists the platforma a game is developed for
+     */
     private void listGameForPlatform ()
     {
-        String currentPlatform = cbListPlatforms.getSelectedItem().toString();
-        int PID = Integer.parseInt(currentPlatform.split(",")[0]);
+        try
+        {
+            String currentPlatform = cbListPlatforms.getSelectedItem().toString();
+            int PID = Integer.parseInt(currentPlatform.split(",")[0]);
+
+            DbClass database = new DbClass ();
+            tasearchResultPlatform.setText("");
+
+                ArrayList<HashMap<String, String>> listGame = database.listGamesForPlatform(PID);
+                for (int i = 0; i < listGame.size(); i++)
+                {
+                    String game = listGame.get(i).get("BETECKNING");
+                    tasearchResultPlatform.append(game + "\n");
+                }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
         
-        DbClass database = new DbClass ();
-        tasearchResultPlatform.setText("");
-        
-            ArrayList<HashMap<String, String>> listGame = database.listGamesForPlatform(PID);
-            for (int i = 0; i < listGame.size(); i++)
-            {
-                String game = listGame.get(i).get("BETECKNING");
-                tasearchResultPlatform.append(game + "\n");
-            }
     }
     
-    
+    /**
+     * adds items to a combobox
+     */
     public void addGameProjectsToCB ()
     {
-        DbClass database = new DbClass();
-        
-        ArrayList<HashMap<String, String>> allProjects = database.listAllProjects();
-        for (int i = 0; i < allProjects.size(); i++)
+        try
         {
-            String sid = allProjects.get(i).get("SID");
-            String gameName = allProjects.get(i).get("BETECKNING");
-            cbAllGameProjects.addItem(sid + "," + gameName);
+            DbClass database = new DbClass();
+        
+            ArrayList<HashMap<String, String>> allProjects = database.listAllProjects();
+            for (int i = 0; i < allProjects.size(); i++)
+            {
+                String sid = allProjects.get(i).get("SID");
+                String gameName = allProjects.get(i).get("BETECKNING");
+                cbAllGameProjects.addItem(sid + "," + gameName);
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
         }
     }
     
@@ -1868,57 +2313,77 @@ public class MainPage extends javax.swing.JFrame {
      */
     private void listProjects ()             //Validering krävs 
     {
-         String searchWord = tfsearchField.getText();
-         DbClass database = new DbClass();
-         tasearchResult.setText("");
-         boolean validation = Validation.containsString(searchWord);
-        if (Validation.textBoxTextIsRequired(tfsearchField) && validation)
+        try
         {
-            lblErrorMessageHired.setText("");
-            
-            ArrayList<HashMap<String, String>> listProject = database.listProjects(searchWord);
-            if (listProject != null)
+            String searchWord = tfsearchField.getText();
+            DbClass database = new DbClass();
+            tasearchResult.setText("");
+            boolean validation = Validation.containsString(searchWord);
+            if (Validation.textBoxTextIsRequired(tfsearchField) && validation)
             {
-                for(int i = 0; i < listProject.size(); i++)
+                lblErrorMessageHired.setText("");
+
+                ArrayList<HashMap<String, String>> listProject = database.listProjects(searchWord);
+                if (listProject != null)
                 {
-                    String beteckningen = listProject.get(i).get("BETECKNING");
-                    String startdatumet = listProject.get(i).get("STARTDATUM");
-                    String releasedatumet = listProject.get(i).get("RELEASEDATUM");
-                    tasearchResult.append(beteckningen + " " + startdatumet + " " + releasedatumet + "\n");
+                    for(int i = 0; i < listProject.size(); i++)
+                    {
+                        String beteckningen = listProject.get(i).get("BETECKNING");
+                        String startdatumet = listProject.get(i).get("STARTDATUM");
+                        String releasedatumet = listProject.get(i).get("RELEASEDATUM");
+                        tasearchResult.append(beteckningen + " " + startdatumet + " " + releasedatumet + "\n");
+                    }
+                }
+                else
+                {
+                    lblFunctionError.setText("Personen arbetar inte med några projekt, prova sök igen, och var noga med gemener och versaler");
+
                 }
             }
             else
             {
-                lblFunctionError.setText("Personen arbetar inte med några projekt, prova sök igen, och var noga med gemener och versaler");
-                
+                lblErrorMessageHired.setText("Använd endast a-ö, A-Ö, var noga med versaler och gemener");
             }
+         
         }
-        else
+        catch (Exception e)
         {
-            lblErrorMessageHired.setText("Använd endast a-ö, A-Ö, var noga med versaler och gemener");
+            System.out.println(e.getMessage());
         }
     }
     
+    /**
+     * adds items to a combobox
+     */
     public void addLeadersToCbNewProjLeader()			
-    {       //Adds a new leader to the selected project
-	DbClass database = new DbClass();
-	
-	ArrayList<HashMap<String, String>> allProjects = database.listAllLeaders();
-	for (int i = 0; i < allProjects.size(); i++)
-	{
-		//String sid = allProjects.get(i).get("SID");
-		String namn = allProjects.get(i).get("NAMN");
-		cbNewProjLeader.addItem(namn);
-	}
+    {   
+        try
+        {
+            //Adds a new leader to the selected project
+            DbClass database = new DbClass();
+
+            ArrayList<HashMap<String, String>> allProjects = database.listAllLeaders();
+            for (int i = 0; i < allProjects.size(); i++)
+            {
+                    //String sid = allProjects.get(i).get("SID");
+                    String namn = allProjects.get(i).get("NAMN");
+                    cbNewProjLeader.addItem(namn);
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
     
     /**
      * A method that lists all games that have been released.
      */
-    
     private void listReleases()             
     {
-         DbClass database = new DbClass();
+        try 
+        {
+           DbClass database = new DbClass();
             
             ArrayList<HashMap<String, String>> listReleases = database.listReleasedGames();
 
@@ -1927,7 +2392,13 @@ public class MainPage extends javax.swing.JFrame {
                     String beteckningen = listReleases.get(i).get("BETECKNING");
                     String sid = listReleases.get(i).get("SID");
                     tasearchResultGameProject.append(sid + " " + beteckningen + "\n");
-                }       
+                }  
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+               
     }
     
     /**
@@ -1935,7 +2406,9 @@ public class MainPage extends javax.swing.JFrame {
      */
      private void listProjectsUnderDevelopment()             
     {
-         DbClass database = new DbClass();
+        try
+        {
+            DbClass database = new DbClass();
             
             ArrayList<HashMap<String, String>> listDeveloping = database.listUnderDevelopment();
 
@@ -1944,7 +2417,12 @@ public class MainPage extends javax.swing.JFrame {
                     String beteckningen = listDeveloping.get(i).get("BETECKNING");
                     String sid = listDeveloping.get(i).get("SID");
                     tasearchResultGameProject.append(sid + " " + beteckningen + "\n");
-                }       
+                }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }    
     }
     
     /**
@@ -1952,14 +2430,21 @@ public class MainPage extends javax.swing.JFrame {
      */
     private void addHiredToCB()
     {
-        DbClass database = new DbClass();
-        //create a cb that holds all the hired staff
-        ArrayList<HashMap<String, String>> allHired = database.listAllHired();
-        for (int i = 0; i < allHired.size(); i++)
+        try
         {
-            String aid = allHired.get(i).get("AID");
-            String name = allHired.get(i).get("NAMN");
-            cbListAllHired.addItem(aid + "," + name);
+            DbClass database = new DbClass();
+            //create a cb that holds all the hired staff
+            ArrayList<HashMap<String, String>> allHired = database.listAllHired();
+            for (int i = 0; i < allHired.size(); i++)
+            {
+                String aid = allHired.get(i).get("AID");
+                String name = allHired.get(i).get("NAMN");
+                cbListAllHired.addItem(aid + "," + name);
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
         }
     }
     
@@ -1969,25 +2454,32 @@ public class MainPage extends javax.swing.JFrame {
      */
     private void changeInfoAboutHired (int AID)             //Validering krävs 
     {
-        DbClass database = new DbClass();
-        HashMap<String, String> hired = database.listHired(AID);
-        
-        
-        //Gets the current name from the database
-        String existingName = hired.get("NAMN");
-        String setName = tfChangeNameHired.getText();
-        String existingTelephone = hired.get("TELEFON");
-        String setPhone = tfChangeTelephoneHired.getText();
-        String existingMail = hired.get("MAIL");
-        String setMail = tfChangeMailHired.getText();
-        if (!setName.equals(existingName) || !setPhone.equals(existingTelephone) || !setMail.equals(existingMail))
+        try
         {
-            database.changeHired(setName, setPhone, setMail, AID);
-            System.out.println("Ändring genomförd");
+            DbClass database = new DbClass();
+            HashMap<String, String> hired = database.listHired(AID);
+
+
+            //Gets the current name from the database
+            String existingName = hired.get("NAMN");
+            String setName = tfChangeNameHired.getText();
+            String existingTelephone = hired.get("TELEFON");
+            String setPhone = tfChangeTelephoneHired.getText();
+            String existingMail = hired.get("MAIL");
+            String setMail = tfChangeMailHired.getText();
+            if (!setName.equals(existingName) || !setPhone.equals(existingTelephone) || !setMail.equals(existingMail))
+            {
+                database.changeHired(setName, setPhone, setMail, AID);
+                System.out.println("Ändring genomförd");
+            }
+            else
+            {
+                System.out.println("nope");
+            }
         }
-        else
+        catch (Exception e)
         {
-            System.out.println("nope");
+            System.out.println(e.getMessage());
         }
     }
     
@@ -2031,33 +2523,35 @@ public class MainPage extends javax.swing.JFrame {
      */
     public void addNewProject()            
     {
-	DbClass database = new DbClass();
+        try
+        {
+            DbClass database = new DbClass();
 	
-        int newSID = database.generateSID();
+            int newSID = database.generateSID();
         
-        String beteckning = tfGpAddName.getText();
+            String beteckning = tfGpAddName.getText();
        
-        //Gets the combo box values and puts them in strings.
-        //Reason for having this separate from the added strings is that we
-        //are going to use these in multiple places.
-        int startDay = Integer.parseInt(cbStartDateDay.getSelectedItem().toString());
-        int startMonth = Integer.parseInt(cbStartDateMonth.getSelectedItem().toString());
-        int startYear = Integer.parseInt(tfStartDateYear.getText());
+            //Gets the combo box values and puts them in strings.
+            //Reason for having this separate from the added strings is that we
+            //are going to use these in multiple places.
+            int startDay = Integer.parseInt(cbStartDateDay.getSelectedItem().toString());
+            int startMonth = Integer.parseInt(cbStartDateMonth.getSelectedItem().toString());
+            int startYear = Integer.parseInt(tfStartDateYear.getText());
         
-        int releaseDay = Integer.parseInt(cbReleaseDateDay.getSelectedItem().toString());
-        int releaseMonth = Integer.parseInt(cbReleaseDateMonth.getSelectedItem().toString());
-        int releaseYear = Integer.parseInt(tfReleaseDateYear.getText());
+            int releaseDay = Integer.parseInt(cbReleaseDateDay.getSelectedItem().toString());
+            int releaseMonth = Integer.parseInt(cbReleaseDateMonth.getSelectedItem().toString());
+            int releaseYear = Integer.parseInt(tfReleaseDateYear.getText());
         
-        //Adds the combo box values in to one date, x2.
-        String startDatum = startDay + "." + startMonth + "." + startYear;
-        String releaseDatum = releaseDay + "." + releaseMonth + "." + releaseYear;
+            //Adds the combo box values in to one date, x2.
+            String startDatum = startDay + "." + startMonth + "." + startYear;
+            String releaseDatum = releaseDay + "." + releaseMonth + "." + releaseYear;
         
-        //Adds the combo box values in to one number, to check dates.
-        int startDatumTotal = startDay + startMonth + startYear;
-        int releaseDatumTotal = releaseDay + releaseMonth + releaseYear;
+            //Adds the combo box values in to one number, to check dates.
+            int startDatumTotal = startDay + startMonth + startYear;
+            int releaseDatumTotal = releaseDay + releaseMonth + releaseYear;
         
-       // Checks if the name allready exists in the database.
-        boolean nameExists = false;
+            // Checks if the name allready exists in the database.
+            boolean nameExists = false;
         
             ArrayList<HashMap<String, String>> listProjectNames = database.listAllProjectNames();
 
@@ -2071,10 +2565,10 @@ public class MainPage extends javax.swing.JFrame {
                     }
                 }  
         
-        String strLeaderAID = "";
+            String strLeaderAID = "";
         
-        //Adds a new leader to the project.
-        ArrayList<HashMap<String, String>> listLeaders = database.listAllLeaders();
+            //Adds a new leader to the project.
+            ArrayList<HashMap<String, String>> listLeaders = database.listAllLeaders();
 
                 for(int i = 0; i < listLeaders.size(); i++)
                 {
@@ -2085,23 +2579,29 @@ public class MainPage extends javax.swing.JFrame {
                     //if it's a match, it sets the strLeaderAID to that leaders AID.
                     if (cbNewProjLeader.getSelectedItem().toString().equals(leaderName))
                     {
-                    strLeaderAID = listLeaders.get(i).get("AID");
+                        strLeaderAID = listLeaders.get(i).get("AID");
                     }
                 } 
         
-        //Sets the leaders AID that was fetched from the loop to int.
-        int leaderAID = Integer.parseInt(strLeaderAID);
+            //Sets the leaders AID that was fetched from the loop to int.
+            int leaderAID = Integer.parseInt(strLeaderAID);
         
-        if (startDatumTotal < releaseDatumTotal && nameExists == false)
-        {
-             database.addProject(newSID, beteckning, startDatum, releaseDatum, leaderAID);
-            lblAddProjectText.setText(beteckning + " är nu tillagd!");
-        }
-        else
-        {
-            lblAddProjectText.setText(beteckning + " kunde inte läggas till. \n"
+            if (startDatumTotal < releaseDatumTotal && nameExists == false)
+            {
+                 database.addProject(newSID, beteckning, startDatum, releaseDatum, leaderAID);
+                lblAddProjectText.setText(beteckning + " är nu tillagd!");
+            }
+            else
+            {
+                lblAddProjectText.setText(beteckning + " kunde inte läggas till. \n"
                     + "Se till att namnet är unikt och att startdatumet är innan releasedatumet.");
-        }  
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+	  
     }
     
     /**
@@ -2109,38 +2609,46 @@ public class MainPage extends javax.swing.JFrame {
     */
     public void addNewHired ()             //Validering krävs 
     {
-	DbClass database = new DbClass();
-	
-        int newAID = database.generateAID();
-        String firstname = tfAddFirstName.getText();
-        String lastname = tfAddLastName.getText();
-        String phone = tfAddTelephone.getText();
-        String mail = tfAddMail.getText();
-	
-        //Gets the info from the textboxes and validates it
-        if (Validation.containsString(firstname) && Validation.containsString(lastname) && Validation.checkName(firstname, lastname) && Validation.checkNumber(phone) && Validation.checkMail(mail))
+        try
         {
-            firstname =  tfAddFirstName.getText(); 
-            lastname = tfAddLastName.getText();
-            phone = tfAddTelephone.getText();
-            mail = tfAddMail.getText();
-        }
+            DbClass database = new DbClass();
+	
+            int newAID = database.generateAID();
+            String firstname = tfAddFirstName.getText();
+            String lastname = tfAddLastName.getText();
+            String phone = tfAddTelephone.getText();
+            String mail = tfAddMail.getText();
+	
+            //Gets the info from the textboxes and validates it
+            if (Validation.containsString(firstname) && Validation.containsString(lastname) && Validation.checkName(firstname, lastname) && Validation.checkNumber(phone) && Validation.checkMail(mail))
+            {
+                firstname =  tfAddFirstName.getText(); 
+                lastname = tfAddLastName.getText();
+                phone = tfAddTelephone.getText();
+                mail = tfAddMail.getText();
+            }
 				
-	//Create a username based on the firstnames first letter, the lastnames first and last letter.
-	String sistaBokstaven = lastname.substring(lastname.length()-1, lastname.length());
-	String username = firstname.substring(0,1) + lastname.substring(0,1) + sistaBokstaven;       
+            //Create a username based on the firstnames first letter, the lastnames first and last letter.
+            String sistaBokstaven = lastname.substring(lastname.length()-1, lastname.length());
+            String username = firstname.substring(0,1) + lastname.substring(0,1) + sistaBokstaven;       
 		
-	//checks if there is any text in the textfields and then adds the text in them to the database
-        if (Validation.textBoxTextIsRequired(tfAddFirstName) && Validation.textBoxTextIsRequired(tfAddLastName) && Validation.textBoxTextIsRequired(tfAddTelephone) && Validation.textBoxTextIsRequired(tfAddMail))
-        {
-            String name = firstname + " " + lastname;
-            database.addHired(newAID, name, phone, mail, username);
-            System.out.println(name + " är nu tillagd!");
+            //checks if there is any text in the textfields and then adds the text in them to the database
+            if (Validation.textBoxTextIsRequired(tfAddFirstName) && Validation.textBoxTextIsRequired(tfAddLastName) && Validation.textBoxTextIsRequired(tfAddTelephone) && Validation.textBoxTextIsRequired(tfAddMail))
+            {
+                String name = firstname + " " + lastname;
+                database.addHired(newAID, name, phone, mail, username);
+                System.out.println(name + " är nu tillagd!");
+            }
+            else
+            {
+                System.out.println("Personen kunde inte läggas till");
+            }
         }
-        else
+        catch (Exception e)
         {
-            System.out.println("Personen kunde inte läggas till");
+            System.out.println(e.getMessage());
         }
+	
     }
     
     /**
@@ -2148,24 +2656,29 @@ public class MainPage extends javax.swing.JFrame {
      */
     private void updatePlatformGame()
     {
-        String currentGame = cbListAllGamesPlatform.getSelectedItem().toString();
-        int sid = Integer.parseInt(currentGame.split(",")[0]);
-        String currentPlatform = cbListAllPlatforms.getSelectedItem().toString();
-        int pid = Integer.parseInt(currentPlatform.split(",")[0]);
-        DbClass database = new DbClass();
-        lblErrorMessagePlatform.setText("");
-       
-        if (!database.doesExistInInnefattar(sid, pid))
+        try 
         {
-            database.insertGamePlatform(sid, pid);
-            lblErrorMessagePlatform.setText("Ändringen genomförd");
+            String currentGame = cbListAllGamesPlatform.getSelectedItem().toString();
+            int sid = Integer.parseInt(currentGame.split(",")[0]);
+            String currentPlatform = cbListAllPlatforms.getSelectedItem().toString();
+            int pid = Integer.parseInt(currentPlatform.split(",")[0]);
+            DbClass database = new DbClass();
+            lblErrorMessagePlatform.setText("");
+
+            if (!database.doesExistInInnefattar(sid, pid))
+            {
+                database.insertGamePlatform(sid, pid);
+                lblErrorMessagePlatform.setText("Ändringen genomförd");
+            }
+            else
+            {
+                lblErrorMessagePlatform.setText("Ändringen kunde inte genomföras");
+            }
         }
-        else
+        catch (Exception e)
         {
-            lblErrorMessagePlatform.setText("Ändringen kunde inte genomföras");
+            System.out.println(e.getMessage());
         }
-        
-        
     }
   
     /**

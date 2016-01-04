@@ -225,13 +225,11 @@ public class DbClass {
         }
     }
     
-    public void updateSpecialistProject(String specialist, String project)
+    public void updateSpecialistProject(int aid, int sid)
     {
-        String sqlFraga ="insert into ARBETAR_I " 
-               + "(AID, SID) "
-               + "values((select anstalld.AID from anstalld "
-               + "where namn = '" + specialist + "'), (select spelprojekt.sid from spelprojekt "
-               + "where spelprojekt.BETECKNING = '" + project + "'))";
+        String sqlFraga = "insert into ARBETAR_I " +
+                          "(AID, SID) " +
+                          "values(" + aid + "," + sid + ");";
         
         try
 	{
@@ -243,12 +241,10 @@ public class DbClass {
 	}
     }
     
-     public void deleteSpecialistProject(String specialist, String project)
+     public void deleteSpecialistProject(int aid, int sid)
     {
         String sqlFraga ="delete from ARBETAR_I " 
-               + "where AID = (select anstalld.AID from anstalld "
-               + "where namn = '" + specialist + "') and SID = (select spelprojekt.sid from spelprojekt "
-               + "where spelprojekt.BETECKNING = '" + project + "')";
+               + "where AID = (" + aid + ") and SID = (" + sid + ")";
         
         try
 	{

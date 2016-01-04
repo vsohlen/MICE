@@ -661,7 +661,7 @@
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="lblErrorMessageHiredUpdate" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="12" max="32767" attributes="0"/>
+                              <EmptySpace pref="54" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -817,19 +817,10 @@
                       </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblErrorMessageHiredProjekt">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jLabel1"/>
-                      </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblErrorMessageHiredGP">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jLabel1"/>
-                      </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblErrorMessageHiredUpdate">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jLabel1"/>
-                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>

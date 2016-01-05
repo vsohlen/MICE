@@ -105,6 +105,36 @@ public class Validation {
         }
         return match;
     }
+    
+    public static boolean checkYear(String number)
+    {
+    
+        try
+        {
+            boolean match;
+            
+
+            //Checks if the number is a number.
+            boolean isNumber = checkNumber(number);
+
+            if (isNumber == true && number.length() == 4)
+            {
+                match = true;
+            }
+            else
+            {
+                match = false;
+            }
+
+            return match;
+        }
+        
+        catch(Exception e)
+            {
+                System.out.println(e.getMessage());
+                return false;
+            }
+    }
 }
 
 

@@ -58,18 +58,22 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="spHired" alignment="0" min="-2" pref="431" max="-2" attributes="0"/>
                           <Component id="lblFunctionError" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="lblHeader" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cbFunctions" min="-2" pref="364" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="tfsearchField" min="-2" pref="98" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="btnSearch" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="lblErrorMessageHired" min="-2" pref="129" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="spHired" alignment="0" min="-2" pref="364" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="cbFunctions" min="-2" pref="364" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="tfsearchField" min="-2" pref="98" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="btnSearch" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="lblErrorMessageHired" min="-2" pref="129" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -107,7 +111,7 @@
                       <Component id="spHired" min="-2" pref="75" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="lblFunctionError" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="37" max="32767" attributes="0"/>
+                      <EmptySpace pref="31" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -172,22 +176,26 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="lblHeaderChangeHired" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="lblChooseHired" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <Component id="cbListAllHired" min="-2" pref="135" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="btnChooseChangeHired" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="lblChooseHired" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="cbListAllHired" max="32767" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="btnChooseChangeHired" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="btnChangeHired" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="lblPassword" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                          <Component id="pfPassword" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                          <Component id="btnChangeHired" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="lblChangeNameHired" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -204,7 +212,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="212" max="-2" attributes="0"/>
+                              <EmptySpace pref="495" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -213,36 +221,36 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                               <Component id="lblHeaderChangeHired" min="-2" pref="14" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="lblChooseHired" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="lblChooseHired" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="cbListAllHired" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btnChooseChangeHired" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="tfChangeNameHired" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblChangeNameHired" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="lblChangeTelephoneHired" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tfChangeTelephoneHired" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="lblChangeMailHired" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tfChangeMailHired" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="cbListAllHired" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnChooseChangeHired" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="tfChangeNameHired" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblChangeNameHired" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblChangeTelephoneHired" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tfChangeTelephoneHired" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblChangeMailHired" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tfChangeMailHired" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="pfPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="17" max="32767" attributes="0"/>
                               <Component id="btnChangeHired" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="102" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -317,6 +325,16 @@
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnChooseChangeHiredMouseClicked"/>
                       </Events>
                     </Component>
+                    <Component class="javax.swing.JLabel" name="lblPassword">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="L&#xf6;senord:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JPasswordField" name="pfPassword">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="jPasswordField1"/>
+                      </Properties>
+                    </Component>
                   </SubComponents>
                 </Container>
                 <Container class="javax.swing.JPanel" name="paneRemoveHired">
@@ -345,7 +363,7 @@
                                       <Component id="btnRemove" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="402" max="32767" attributes="0"/>
+                              <EmptySpace pref="407" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -363,7 +381,7 @@
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="lblNote" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="127" max="32767" attributes="0"/>
+                              <EmptySpace pref="133" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -452,7 +470,7 @@
                                       <Component id="tfAddLastName" min="-2" pref="97" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="569" max="32767" attributes="0"/>
+                              <EmptySpace pref="574" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -483,7 +501,7 @@
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="btnChangeHiredAdd" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="66" max="32767" attributes="0"/>
+                              <EmptySpace pref="72" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -563,61 +581,53 @@
                               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblUpdateHiredPosition" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblUpdateHiredInProject" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lblChooseHiredPosition" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="cbListAllHiredPosition" min="-2" pref="95" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="lblChooseUpgrade" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                              <Component id="cbHiredForm" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="btnConfirmUpdatePosition" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace pref="227" max="32767" attributes="0"/>
+                                      <Component id="lblChooseSpecialist" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                      <Component id="cbListAllSpecialists" min="-2" pref="140" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lblChooseGameProjectUpdate" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cbListAllGameProjectsUpdate" min="-2" pref="206" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="btnConfirmUpdateRemoved" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="btnConfirmUpdateHired" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="lblChooseHiredPosition" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="cbListAllHiredPosition" min="-2" pref="240" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lblChooseUpgrade" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cbHiredForm" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="btnConfirmUpdatePosition" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="lblChooseGameProject" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="cbListAllGameProjects" min="-2" pref="206" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="lblChooseProjectleader" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="cbListAllProjectleaders" min="-2" pref="240" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="btnConfirmUpdate" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="lblUpdateHiredPosition" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblUpdateHiredInProject" min="-2" max="-2" attributes="0"/>
                                           <Component id="lblErrorMessageHiredUpdate" min="-2" max="-2" attributes="0"/>
                                           <Component id="lblErrorMessageHiredGP" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="lblChooseSpecialist" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="cbListAllSpecialists" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                                                      <Component id="lblChooseGameProjectUpdate" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                                      <Component id="cbListAllGameProjectsUpdate" min="-2" pref="90" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="btnConfirmUpdateRemoved" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="lblErrorMessageHiredProjekt" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="lblUpdateLeader" min="-2" max="-2" attributes="0"/>
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="lblChooseGameProject" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="cbListAllGameProjects" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                                      <Component id="lblChooseProjectleader" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="cbListAllProjectleaders" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="btnConfirmUpdate" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                              <Component id="btnConfirmUpdateHired" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="lblErrorMessageHiredProjekt" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblUpdateLeader" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -661,7 +671,7 @@
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="lblErrorMessageHiredUpdate" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="54" max="32767" attributes="0"/>
+                              <EmptySpace pref="60" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -854,19 +864,19 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="lblHeaderGameProject" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="spGameProject" min="-2" pref="365" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="lblHeaderGameProject" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="cbFunctionsGameProject" min="-2" pref="361" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="tfsearchFieldGameProject" min="-2" pref="68" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="spGameProject" min="-2" pref="432" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                      <Component id="tfsearchFieldGameProject" min="-2" pref="98" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="cbAllGameProjects" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="cbAllGameProjects" min="-2" pref="114" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnSearchGameProject" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lblErrorMessageGameProject" max="32767" attributes="0"/>
@@ -888,23 +898,21 @@
                       <Component id="separatorGameProject" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lblHeaderGameProject" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cbFunctionsGameProject" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="tfsearchFieldGameProject" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="lblErrorMessageGameProject" pref="23" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblHeaderGameProject" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbFunctionsGameProject" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tfsearchFieldGameProject" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="spGameProject" min="-2" pref="76" max="-2" attributes="0"/>
+                              <Component id="lblErrorMessageGameProject" pref="23" max="32767" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnSearchGameProject" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="cbAllGameProjects" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="spGameProject" min="-2" pref="76" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -980,7 +988,7 @@
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Component id="lblHeaderChangeGameProject" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="624" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
@@ -991,27 +999,58 @@
                                           </Group>
                                           <Component id="lblChooseGame" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="lblGpChangeName" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="lblGpChangeReleaseDate" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="lblGpChangeStartDate" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="tfChangeGpStartDate" alignment="1" max="32767" attributes="0"/>
-                                                  <Component id="tfGpChangeName" alignment="1" max="32767" attributes="0"/>
-                                                  <Component id="tfChangeGpReleaseDate" alignment="1" min="-2" pref="97" max="-2" attributes="0"/>
-                                              </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="lblGpChangeStartDate" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                              <Component id="tfChangeGpStartDate" min="-2" pref="95" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="lblStartDateChangeDay" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="cbStartDateChangeDay" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="lblStartDateChangeMonth" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="cbStartDateChangeMonth" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="lblStartDateChangeYear" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="tfStartDateChangeYear" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="148" pref="148" max="-2" attributes="0"/>
-                                              <Component id="btnChangeGameProject" min="-2" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="btnChangeGameProject" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="lblGpChangeReleaseDate" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="lblGpChangeName" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="tfChangeGpReleaseDate" min="-2" pref="97" max="-2" attributes="0"/>
+                                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                              <Component id="lblReleaseChangeDay" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                              <Component id="cbReleaseChangeDay" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                              <Component id="lblReleaseChangeMonth" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="cbReleaseChangeMonth" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                              <Component id="lblReleaseChangeYear" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                              <Component id="tfReleaseChangeYear" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Component id="tfGpChangeName" min="-2" pref="95" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace pref="53" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -1019,39 +1058,57 @@
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                              <Component id="lblHeaderChangeGameProject" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="lblChooseGame" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="cbListAllGames" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btnChooseChangeGameProject" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="lblGpChangeName" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="tfGpChangeName" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="lblGpChangeStartDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="tfChangeGpStartDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblStartDateChangeDay" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="cbStartDateChangeDay" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblStartDateChangeMonth" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="cbStartDateChangeMonth" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblStartDateChangeYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="tfStartDateChangeYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="lblHeaderChangeGameProject" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                                              <Component id="lblChooseGame" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="cbListAllGames" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btnChooseChangeGameProject" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
                                       </Group>
+                                      <EmptySpace pref="56" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="tfGpChangeName" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblGpChangeName" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="lblGpChangeStartDate" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tfChangeGpStartDate" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="lblGpChangeReleaseDate" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="tfChangeGpReleaseDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblReleaseChangeDay" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cbReleaseChangeDay" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblReleaseChangeMonth" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cbReleaseChangeMonth" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblReleaseChangeYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="tfReleaseChangeYear" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="btnChangeGameProject" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="12" max="32767" attributes="0"/>
+                              <Component id="btnChangeGameProject" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1098,6 +1155,7 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="tfChangeGpReleaseDate">
                       <Properties>
+                        <Property name="editable" type="boolean" value="false"/>
                         <Property name="text" type="java.lang.String" value="&#xc5;&#xc5;&#xc5;&#xc5;.MM.DD"/>
                       </Properties>
                     </Component>
@@ -1113,6 +1171,7 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="tfChangeGpStartDate">
                       <Properties>
+                        <Property name="editable" type="boolean" value="false"/>
                         <Property name="text" type="java.lang.String" value="&#xc5;&#xc5;&#xc5;&#xc5;.MM.DD"/>
                       </Properties>
                     </Component>
@@ -1124,6 +1183,176 @@
                     <Component class="javax.swing.JLabel" name="lblGpChangeName">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Beteckning:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblStartDateChangeDay">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Dag:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="cbStartDateChangeDay">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="31">
+                            <StringItem index="0" value="01"/>
+                            <StringItem index="1" value="02"/>
+                            <StringItem index="2" value="03"/>
+                            <StringItem index="3" value="04"/>
+                            <StringItem index="4" value="05"/>
+                            <StringItem index="5" value="06"/>
+                            <StringItem index="6" value="07"/>
+                            <StringItem index="7" value="08"/>
+                            <StringItem index="8" value="09"/>
+                            <StringItem index="9" value="10"/>
+                            <StringItem index="10" value="11"/>
+                            <StringItem index="11" value="12"/>
+                            <StringItem index="12" value="13"/>
+                            <StringItem index="13" value="14"/>
+                            <StringItem index="14" value="15"/>
+                            <StringItem index="15" value="16"/>
+                            <StringItem index="16" value="17"/>
+                            <StringItem index="17" value="18"/>
+                            <StringItem index="18" value="19"/>
+                            <StringItem index="19" value="20"/>
+                            <StringItem index="20" value="21"/>
+                            <StringItem index="21" value="22"/>
+                            <StringItem index="22" value="23"/>
+                            <StringItem index="23" value="24"/>
+                            <StringItem index="24" value="25"/>
+                            <StringItem index="25" value="26"/>
+                            <StringItem index="26" value="27"/>
+                            <StringItem index="27" value="28"/>
+                            <StringItem index="28" value="29"/>
+                            <StringItem index="29" value="30"/>
+                            <StringItem index="30" value="31"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblStartDateChangeMonth">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="M&#xe5;nad:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="cbStartDateChangeMonth">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="12">
+                            <StringItem index="0" value="01"/>
+                            <StringItem index="1" value="0"/>
+                            <StringItem index="2" value="03"/>
+                            <StringItem index="3" value="04"/>
+                            <StringItem index="4" value="05"/>
+                            <StringItem index="5" value="06"/>
+                            <StringItem index="6" value="07"/>
+                            <StringItem index="7" value="08"/>
+                            <StringItem index="8" value="09"/>
+                            <StringItem index="9" value="10"/>
+                            <StringItem index="10" value="11"/>
+                            <StringItem index="11" value="12"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblStartDateChangeYear">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xc5;r:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="tfStartDateChangeYear">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xc5;&#xc5;&#xc5;&#xc5;"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblReleaseChangeDay">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Dag:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="cbReleaseChangeDay">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="31">
+                            <StringItem index="0" value="01"/>
+                            <StringItem index="1" value="02"/>
+                            <StringItem index="2" value="03"/>
+                            <StringItem index="3" value="04"/>
+                            <StringItem index="4" value="05"/>
+                            <StringItem index="5" value="06"/>
+                            <StringItem index="6" value="07"/>
+                            <StringItem index="7" value="08"/>
+                            <StringItem index="8" value="09"/>
+                            <StringItem index="9" value="10"/>
+                            <StringItem index="10" value="11"/>
+                            <StringItem index="11" value="12"/>
+                            <StringItem index="12" value="13"/>
+                            <StringItem index="13" value="14"/>
+                            <StringItem index="14" value="15"/>
+                            <StringItem index="15" value="16"/>
+                            <StringItem index="16" value="17"/>
+                            <StringItem index="17" value="18"/>
+                            <StringItem index="18" value="19"/>
+                            <StringItem index="19" value="20"/>
+                            <StringItem index="20" value="21"/>
+                            <StringItem index="21" value="22"/>
+                            <StringItem index="22" value="23"/>
+                            <StringItem index="23" value="24"/>
+                            <StringItem index="24" value="25"/>
+                            <StringItem index="25" value="26"/>
+                            <StringItem index="26" value="27"/>
+                            <StringItem index="27" value="28"/>
+                            <StringItem index="28" value="29"/>
+                            <StringItem index="29" value="30"/>
+                            <StringItem index="30" value="31"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblReleaseChangeMonth">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="M&#xe5;nad:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="cbReleaseChangeMonth">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="12">
+                            <StringItem index="0" value="01"/>
+                            <StringItem index="1" value="0"/>
+                            <StringItem index="2" value="03"/>
+                            <StringItem index="3" value="04"/>
+                            <StringItem index="4" value="05"/>
+                            <StringItem index="5" value="06"/>
+                            <StringItem index="6" value="07"/>
+                            <StringItem index="7" value="08"/>
+                            <StringItem index="8" value="09"/>
+                            <StringItem index="9" value="10"/>
+                            <StringItem index="10" value="11"/>
+                            <StringItem index="11" value="12"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblReleaseChangeYear">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xc5;r:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="tfReleaseChangeYear">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#xc5;&#xc5;&#xc5;&#xc5;"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -1153,11 +1382,6 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="cbNewProjLeader" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="243" max="-2" attributes="0"/>
-                                              <Component id="btnAddGameProject" min="-2" max="-2" attributes="0"/>
-                                          </Group>
                                           <Component id="tfGpAddName" min="-2" pref="97" max="-2" attributes="0"/>
                                           <Component id="lblAddDay" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
@@ -1193,10 +1417,15 @@
                                                   </Group>
                                               </Group>
                                           </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="cbNewProjLeader" max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                                              <Component id="btnAddGameProject" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="267" max="32767" attributes="0"/>
+                              <EmptySpace pref="272" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1498,49 +1727,50 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="lblHeaderPlatform" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="cbFunctionsPlatform" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="spPlatform" min="-2" pref="372" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="cbListPlatforms" min="-2" pref="146" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="btnSearchPlatform" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="sepPlatform" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="lblChoosePlatform" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="cbListAllPlatforms" min="-2" pref="153" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="lblChooseGameProjectPlatform" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                              <Component id="cbListAllGamesPlatform" min="-2" pref="135" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="btnConfirmUpdatePlatform" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="lblErrorMessagePlatform" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
+                              <Component id="sepPlatform" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="lblChoosePlatform" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="cbListAllPlatforms" min="-2" pref="153" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="lblChooseGameProjectPlatform" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="cbListAllGamesPlatform" min="-2" pref="190" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="btnConfirmUpdatePlatform" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                              <Component id="lblErrorMessagePlatform" pref="79" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="lblPlatformUpdateHeader" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="52" pref="615" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                      <Component id="lblHeaderPlatform" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="cbFunctionsPlatform" pref="291" max="32767" attributes="0"/>
+                                          <Component id="spPlatform" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="cbListPlatforms" min="-2" pref="146" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="btnSearchPlatform" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="lblPlatformUpdateHeader" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1549,19 +1779,17 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
                       <Component id="lblPlatformUpdateHeader" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lblChoosePlatform" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cbListAllPlatforms" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblChooseGameProjectPlatform" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cbListAllGamesPlatform" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="btnConfirmUpdatePlatform" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblChoosePlatform" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbListAllPlatforms" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblChooseGameProjectPlatform" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbListAllGamesPlatform" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnConfirmUpdatePlatform" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                               <Component id="sepPlatform" min="-2" pref="10" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -1570,11 +1798,11 @@
                                   <Component id="btnSearchPlatform" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="cbListPlatforms" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                              <Component id="spPlatform" min="-2" pref="74" max="-2" attributes="0"/>
                           </Group>
                           <Component id="lblErrorMessagePlatform" min="-2" pref="23" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      <Component id="spPlatform" min="-2" pref="74" max="-2" attributes="0"/>
                       <EmptySpace pref="244" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -1681,23 +1909,64 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="sepCompetence" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="lblHeaderCompetence" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="spCompetence" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="lblHeaderCompetence" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cbFunctionsCompetence" max="32767" attributes="0"/>
+                              <Component id="cbFunctionsCompetence" min="-2" pref="305" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="cbCompetenceSpecialists" min="-2" pref="91" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="spCompetence" min="-2" pref="372" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="tfsearchFieldCompetence" min="-2" pref="98" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnSearchCompetence" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="lblErrorMessageCompetence" pref="117" max="32767" attributes="0"/>
+                      <Component id="btnSearchCompetence" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lblCompetenceTitle" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="366" max="-2" attributes="0"/>
+                              <Component id="lblErrorMessageCompetence" pref="150" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblChooseSpecialistChange" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbListSpecialistChange" alignment="0" min="-2" pref="126" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblChooseCompetenceChange" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="cbChooseCompetenceChange" min="-2" pref="130" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                      <Component id="btnRemoveCompetence" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="btnAddCompetence" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="btnLevelDownCompetence" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="tfCurrentLevelChange" min="-2" pref="50" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnLevelUpCompetence" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="lblChangeLevel" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1705,18 +1974,42 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblHeaderCompetence" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cbFunctionsCompetence" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tfsearchFieldCompetence" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnSearchCompetence" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="lblErrorMessageCompetence" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="lblErrorMessageCompetence" min="-2" pref="23" max="-2" attributes="0"/>
+                          <Component id="lblCompetenceTitle" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblChooseSpecialistChange" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblChooseCompetenceChange" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cbListSpecialistChange" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbChooseCompetenceChange" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnRemoveCompetence" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnAddCompetence" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="lblChangeLevel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnLevelDownCompetence" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfCurrentLevelChange" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnLevelUpCompetence" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="82" max="32767" attributes="0"/>
+                      <Component id="sepCompetence" min="-2" pref="9" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblHeaderCompetence" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbFunctionsCompetence" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSearchCompetence" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbCompetenceSpecialists" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="spCompetence" min="-2" pref="74" max="-2" attributes="0"/>
-                      <EmptySpace pref="354" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1741,11 +2034,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="S&#xf6;k"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="tfsearchFieldCompetence">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="S&#xf6;k..."/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchCompetenceActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="cbFunctionsCompetence">
               <Properties>
@@ -1763,6 +2054,71 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblErrorMessageCompetence">
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cbCompetenceSpecialists">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JSeparator" name="sepCompetence">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblCompetenceTitle">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="14" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="&#xc4;ndra kompetens f&#xf6;r en specialist"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblChooseSpecialistChange">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="V&#xe4;lj specialist:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cbListSpecialistChange">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblChooseCompetenceChange">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="V&#xe4;lj kompetens:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cbChooseCompetenceChange">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnRemoveCompetence">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ta bort"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnAddCompetence">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="L&#xe4;gg till"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblChangeLevel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#xc4;ndra level:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnLevelDownCompetence">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="-"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="tfCurrentLevelChange">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnLevelUpCompetence">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="+"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

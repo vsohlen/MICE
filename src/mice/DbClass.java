@@ -170,6 +170,21 @@ public class DbClass {
         }
     }
     
+    public void changeAdmin (int AID, String password)
+    {
+        String sqlFraga = "update ADMINISTRATOR " +
+                          "set aid = " + AID + ", losenord = '" + password + "' " +
+                          "where aid = " + AID + ";";
+        try
+        {
+            idb.update(sqlFraga);
+        }
+        catch(InfException e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+    
     /**
      * Updates all info about a game at once
      */
@@ -642,7 +657,80 @@ public class DbClass {
         }
     
     }
-
-          
+    
+    public ArrayList<HashMap<String, String>> getSpecialistCompetence(String aid)
+    {
+        String sqlFraga = "select * from HAR_KOMPETENS " +
+                          "where aid = '" + aid + "';";
+        
+        try
+        {
+            ArrayList<HashMap<String, String>> specialistCompetences = idb.fetchRows(sqlFraga);
+            return specialistCompetences;
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+    
+    public String getCompetenceName(String kid)
+    {
+        String sqlFraga = "select BENAMNING from KOMPETENSDOMAN " +
+                          "where kid = '" + kid + "';";
+        
+        try
+        {
+            String getCompetenceName = idb.fetchSingle(sqlFraga);
+            return getCompetenceName;
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+    
+    public String getAidFromSpecialist(String name)
+    {
+        String aid;
+        
+        String sqlFraga = "select specialist.aid from SPECIALIST " +
+                          "join anstalld on anstalld.aid = SPECIALIST.AID " +
+                          "where NAMN = '" + name + "'";
+        
+        try
+        {
+            aid = idb.fetchSingle(sqlFraga);
+            return aid;
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+        
+    }
+        
+    public ArrayList<HashMap<String, String>> listAdmin(int AID)
+    {
+        String sqlFraga = "select * from ADMINISTRATOR " +
+                          "JOIN ANSTALLD on ADMINISTRATOR.AID = ANSTALLD.AID " +
+                          "where ANSTALLD.AID = " + AID + ";";
+        
+        ArrayList<HashMap<String,String>> allAdmin = new ArrayList<HashMap<String, String>>();
+        
+        try
+        {
+            allAdmin = idb.fetchRows(sqlFraga);
+            return allAdmin;
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return allAdmin;
+        }
+    }
 }
     

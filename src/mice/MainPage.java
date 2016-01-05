@@ -15,6 +15,7 @@ import java.util.*; //Import of the java util package
 public class MainPage extends javax.swing.JFrame {
 
     private boolean isAdmin;        //a field that  decides what the user have access to
+    private DbClass database;
     
     /**
      * Creates new form MainPage
@@ -22,6 +23,7 @@ public class MainPage extends javax.swing.JFrame {
      */
     public MainPage(boolean isAdmin) {
         initComponents();
+        initDb();
         updateCBs();
             listHiredToCBRemove();
             //Fills in combo boxes with data.
@@ -49,6 +51,12 @@ public class MainPage extends javax.swing.JFrame {
                 initHiredFunctionsCompetence();
             }
     }
+    
+    private void initDb()
+    {
+        database = new DbClass();
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -1345,9 +1353,7 @@ public class MainPage extends javax.swing.JFrame {
     public void addProjectleadersToCB()
     {
         try
-        {
-            DbClass database = new DbClass();
-	
+        {	
             ArrayList<HashMap<String, String>> allLeaders = database.listAllLeaders();
             for (int i = 0; i < allLeaders.size(); i++)
             {
@@ -1515,9 +1521,6 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            //Remove the person selected in the combobox.
-            DbClass database = new DbClass();
-
             database.deleteHired(deleteAID);
         }
         catch(Exception e)
@@ -1533,7 +1536,6 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            DbClass database = new DbClass();
             //Fetches the names of all of the staff, and holds all info in a cb.
             ArrayList<HashMap<String, String>> allHired = database.listAllHired();
             for (int i = 0; i < allHired.size(); i++)
@@ -1609,9 +1611,7 @@ public class MainPage extends javax.swing.JFrame {
     private void btnConfirmUpdateHiredMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmUpdateHiredMouseClicked
         try
         {
-            // Update a specialist to show a new project said specialist is working on.  
-            DbClass database = new DbClass();
-
+            // Update a specialist to show a new project said specialist is working on. 
             String specialist = cbListAllSpecialists.getSelectedItem().toString();
             int aid = Integer.parseInt(specialist.split(",")[0]);
             String project = cbListAllGameProjectsUpdate.getSelectedItem().toString();
@@ -1633,8 +1633,6 @@ public class MainPage extends javax.swing.JFrame {
         {
             // Update a specialist to show a project that the specialist is no longer
             //working on.
-            DbClass database = new DbClass();
-
             String specialist = cbListAllSpecialists.getSelectedItem().toString();
             int aid = Integer.parseInt(specialist.split(",")[0]);
             String project = cbListAllGameProjectsUpdate.getSelectedItem().toString();
@@ -1705,9 +1703,6 @@ public class MainPage extends javax.swing.JFrame {
         {
             String currentHired = cbListAllHired.getSelectedItem().toString();
             int aid = Integer.parseInt(currentHired.split(",")[0]);
-
-            DbClass database = new DbClass();
-
             //populate textfields with existing data
             HashMap<String, String> hired = database.listHired(aid);
             String name = hired.get("NAMN");
@@ -1892,9 +1887,6 @@ public class MainPage extends javax.swing.JFrame {
         
             String choosenGame = cbListAllGames.getSelectedItem().toString();
             int sid = Integer.parseInt(choosenGame.split(",")[0]);
-
-            DbClass database = new DbClass();
-
             //populate textfields with existing data
             HashMap<String, String> games = database.listProject(sid);
 
@@ -2055,7 +2047,6 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            DbClass database = new DbClass();
             String currentLeader = cbListAllProjectleaders.getSelectedItem().toString();
             String currentGame = cbListAllGameProjects.getSelectedItem().toString();
             int aid = Integer.parseInt(currentLeader.split(",")[0]);
@@ -2094,8 +2085,6 @@ public class MainPage extends javax.swing.JFrame {
         try
         {
             //Adds all the projects a specialist can work on to a cb.
-            DbClass database = new DbClass();
-
             ArrayList<HashMap<String, String>> allProjects = database.listAllProjects();
             for (int i = 0; i < allProjects.size(); i++)
             {
@@ -2142,7 +2131,7 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            DbClass database = new DbClass();
+            
         
             String currentEmployee = cbListAllHiredPosition.getSelectedItem().toString();
             int aid = Integer.parseInt(currentEmployee.split(",")[0]);
@@ -2169,7 +2158,7 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            DbClass database = new DbClass();
+            
             String currentEmployee = cbListAllHiredPosition.getSelectedItem().toString();
             int aid = Integer.parseInt(currentEmployee.split(",")[0]);
 
@@ -2196,7 +2185,7 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            DbClass database = new DbClass();
+            
             ArrayList<HashMap<String, String>> allPlatforms = database.listPlatforms();
             for (int i = 0; i<allPlatforms.size(); i++)
             {
@@ -2219,7 +2208,7 @@ public class MainPage extends javax.swing.JFrame {
         try
         {
             //Adds all the projects a specialist can work on to a cb.
-            DbClass database = new DbClass();
+            
 
             ArrayList<HashMap<String, String>> allProjects = database.listAllProjects();
             for (int i = 0; i < allProjects.size(); i++)
@@ -2242,7 +2231,7 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            DbClass database = new DbClass();
+            
         
             ArrayList<HashMap<String, String>> allPlatforms = database.listPlatforms();
             for (int i = 0; i < allPlatforms.size(); i++)
@@ -2265,7 +2254,7 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            DbClass database = new DbClass();
+            
         
             ArrayList<HashMap<String,String>> allGames = database.listAllProjects();
             for(int i = 0; i<allGames.size(); i++)
@@ -2288,7 +2277,7 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            DbClass database = new DbClass();
+            
 	
             ArrayList<HashMap<String, String>> allProjects = database.listAllProjects();
             for (int i = 0; i < allProjects.size(); i++)
@@ -2311,7 +2300,7 @@ public class MainPage extends javax.swing.JFrame {
     {      
         try
         {
-            DbClass database = new DbClass();
+            
 	
             ArrayList<HashMap<String, String>> allSpecialists = database.listAllSpecialists();
             for (int i = 0; i < allSpecialists.size(); i++)
@@ -2335,7 +2324,7 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            DbClass database = new DbClass();
+            
         
             ArrayList<HashMap<String, String>> allHiredPosition = database.listAllHired();
             for(int i = 0; i < allHiredPosition.size(); i++)
@@ -2395,7 +2384,7 @@ public class MainPage extends javax.swing.JFrame {
         try
         {
             String searchWord = tfsearchField.getText();
-            DbClass database = new DbClass();
+            
             tasearchResult.setText("");
             lblErrorMessageHired.setText("");
             if (Validation.textBoxTextIsRequired(tfsearchField) && Validation.containsString(searchWord))
@@ -2427,7 +2416,7 @@ public class MainPage extends javax.swing.JFrame {
             String currentGame = cbAllGameProjects.getSelectedItem().toString();
             int gameID = Integer.parseInt(currentGame.split(",")[0]);
 
-            DbClass database = new DbClass ();
+            
             tasearchResultGameProject.setText("");        
 
                 ArrayList<HashMap<String, String>> listLeader = database.listLeaderOnProject(gameID);
@@ -2452,7 +2441,7 @@ public class MainPage extends javax.swing.JFrame {
         try 
         {
             String searchWord = tfsearchFieldGameProject.getText();
-            DbClass database = new DbClass();
+            
             tasearchResultGameProject.setText("");
             lblErrorMessageGameProject.setText("");
             ArrayList<HashMap<String, String>> listPlatform = database.listPlatformsForGames(searchWord);
@@ -2487,7 +2476,7 @@ public class MainPage extends javax.swing.JFrame {
             String currentPlatform = cbListPlatforms.getSelectedItem().toString();
             int PID = Integer.parseInt(currentPlatform.split(",")[0]);
 
-            DbClass database = new DbClass ();
+            
             tasearchResultPlatform.setText("");
 
                 ArrayList<HashMap<String, String>> listGame = database.listGamesForPlatform(PID);
@@ -2511,7 +2500,7 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            DbClass database = new DbClass();
+            
         
             ArrayList<HashMap<String, String>> allProjects = database.listAllProjects();
             for (int i = 0; i < allProjects.size(); i++)
@@ -2535,7 +2524,7 @@ public class MainPage extends javax.swing.JFrame {
         try
         {
             String searchWord = tfsearchField.getText();
-            DbClass database = new DbClass();
+            
             tasearchResult.setText("");
             boolean validation = Validation.containsString(searchWord);
             if (Validation.textBoxTextIsRequired(tfsearchField) && validation)
@@ -2579,7 +2568,7 @@ public class MainPage extends javax.swing.JFrame {
         try
         {
             //Adds a new leader to the selected project
-            DbClass database = new DbClass();
+            
 
             ArrayList<HashMap<String, String>> allProjects = database.listAllLeaders();
             for (int i = 0; i < allProjects.size(); i++)
@@ -2602,7 +2591,7 @@ public class MainPage extends javax.swing.JFrame {
     {
         try 
         {
-           DbClass database = new DbClass();
+           
             
             ArrayList<HashMap<String, String>> listReleases = database.listReleasedGames();
 
@@ -2627,7 +2616,7 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            DbClass database = new DbClass();
+            
             
             ArrayList<HashMap<String, String>> listDeveloping = database.listUnderDevelopment();
 
@@ -2651,7 +2640,7 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            DbClass database = new DbClass();
+            
             //create a cb that holds all the hired staff
             ArrayList<HashMap<String, String>> allHired = database.listAllHired();
             for (int i = 0; i < allHired.size(); i++)
@@ -2671,7 +2660,7 @@ public class MainPage extends javax.swing.JFrame {
     {
         boolean admin = false;
             
-        DbClass database = new DbClass();
+        
         
             //loops through all admins and checks if the person choosen in the combobox is an admin
             ArrayList<HashMap<String, String>> admins = database.listAdmin(AID);
@@ -2691,7 +2680,7 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            DbClass database = new DbClass();
+            
             HashMap<String, String> hired = database.listHired(AID);
 
             //Gets the current name from the database
@@ -2731,7 +2720,7 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            DbClass database = new DbClass();
+            
             HashMap<String, String> game = database.listProject(sid);
         
         
@@ -2777,7 +2766,7 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            DbClass database = new DbClass();
+            
 	
             int newSID = database.generateSID();
         
@@ -2865,7 +2854,7 @@ public class MainPage extends javax.swing.JFrame {
         try
         {
             //Adds all the competences a specialist has.
-            DbClass database = new DbClass();
+            
             String kid = "";
             String kompetensniva;
             String beteckning = "";
@@ -2896,7 +2885,7 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            DbClass database = new DbClass();
+            
 	
             ArrayList<HashMap<String, String>> specialists = database.listAllSpecialists();
             for (int i = 0; i < specialists.size(); i++)
@@ -2918,7 +2907,7 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            DbClass database = new DbClass();
+            
 	
             int newAID = database.generateAID();
             String firstname = tfAddFirstName.getText();
@@ -2969,7 +2958,7 @@ public class MainPage extends javax.swing.JFrame {
             int sid = Integer.parseInt(currentGame.split(",")[0]);
             String currentPlatform = cbListAllPlatforms.getSelectedItem().toString();
             int pid = Integer.parseInt(currentPlatform.split(",")[0]);
-            DbClass database = new DbClass();
+            
             lblErrorMessagePlatform.setText("");
 
             if (!database.doesExistInInnefattar(sid, pid))

@@ -113,7 +113,7 @@ public class LogIn extends javax.swing.JFrame {
         DbClass database = new DbClass();
         
         String tempUsername = tfAdminUsername.getText();
-        String tempPass = pfPassword.getText();
+        String tempPass = new String(pfPassword.getPassword());
         
         boolean checker = database.adminLoginCheck(tempUsername, tempPass);
         

@@ -37,30 +37,23 @@ public class DbClass {
      * method for getting a list of which hired who works with a certain projekt
      * @param searchHired
      * @return     */
-    public ArrayList<String> listHiredInProject(String searchHired)
+    public ArrayList<HashMap<String, String>> listHiredInProject(String searchHired)
     {   
-        String sqlFraga = "SELECT BETECKNING FROM SPELPROJEKT"
+        String sqlFraga = "SELECT * FROM SPELPROJEKT"
                          +  " join ARBETAR_I on SPELPROJEKT.SID = ARBETAR_I.SID"
                          +  " join ANSTALLD on ARBETAR_I.AID = ANSTALLD.AID"
                          +  " where ANSTALLD.NAMN like '" + searchHired + "%'";
         
-        ArrayList<String> listHired = new ArrayList<>(); 
-      
         try
         {
-        ArrayList<HashMap<String, String>> hiredProject = idb.fetchRows(sqlFraga);
-
-        for (int i = 0; i < hiredProject.size(); i++)
-            {
-              listHired.add(hiredProject.get(i).get("BETECKNING"));
-            }
+            ArrayList<HashMap<String, String>> hiredProject = idb.fetchRows(sqlFraga);
+            return hiredProject;
         }
         catch(InfException e)
         {
             System.out.println(e.getMessage());
             return null;
         }
-        return listHired;
     }
     
     /**
@@ -240,7 +233,30 @@ public class DbClass {
         }
     }
     
-    public void updateSpecialistProject(int aid, int sid)
+    public boolean doesSpecialistExist(int aid)
+    {
+        String sqlFraga = "Select * from SPECIALIST where AID = " + aid;
+        
+        try 
+        {
+             HashMap<String, String> specialist = idb.fetchRow(sqlFraga);
+             if(specialist != null)
+             {
+                 return true;
+             }
+             else
+             {
+                return false;
+             }
+        } 
+        catch (Exception e) 
+        {
+            System.out.println(e.getMessage());
+            return false;
+        }       
+    }
+    
+    public boolean updateSpecialistProject(int aid, int sid)
     {
         String sqlFraga = "insert into ARBETAR_I " +
                           "(AID, SID) " +
@@ -249,10 +265,12 @@ public class DbClass {
         try
 	{
             idb.insert(sqlFraga);
+            return true;
 	}
 	catch (InfException e)
 	{
-		System.out.println(e.getMessage());
+            System.out.println(e.getMessage());
+            return false;
 	}
     }
     

@@ -54,7 +54,7 @@ public class Validation {
         String firstName = name1;
         String lastName = name2;
         
-        if (firstName.length() < 2 && lastName.length() < 2 && firstName.contains("\\s+") && lastName.contains("\\s+"))
+        if (firstName.length() < 1 && lastName.length() < 1 && firstName.contains("\\s+") && lastName.contains("\\s+"))
         {  
             match = false;
         }
@@ -74,9 +74,9 @@ public class Validation {
       */  
      public static boolean checkMail(String mail)
     {
-      String regex = "^[a-zåäöA-ZÅÄÖ0-9.-]+@[a-zåäöA-ZÅÄÖ0-9.-]+\\.[A-Z]{2,6}+$";
+      //String regex = "^[a-zåäöA-ZÅÄÖ0-9.-]+@[a-zåäöA-ZÅÄÖ0-9.-]+\\.[A-Z]{2,6}+$";
         boolean match;
-        if (mail.matches(regex))
+        if (mail.contains("@"))
             {
                 match = true;
             }
@@ -95,7 +95,7 @@ public class Validation {
     {
     String regex = "^[0-9]+$";
         boolean match;
-        if (number.matches(regex) && !number.contains("\\s+"))
+        if (number.matches(regex) && !number.contains("\\s+") && number.length() > 4)
             {
                 match = true;
             }

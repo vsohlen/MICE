@@ -6,6 +6,7 @@
 package mice;
 
 import java.util.*; //Import of the java util package
+import oru.inf.InfException;
 
 
 /**
@@ -305,9 +306,7 @@ public class MainPage extends javax.swing.JFrame {
                             .addGap(29, 29, 29)
                             .addComponent(pfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(paneChangeHiredLayout.createSequentialGroup()
-                                .addGap(127, 127, 127)
-                                .addComponent(btnChangeHired))
+                            .addComponent(btnChangeHired)
                             .addGroup(paneChangeHiredLayout.createSequentialGroup()
                                 .addGroup(paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblChangeNameHired)
@@ -318,13 +317,14 @@ public class MainPage extends javax.swing.JFrame {
                                     .addComponent(tfChangeTelephoneHired)
                                     .addComponent(tfChangeNameHired)
                                     .addComponent(tfChangeMailHired, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(495, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         paneChangeHiredLayout.setVerticalGroup(
             paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paneChangeHiredLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(lblHeaderChangeHired, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(lblChooseHired)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -382,7 +382,7 @@ public class MainPage extends javax.swing.JFrame {
                             .addComponent(cbListAllHiredRemove, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addComponent(btnRemove)))
-                .addContainerGap(407, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         paneRemoveHiredLayout.setVerticalGroup(
             paneRemoveHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -397,7 +397,7 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(btnRemove))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblNote)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tpSubMenuHired.addTab("Ta bort", paneRemoveHired);
@@ -456,7 +456,7 @@ public class MainPage extends javax.swing.JFrame {
                         .addComponent(lblAddLastName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tfAddLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(574, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         paneAddHiredLayout.setVerticalGroup(
             paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -481,7 +481,7 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(tfAddMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnChangeHiredAdd)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tpSubMenuHired.addTab("Lägg till", paneAddHired);
@@ -552,7 +552,7 @@ public class MainPage extends javax.swing.JFrame {
                         .addComponent(lblChooseGameProjectUpdate)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cbListAllGameProjectsUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(47, 47, 47)
                         .addComponent(btnConfirmUpdateRemoved)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnConfirmUpdateHired))
@@ -622,9 +622,9 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(lblChooseUpgrade)
                     .addComponent(cbHiredForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnConfirmUpdatePosition))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblErrorMessageHiredUpdate)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addGap(60, 60, 60))
         );
 
         tpSubMenuHired.addTab("Uppdatera", paneUpdateHired);
@@ -636,48 +636,50 @@ public class MainPage extends javax.swing.JFrame {
         paneHiredLayout.setHorizontalGroup(
             paneHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paneHiredLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
                 .addGroup(paneHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblFunctionError)
                     .addGroup(paneHiredLayout.createSequentialGroup()
-                        .addComponent(lblHeader)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(20, 20, 20)
                         .addGroup(paneHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(spHired, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblFunctionError)
                             .addGroup(paneHiredLayout.createSequentialGroup()
-                                .addComponent(cbFunctions, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(tfsearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnSearch)
-                                .addGap(18, 18, 18)
-                                .addComponent(lblErrorMessageHired, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(paneHiredLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(paneHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(separatorHired)
-                    .addComponent(tpSubMenuHired))
+                                .addComponent(lblHeader)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(paneHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(paneHiredLayout.createSequentialGroup()
+                                        .addComponent(spHired, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(lblErrorMessageHired, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(paneHiredLayout.createSequentialGroup()
+                                        .addComponent(cbFunctions, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(tfsearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnSearch)
+                                        .addGap(0, 0, Short.MAX_VALUE))))))
+                    .addGroup(paneHiredLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(paneHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(separatorHired)
+                            .addComponent(tpSubMenuHired))))
                 .addContainerGap())
         );
         paneHiredLayout.setVerticalGroup(
             paneHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paneHiredLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(paneHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(paneHiredLayout.createSequentialGroup()
-                        .addComponent(tpSubMenuHired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(separatorHired, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(paneHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblHeader)
-                            .addComponent(cbFunctions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSearch)
-                            .addComponent(tfsearchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(lblErrorMessageHired, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(tpSubMenuHired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(separatorHired, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(paneHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblHeader)
+                    .addComponent(cbFunctions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSearch)
+                    .addComponent(tfsearchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(spHired, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(paneHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(spHired, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblErrorMessageHired, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblFunctionError)
                 .addContainerGap(31, Short.MAX_VALUE))
@@ -1309,7 +1311,7 @@ public class MainPage extends javax.swing.JFrame {
         try
         {
             String selectedFunction = cbFunctions.getSelectedItem().toString();
-                   //valid.containsString(tfsearchField.getText())
+                   
             switch (selectedFunction)
             {
                 case "Sök anställd i ett projekt" :
@@ -1335,7 +1337,6 @@ public class MainPage extends javax.swing.JFrame {
                     break;
                 case "Uppdatera anställd" : 
                     showHiredUpdateFields();
-                    showHiredChangeFields();
                     updateCBs();
                     tpSubMenuHired.setSelectedIndex(3);
                     break;       
@@ -1517,7 +1518,7 @@ public class MainPage extends javax.swing.JFrame {
      * lets u delete a hired person
      * @param deleteAID 
      */
-    private void removeHired (String deleteAID)             //Validering krävs 
+    private void removeHired (String deleteAID)
     {
         try
         {
@@ -1616,7 +1617,20 @@ public class MainPage extends javax.swing.JFrame {
             int aid = Integer.parseInt(specialist.split(",")[0]);
             String project = cbListAllGameProjectsUpdate.getSelectedItem().toString();
             int sid = Integer.parseInt(project.split(",")[0]);
-            database.updateSpecialistProject(aid, sid);
+            String name =specialist.split(",")[1];
+            lblErrorMessageHiredGP.setText("");
+            boolean performed = database.updateSpecialistProject(aid, sid);
+           
+            if (performed)
+            {
+                
+                lblErrorMessageHiredGP.setText("");
+                lblErrorMessageHiredGP.setText(name + " arbetar nu med projektet.");
+            }
+            else
+            {
+                lblErrorMessageHiredGP.setText(name + " kunde inte läggas till i projektet. Kontrollera så personen inte redan jobbar i det aktuella projektet.");
+            }
         }
         catch(Exception e)
         {
@@ -1635,9 +1649,31 @@ public class MainPage extends javax.swing.JFrame {
             //working on.
             String specialist = cbListAllSpecialists.getSelectedItem().toString();
             int aid = Integer.parseInt(specialist.split(",")[0]);
+            String name =specialist.split(",")[1];
             String project = cbListAllGameProjectsUpdate.getSelectedItem().toString();
             int sid = Integer.parseInt(project.split(",")[0]);
-            database.deleteSpecialistProject(aid, sid);
+            String gameName = project.split(",")[1];
+            ArrayList<HashMap<String, String>> projects = database.listHiredInProject(name);
+            
+            boolean deletePreformed = false;
+            for(int i = 0; i < projects.size(); i++)
+            {
+                String currentDescription = projects.get(i).get("BETECKNING");
+                if(gameName.equals(currentDescription)){
+                    database.deleteSpecialistProject(aid, sid);
+                    deletePreformed = true;
+                }
+            }
+            
+            if (deletePreformed)
+            {
+                lblErrorMessageHiredGP.setText("");
+                lblErrorMessageHiredGP.setText(name + " är borttagen från projektet.");
+            }
+            else
+            {
+                lblErrorMessageHiredGP.setText(name + " kunde inte tas bort från projektet. Kontrollera så personen jobbar i det aktuella projektet.");
+            }
         }
         catch(Exception e)
         {
@@ -1764,6 +1800,7 @@ public class MainPage extends javax.swing.JFrame {
             else if (selectedText.equals("Sök anställd i ett projekt"))
             {
                 tfsearchField.setVisible(true);
+                tfsearchField.setText("Sök anställd");
                 btnSearch.setText("OK");
             }
             else
@@ -1797,14 +1834,12 @@ public class MainPage extends javax.swing.JFrame {
                 listPlatforms();
                 break;  
              case "Lista de spelprojekt som är under utveckling":
-                //Anropa metod som listar de projekt som är under utveckling
                 updateCBs();
                 clearTFs();
                 listProjectsUnderDevelopment(); 
                 cbFunctionsGameProject.setSelectedIndex(1);
                 break;
             case "Lista de spelprojekt som har släppts" :
-                //Anropa metod som listar de spel som har släppts
                 updateCBs();
                 clearTFs();
                 listReleases(); 
@@ -1829,53 +1864,7 @@ public class MainPage extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnSearchGameProjectActionPerformed
 
-    /**
-     * Event for deciding different changes based on different functions
-     * @param evt 
-     */
-    private void cbFunctionsGameProjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFunctionsGameProjectActionPerformed
-        //changes the btn text based on what action is selected and hides/shows the search-field
-        
-        String selectedFunction = cbFunctionsGameProject.getSelectedItem().toString();
-        
-        switch (selectedFunction)
-        {
-            case "Visa vem som leder/har lett ett specifikt projekt" :
-                tfsearchFieldGameProject.setVisible(false);
-                btnSearchGameProject.setText("OK");
-                cbAllGameProjects.setVisible(true);
-                addGameProjectsToCB();
-                break;
-            case "Visa vilka plattformar ett spel utvecklas till" :
-                tfsearchFieldGameProject.setVisible(true);
-                tfsearchFieldGameProject.setText("Sök spel..");
-                btnSearchGameProject.setText("OK");
-                cbAllGameProjects.setVisible(false);
-                break;
-            case "Lista de spelprojekt som är under utveckling" :
-                tfsearchFieldGameProject.setVisible(false);
-                btnSearchGameProject.setText("OK");
-                cbAllGameProjects.setVisible(false);
-                break;
-            case "Lista de spelprojekt som har släppts" :
-                tfsearchFieldGameProject.setVisible(false);
-                btnSearchGameProject.setText("OK");
-                cbAllGameProjects.setVisible(false);
-                break;
-            case "Lägg till spelutvecklingsprojekt" :
-                tfsearchFieldGameProject.setVisible(false);
-                btnSearchGameProject.setText("Gå");
-                cbAllGameProjects.setVisible(false);
-                break;
-            case "Uppdatera information om ett specifikt projekt" :
-                tfsearchFieldGameProject.setVisible(false);
-                btnSearchGameProject.setText("Gå");
-                cbAllGameProjects.setVisible(false);
-                break;
-        }
-      
-    }//GEN-LAST:event_cbFunctionsGameProjectActionPerformed
-
+   
     /**
      * button that chooses what gameproject to change
      * @param evt 
@@ -2040,6 +2029,52 @@ public class MainPage extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnSearchCompetenceActionPerformed
 
+   
+    /**
+     * Event for deciding different changes based on different functions
+     * @param evt 
+     */
+    private void cbFunctionsGameProjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFunctionsGameProjectActionPerformed
+        //changes the btn text based on what action is selected and hides/shows the search-field
+        String selectedFunction = cbFunctionsGameProject.getSelectedItem().toString();
+        
+        switch (selectedFunction)
+        {
+            case "Visa vem som leder/har lett ett specifikt projekt" :
+                tfsearchFieldGameProject.setVisible(false);
+                btnSearchGameProject.setText("OK");
+                cbAllGameProjects.setVisible(true);
+                addGameProjectsToCB();
+                break;
+            case "Visa vilka plattformar ett spel utvecklas till" :
+                tfsearchFieldGameProject.setVisible(true);
+                tfsearchFieldGameProject.setText("Sök spel..");
+                btnSearchGameProject.setText("OK");
+                cbAllGameProjects.setVisible(false);
+                break;
+            case "Lista de spelprojekt som är under utveckling" :
+                tfsearchFieldGameProject.setVisible(false);
+                btnSearchGameProject.setText("OK");
+                cbAllGameProjects.setVisible(false);
+                break;
+            case "Lista de spelprojekt som har släppts" :
+                tfsearchFieldGameProject.setVisible(false);
+                btnSearchGameProject.setText("OK");
+                cbAllGameProjects.setVisible(false);
+                break;
+            case "Lägg till spelutvecklingsprojekt" :
+                tfsearchFieldGameProject.setVisible(false);
+                btnSearchGameProject.setText("Gå");
+                cbAllGameProjects.setVisible(false);
+                break;
+            case "Uppdatera information om ett specifikt projekt" :
+                tfsearchFieldGameProject.setVisible(false);
+                btnSearchGameProject.setText("Gå");
+                cbAllGameProjects.setVisible(false);
+                break;
+        }                                     
+    }//GEN-LAST:event_cbFunctionsGameProjectActionPerformed
+
     /**
     * calls the database updateHired-methos and sends the new info to it.
     */
@@ -2052,6 +2087,7 @@ public class MainPage extends javax.swing.JFrame {
             int aid = Integer.parseInt(currentLeader.split(",")[0]);
             int game = Integer.parseInt(currentGame.split(",")[0]);
             boolean match = false;
+            lblErrorMessageHiredProjekt.setText("");
 
             HashMap<String, String> thisLeader = database.listALeader(aid);
             for (String leader: thisLeader.keySet())
@@ -2064,11 +2100,11 @@ public class MainPage extends javax.swing.JFrame {
             if(match)
             {
                 database.updateHired(aid, game);
-                System.out.println("Uppdateringen utförd");
+                lblErrorMessageHiredProjekt.setText("Uppdateringen utförd");
             }
             else
             {
-                System.out.println("Ett felmeddelande här");
+                lblErrorMessageHiredProjekt.setText("Uppdateringen kunde ej utföras");
             }
         }
         catch (Exception e)
@@ -2106,6 +2142,7 @@ public class MainPage extends javax.swing.JFrame {
     {
 	try
         {
+            lblErrorMessageHiredUpdate.setText("");
             //Add all the employment-states to a cb
             String employment = cbHiredForm.getSelectedItem().toString();
             switch (employment)
@@ -2131,11 +2168,14 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            
-        
             String currentEmployee = cbListAllHiredPosition.getSelectedItem().toString();
             int aid = Integer.parseInt(currentEmployee.split(",")[0]);
-            if (!currentEmployee.isEmpty())
+            
+            if (database.doesSpecialistExist(aid))
+            {                
+                lblErrorMessageHiredUpdate.setText(currentEmployee.split(",")[1] + " är redan speciallist");
+            }            
+            else if (!currentEmployee.isEmpty())
             {
                 database.insertToSpecialist(aid);
                 lblErrorMessageHiredUpdate.setText("Uppdateringen utförd");
@@ -2147,7 +2187,7 @@ public class MainPage extends javax.swing.JFrame {
         }
         catch (Exception e)
         {
-            System.out.println();
+            System.out.println(e.getMessage());
         }   
     }
     
@@ -2379,7 +2419,7 @@ public class MainPage extends javax.swing.JFrame {
     /**
      * Lists the projects a person is working on.
      */
-    private void listHired ()             //Validering krävs 
+    private void listHired ()
     {
         try
         {
@@ -2387,18 +2427,29 @@ public class MainPage extends javax.swing.JFrame {
             
             tasearchResult.setText("");
             lblErrorMessageHired.setText("");
+            
+            
             if (Validation.textBoxTextIsRequired(tfsearchField) && Validation.containsString(searchWord))
-            {
-                ArrayList<String> listHired = database.listHiredInProject(searchWord);
-                for(String beteckning: listHired)
+            {    
+                ArrayList<HashMap<String, String>> listHired = database.listHiredInProject(searchWord);
+                if (listHired != null)
                 {
-                    tasearchResult.append(beteckning + "\n");
+                    for (int i = 0; i < listHired.size(); i++)
+                    {
+                        String project = listHired.get(i).get("BETECKNING");
+                        tasearchResult.append(project + "\n");
+                        lblFunctionError.setText("");
+                    }
+                }
+                else
+                {
+                    lblFunctionError.setText("Personen jobbar inte med något projekt. Sök igen, var noga med gemener och varsaler");
                 }
             }
             else
             {
-                lblErrorMessageHired.setText("Använd endast a-ö, A-Ö");
-            }
+                lblErrorMessageHired.setText("Använd endast a-ö, A-Ö, var noga med gemener och versaler");
+            } 
         }
         catch(Exception e)
         {
@@ -2442,23 +2493,33 @@ public class MainPage extends javax.swing.JFrame {
         {
             String searchWord = tfsearchFieldGameProject.getText();
             
+            if(!Validation.textBoxTextIsRequired(tfsearchFieldGameProject))
+            {
+                return;
+            }
+            if(!Validation.containsString(searchWord))
+            {                
+                lblErrorMessageGameProject.setText("Använd endast a-ö, A-Ö. Var noga med gemener och versaler");
+                return;
+            }
+            
             tasearchResultGameProject.setText("");
             lblErrorMessageGameProject.setText("");
             ArrayList<HashMap<String, String>> listPlatform = database.listPlatformsForGames(searchWord);
-
-            if (Validation.textBoxTextIsRequired(tfsearchFieldGameProject) && Validation.containsString(searchWord))
+            
+            if(listPlatform != null)
             {
-
                 for(int i = 0; i < listPlatform.size(); i++)
                 {
                     String beteckning = listPlatform.get(i).get("BENAMNING");
                     tasearchResultGameProject.append(beteckning + "\n");
-                }
+                    lblErrorMessageGameProject.setText("");
+                }                
             }
             else
             {
-                lblErrorMessageGameProject.setText("Använd endast a-ö, A-Ö");
-            }
+                lblErrorMessageGameProject.setText("Spelet du sökte efter finns inte.");                
+            } 
         }
         catch (Exception e)
         {
@@ -2519,18 +2580,16 @@ public class MainPage extends javax.swing.JFrame {
     /**
      * Lists the projects a person os leading
      */
-    private void listProjects ()             //Validering krävs 
+    private void listProjects ()
     {
         try
         {
             String searchWord = tfsearchField.getText();
-            
             tasearchResult.setText("");
-            boolean validation = Validation.containsString(searchWord);
-            if (Validation.textBoxTextIsRequired(tfsearchField) && validation)
+            lblErrorMessageHired.setText("");
+            
+            if (Validation.textBoxTextIsRequired(tfsearchField) && Validation.containsString(searchWord))
             {
-                lblErrorMessageHired.setText("");
-
                 ArrayList<HashMap<String, String>> listProject = database.listProjects(searchWord);
                 if (listProject != null)
                 {
@@ -2540,6 +2599,7 @@ public class MainPage extends javax.swing.JFrame {
                         String startdatumet = listProject.get(i).get("STARTDATUM");
                         String releasedatumet = listProject.get(i).get("RELEASEDATUM");
                         tasearchResult.append(beteckningen + " " + startdatumet + " " + releasedatumet + "\n");
+                        lblFunctionError.setText("");
                     }
                 }
                 else
@@ -2683,28 +2743,38 @@ public class MainPage extends javax.swing.JFrame {
             
             HashMap<String, String> hired = database.listHired(AID);
 
-            //Gets the current name from the database
+            //Gets the current info from the database and the new typed in to the boxes
             String existingName = hired.get("NAMN");
             String setName = tfChangeNameHired.getText();
+            String firstName = setName.split(" ")[0];
+            String lastName = setName.split(" ")[1];
             String existingTelephone = hired.get("TELEFON");
             String setPhone = tfChangeTelephoneHired.getText();
             String existingMail = hired.get("MAIL");
             String setMail = tfChangeMailHired.getText();
-            String setPassword = pfPassword.getText();
+            String setPassword = new String(pfPassword.getPassword());
                 
-            if (isAdmin(AID))
+            if (isAdmin(AID))       //checks if the user they want to change is administrator and lets u change the password
             {
                 database.changeAdmin(AID, setPassword);
             }
-                
-            if (!setName.equals(existingName) || !setPhone.equals(existingTelephone) || !setMail.equals(existingMail))
+            
+            if (Validation.textBoxTextIsRequired(tfChangeNameHired) && Validation.textBoxTextIsRequired(tfChangeTelephoneHired) && Validation.textBoxTextIsRequired(tfChangeMailHired))
             {
-                database.changeHired(setName, setPhone, setMail, AID);
-                System.out.println("Ändring genomförd");
-            }
+                //checks so that the new info doesn't already excist and sends in the new info to the database
+                if (!setName.equals(existingName) || !setPhone.equals(existingTelephone) || !setMail.equals(existingMail))
+                {
+                    database.changeHired(setName, setPhone, setMail, AID);
+                    lblErrorMessageHired.setText("Ändringen genomförd");
+                }
+                else
+                {
+                    lblErrorMessageHired.setText("Ändringen kunde ej genomföras");
+                }
+            } 
             else
             {
-                System.out.println("nope");
+                lblErrorMessageHired.setText("En textruta får aldrig lämnas tom.");
             }
         }
         catch (Exception e)
@@ -2903,12 +2973,10 @@ public class MainPage extends javax.swing.JFrame {
     /**
     * Throws the new info about a hired to the database-class
     */
-    public void addNewHired ()             //Validering krävs 
+    public void addNewHired ()
     {
         try
         {
-            
-	
             int newAID = database.generateAID();
             String firstname = tfAddFirstName.getText();
             String lastname = tfAddLastName.getText();
@@ -2916,29 +2984,32 @@ public class MainPage extends javax.swing.JFrame {
             String mail = tfAddMail.getText();
 	
             //Gets the info from the textboxes and validates it
-            if (Validation.containsString(firstname) && Validation.containsString(lastname) && Validation.checkName(firstname, lastname) && Validation.checkNumber(phone) && Validation.checkMail(mail))
+            if (Validation.textBoxTextIsRequired(tfAddFirstName) && Validation.textBoxTextIsRequired(tfAddLastName) && Validation.textBoxTextIsRequired(tfAddTelephone) && Validation.textBoxTextIsRequired(tfAddMail))
+                    
             {
-                firstname =  tfAddFirstName.getText(); 
+                /*firstname =  tfAddFirstName.getText(); 
                 lastname = tfAddLastName.getText();
                 phone = tfAddTelephone.getText();
-                mail = tfAddMail.getText();
+                mail = tfAddMail.getText();*/
+                
+                //Create a username based on the firstnames first letter, the lastnames first and last letter.
+                String sistaBokstaven = lastname.substring(lastname.length()-1, lastname.length());
+                String username = firstname.substring(0,1) + lastname.substring(0,1) + sistaBokstaven;       
+
+                //checks if there is any text in the textfields and then adds the text in them to the database
+                if (Validation.checkName(firstname, lastname) && Validation.checkNumber(phone) && Validation.checkMail(mail))
+                {
+                    String name = firstname + " " + lastname;
+                    database.addHired(newAID, name, phone, mail, username);
+                    lblErrorMessageHired.setText(name + " är nu tillagd!");
+                }
+                else
+                {
+                    lblErrorMessageHired.setText("Personen kunde inte läggas till");
+                }
             }
 				
-            //Create a username based on the firstnames first letter, the lastnames first and last letter.
-            String sistaBokstaven = lastname.substring(lastname.length()-1, lastname.length());
-            String username = firstname.substring(0,1) + lastname.substring(0,1) + sistaBokstaven;       
-		
-            //checks if there is any text in the textfields and then adds the text in them to the database
-            if (Validation.textBoxTextIsRequired(tfAddFirstName) && Validation.textBoxTextIsRequired(tfAddLastName) && Validation.textBoxTextIsRequired(tfAddTelephone) && Validation.textBoxTextIsRequired(tfAddMail))
-            {
-                String name = firstname + " " + lastname;
-                database.addHired(newAID, name, phone, mail, username);
-                System.out.println(name + " är nu tillagd!");
-            }
-            else
-            {
-                System.out.println("Personen kunde inte läggas till");
-            }
+            
         }
         catch (Exception e)
         {

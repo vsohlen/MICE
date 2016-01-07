@@ -227,6 +227,8 @@ public class MainPage extends javax.swing.JFrame {
         btnLevelDownCompetence = new javax.swing.JButton();
         tfCurrentLevelChange = new javax.swing.JTextField();
         btnLevelUpCompetence = new javax.swing.JButton();
+        cbChoosePlattformChange = new javax.swing.JComboBox<>();
+        lblErrorMessageCompetenceChange = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -544,18 +546,6 @@ public class MainPage extends javax.swing.JFrame {
             .addGroup(paneUpdateHiredLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(paneUpdateHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(paneUpdateHiredLayout.createSequentialGroup()
-                        .addComponent(lblChooseSpecialist)
-                        .addGap(18, 18, 18)
-                        .addComponent(cbListAllSpecialists, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblChooseGameProjectUpdate)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbListAllGameProjectsUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47)
-                        .addComponent(btnConfirmUpdateRemoved)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnConfirmUpdateHired))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneUpdateHiredLayout.createSequentialGroup()
                         .addComponent(lblChooseHiredPosition)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -568,6 +558,18 @@ public class MainPage extends javax.swing.JFrame {
                         .addComponent(btnConfirmUpdatePosition))
                     .addGroup(paneUpdateHiredLayout.createSequentialGroup()
                         .addGroup(paneUpdateHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(paneUpdateHiredLayout.createSequentialGroup()
+                                .addComponent(lblChooseSpecialist)
+                                .addGap(18, 18, 18)
+                                .addComponent(cbListAllSpecialists, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lblChooseGameProjectUpdate)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbListAllGameProjectsUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(47, 47, 47)
+                                .addComponent(btnConfirmUpdateRemoved)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnConfirmUpdateHired))
                             .addGroup(paneUpdateHiredLayout.createSequentialGroup()
                                 .addComponent(lblChooseGameProject)
                                 .addGap(18, 18, 18)
@@ -1185,19 +1187,57 @@ public class MainPage extends javax.swing.JFrame {
 
         lblChooseSpecialistChange.setText("Välj specialist:");
 
+        cbListSpecialistChange.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbListSpecialistChangeActionPerformed(evt);
+            }
+        });
+
         lblChooseCompetenceChange.setText("Välj kompetens:");
 
+        cbChooseCompetenceChange.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbChooseCompetenceChangeActionPerformed(evt);
+            }
+        });
+
         btnRemoveCompetence.setText("Ta bort");
+        btnRemoveCompetence.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRemoveCompetenceMouseClicked(evt);
+            }
+        });
 
         btnAddCompetence.setText("Lägg till");
+        btnAddCompetence.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAddCompetenceMouseClicked(evt);
+            }
+        });
 
         lblChangeLevel.setText("Ändra level:");
 
         btnLevelDownCompetence.setText("-");
+        btnLevelDownCompetence.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLevelDownCompetenceMouseClicked(evt);
+            }
+        });
 
         tfCurrentLevelChange.setEditable(false);
 
         btnLevelUpCompetence.setText("+");
+        btnLevelUpCompetence.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLevelUpCompetenceMouseClicked(evt);
+            }
+        });
+
+        cbChoosePlattformChange.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbChoosePlattformChangeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout paneCompetenceLayout = new javax.swing.GroupLayout(paneCompetence);
         paneCompetence.setLayout(paneCompetenceLayout);
@@ -1216,29 +1256,10 @@ public class MainPage extends javax.swing.JFrame {
                         .addComponent(cbCompetenceSpecialists, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSearchCompetence)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(201, Short.MAX_VALUE))
             .addGroup(paneCompetenceLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(paneCompetenceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(paneCompetenceLayout.createSequentialGroup()
-                        .addComponent(lblCompetenceTitle)
-                        .addGap(366, 366, 366)
-                        .addComponent(lblErrorMessageCompetence, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                        .addGap(31, 31, 31))
-                    .addGroup(paneCompetenceLayout.createSequentialGroup()
-                        .addGroup(paneCompetenceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblChooseSpecialistChange)
-                            .addComponent(cbListSpecialistChange, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(46, 46, 46)
-                        .addGroup(paneCompetenceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblChooseCompetenceChange)
-                            .addGroup(paneCompetenceLayout.createSequentialGroup()
-                                .addComponent(cbChooseCompetenceChange, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(41, 41, 41)
-                                .addComponent(btnRemoveCompetence)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnAddCompetence)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(paneCompetenceLayout.createSequentialGroup()
                         .addGroup(paneCompetenceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(paneCompetenceLayout.createSequentialGroup()
@@ -1248,7 +1269,32 @@ public class MainPage extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnLevelUpCompetence))
                             .addComponent(lblChangeLevel))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(paneCompetenceLayout.createSequentialGroup()
+                        .addGroup(paneCompetenceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblCompetenceTitle)
+                            .addGroup(paneCompetenceLayout.createSequentialGroup()
+                                .addGroup(paneCompetenceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblChooseSpecialistChange)
+                                    .addComponent(cbListSpecialistChange, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(46, 46, 46)
+                                .addGroup(paneCompetenceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblChooseCompetenceChange)
+                                    .addComponent(cbChooseCompetenceChange, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(paneCompetenceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(paneCompetenceLayout.createSequentialGroup()
+                                .addComponent(lblErrorMessageCompetence, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
+                                .addGap(31, 31, 31))
+                            .addGroup(paneCompetenceLayout.createSequentialGroup()
+                                .addComponent(cbChoosePlattformChange, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnRemoveCompetence)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnAddCompetence)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblErrorMessageCompetenceChange)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
         paneCompetenceLayout.setVerticalGroup(
             paneCompetenceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1266,7 +1312,9 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(cbListSpecialistChange, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbChooseCompetenceChange, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRemoveCompetence)
-                    .addComponent(btnAddCompetence))
+                    .addComponent(btnAddCompetence)
+                    .addComponent(cbChoosePlattformChange, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblErrorMessageCompetenceChange))
                 .addGap(18, 18, 18)
                 .addComponent(lblChangeLevel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1583,6 +1631,12 @@ public class MainPage extends javax.swing.JFrame {
             addGamesToCB();
             cbCompetenceSpecialists.removeAllItems();
             addSpecialistsToCBCompetence();
+            cbChooseCompetenceChange.removeAllItems();
+            addCompetenceToCB();
+            cbListSpecialistChange.removeAllItems();
+            addSpecialistsToCBCompetenceChange();
+            cbChoosePlattformChange.removeAllItems();
+            addPlatformsToCBChange();
         }
         catch(Exception e)
         {
@@ -2075,6 +2129,247 @@ public class MainPage extends javax.swing.JFrame {
         }                                     
     }//GEN-LAST:event_cbFunctionsGameProjectActionPerformed
 
+    private void btnAddCompetenceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddCompetenceMouseClicked
+          
+            //Get specialist name and competence name.
+            String name = cbListSpecialistChange.getSelectedItem().toString();
+            String benamning = cbChooseCompetenceChange.getSelectedItem().toString();
+            String plattform = cbChoosePlattformChange.getSelectedItem().toString();
+            //Get AID, KID and PID from names.
+            String aid = database.getAidFromSpecialist(name);
+            String kid = database.getKidFromCompetenceName(benamning);
+            String pid = database.getPidFromPlattformName(plattform);
+            
+        try
+        {  
+            if (tfCurrentLevelChange.getText().equals(""))
+            {
+                database.addCompetenceLevel(aid, kid, pid);
+            }
+            else
+            {
+                lblErrorMessageCompetenceChange.setText("Kompetensen finns redan för " + name + ".");
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }             
+    }//GEN-LAST:event_btnAddCompetenceMouseClicked
+
+    private void cbChooseCompetenceChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbChooseCompetenceChangeActionPerformed
+       //Sets the level in the levelbox according to what competence you choose.
+       try
+       {
+        String selectedFunction = cbChooseCompetenceChange.getSelectedItem().toString();
+        
+        String name = cbListSpecialistChange.getSelectedItem().toString();
+        String benamning = cbChooseCompetenceChange.getSelectedItem().toString();
+        String plattform = cbChoosePlattformChange.getSelectedItem().toString();
+        
+        lblErrorMessageCompetenceChange.setText("");
+        
+         switch (selectedFunction)
+        {
+            case "Art" : 
+                clearTFs();
+                getCompetenceLevel(name, benamning, plattform);
+                break;
+             
+            case "Audio" :
+                clearTFs(); 
+                getCompetenceLevel(name, benamning, plattform);     
+                break;
+                
+            case "Programming" :
+                clearTFs();
+                getCompetenceLevel(name, benamning, plattform);
+                break;
+                
+            case "Design" :
+                clearTFs();
+                getCompetenceLevel(name, benamning, plattform);
+                break;
+         }
+       }
+         catch(Exception e)
+            {
+            System.out.println(e.getMessage());
+            }
+    }//GEN-LAST:event_cbChooseCompetenceChangeActionPerformed
+
+    private void cbListSpecialistChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbListSpecialistChangeActionPerformed
+                                                    
+        // Runs the level display method while changing person.
+        try
+        {
+        String name = cbListSpecialistChange.getSelectedItem().toString();
+        String benamning = cbChooseCompetenceChange.getSelectedItem().toString();
+        String plattform = cbChoosePlattformChange.getSelectedItem().toString();
+        
+        lblErrorMessageCompetenceChange.setText("");
+        
+        getCompetenceLevel(name, benamning, plattform);
+        }
+        catch(Exception e)
+            {
+            System.out.println(e.getMessage());
+            }
+    }//GEN-LAST:event_cbListSpecialistChangeActionPerformed
+
+    /**
+     * Decreases the level of a certain skill of a specialist chosen from
+     * the combo boxes. Returns an error message if the value tries to go under
+     * 1, and tells the user to use the remove button instead.
+     * @param evt 
+     */
+    private void btnLevelDownCompetenceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLevelDownCompetenceMouseClicked
+                                                
+        // Decrease the value of the current level by 1. Can't go under 1.
+      
+        String strCurrentLevel = "";
+        int currentLevel = 0;
+        int newValue;
+        
+        strCurrentLevel = tfCurrentLevelChange.getText();
+            
+        if (!strCurrentLevel.equals(""))
+            {
+            currentLevel = Integer.parseInt(tfCurrentLevelChange.getText());
+            }
+
+            //Get specialist name and competence name.
+            String name = cbListSpecialistChange.getSelectedItem().toString();
+            String benamning = cbChooseCompetenceChange.getSelectedItem().toString();
+            String plattform = cbChoosePlattformChange.getSelectedItem().toString();
+            //Get AID and KID from names.
+            String aid = database.getAidFromSpecialist(name);
+            String kid = database.getKidFromCompetenceName(benamning);    
+            String pid = database.getPidFromPlattformName(plattform);
+        try
+        {
+           if (strCurrentLevel.equals(""))
+            {
+            lblErrorMessageCompetenceChange.setText("Använd 'Ta bort' för att ta bort en existerande kompetens.");
+            }    
+            else if (currentLevel != 1 )
+            {
+                newValue = currentLevel - 1;
+                database.updateCompetenceLevel(aid, kid, pid, newValue);
+                lblErrorMessageCompetenceChange.setText(name+ "s nivå inom " + benamning + ", " + plattform + " sänkt till " + newValue + ".");
+                getCompetenceLevel(name, benamning, plattform);   
+            }
+            else
+            {
+                lblErrorMessageCompetenceChange.setText("En specialists nivå kan inte vara under 1. Använd 'Ta bort' istället.");
+            }
+        }
+        catch(Exception e)
+        {
+        System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_btnLevelDownCompetenceMouseClicked
+
+    /**
+     * Increases the level of a certain skill of a specialist chosen from
+     * the combo boxes. Returns an error message if the value tries to go over 5.
+     * @param evt 
+     */
+    private void btnLevelUpCompetenceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLevelUpCompetenceMouseClicked
+        // Decrease the value of the current level by 1. Can't go under 1.
+
+        String strCurrentLevel = "";
+        int currentLevel = 0;
+        int newValue;
+        
+        strCurrentLevel = tfCurrentLevelChange.getText();
+            
+        if (!strCurrentLevel.equals(""))
+            {
+            currentLevel = Integer.parseInt(tfCurrentLevelChange.getText());
+            }
+         
+            //Get specialist name and competence name.
+            String name = cbListSpecialistChange.getSelectedItem().toString();
+            String benamning = cbChooseCompetenceChange.getSelectedItem().toString();
+            String plattform = cbChoosePlattformChange.getSelectedItem().toString();
+            //Get AID and KID from names.
+            String aid = database.getAidFromSpecialist(name);
+            String kid = database.getKidFromCompetenceName(benamning);
+            String pid = database.getPidFromPlattformName(plattform);
+        
+        try
+        {
+            if (strCurrentLevel.equals(""))
+            {
+            lblErrorMessageCompetenceChange.setText("Använd 'Lägg Till' för att lägga till en ny kompetens.");
+            }    
+            else if (currentLevel != 5)
+            {
+                newValue = currentLevel + 1;
+                database.updateCompetenceLevel(aid, kid, pid, newValue);
+                lblErrorMessageCompetenceChange.setText(name + "s nivå inom " + benamning + ", " + plattform + " höjd till " + newValue + ".");
+                getCompetenceLevel(name, benamning, plattform);   
+            }
+            else
+            {
+                lblErrorMessageCompetenceChange.setText("En specialists nivå kan inte vara över 5.");
+            }
+            
+        }
+        catch(Exception e)
+        {
+        System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_btnLevelUpCompetenceMouseClicked
+
+    private void cbChoosePlattformChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbChoosePlattformChangeActionPerformed
+        // Runs the level display method while changing person.
+        try
+        {
+        String name = cbListSpecialistChange.getSelectedItem().toString();
+        String benamning = cbChooseCompetenceChange.getSelectedItem().toString();
+        String plattform = cbChoosePlattformChange.getSelectedItem().toString();
+        
+        lblErrorMessageCompetenceChange.setText("");
+        
+        getCompetenceLevel(name, benamning, plattform);
+        }
+        catch(Exception e)
+            {
+            System.out.println(e.getMessage());
+            }
+    }//GEN-LAST:event_cbChoosePlattformChangeActionPerformed
+
+    private void btnRemoveCompetenceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRemoveCompetenceMouseClicked
+        //Removes a certain competence level.
+       
+            //Get specialist name and competence name.
+            String name = cbListSpecialistChange.getSelectedItem().toString();
+            String benamning = cbChooseCompetenceChange.getSelectedItem().toString();
+            String plattform = cbChoosePlattformChange.getSelectedItem().toString();
+            //Get AID, KID and PID from names.
+            String aid = database.getAidFromSpecialist(name);
+            String kid = database.getKidFromCompetenceName(benamning);
+            String pid = database.getPidFromPlattformName(plattform);
+            
+        try
+        {  
+            if (!tfCurrentLevelChange.getText().equals(""))
+            {
+                database.removeCompetenceLevel(aid, kid, pid);
+            }
+            else
+            {
+                lblErrorMessageCompetenceChange.setText("Kompetensen existerar inte  för " + name + ".");
+            }
+        }
+        catch (Exception e)
+        {
+        System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_btnRemoveCompetenceMouseClicked
+
     /**
     * calls the database updateHired-methos and sends the new info to it.
     */
@@ -2138,7 +2433,7 @@ public class MainPage extends javax.swing.JFrame {
     /**
      * updates the employment-form
      */
-    public void updateHiredForm()             //Validering krävs 
+    public void updateHiredForm()
     {
 	try
         {
@@ -2164,7 +2459,7 @@ public class MainPage extends javax.swing.JFrame {
     /**
      * updates the employment to specialist
      */
-    public void updateEmploymentToSpecialist ()             //Validering krävs      
+    public void updateEmploymentToSpecialist ()   
     {
         try
         {
@@ -2194,7 +2489,7 @@ public class MainPage extends javax.swing.JFrame {
     /**
      * updates the employment tp projectleader
      */
-    public void updateEmploymentToProjectleader()             //Validering krävs 
+    public void updateEmploymentToProjectleader()
     {
         try
         {
@@ -2356,7 +2651,6 @@ public class MainPage extends javax.swing.JFrame {
             System.out.println(e.getMessage());
         }
     }
-    
     /**
      * changes the position of a hired
      */
@@ -2364,8 +2658,6 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            
-        
             ArrayList<HashMap<String, String>> allHiredPosition = database.listAllHired();
             for(int i = 0; i < allHiredPosition.size(); i++)
             {
@@ -2746,8 +3038,8 @@ public class MainPage extends javax.swing.JFrame {
             //Gets the current info from the database and the new typed in to the boxes
             String existingName = hired.get("NAMN");
             String setName = tfChangeNameHired.getText();
-            String firstName = setName.split(" ")[0];
-            String lastName = setName.split(" ")[1];
+            //String firstName = setName.split(" ")[0];
+            //String lastName = setName.split(" ")[1];
             String existingTelephone = hired.get("TELEFON");
             String setPhone = tfChangeTelephoneHired.getText();
             String existingMail = hired.get("MAIL");
@@ -2821,6 +3113,7 @@ public class MainPage extends javax.swing.JFrame {
             {
                 System.out.println("nope");
             }
+            
         }
         catch (Exception e)
         {
@@ -2912,7 +3205,6 @@ public class MainPage extends javax.swing.JFrame {
         {
             System.out.println(e.getMessage());
         }
-	  
     }
     
                                                     
@@ -2921,26 +3213,31 @@ public class MainPage extends javax.swing.JFrame {
     */
     private void listSpecialistCompetence()
     {
+        //Adds all the competences a specialist has.
+        
+        String kid;
+        String pid;
+        String kompetensniva;
+        String beteckning;
+        String plattform;
+        
+        String name = cbCompetenceSpecialists.getSelectedItem().toString();
+        String aid = database.getAidFromSpecialist(name);
+        
         try
         {
-            //Adds all the competences a specialist has.
-            
-            String kid = "";
-            String kompetensniva;
-            String beteckning = "";
-
-            String name = cbCompetenceSpecialists.getSelectedItem().toString();
-            String aid = database.getAidFromSpecialist(name);
-
-            ArrayList<HashMap<String, String>> allCompetences = database.getSpecialistCompetence(aid);
-            for (int i = 0; i < allCompetences.size(); i++)
-            {
-                    kid = allCompetences.get(i).get("KID");
-                    kompetensniva = allCompetences.get(i).get("KOMPETENSNIVA");
-                    beteckning = database.getCompetenceName(kid);
-                    String textHolder = tasearchResultCompetence.getText();
-                    tasearchResultCompetence.setText(textHolder + "Avdelning: " + beteckning + "\nKompetensnivå: " + kompetensniva + "\n" + "\n");
-            } 
+	ArrayList<HashMap<String, String>> allCompetences = database.getSpecialistCompetence(aid);
+	for (int i = 0; i < allCompetences.size(); i++)
+	{
+		kid = allCompetences.get(i).get("KID");
+		kompetensniva = allCompetences.get(i).get("KOMPETENSNIVA");
+                pid = allCompetences.get(i).get("PID");
+                plattform = database.getPlatformFromPid(pid);
+                beteckning = database.getCompetenceName(kid);
+                String textHolder = tasearchResultCompetence.getText();
+		tasearchResultCompetence.setText(textHolder + "Avdelning: " + beteckning + "\nPlattform: " + plattform + "\nKompetensnivå: " + kompetensniva + "\n" + "\n");
+	}
+        updateCBs();
         }
         catch(Exception e)
         {
@@ -2985,13 +3282,7 @@ public class MainPage extends javax.swing.JFrame {
 	
             //Gets the info from the textboxes and validates it
             if (Validation.textBoxTextIsRequired(tfAddFirstName) && Validation.textBoxTextIsRequired(tfAddLastName) && Validation.textBoxTextIsRequired(tfAddTelephone) && Validation.textBoxTextIsRequired(tfAddMail))
-                    
-            {
-                /*firstname =  tfAddFirstName.getText(); 
-                lastname = tfAddLastName.getText();
-                phone = tfAddTelephone.getText();
-                mail = tfAddMail.getText();*/
-                
+            {                
                 //Create a username based on the firstnames first letter, the lastnames first and last letter.
                 String sistaBokstaven = lastname.substring(lastname.length()-1, lastname.length());
                 String username = firstname.substring(0,1) + lastname.substring(0,1) + sistaBokstaven;       
@@ -3008,8 +3299,6 @@ public class MainPage extends javax.swing.JFrame {
                     lblErrorMessageHired.setText("Personen kunde inte läggas till");
                 }
             }
-				
-            
         }
         catch (Exception e)
         {
@@ -3047,7 +3336,61 @@ public class MainPage extends javax.swing.JFrame {
             System.out.println(e.getMessage());
         }
     }
-  
+    
+    private void getCompetenceLevel(String name, String benamning, String plattform)
+    {
+        
+        try
+        {
+            String aid = database.getAidFromSpecialist(name);
+            String kid = database.getKidFromCompetenceName(benamning);
+            String pid = database.getPidFromPlattformName(plattform);
+            
+            String competenceLevel  = database.getCompetenceLevel(aid, kid, pid);
+
+            tfCurrentLevelChange.setText(competenceLevel);
+     
+        }
+        catch(Exception e)
+            {
+            System.out.println(e.getMessage());
+            }       
+    }
+    
+    
+    private void addCompetenceToCB()
+    {
+	ArrayList<HashMap<String, String>> competenceNames = database.getCompetenceNames();
+	for (int i = 0; i < competenceNames.size(); i++)
+	{
+		String competenceName = competenceNames.get(i).get("BENAMNING");
+		cbChooseCompetenceChange.addItem(competenceName);
+                
+	}
+    }
+    
+    public void addSpecialistsToCBCompetenceChange()
+    {
+	
+	ArrayList<HashMap<String, String>> specialists = database.listAllSpecialists();
+	for (int i = 0; i < specialists.size(); i++)
+	{
+		String name = specialists.get(i).get("NAMN");
+                cbListSpecialistChange.addItem(name);
+	}
+    }
+    
+    public void addPlatformsToCBChange()
+    {
+	
+	ArrayList<HashMap<String, String>>platformNames = database.listPlatformNames();
+	for (int i = 0; i < platformNames.size(); i++)
+	{
+		String name = platformNames.get(i).get("BENAMNING");
+                cbChoosePlattformChange.addItem(name);
+	}
+    }
+    
     /**
      * Shows the fields about a Hired when someone with full access is logged in
      */
@@ -3362,6 +3705,8 @@ public class MainPage extends javax.swing.JFrame {
         btnLevelUpCompetence.setVisible(true);
         btnAddCompetence.setVisible(true);
         btnRemoveCompetence.setVisible(true);
+        cbChoosePlattformChange.setVisible(true);
+        lblErrorMessageCompetenceChange.setVisible(true);
     }
     
     /**
@@ -3381,6 +3726,8 @@ public class MainPage extends javax.swing.JFrame {
         btnLevelUpCompetence.setVisible(false);
         btnAddCompetence.setVisible(false);
         btnRemoveCompetence.setVisible(false);
+        cbChoosePlattformChange.setVisible(false);
+        lblErrorMessageCompetenceChange.setVisible(false);
     }
     
         
@@ -3409,6 +3756,7 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JButton btnSearchPlatform;
     private javax.swing.JComboBox<String> cbAllGameProjects;
     private javax.swing.JComboBox<String> cbChooseCompetenceChange;
+    private javax.swing.JComboBox<String> cbChoosePlattformChange;
     private javax.swing.JComboBox<String> cbCompetenceSpecialists;
     private javax.swing.JComboBox<String> cbFunctions;
     private javax.swing.JComboBox<String> cbFunctionsCompetence;
@@ -3468,6 +3816,7 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel lblDateYear;
     private javax.swing.JLabel lblDateYearRelease;
     private javax.swing.JLabel lblErrorMessageCompetence;
+    private javax.swing.JLabel lblErrorMessageCompetenceChange;
     private javax.swing.JLabel lblErrorMessageGameProject;
     private javax.swing.JLabel lblErrorMessageHired;
     private javax.swing.JLabel lblErrorMessageHiredGP;

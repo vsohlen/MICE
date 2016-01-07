@@ -750,5 +750,187 @@ public class DbClass {
             return allAdmin;
         }
     }
+    
+    public ArrayList<HashMap<String, String>> listPlatformNames ()
+    {
+        String sqlFraga = "select BENAMNING from PLATTFORM";
+        
+        try 
+        {
+            ArrayList<HashMap<String, String>> platformNames = idb.fetchRows(sqlFraga);
+            return platformNames;
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+   public ArrayList<HashMap<String, String>> getCompetenceNames()
+    {
+        String sqlFraga = "select BENAMNING from  KOMPETENSDOMAN";  
+    
+        try
+        {
+            ArrayList<HashMap<String, String>> competenceNames = idb.fetchRows(sqlFraga);
+            return competenceNames;
+        }
+        catch(InfException e)
+        {
+        System.out.println(e.getMessage());
+        return null;
+        }
+    }
+    
+    public String getCompetenceLevel(String aid, String kid, String pid)
+    {
+    String sqlFraga = "select KOMPETENSNIVA from HAR_KOMPETENS "
+            + "where aid = " + aid + " and kid = " + kid + " and pid = " + pid + ";";
+    
+    try
+        {
+           String specialistCompetenceLevel = idb.fetchSingle(sqlFraga);
+           return specialistCompetenceLevel;
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+    
+    /**
+     * Adds or subtracts one value of the "kompetensnivå" value.
+     * @param aid
+     * @param kid
+     * @param pid
+     * @param newValue 
+     */
+    public void updateCompetenceLevel(String aid, String kid, String pid, int newValue)
+    {
+         String sqlFraga = "update HAR_KOMPETENS set kompetensniva = " + newValue + " " +
+                            "where aid = " + aid + " and kid = " + kid + " and pid = " + pid + "";
+         try
+	{
+            idb.update(sqlFraga);    
+	}
+	catch (InfException e)
+	{
+		System.out.println(e.getMessage());
+	}
+    }
+    
+    /**
+     * Removes a certain specialists whole competence where the kid is the one
+     * chosen in a combo box.
+     * @param aid
+     * @param kid
+     */
+    public void removeCompetenceLevel(String aid, String kid)
+    {
+         String sqlFraga = ";";
+         try
+	{
+            idb.delete(sqlFraga);    
+	}
+	catch (InfException e)
+	{
+		System.out.println(e.getMessage());
+	}
+    }
+    
+    /**
+     * Adds a competence to a certain specialist where the kid and pid is 
+     * the one chosen in a combo box.
+     * @param aid
+     * @param kid
+     * @param pid
+     */
+    public void addCompetenceLevel(String aid, String kid, String pid)
+    {
+
+         String sqlFraga = "insert into HAR_KOMPETENS (aid, kid, pid, KOMPETENSNIVA) " +
+                            "values( " + aid + ", " + kid + ", " + pid +", '1');";
+         try
+	{
+            idb.insert(sqlFraga);    
+	}
+	catch (InfException e)
+	{
+		System.out.println(e.getMessage());
+	}
+    }
+    
+     /**
+     * Removes a competence to a certain specialist where the kid and pid is 
+     * the one chosen in a combo box.
+     * @param aid
+     * @param kid
+     * @param pid
+     */
+    public void removeCompetenceLevel(String aid, String kid, String pid)
+    {
+
+         String sqlFraga = "delete from HAR_KOMPETENS " +
+                            "where aid = " + aid + " and kid = " + kid + " and pid = " + pid + ";";
+         try
+	{
+            idb.delete(sqlFraga);    
+	}
+	catch (InfException e)
+	{
+		System.out.println(e.getMessage());
+	}
+    }
+    
+    
+    public String getKidFromCompetenceName(String name)
+    {
+      String sqlFraga = "select KID from KOMPETENSDOMAN " +
+                        "where BENAMNING = '" + name + "'";
+        try
+        {
+            String competenceKid = idb.fetchSingle(sqlFraga);
+            return competenceKid;
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+    
+     public String getPidFromPlattformName(String plattform)
+    {
+        String sqlFraga = "select PID from PLATTFORM " +
+                        "where BENAMNING = '" + plattform + "'";
+        try
+        {
+            String competencePid = idb.fetchSingle(sqlFraga);
+            return competencePid;
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+     
+    public String getPlatformFromPid(String pid)
+    {
+        String sqlFraga = "select BENAMNING from PLATTFORM " +
+                        "where pid = '" + pid + "'";
+        try
+        {
+            String competenceKid = idb.fetchSingle(sqlFraga);
+            return competenceKid;
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
 }
     

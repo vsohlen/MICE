@@ -852,14 +852,14 @@ public class DbClass {
 
          String sqlFraga = "insert into HAR_KOMPETENS (aid, kid, pid, KOMPETENSNIVA) " +
                             "values( " + aid + ", " + kid + ", " + pid +", '1');";
-         try
-	{
+        try
+        {
             idb.insert(sqlFraga);    
-	}
-	catch (InfException e)
-	{
-		System.out.println(e.getMessage());
-	}
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
     
      /**

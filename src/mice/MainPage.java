@@ -81,14 +81,19 @@ public class MainPage extends javax.swing.JFrame {
         tfChangeMailHired = new javax.swing.JTextField();
         tfChangeTelephoneHired = new javax.swing.JTextField();
         lblChangeTelephoneHired = new javax.swing.JLabel();
-        lblChangeNameHired = new javax.swing.JLabel();
-        tfChangeNameHired = new javax.swing.JTextField();
+        lblChangeFirstNameHired = new javax.swing.JLabel();
+        tfChangeFirstNameHired = new javax.swing.JTextField();
         lblHeaderChangeHired = new javax.swing.JLabel();
         lblChooseHired = new javax.swing.JLabel();
         cbListAllHired = new javax.swing.JComboBox<>();
         btnChooseChangeHired = new javax.swing.JButton();
         lblPassword = new javax.swing.JLabel();
         pfPassword = new javax.swing.JPasswordField();
+        tfChangeLastNameHired = new javax.swing.JTextField();
+        lblChangeLastNameHired = new javax.swing.JLabel();
+        pfVerifyPassword = new javax.swing.JPasswordField();
+        lblVerifyPassword = new javax.swing.JLabel();
+        lblChangeHiredMessage = new javax.swing.JLabel();
         paneRemoveHired = new javax.swing.JPanel();
         lblChooseHiredRemove = new javax.swing.JLabel();
         cbListAllHiredRemove = new javax.swing.JComboBox<>();
@@ -266,9 +271,9 @@ public class MainPage extends javax.swing.JFrame {
 
         lblChangeTelephoneHired.setText("Telefon: ");
 
-        lblChangeNameHired.setText("Namn:");
+        lblChangeFirstNameHired.setText("Förnamn:");
 
-        tfChangeNameHired.setText("Namn");
+        tfChangeFirstNameHired.setText("Förnamn");
 
         lblHeaderChangeHired.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblHeaderChangeHired.setText("Ändra anställd");
@@ -284,7 +289,17 @@ public class MainPage extends javax.swing.JFrame {
 
         lblPassword.setText("Lösenord:");
 
-        pfPassword.setText("jPasswordField1");
+        pfPassword.setText("asdwakjba");
+
+        tfChangeLastNameHired.setText("Efternamn");
+
+        lblChangeLastNameHired.setText("Efternamn:");
+
+        pfVerifyPassword.setText("asdasdasd");
+
+        lblVerifyPassword.setText("Verifiera:");
+
+        lblChangeHiredMessage.setText("aaaa");
 
         javax.swing.GroupLayout paneChangeHiredLayout = new javax.swing.GroupLayout(paneChangeHired);
         paneChangeHired.setLayout(paneChangeHiredLayout);
@@ -300,24 +315,27 @@ public class MainPage extends javax.swing.JFrame {
                             .addComponent(cbListAllHired, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(btnChooseChangeHired)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, paneChangeHiredLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, paneChangeHiredLayout.createSequentialGroup()
+                        .addGroup(paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblChangeMailHired)
+                            .addComponent(lblChangeTelephoneHired)
+                            .addComponent(lblChangeFirstNameHired)
+                            .addComponent(lblChangeLastNameHired)
                             .addComponent(lblPassword)
-                            .addGap(29, 29, 29)
-                            .addComponent(pfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnChangeHired)
-                            .addGroup(paneChangeHiredLayout.createSequentialGroup()
-                                .addGroup(paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblChangeNameHired)
-                                    .addComponent(lblChangeMailHired)
-                                    .addComponent(lblChangeTelephoneHired))
-                                .addGap(34, 34, 34)
-                                .addGroup(paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(tfChangeTelephoneHired)
-                                    .addComponent(tfChangeNameHired)
-                                    .addComponent(tfChangeMailHired, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(lblVerifyPassword))
+                        .addGap(26, 26, 26)
+                        .addGroup(paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(pfVerifyPassword)
+                            .addComponent(tfChangeTelephoneHired, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tfChangeFirstNameHired, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tfChangeMailHired, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                            .addComponent(tfChangeLastNameHired, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(pfPassword, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnChangeHired)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblChangeHiredMessage)))
+                .addContainerGap(465, Short.MAX_VALUE))
         );
         paneChangeHiredLayout.setVerticalGroup(
             paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,11 +348,15 @@ public class MainPage extends javax.swing.JFrame {
                 .addGroup(paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbListAllHired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnChooseChangeHired))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfChangeNameHired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblChangeNameHired))
-                .addGap(8, 8, 8)
+                    .addComponent(tfChangeFirstNameHired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblChangeFirstNameHired))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblChangeLastNameHired)
+                    .addComponent(tfChangeLastNameHired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblChangeTelephoneHired)
                     .addComponent(tfChangeTelephoneHired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -342,13 +364,17 @@ public class MainPage extends javax.swing.JFrame {
                 .addGroup(paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblChangeMailHired)
                     .addComponent(tfChangeMailHired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPassword)
                     .addComponent(pfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addComponent(btnChangeHired)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pfVerifyPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblVerifyPassword)
+                    .addComponent(btnChangeHired)
+                    .addComponent(lblChangeHiredMessage))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         tpSubMenuHired.addTab("Ändra", paneChangeHired);
@@ -813,8 +839,7 @@ public class MainPage extends javax.swing.JFrame {
                                                     .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
                                                         .addComponent(lblStartDateChangeYear)
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(tfStartDateChangeYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(2, 2, 2))
+                                                        .addComponent(tfStartDateChangeYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                     .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
                                                         .addGap(2, 2, 2)
                                                         .addComponent(lblReleaseChangeYear)
@@ -825,8 +850,7 @@ public class MainPage extends javax.swing.JFrame {
                                                     .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
                                                         .addComponent(lblStartDateChangeMonth)
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(cbStartDateChangeMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(2, 2, 2))
+                                                        .addComponent(cbStartDateChangeMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                     .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
                                                         .addGap(2, 2, 2)
                                                         .addComponent(lblReleaseChangeMonth)
@@ -837,8 +861,7 @@ public class MainPage extends javax.swing.JFrame {
                                                     .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
                                                         .addComponent(lblStartDateChangeDay)
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(cbStartDateChangeDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(2, 2, 2))
+                                                        .addComponent(cbStartDateChangeDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                     .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
                                                         .addGap(2, 2, 2)
                                                         .addComponent(lblReleaseChangeDay)
@@ -1064,13 +1087,10 @@ public class MainPage extends javax.swing.JFrame {
                 .addComponent(lblErrorMessageGameProject, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(21, 21, 21))
             .addGroup(paneProjectLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(paneProjectLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(tpSubMenuGameProject))
-                    .addGroup(paneProjectLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(separatorGameProject)))
+                    .addComponent(tpSubMenuGameProject)
+                    .addComponent(separatorGameProject))
                 .addContainerGap())
         );
         paneProjectLayout.setVerticalGroup(
@@ -1839,35 +1859,47 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConfirmUpdatePositionMouseClicked
 
     /**
-     * Event on mouseclick that sets the choosen one that you want to update information about
+     * Event on mouse click that sets the chosen one that you want to update information about
      * @param evt 
      */
     private void btnChooseChangeHiredMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChooseChangeHiredMouseClicked
         try
         {
+            lblChangeHiredMessage.setText("");
+            tfChangeFirstNameHired.setText("");
+            tfChangeLastNameHired.setText("");
+            tfChangeTelephoneHired.setText("");
+            tfChangeMailHired.setText("");    
+                    
             String currentHired = cbListAllHired.getSelectedItem().toString();
             int aid = Integer.parseInt(currentHired.split(",")[0]);
             //populate textfields with existing data
             HashMap<String, String> hired = database.listHired(aid);
-            String name = hired.get("NAMN");
-            tfChangeNameHired.setText(name);
+            String existingName = hired.get("NAMN");
+            tfChangeFirstNameHired.setText(existingName.split(" ")[0]);
+            tfChangeLastNameHired.setText(existingName.split(" ")[1]);
+
             String phone = hired.get("TELEFON");
             tfChangeTelephoneHired.setText(phone);
             String mail = hired.get("MAIL");
             tfChangeMailHired.setText(mail);
             boolean admin = isAdmin(aid);
-                        
-                //if the person choosen in the combobox is admin shows/hides the comboxes
-                if (!admin)
-                {
-                    lblPassword.setVisible(false);
-                    pfPassword.setVisible(false);
-                }
-                else
-                {
-                    lblPassword.setVisible(true);
-                    pfPassword.setVisible(true);
-                }
+
+            //if the person choosen in the combobox is admin shows/hides the comboxes
+            if (!admin)
+            {
+                lblPassword.setVisible(false);
+                pfPassword.setVisible(false);
+                lblVerifyPassword.setVisible(false);
+                pfVerifyPassword.setVisible(false);
+            }
+            else
+            {
+                lblPassword.setVisible(true);
+                pfPassword.setVisible(true);
+                lblVerifyPassword.setVisible(true);
+                pfVerifyPassword.setVisible(true);
+            }
         }
         catch(Exception e)
         {
@@ -1880,11 +1912,22 @@ public class MainPage extends javax.swing.JFrame {
      * @param evt 
      */
     private void btnChangeHiredMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChangeHiredMouseClicked
+        lblChangeHiredMessage.setText("");
         try
         {
-            String currentHired = cbListAllHired.getSelectedItem().toString();
-            int aid = Integer.parseInt(currentHired.split(",")[0]);
-            changeInfoAboutHired(aid);
+            String password1 = new String(pfPassword.getPassword());
+            String password2 = new String(pfVerifyPassword.getPassword());
+            if (password1.equals(password2))
+            {
+                String currentHired = cbListAllHired.getSelectedItem().toString();
+                int aid = Integer.parseInt(currentHired.split(",")[0]);
+                changeInfoAboutHired(aid);
+                lblChangeHiredMessage.setText("Ändringar genomförda.");
+            }
+            else
+            {
+                lblChangeHiredMessage.setText("Lösenorden stämmer inte.");
+            }
         }
         catch(Exception e)
         {
@@ -3116,7 +3159,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Lets you change information about the choosen one.
+     * Lets you change information about the chosen one.
      * @param AID 
      */
     private void changeInfoAboutHired (int AID)             //Validering krävs 
@@ -3128,7 +3171,7 @@ public class MainPage extends javax.swing.JFrame {
 
             //Gets the current info from the database and the new typed in to the boxes
             String existingName = hired.get("NAMN");
-            String setName = tfChangeNameHired.getText();
+            String setName = tfChangeFirstNameHired.getText();
             //String firstName = setName.split(" ")[0];
             //String lastName = setName.split(" ")[1];
             String existingTelephone = hired.get("TELEFON");
@@ -3142,7 +3185,7 @@ public class MainPage extends javax.swing.JFrame {
                 database.changeAdmin(AID, setPassword);
             }
             
-            if (Validation.textBoxTextIsRequired(tfChangeNameHired) && Validation.textBoxTextIsRequired(tfChangeTelephoneHired) && Validation.textBoxTextIsRequired(tfChangeMailHired))
+            if (Validation.textBoxTextIsRequired(tfChangeFirstNameHired) && Validation.textBoxTextIsRequired(tfChangeTelephoneHired) && Validation.textBoxTextIsRequired(tfChangeMailHired))
             {
                 //checks so that the new info doesn't already excist and sends in the new info to the database
                 if (!setName.equals(existingName) || !setPhone.equals(existingTelephone) || !setMail.equals(existingMail))
@@ -3503,15 +3546,18 @@ public class MainPage extends javax.swing.JFrame {
 	lblChooseHired.setVisible(true);
 	cbListAllHired.setVisible(true);
 	btnChooseChangeHired.setVisible(true);
-	lblChangeNameHired.setVisible(true);
-	tfChangeNameHired.setVisible(true);
+	lblChangeFirstNameHired.setVisible(true);
+	tfChangeFirstNameHired.setVisible(true);
 	lblChangeTelephoneHired.setVisible(true);
 	tfChangeTelephoneHired.setVisible(true);
 	lblChangeMailHired.setVisible(true);
 	tfChangeMailHired.setVisible(true);
 	btnChangeHired.setVisible(true);
-        lblPassword.setVisible(false);
-        pfPassword.setVisible(false);
+        lblPassword.setVisible(true);
+        pfPassword.setVisible(true);
+        lblVerifyPassword.setVisible(true);
+        pfVerifyPassword.setVisible(true);
+
     }
     
     /**
@@ -3525,8 +3571,8 @@ public class MainPage extends javax.swing.JFrame {
 	lblChooseHired.setVisible(false);
 	cbListAllHired.setVisible(false);
 	btnChooseChangeHired.setVisible(false);
-	lblChangeNameHired.setVisible(false);
-	tfChangeNameHired.setVisible(false);
+	lblChangeFirstNameHired.setVisible(false);
+	tfChangeFirstNameHired.setVisible(false);
 	lblChangeTelephoneHired.setVisible(false);
 	tfChangeTelephoneHired.setVisible(false);
 	lblChangeMailHired.setVisible(false);
@@ -3534,6 +3580,8 @@ public class MainPage extends javax.swing.JFrame {
 	btnChangeHired.setVisible(false);
         lblPassword.setVisible(false);
         pfPassword.setVisible(false);
+        lblVerifyPassword.setVisible(false);
+        pfVerifyPassword.setVisible(false);
     }
     
     /**
@@ -3897,9 +3945,11 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel lblAddMonthRelease;
     private javax.swing.JLabel lblAddProjectText;
     private javax.swing.JLabel lblAddTelephone;
+    private javax.swing.JLabel lblChangeFirstNameHired;
+    private javax.swing.JLabel lblChangeHiredMessage;
+    private javax.swing.JLabel lblChangeLastNameHired;
     private javax.swing.JLabel lblChangeLevel;
     private javax.swing.JLabel lblChangeMailHired;
-    private javax.swing.JLabel lblChangeNameHired;
     private javax.swing.JLabel lblChangeTelephoneHired;
     private javax.swing.JLabel lblChooseCompetenceChange;
     private javax.swing.JLabel lblChooseGame;
@@ -3955,6 +4005,7 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel lblUpdateHiredInProject;
     private javax.swing.JLabel lblUpdateHiredPosition;
     private javax.swing.JLabel lblUpdateLeader;
+    private javax.swing.JLabel lblVerifyPassword;
     private javax.swing.JPanel paneAddGameProject;
     private javax.swing.JPanel paneAddHired;
     private javax.swing.JPanel paneChangeGameProject;
@@ -3966,6 +4017,7 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JPanel paneRemoveHired;
     private javax.swing.JPanel paneUpdateHired;
     private javax.swing.JPasswordField pfPassword;
+    private javax.swing.JPasswordField pfVerifyPassword;
     private javax.swing.JSeparator sepCompetence;
     private javax.swing.JSeparator sepPlatform;
     private javax.swing.JSeparator separatorGameProject;
@@ -3982,10 +4034,11 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JTextField tfAddLastName;
     private javax.swing.JTextField tfAddMail;
     private javax.swing.JTextField tfAddTelephone;
+    private javax.swing.JTextField tfChangeFirstNameHired;
     private javax.swing.JTextField tfChangeGpReleaseDate;
     private javax.swing.JTextField tfChangeGpStartDate;
+    private javax.swing.JTextField tfChangeLastNameHired;
     private javax.swing.JTextField tfChangeMailHired;
-    private javax.swing.JTextField tfChangeNameHired;
     private javax.swing.JTextField tfChangeTelephoneHired;
     private javax.swing.JTextField tfCurrentLevelChange;
     private javax.swing.JTextField tfGpAddName;

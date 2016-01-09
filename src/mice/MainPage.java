@@ -136,6 +136,7 @@ public class MainPage extends javax.swing.JFrame {
         lblErrorMessageHiredUpdate = new javax.swing.JLabel();
         separatorHired = new javax.swing.JSeparator();
         lblFunctionError = new javax.swing.JLabel();
+        cbChooseProjectHiredIn = new javax.swing.JComboBox<>();
         paneProject = new javax.swing.JPanel();
         lblHeaderGameProject = new javax.swing.JLabel();
         cbFunctionsGameProject = new javax.swing.JComboBox<>();
@@ -657,6 +658,8 @@ public class MainPage extends javax.swing.JFrame {
 
         lblFunctionError.setText(" ");
 
+        cbChooseProjectHiredIn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", " " }));
+
         javax.swing.GroupLayout paneHiredLayout = new javax.swing.GroupLayout(paneHired);
         paneHired.setLayout(paneHiredLayout);
         paneHiredLayout.setHorizontalGroup(
@@ -681,7 +684,9 @@ public class MainPage extends javax.swing.JFrame {
                                                 .addComponent(cbFunctions, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(tfsearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cbChooseProjectHiredIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(btnSearch)
                                         .addGap(0, 0, Short.MAX_VALUE))))))
                     .addGroup(paneHiredLayout.createSequentialGroup()
@@ -703,7 +708,8 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(lblHeader)
                     .addComponent(cbFunctions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearch)
-                    .addComponent(tfsearchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfsearchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbChooseProjectHiredIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(spHired, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -814,119 +820,116 @@ public class MainPage extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                                .addComponent(lblGpChangeStartDate)
-                                .addGap(32, 32, 32)
-                                .addComponent(tfChangeGpStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(lblGpChangeName)
+                                .addGap(34, 34, 34)
+                                .addComponent(tfGpChangeName, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                                .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneChangeGameProjectLayout.createSequentialGroup()
+                                        .addComponent(lblGpChangeReleaseDate)
+                                        .addGap(18, 18, 18))
                                     .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                                        .addComponent(btnChangeGameProject)
-                                        .addGap(14, 14, 14))
-                                    .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lblGpChangeReleaseDate)
-                                            .addComponent(lblGpChangeName))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                                                .addComponent(tfGpChangeName, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(165, 165, 165))
-                                            .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                                                .addComponent(tfChangeGpReleaseDate, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                                                .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                                                        .addComponent(lblStartDateChangeYear)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(tfStartDateChangeYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                                                        .addGap(2, 2, 2)
-                                                        .addComponent(lblReleaseChangeYear)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(tfReleaseChangeYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGap(28, 28, 28)
-                                                .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                                                        .addComponent(lblStartDateChangeMonth)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(cbStartDateChangeMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                                                        .addGap(2, 2, 2)
-                                                        .addComponent(lblReleaseChangeMonth)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(cbReleaseChangeMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                                                        .addComponent(lblStartDateChangeDay)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(cbStartDateChangeDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                                                        .addGap(2, 2, 2)
-                                                        .addComponent(lblReleaseChangeDay)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(cbReleaseChangeDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                                .addGap(39, 39, 39))))))
+                                        .addGap(2, 2, 2)
+                                        .addComponent(lblGpChangeStartDate)
+                                        .addGap(30, 30, 30)))
+                                .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(tfChangeGpStartDate)
+                                    .addComponent(tfChangeGpReleaseDate, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE))))
+                        .addContainerGap(313, Short.MAX_VALUE))))
+            .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnChangeGameProject)
+                    .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
+                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
+                                .addComponent(lblStartDateChangeYear)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tfStartDateChangeYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(lblReleaseChangeYear)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tfReleaseChangeYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(28, 28, 28)
+                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
+                                .addComponent(lblStartDateChangeMonth)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbStartDateChangeMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(lblReleaseChangeMonth)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbReleaseChangeMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
+                                .addComponent(lblStartDateChangeDay)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cbStartDateChangeDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(lblReleaseChangeDay)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cbReleaseChangeDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         paneChangeGameProjectLayout.setVerticalGroup(
             paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
                 .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                                .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblGpChangeName)
-                                    .addComponent(tfGpChangeName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblGpChangeStartDate)
-                                    .addComponent(tfChangeGpStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                                .addComponent(lblHeaderChangeGameProject)
-                                .addGap(3, 3, 3)
-                                .addComponent(lblChooseGame)
-                                .addGap(11, 11, 11)
-                                .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(cbListAllGames, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnChooseChangeGameProject))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE))
+                        .addComponent(lblHeaderChangeGameProject)
+                        .addGap(3, 3, 3)
+                        .addComponent(lblChooseGame)
+                        .addGap(11, 11, 11)
+                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbListAllGames, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnChooseChangeGameProject))
+                        .addGap(25, 25, 25))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneChangeGameProjectLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(lblGpChangeReleaseDate)
-                                .addComponent(tfChangeGpReleaseDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblGpChangeName)
+                            .addComponent(tfGpChangeName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblGpChangeStartDate)
+                            .addComponent(tfChangeGpStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblGpChangeReleaseDate)
+                            .addComponent(tfChangeGpReleaseDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblStartDateChangeDay)
+                        .addComponent(cbStartDateChangeDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblReleaseChangeDay)
+                            .addComponent(cbReleaseChangeDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblStartDateChangeMonth)
+                            .addComponent(cbStartDateChangeMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblStartDateChangeDay)
-                                    .addComponent(cbStartDateChangeDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(lblReleaseChangeDay)
-                                        .addComponent(cbReleaseChangeDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(lblStartDateChangeMonth)
-                                        .addComponent(cbStartDateChangeMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                                                .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                    .addComponent(lblStartDateChangeYear)
-                                                    .addComponent(tfStartDateChangeYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                .addComponent(lblReleaseChangeYear)
-                                                .addComponent(tfReleaseChangeYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(lblReleaseChangeMonth)
-                                            .addComponent(cbReleaseChangeMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addGap(15, 15, 15)))
-                .addComponent(btnChangeGameProject))
+                                        .addComponent(lblStartDateChangeYear)
+                                        .addComponent(tfStartDateChangeYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblReleaseChangeYear)
+                                    .addComponent(tfReleaseChangeYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblReleaseChangeMonth)
+                                .addComponent(cbReleaseChangeMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(18, 18, 18)
+                .addComponent(btnChangeGameProject)
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         tpSubMenuGameProject.addTab("Ändra", paneChangeGameProject);
@@ -1029,13 +1032,12 @@ public class MainPage extends javax.swing.JFrame {
         paneAddGameProjectLayout.setVerticalGroup(
             paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneAddGameProjectLayout.createSequentialGroup()
-                .addContainerGap(153, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(lblHeaderAddGameProject)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfGpAddName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblGpAddName)
-                    .addComponent(lblAddProjectText))
+                    .addComponent(lblGpAddName))
                 .addGap(8, 8, 8)
                 .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblGpAddStartDate)
@@ -1060,7 +1062,9 @@ public class MainPage extends javax.swing.JFrame {
                     .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblChooseLeaderAddGP)
                         .addComponent(cbNewProjLeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(12, 12, 12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addComponent(lblAddProjectText)
+                .addGap(115, 115, 115))
         );
 
         tpSubMenuGameProject.addTab("Lägg till", paneAddGameProject);
@@ -1424,7 +1428,7 @@ public class MainPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
-     * A method for looking through and choosing which method too use in the combobox
+     * A method for looking through and choosing which method too use in the combo box
      * @param evt 
      */
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
@@ -1441,7 +1445,13 @@ public class MainPage extends javax.swing.JFrame {
                 case "Sök anställd som leder projekt":
                     listProjects();
                     hideHiredChangeFields();
-                    break;  
+                    break;
+                    case "Lista anställda som arbetar med ett projekt":
+                    hideHiredChangeFields();
+                    listHiredInProjects();
+                    updateCBs();
+                    tpSubMenuHired.setSelectedIndex(0);
+                    break;
                 case "Ändra information om en anställd":
                     showHiredChangeFields();
                     updateCBs();
@@ -1516,6 +1526,7 @@ public class MainPage extends javax.swing.JFrame {
         {
             cbFunctions.addItem("Sök anställd som leder projekt");
             cbFunctions.addItem("Sök anställd i ett projekt");
+            cbFunctions.addItem("Lista anställda som arbetar med ett projekt");
         }
         catch(Exception e)
         {
@@ -1945,17 +1956,27 @@ public class MainPage extends javax.swing.JFrame {
             String selectedText = cbFunctions.getSelectedItem().toString();
             if (selectedText.equals("Sök anställd som leder projekt"))
             {
+                cbChooseProjectHiredIn.setVisible(false);
                 tfsearchField.setVisible(true);
                 btnSearch.setText("OK");
             }    
             else if (selectedText.equals("Sök anställd i ett projekt"))
             {
+                cbChooseProjectHiredIn.setVisible(false);
                 tfsearchField.setVisible(true);
                 tfsearchField.setText("Sök anställd");
                 btnSearch.setText("OK");
             }
+            else if (selectedText.equals("Lista anställda som arbetar med ett projekt"))
+            {
+             cbChooseProjectHiredIn.removeAllItems();   
+             addProjectsToCBChooseProjectHiredIn();
+             cbChooseProjectHiredIn.setVisible(true);
+             tfsearchField.setVisible(false);
+            }    
             else
             {
+                cbChooseProjectHiredIn.setVisible(false);
                 tfsearchField.setVisible(false);
                 btnSearch.setText("Gå");
             }
@@ -2651,7 +2672,27 @@ public class MainPage extends javax.swing.JFrame {
             System.out.println(e.getMessage());
         }
     }
-      
+      /**
+       * Adds projects to the cbChooseProjectHiredIn combo box.
+       */
+    public void addProjectsToCBChooseProjectHiredIn()
+    {
+        try
+        {
+            ArrayList<HashMap<String, String>> allProjects = database.listAllProjects();
+            for (int i = 0; i<allProjects.size(); i++)
+            {
+                String benamning = allProjects.get(i).get("BETECKNING");
+                cbChooseProjectHiredIn.addItem(benamning);
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    
     /**
      * add items to a combobox
      */
@@ -3008,10 +3049,38 @@ public class MainPage extends javax.swing.JFrame {
         }
     }
     
+    private void listHiredInProjects()
+    {
+        
+        try
+        {
+            String project = cbChooseProjectHiredIn.getSelectedItem().toString();
+            //Hämtar SIDt från ett projekt med hjälp av beteckningen.
+            String sid = database.getSidFromBeteckning(project);
+            
+            ArrayList<HashMap<String, String>> allHiredInProject = database.listWorksInProjects(sid);
+            
+            tasearchResult.setText("");
+            
+            for(int i = 0; i < allHiredInProject.size(); i++)
+                {
+                    String namn = allHiredInProject.get(i).get("NAMN");
+                    tasearchResult.append(namn + "\n");
+                }
+
+            
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    
     /**
-     * Lists the projects a person os leading
+     * Lists the projects a person is leading
      */
-    private void listProjects ()
+    private void listProjects()
     {
         try
         {
@@ -3259,8 +3328,6 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            
-	
             int newSID = database.generateSID();
         
             String beteckning = tfGpAddName.getText();
@@ -3648,6 +3715,7 @@ public class MainPage extends javax.swing.JFrame {
 	tfAddTelephone.setVisible(false);
 	lblAddMail.setVisible(false);
 	btnChangeHiredAdd.setVisible(false);
+        cbChooseProjectHiredIn.setVisible(false);
     }
     
     /**
@@ -3908,6 +3976,7 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbAllGameProjects;
     private javax.swing.JComboBox<String> cbChooseCompetenceChange;
     private javax.swing.JComboBox<String> cbChoosePlattformChange;
+    private javax.swing.JComboBox<String> cbChooseProjectHiredIn;
     private javax.swing.JComboBox<String> cbCompetenceSpecialists;
     private javax.swing.JComboBox<String> cbFunctions;
     private javax.swing.JComboBox<String> cbFunctionsCompetence;

@@ -80,6 +80,24 @@ public class DbClass {
         }
     }
     
+    public ArrayList<HashMap<String, String>> listWorksInProjects(String sid)
+    {
+        String sqlFraga = "select ANSTALLD.NAMN FROM ANSTALLD " +
+                          "JOIN ARBETAR_I on ANSTALLD.AID = ARBETAR_I.AID " +
+                          "where ARBETAR_I.SID =  " + sid + "" ;
+
+        try
+        {
+            ArrayList<HashMap<String, String>> worksInProjects = idb.fetchRows(sqlFraga);
+            return worksInProjects;
+        }
+        catch(InfException e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+    
         /**
      * Checks if a username and password matches any values in the database.
      * If yes, return TRUE, if no, return FALSE.
@@ -722,6 +740,30 @@ public class DbClass {
         {
             aid = idb.fetchSingle(sqlFraga);
             return aid;
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+        
+    }
+    
+    /**
+     * Gets the sid of a a project from the name, where the name is the given parameter.
+     * @param beteckning
+     * @return 
+     */
+      public String getSidFromBeteckning(String beteckning)
+    {
+        String sid;
+        String sqlFraga = "select sid from spelprojekt " +
+                          "where BETECKNING = '" + beteckning + "'";
+        
+        try
+        {
+            sid = idb.fetchSingle(sqlFraga);
+            return sid;
         }
         catch (InfException e)
         {

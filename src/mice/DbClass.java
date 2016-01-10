@@ -12,13 +12,16 @@ import oru.inf.InfException;
 
 /**
  * The constructor of the database-class. Creates a connection to the SQL-database
- * @author Victoria
+ * @author Victoria & Anton
  */
 
 public class DbClass {
 
     private InfDB idb;
     
+    /**
+     * The constructor. Connects to the database.
+     */
     public DbClass()
     {
         try
@@ -34,7 +37,7 @@ public class DbClass {
     }
     
     /**
-     * method for getting a list of which hired who works with a certain projekt
+     * Method for getting a list of which hired who works with a certain project.
      * @param searchHired
      * @return     */
     public ArrayList<HashMap<String, String>> listHiredInProject(String searchHired)
@@ -57,7 +60,7 @@ public class DbClass {
     }
     
     /**
-     * lists the projects as a projectleader leads.
+     * Lists the projects as a project leader leads.
      * @param searchProject
      * @return 
      */
@@ -141,6 +144,11 @@ public class DbClass {
      return response;
     }
     
+    /**
+     * Deletes a hired from the database where the selected AID is the 
+     * parameter.
+     * @param deleteAID 
+     */
     public void deleteHired(String deleteAID)
     {
        String sqlFraga = "delete from anstalld "
@@ -181,6 +189,12 @@ public class DbClass {
         }
     }
     
+    /**
+     * Changes a specific administrators aid and/or password where the aid
+     * is the aid of the selected administrator.
+     * @param AID
+     * @param password 
+     */
     public void changeAdmin (int AID, String password)
     {
         String sqlFraga = "update ADMINISTRATOR " +
@@ -197,7 +211,8 @@ public class DbClass {
     }
     
     /**
-     * Updates all info about a game at once
+     * Updates all info about a game at once. The parameters are all the values
+     * that are being updated.
      */
     public void changeGame (String setName, String setStartDate, String setRelease, int sid)
     {
@@ -215,6 +230,11 @@ public class DbClass {
         }
     }
     
+    /**
+     * Lists all hired persons and returns them in the form of an 
+     * ArrayList<HashMap<String, String>>.
+     * @return 
+     */
     public ArrayList<HashMap<String, String>> listAllHired()
     {
         String sqlFraga = "select * from ANSTALLD";
@@ -232,7 +252,8 @@ public class DbClass {
     }
     
     /**
-     Lists all the specialists.
+     Lists all the specialists and returns them in the form of an 
+     * ArrayList<HashMap<String, String>>.
      */
     public ArrayList<HashMap<String, String>> listAllSpecialists()
     {
@@ -251,6 +272,11 @@ public class DbClass {
         }
     }
     
+    /**
+     * Checks if a specialist exists with the help of the specialists aid.
+     * @param aid
+     * @return 
+     */
     public boolean doesSpecialistExist(int aid)
     {
         String sqlFraga = "Select * from SPECIALIST where AID = " + aid;
@@ -274,6 +300,13 @@ public class DbClass {
         }       
     }
     
+    /**
+     * Adds a project to a specialist with the help of the specialist aid
+     * and the projects sid.
+     * @param aid
+     * @param sid
+     * @return 
+     */
     public boolean updateSpecialistProject(int aid, int sid)
     {
         String sqlFraga = "insert into ARBETAR_I " +
@@ -292,6 +325,12 @@ public class DbClass {
 	}
     }
     
+    /**
+     * Removes a project to a specialist with the help of the specialist aid
+     * and the projects sid.
+     * @param aid
+     * @param sid 
+     */
      public void deleteSpecialistProject(int aid, int sid)
     {
         String sqlFraga ="delete from ARBETAR_I " 
@@ -307,6 +346,11 @@ public class DbClass {
 	}
     }
     
+     /**
+      * Lists all projects and returns them in the form of an 
+     * ArrayList<HashMap<String, String>>.
+      * @return 
+      */
     public ArrayList<HashMap<String, String>> listAllProjects()			
 {
 	String sqlFraga = "select * from SPELPROJEKT";
@@ -324,7 +368,12 @@ public class DbClass {
 }
 
 
-    
+    /**
+     * Lists all info about a hire with the help of the hires aid 
+     * and returns it in a HashMap<String, String>.
+     * @param aid
+     * @return 
+     */
     public HashMap<String, String> listHired(int aid)
     {
         String sqlFraga = "select * from ANSTALLD where aid = " + aid + ";";
@@ -342,7 +391,8 @@ public class DbClass {
     }
     
     /**
-     * returns a hashmap with a gameproject based on the SID
+     * Lists all info about a project with the help of the projects sid 
+     * and returns it in a HaspMap<String, String>.
      */
     public HashMap<String, String> listProject (int sid)
     {
@@ -360,9 +410,9 @@ public class DbClass {
     }
     
     /**
-*Generates a new AID to be used when adding a new hired
-     * @return 
-*/
+    *Generates a new AID to be used when adding a new hired.
+    * @return 
+    */
     public int generateAID ()
     {
     try 
@@ -378,13 +428,14 @@ public class DbClass {
     }
     
     /**
-* Adds a new hired in the database
-     * @param newAID
-     * @param name
-     * @param phone
-     * @param mail
-     * @param username
-*/
+    * Adds a new hired in the database. The parameters are the values entered
+    * in to the database.
+    * @param newAID
+    * @param name
+    * @param phone
+    * @param mail
+    * @param username
+    */
     public void addHired(int newAID, String name, String phone, String mail, String username)
     {
 	String sqlFraga = "insert into ANSTALLD " + 
@@ -402,10 +453,11 @@ public class DbClass {
     }
 
     /**
-    * Lists all leaders from the database
-     * @return 
+    * Lists all leaders from the database and returns them in the form of an 
+    * ArrayList<HashMap<String, String>>.
+    * @return 
     */
-    public ArrayList<HashMap<String, String>> listAllLeaders()			//DbClass
+    public ArrayList<HashMap<String, String>> listAllLeaders()			
     {
 	String sqlFraga = "select * from ANSTALLD " +
 			  "JOIN PROJEKTLEDARE on ANSTALLD.AID = PROJEKTLEDARE.AID";
@@ -423,11 +475,11 @@ public class DbClass {
     }
     
     /**
-    * updates the hired to the database
-     * @param aid
-     * @param game
+    * Updates the hired to the database.                                                                   UPDATES LEADER?
+    * @param aid
+    * @param gameId
     */
-    public void updateHired(int aid, int gameId)			//DbClass
+    public void updateHired(int aid, int gameId)			
     {
 	String sqlFraga = "update SPELPROJEKT " + 
                           "set aid = " + aid +  
@@ -443,7 +495,7 @@ public class DbClass {
     }
     
     /**
-    *Lists a leader from the database
+    *Lists a leader from the database.
      * @param aid
      * @return 
     */
@@ -465,6 +517,10 @@ public class DbClass {
 	}
     }
     
+    /**
+     * Adds a hire to specialist.
+     * @param aid 
+     */
     public void insertToSpecialist (int aid)
     {
         String sqlFraga = "insert into specialist " +
@@ -480,6 +536,10 @@ public class DbClass {
         }
     }
     
+    /**
+     * Adds a hire to project leader.
+     * @param aid 
+     */
     public void insertToProjectleader (int aid)
     {
         String sqlFraga = "insert into PROJEKTLEDARE " +
@@ -495,17 +555,22 @@ public class DbClass {
         }
     }
     
-    public ArrayList<HashMap<String, String>> listLeaderOnProject (int gameID)
+    /**
+     * List the leader of a project and return it. Parameter is the games SID.
+     * @param gameID
+     * @return 
+     */
+    public String listLeaderOnProject (int gameID)
     {
-        String sqlFraga = "select namn from ANSTALLD\n" +
-                          "join PROJEKTLEDARE on ANSTALLD.AID = PROJEKTLEDARE.AID\n" +
-                          "join SPELPROJEKT on PROJEKTLEDARE.AID = SPELPROJEKT.AID\n" +
+        String sqlFraga = "select namn from ANSTALLD " +
+                          "join PROJEKTLEDARE on ANSTALLD.AID = PROJEKTLEDARE.AID " +
+                          "join SPELPROJEKT on PROJEKTLEDARE.AID = SPELPROJEKT.AID " +
                           "where sid = " + gameID + ";";
         try
         {
             
-            ArrayList<HashMap<String, String>> allLeadersInProject = idb.fetchRows(sqlFraga);
-            return allLeadersInProject;
+            String LeaderInProject = idb.fetchSingle(sqlFraga);
+            return LeaderInProject;
         }
         catch (InfException e)
         {
@@ -515,6 +580,12 @@ public class DbClass {
         
     }
     
+    /**
+     * List all the platforms for a game where the parameter is the name of the
+     * game and returns them in the form of an ArrayList<HashMap<String, String>>.
+     * @param searchWord
+     * @return 
+     */
     public ArrayList<HashMap<String, String>> listPlatformsForGames (String searchWord)
     {
         String sqlFraga = "select BENAMNING from PLATTFORM " +
@@ -534,6 +605,11 @@ public class DbClass {
         }
     }
     
+    /**
+     * Gets all the info from platforms and returns them in the form of an 
+     * ArrayList<HashMap<String, String>>.
+     * @return 
+     */
     public ArrayList<HashMap<String, String>> listPlatforms ()
     {
         String sqlFraga = "select * from PLATTFORM";
@@ -550,6 +626,12 @@ public class DbClass {
         }
     }
     
+    /**
+     * List all games that have been developed/are developed for the chosen
+     * platform.
+     * @param pid
+     * @return 
+     */
     public ArrayList<HashMap<String, String>> listGamesForPlatform(int pid)
     {
         String sqlFraga = "select beteckning from SPELPROJEKT " +
@@ -569,6 +651,11 @@ public class DbClass {
         }
     }
     
+    /**
+     * Adds a game to a specific platform. 
+     * @param sid
+     * @param pid 
+     */
     public void insertGamePlatform(int sid, int pid)
     {
         String sqlFraga = "insert into INNEFATTAR " +
@@ -584,6 +671,12 @@ public class DbClass {
         }
     }
     
+    /**
+     * Checks if a specific game is connected with a specific platform.
+     * @param sid
+     * @param pid
+     * @return 
+     */
     public boolean doesExistInInnefattar (int sid, int pid)
     {
         String sqlFraga = "select * from INNEFATTAR " +
@@ -605,7 +698,7 @@ public class DbClass {
         }
     }
     
-    /**Generates a new SID to be used when adding a new project
+    /**Generates a new SID to be used when adding a new project.
      * @return 
     */
     public int generateSID ()
@@ -638,7 +731,11 @@ public class DbClass {
 	}
     }
 
-
+/**
+ * Lists all the project names and returns them in the form of an 
+ * ArrayList<HashMap<String, String>>.
+ * @return 
+ */
  public ArrayList<HashMap<String, String>> listAllProjectNames()			
 {
 	String sqlFraga = "select * from SPELPROJEKT";
@@ -657,7 +754,11 @@ public class DbClass {
 
 
 
-
+/**
+ * Lists all the released games and returns them in the form of an 
+ * ArrayList<HashMap<String, String>>.
+ * @return 
+ */
   public ArrayList<HashMap<String, String>> listReleasedGames()
     {
         String sqlFraga = "select sid, beteckning from SPELPROJEKT\n" +
@@ -675,7 +776,11 @@ public class DbClass {
         }
     
     }
-    
+    /**
+     * Lists all games under development and returns them in the form of an 
+     * ArrayList<HashMap<String, String>>.
+     * @return 
+     */
     public ArrayList<HashMap<String, String>> listUnderDevelopment()
     {
         String sqlFraga = "select sid, beteckning from SPELPROJEKT\n" +
@@ -694,6 +799,12 @@ public class DbClass {
     
     }
     
+    /**
+     * Lists all the competences a specific hire has with the hires AID and 
+     * returns them in the form of an ArrayList<HashMap<String, String>>.
+     * @param aid
+     * @return 
+     */
     public ArrayList<HashMap<String, String>> getSpecialistCompetence(String aid)
     {
         String sqlFraga = "select * from HAR_KOMPETENS " +
@@ -711,6 +822,11 @@ public class DbClass {
         }
     }
     
+    /**
+     * Gets a competence name with the help of the chosen competences kid.
+     * @param kid
+     * @return 
+     */
     public String getCompetenceName(String kid)
     {
         String sqlFraga = "select BENAMNING from KOMPETENSDOMAN " +
@@ -728,6 +844,11 @@ public class DbClass {
         }
     }
     
+    /**
+     * Gets the AID of a specialist from the specialists name.
+     * @param name
+     * @return 
+     */
     public String getAidFromSpecialist(String name)
     {
         String aid;
@@ -772,7 +893,12 @@ public class DbClass {
         }
         
     }
-        
+    
+     /**
+      * Selects the info from administrator.
+      * @param AID
+      * @return 
+      */
     public ArrayList<HashMap<String, String>> listAdmin(int AID)
     {
         String sqlFraga = "select * from ADMINISTRATOR " +
@@ -793,6 +919,11 @@ public class DbClass {
         }
     }
     
+    /**
+     * Lists all the platform names and returns them in the form of an 
+     * ArrayList<HashMap<String, String>>.
+     * @return 
+     */
     public ArrayList<HashMap<String, String>> listPlatformNames ()
     {
         String sqlFraga = "select BENAMNING from PLATTFORM";
@@ -809,6 +940,11 @@ public class DbClass {
         }
     }
 
+    /**
+     * Lists all competence names and returns them in the form of an 
+     * ArrayList<HashMap<String, String>>.
+     * @return 
+     */
    public ArrayList<HashMap<String, String>> getCompetenceNames()
     {
         String sqlFraga = "select BENAMNING from  KOMPETENSDOMAN";  
@@ -825,6 +961,13 @@ public class DbClass {
         }
     }
     
+   /**
+    * Gets the competence level from a specific specialist.
+    * @param aid
+    * @param kid
+    * @param pid
+    * @return 
+    */
     public String getCompetenceLevel(String aid, String kid, String pid)
     {
     String sqlFraga = "select KOMPETENSNIVA from HAR_KOMPETENS "
@@ -926,7 +1069,11 @@ public class DbClass {
 	}
     }
     
-    
+    /**
+     * Get a specific competences kid from the competence name.
+     * @param name
+     * @return 
+     */
     public String getKidFromCompetenceName(String name)
     {
       String sqlFraga = "select KID from KOMPETENSDOMAN " +
@@ -943,6 +1090,11 @@ public class DbClass {
         }
     }
     
+    /**
+     * Get a specific platforms pid from the platform name.
+     * @param plattform
+     * @return 
+     */
      public String getPidFromPlattformName(String plattform)
     {
         String sqlFraga = "select PID from PLATTFORM " +
@@ -959,6 +1111,11 @@ public class DbClass {
         }
     }
      
+    /**
+     * Get the specific platform name from the platform pid.
+     * @param pid
+     * @return 
+     */ 
     public String getPlatformFromPid(String pid)
     {
         String sqlFraga = "select BENAMNING from PLATTFORM " +

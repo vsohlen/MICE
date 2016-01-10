@@ -8,7 +8,7 @@ import java.awt.Color;
 import javax.swing.JTextField; 
 /**
  *
- * @author Victoria
+ * @author Victoria & Anton
  */
 public class Validation {
     
@@ -32,10 +32,18 @@ public class Validation {
         }
     }
 
+    /**
+     * Checks if the variable contains valid characters.
+     * @param str
+     * @return 
+     */
     public static boolean containsString(String str)
     {
-        String regex = "^[a-zåäöA-ZÅÄÖ]+$";
-        Boolean match;
+        Boolean match= false;
+        
+        try
+        {
+        String regex = "^[a-zA-Z0-9åäöÅÄÖ ]+$";
         if (str.matches(regex))
             {
                 match = true;
@@ -44,9 +52,20 @@ public class Validation {
         {
             match = false;
         }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
         return match;
     }
     
+    /**
+     * Checks that a name entered contains the valid requirements.
+     * @param name1
+     * @param name2
+     * @return 
+     */
      public static boolean checkName(String name1, String name2)
     {
        boolean match;
@@ -87,7 +106,7 @@ public class Validation {
         return match;
     }
     /**
-     * checks the in-phonenumber
+     * checks the in-phone number
      * @param number
      * @return 
     */
@@ -95,7 +114,7 @@ public class Validation {
     {
     String regex = "^[0-9]+$";
         boolean match;
-        if (number.matches(regex) && !number.contains("\\s+") && number.length() > 4)
+        if (number.matches(regex) && !number.contains("\\s+") && number.length() >= 4)
             {
                 match = true;
             }
@@ -106,9 +125,13 @@ public class Validation {
         return match;
     }
     
+    /**
+     * Checks that a number is from this or the previous millenia.
+     * @param number
+     * @return 
+     */
     public static boolean checkYear(String number)
     {
-    
         try
         {
             boolean match;
@@ -134,6 +157,49 @@ public class Validation {
                 System.out.println(e.getMessage());
                 return false;
             }
+    }
+    
+    /**
+     * Checks that the date entered is valid. Checks for leap years and different
+     * nummer of days days in different months.
+     * @param year
+     * @param month
+     * @param day
+     * @return 
+     */
+    public static boolean checkDate (int year, int month, int day)
+    {
+        boolean validDate = false;
+        boolean leapYear = false;
+        
+        if ((month >= 1 && month <= 12) && (day >= 1 && day <= 31))
+        {
+            if((month == 4 || month == 6 || month == 9 || month == 11) && (day <= 30))
+            {
+                validDate = true;
+            }
+            if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && (day <= 31))
+            {
+                validDate = true;
+            }
+            if ((month == 2) && (day < 30))
+            {
+                leapYear = false;
+                if ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0)))
+                {
+                    leapYear = true;
+                }
+                if (leapYear == true && day <= 29)
+                {
+                    validDate = true;
+                }
+                else if (leapYear == false && day <= 28)
+                {
+                    validDate = true;
+                }
+            }
+        }
+        return validDate;
     }
     
     

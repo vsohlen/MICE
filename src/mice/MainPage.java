@@ -10,7 +10,7 @@ import java.util.*; //Import of the java util package
 
 /**
  *
- * @author Victoria
+ * @author Victoria & Anton
  */
 public class MainPage extends javax.swing.JFrame {
 
@@ -49,6 +49,9 @@ public class MainPage extends javax.swing.JFrame {
             }
     }
     
+    /**
+     * This method initializes the database.
+     */
     private void initDb()
     {
         database = new DbClass();
@@ -170,6 +173,12 @@ public class MainPage extends javax.swing.JFrame {
         lblReleaseChangeYear = new javax.swing.JLabel();
         tfStartDateChangeYear = new javax.swing.JTextField();
         lblStartDateChangeYear = new javax.swing.JLabel();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        filler5 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        lblMessageChangeProject = new javax.swing.JLabel();
         paneAddGameProject = new javax.swing.JPanel();
         lblHeaderAddGameProject = new javax.swing.JLabel();
         lblGpAddName = new javax.swing.JLabel();
@@ -290,13 +299,14 @@ public class MainPage extends javax.swing.JFrame {
 
         lblPassword.setText("Lösenord:");
 
-        pfPassword.setText("asdwakjba");
+        pfPassword.setText("asda3123b");
+        pfPassword.setToolTipText("");
 
         tfChangeLastNameHired.setText("Efternamn");
 
         lblChangeLastNameHired.setText("Efternamn:");
 
-        pfVerifyPassword.setText("asdasdasd");
+        pfVerifyPassword.setText("2iubavwda");
 
         lblVerifyPassword.setText("Verifiera:");
 
@@ -329,14 +339,14 @@ public class MainPage extends javax.swing.JFrame {
                             .addComponent(pfVerifyPassword)
                             .addComponent(tfChangeTelephoneHired, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(tfChangeFirstNameHired, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(tfChangeMailHired, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                            .addComponent(tfChangeMailHired, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(tfChangeLastNameHired, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(pfPassword, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnChangeHired)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblChangeHiredMessage)))
-                .addContainerGap(465, Short.MAX_VALUE))
+                .addContainerGap(482, Short.MAX_VALUE))
         );
         paneChangeHiredLayout.setVerticalGroup(
             paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -786,7 +796,7 @@ public class MainPage extends javax.swing.JFrame {
 
         cbStartDateChangeMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
 
-        cbReleaseChangeMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "0", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+        cbReleaseChangeMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
 
         lblReleaseChangeMonth.setText("Månad:");
 
@@ -799,6 +809,8 @@ public class MainPage extends javax.swing.JFrame {
         tfStartDateChangeYear.setText("ÅÅÅÅ");
 
         lblStartDateChangeYear.setText("År:");
+
+        lblMessageChangeProject.setText("lblMessageChangeProject");
 
         javax.swing.GroupLayout paneChangeGameProjectLayout = new javax.swing.GroupLayout(paneChangeGameProject);
         paneChangeGameProject.setLayout(paneChangeGameProjectLayout);
@@ -837,43 +849,57 @@ public class MainPage extends javax.swing.JFrame {
                                     .addComponent(tfChangeGpReleaseDate, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE))))
                         .addContainerGap(313, Short.MAX_VALUE))))
             .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnChangeGameProject)
+                .addGap(63, 63, 63)
+                .addComponent(filler2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblMessageChangeProject)
                     .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
                         .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneChangeGameProjectLayout.createSequentialGroup()
                                 .addComponent(lblStartDateChangeYear)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(tfStartDateChangeYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(filler3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(tfStartDateChangeYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                                .addGap(2, 2, 2)
                                 .addComponent(lblReleaseChangeYear)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(tfReleaseChangeYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(28, 28, 28)
+                        .addGap(18, 18, 18)
                         .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
+                                .addComponent(lblReleaseChangeMonth)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbReleaseChangeMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
                                 .addComponent(lblStartDateChangeMonth)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbStartDateChangeMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(lblReleaseChangeMonth)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbReleaseChangeMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(filler5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbStartDateChangeMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(6, 6, 6)
                         .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(filler4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
                                 .addComponent(lblStartDateChangeDay)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(cbStartDateChangeDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                                .addGap(2, 2, 2)
                                 .addComponent(lblReleaseChangeDay)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cbReleaseChangeDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnChangeGameProject)
+                                    .addComponent(cbReleaseChangeDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(455, Short.MAX_VALUE))
         );
         paneChangeGameProjectLayout.setVerticalGroup(
             paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -885,8 +911,13 @@ public class MainPage extends javax.swing.JFrame {
                         .addGap(3, 3, 3)
                         .addComponent(lblChooseGame)
                         .addGap(11, 11, 11)
-                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cbListAllGames, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
+                                .addComponent(cbListAllGames, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(filler1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(filler2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(btnChooseChangeGameProject))
                         .addGap(25, 25, 25))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneChangeGameProjectLayout.createSequentialGroup()
@@ -901,41 +932,46 @@ public class MainPage extends javax.swing.JFrame {
                         .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblGpChangeReleaseDate)
                             .addComponent(tfChangeGpReleaseDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblStartDateChangeDay)
-                        .addComponent(cbStartDateChangeDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblStartDateChangeYear)
+                            .addComponent(tfStartDateChangeYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(filler3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblReleaseChangeYear)
+                            .addComponent(tfReleaseChangeYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblReleaseChangeMonth)))
+                    .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
+                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblStartDateChangeDay)
+                                .addComponent(cbStartDateChangeDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblStartDateChangeMonth)
+                                .addComponent(cbStartDateChangeMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(filler4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(filler5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblReleaseChangeDay)
-                            .addComponent(cbReleaseChangeDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblStartDateChangeMonth)
-                            .addComponent(cbStartDateChangeMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(paneChangeGameProjectLayout.createSequentialGroup()
-                                    .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(lblStartDateChangeYear)
-                                        .addComponent(tfStartDateChangeYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblReleaseChangeYear)
-                                    .addComponent(tfReleaseChangeYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(paneChangeGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(lblReleaseChangeMonth)
-                                .addComponent(cbReleaseChangeMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(18, 18, 18)
+                            .addComponent(cbReleaseChangeDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbReleaseChangeMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnChangeGameProject)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addGap(1, 1, 1)
+                .addComponent(lblMessageChangeProject)
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         tpSubMenuGameProject.addTab("Ändra", paneChangeGameProject);
 
         lblHeaderAddGameProject.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblHeaderAddGameProject.setText("Lägg till ett nytt projekt!");
+        lblHeaderAddGameProject.setText("Lägg till ett nytt projekt");
 
         lblGpAddName.setText("Beteckning:");
 
@@ -1479,7 +1515,7 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSearchActionPerformed
 
     /**
-    *Adds all leaders to a combobox
+    *Adds all leaders to a combo box.
     */
     public void addProjectleadersToCB()
     {
@@ -1500,7 +1536,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Set the access on FunctionsHired
+     * Set the access on FunctionsHired.
      */
     public void initAdminFunctionsHired()
     {
@@ -1518,7 +1554,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Set the access on FunctionsHired
+     * Set the access on FunctionsHired.
      */
     public void initHiredFunctionsHired()
     {
@@ -1535,7 +1571,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Set the access on FunctionsGP
+     * Set the access on FunctionsGP.
      */
     public void initAdminFunctionsGameProject ()
     {
@@ -1551,7 +1587,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Set the access on FunctionsGP
+     * Set the access on FunctionsGP.
      */
     public void initHiredFunctionsGameProject ()
     {
@@ -1569,7 +1605,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Set the access on FunctionsPlatform
+     * Set the access on FunctionsPlatform.
      */
     public void initAdminFunctionsPlatform ()
     {
@@ -1584,7 +1620,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Set the access on FunctionsPlatform
+     * Set the access on FunctionsPlatform.
      */
     public void initHiredFunctionsPlatform ()
     {
@@ -1599,7 +1635,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Set the access on FunctionsCompetence
+     * Set the access on FunctionsCompetence.
      */
     public void initAdminFunctionsCompetence ()
     {
@@ -1614,7 +1650,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Set the access on FunctionsCompetence
+     * Set the access on FunctionsCompetence.
      */
     public void initHiredFunctionsCompetence ()
     {
@@ -1629,7 +1665,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * button for the remove-hired-function
+     * button for the remove-hired-function.
      */
     private void btnRemoveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRemoveMouseClicked
         try
@@ -1646,7 +1682,7 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRemoveMouseClicked
 
     /**
-     * lets u delete a hired person
+     * lets u delete a hired person.
      * @param deleteAID 
      */
     private void removeHired (String deleteAID)
@@ -1664,7 +1700,7 @@ public class MainPage extends javax.swing.JFrame {
     }          
     
     /**
-     * Adds items to a combobox
+     * Adds items to a combo box.
      */
     private void listHiredToCBRemove()
     {
@@ -1686,7 +1722,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Update all the comboboxes, so that the latset changes always are showing
+     * Update all the combo boxes, so that the latest changes always are showing.
      */
     public void updateCBs ()
     {
@@ -1722,6 +1758,10 @@ public class MainPage extends javax.swing.JFrame {
             addSpecialistsToCBCompetenceChange();
             cbChoosePlattformChange.removeAllItems();
             addPlatformsToCBChange();
+            cbListAllGameProjectsUpdate.removeAllItems();
+            addProjectsToCBUpdate();
+            cbListAllSpecialists.removeAllItems();
+            addSpecialistToCBUpdate();
         }
         catch(Exception e)
         {
@@ -1730,7 +1770,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * clears the textfields so that the latest changes are showing
+     * Clears the text fields so that the latest changes are showing.
      */
     public void clearTFs()
     {
@@ -1745,7 +1785,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * button for confirming an update of an employee
+     * Button for confirming an update of an employee.
      * @param evt 
      */
     private void btnConfirmUpdateHiredMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmUpdateHiredMouseClicked
@@ -1764,7 +1804,7 @@ public class MainPage extends javax.swing.JFrame {
             {
                 
                 lblErrorMessageHiredGP.setText("");
-                lblErrorMessageHiredGP.setText(name + " arbetar nu med projektet.");
+                lblErrorMessageHiredGP.setText(name + " arbetar nu med projektet "+cbListAllGameProjectsUpdate.getSelectedItem().toString()+".");
             }
             else
             {
@@ -1778,7 +1818,7 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConfirmUpdateHiredMouseClicked
 
     /**
-     * button for confirming an remove of an emlpoyee
+     * Button for confirming an remove of an employee.
      * @param evt 
      */
     private void btnConfirmUpdateRemovedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmUpdateRemovedMouseClicked
@@ -1807,7 +1847,7 @@ public class MainPage extends javax.swing.JFrame {
             if (deletePreformed)
             {
                 lblErrorMessageHiredGP.setText("");
-                lblErrorMessageHiredGP.setText(name + " är borttagen från projektet.");
+                lblErrorMessageHiredGP.setText(name + " är borttagen från projektet "+cbListAllGameProjectsUpdate.getSelectedItem().toString()+".");
             }
             else
             {
@@ -1821,7 +1861,7 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConfirmUpdateRemovedMouseClicked
 
     /**
-     * butten that changes/adds an employee
+     * Button that changes/adds an employee.
      * @param evt 
      */
     private void btnChangeHiredAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChangeHiredAddMouseClicked
@@ -1838,7 +1878,7 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnChangeHiredAddMouseClicked
 
     /**
-    *button for confirming an update of an employee 
+    *Button for confirming an update of an employee. 
     * @param evt 
     */
     private void btnConfirmUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmUpdateMouseClicked
@@ -1853,7 +1893,7 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConfirmUpdateMouseClicked
 
     /**
-     * button for confirming an employmentform
+     * Button for confirming an employmentform.
      * @param evt 
      */
     private void btnConfirmUpdatePositionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmUpdatePositionMouseClicked
@@ -1928,7 +1968,18 @@ public class MainPage extends javax.swing.JFrame {
         {
             String password1 = new String(pfPassword.getPassword());
             String password2 = new String(pfVerifyPassword.getPassword());
-            if (password1.equals(password2))
+            
+            if (isAdmin == true)
+            {
+               if (password1.equals(password2))
+                {
+                    String currentHired = cbListAllHired.getSelectedItem().toString();
+                    int aid = Integer.parseInt(currentHired.split(",")[0]);
+                    changeInfoAboutHired(aid);
+                    lblChangeHiredMessage.setText("Ändringar genomförda.");
+                } 
+            }
+            else if (isAdmin == false)
             {
                 String currentHired = cbListAllHired.getSelectedItem().toString();
                 int aid = Integer.parseInt(currentHired.split(",")[0]);
@@ -1947,7 +1998,7 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnChangeHiredMouseClicked
 
     /**
-     * Event on a combobox that fixes changes beteween different fields and buttons etc
+     * Event on a combo box that fixes changes between different fields and buttons etc.
      * @param evt 
      */
     private void cbFunctionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFunctionsActionPerformed
@@ -1988,12 +2039,13 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_cbFunctionsActionPerformed
 
     /**
-     * Button for choosing what action to perform in the gameproject-tab
+     * Button for choosing what action to perform in the game project-tab.
      * @param evt 
      */
     private void btnSearchGameProjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchGameProjectActionPerformed
         try
         {
+            lblErrorMessageGameProject.setText("");
             String selectedFunction = cbFunctionsGameProject.getSelectedItem().toString();
                
             switch (selectedFunction)
@@ -2036,52 +2088,7 @@ public class MainPage extends javax.swing.JFrame {
 
    
     /**
-     * button that chooses what gameproject to change
-     * @param evt 
-     */
-    private void btnChooseChangeGameProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChooseChangeGameProjectMouseClicked
-        try
-        {
-            // Gets all the existing data about a game and fills the text-fields
-        
-            String choosenGame = cbListAllGames.getSelectedItem().toString();
-            int sid = Integer.parseInt(choosenGame.split(",")[0]);
-            //populate textfields with existing data
-            HashMap<String, String> games = database.listProject(sid);
-
-            String name = games.get("BETECKNING");
-            tfGpChangeName.setText(name);
-            String startDate = games.get("STARTDATUM");
-            tfChangeGpStartDate.setText(startDate);
-            String releaseDate = games.get("RELEASEDATUM");
-            tfChangeGpReleaseDate.setText(releaseDate);
-        }
-        catch(Exception e)
-        {
-            System.out.println(e.getMessage());
-        }
-    }//GEN-LAST:event_btnChooseChangeGameProjectMouseClicked
-
-    /**
-     * button that performes the changes on a gameproject
-     * @param evt 
-     */
-    private void btnChangeGameProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChangeGameProjectMouseClicked
-        try
-        {
-           // Changes the info about the game
-            String currentGames = cbListAllGames.getSelectedItem().toString();  
-            int sid = Integer.parseInt(currentGames.split(",")[0]);
-            changeInfoAboutGame(sid); 
-        }
-        catch(Exception e)
-        {
-            System.out.println(e.getMessage());
-        }
-    }//GEN-LAST:event_btnChangeGameProjectMouseClicked
-
-    /**
-     * Event on a combobox that decides different settings based on which function that is choosed
+     * Event on a combo box that decides different settings based on which function that is chosen one.
      * @param evt 
      */
     private void cbFunctionsPlatformActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFunctionsPlatformActionPerformed
@@ -2111,7 +2118,7 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_cbFunctionsPlatformActionPerformed
 
     /**
-     * butten that shows what different actions you can perform on the platform-tab
+     * Button that shows what different actions you can perform on the platform-tab.
      * @param evt 
      */
     private void btnSearchPlatformActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchPlatformActionPerformed
@@ -2141,7 +2148,7 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSearchPlatformActionPerformed
 
     /**
-     * button for confirming an update for the platform
+     * Button for confirming an update for the platform.
      * @param evt 
      */
     private void btnConfirmUpdatePlatformMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmUpdatePlatformMouseClicked
@@ -2156,7 +2163,7 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConfirmUpdatePlatformMouseClicked
 
     /**
-     * button for adding a new gameproject
+     * Button for adding a new game project.
      * @param evt 
      */
     private void btnAddGameProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddGameProjectMouseClicked
@@ -2172,7 +2179,7 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddGameProjectMouseClicked
 
     /**
-     * button for choosing what action to perform on the competence-tab
+     * Button for choosing what action to perform on the competence-tab.
      * @param evt 
      */
     private void btnSearchCompetenceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCompetenceActionPerformed
@@ -2203,7 +2210,7 @@ public class MainPage extends javax.swing.JFrame {
 
    
     /**
-     * Event for deciding different changes based on different functions
+     * Event for deciding different changes based on different functions.
      * @param evt 
      */
     private void cbFunctionsGameProjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFunctionsGameProjectActionPerformed
@@ -2248,7 +2255,7 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_cbFunctionsGameProjectActionPerformed
 
     /**
-     * button for adding a new competence
+     * Button for adding a new competence.
      * @param evt 
      */
     private void btnAddCompetenceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddCompetenceMouseClicked
@@ -2282,7 +2289,7 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddCompetenceMouseClicked
 
     /**
-     * event on combobox for setting the current level in a textfield based on the persons level on that domain and platform
+     * Event on combo box for setting the current level in a text field based on the persons level on that domain and platform.
      * @param evt 
      */
     private void cbChooseCompetenceChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbChooseCompetenceChangeActionPerformed
@@ -2327,7 +2334,7 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_cbChooseCompetenceChangeActionPerformed
 
     /**
-     * event on combobox that runs the leveldisplay method while changing person
+     * Event on combo box that runs the level display method while changing person.
      * @param evt 
      */
     private void cbListSpecialistChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbListSpecialistChangeActionPerformed
@@ -2456,7 +2463,7 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLevelUpCompetenceMouseClicked
 
     /**
-     * Event on combobox that runs the level display method while changing person.
+     * Event on combo box that runs the level display method while changing person.
      * @param evt 
      */
     private void cbChoosePlattformChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbChoosePlattformChangeActionPerformed
@@ -2512,7 +2519,7 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRemoveCompetenceMouseClicked
 
     /**
-     * event that decides what to show based on which function that is choosen
+     * event that decides what to show based on which function that is chosen.
      * @param evt 
      */
     private void cbFunctionsCompetenceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFunctionsCompetenceActionPerformed
@@ -2531,7 +2538,73 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_cbFunctionsCompetenceActionPerformed
 
     /**
-    * calls the database updateHired-method and sends the new info to it.
+     * button that preforms the changes on a game project.
+     * @param evt 
+     */
+    private void btnChangeGameProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChangeGameProjectMouseClicked
+        try
+        {
+            // Changes the info about the game.
+
+            //Fetches the values of the text fields and combo boxes. Used in validation.
+            int startYear = Integer.parseInt(tfStartDateChangeYear.getText());
+            int startMonth = Integer.parseInt(cbStartDateChangeMonth.getSelectedItem().toString());
+            int startDay = Integer.parseInt(cbStartDateDay.getSelectedItem().toString());
+
+            int releaseYear = Integer.parseInt(tfReleaseChangeYear.getText());
+            int releaseMonth = Integer.parseInt(cbReleaseChangeMonth.getSelectedItem().toString());
+            int releaseDay = Integer.parseInt(cbReleaseChangeDay.getSelectedItem().toString());
+
+            if(Validation.checkDate(startYear, startMonth, startDay) && Validation.checkDate(releaseYear, releaseMonth, releaseDay) &&
+                Validation.checkYear(tfStartDateChangeYear.getText()) && Validation.checkYear(tfReleaseChangeYear.getText()) &&
+                Validation.containsString(tfGpChangeName.getText()) && Validation.textBoxTextIsRequired(tfGpChangeName))
+            {
+                String currentGames = cbListAllGames.getSelectedItem().toString();
+                int sid = Integer.parseInt(currentGames.split(",")[0]);
+                changeInfoAboutGame(sid);
+                lblMessageChangeProject.setText("Ändringen genomförd! Projektnamnet är nu "+tfGpChangeName.getText()+" med datumen "+
+                    releaseYear+"/"+releaseMonth+"/"+releaseDay+".");
+            }
+            else
+            {
+                lblMessageChangeProject.setText("Ändringen genomfördes ej. Kontrollera så att datumen och namnet är korrekt skrivet.");
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_btnChangeGameProjectMouseClicked
+
+    /**
+     * button that chooses what game project to change.
+     * @param evt 
+     */
+    private void btnChooseChangeGameProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChooseChangeGameProjectMouseClicked
+        try
+        {
+            // Gets all the existing data about a game and fills the text-fields.
+
+            String choosenGame = cbListAllGames.getSelectedItem().toString();
+            int sid = Integer.parseInt(choosenGame.split(",")[0]);
+            //populate textfields with existing data
+            HashMap<String, String> games = database.listProject(sid);
+
+            String name = games.get("BETECKNING");
+            tfGpChangeName.setText(name);
+            String startDate = games.get("STARTDATUM");
+            tfChangeGpStartDate.setText(startDate);
+            String releaseDate = games.get("RELEASEDATUM");
+            tfChangeGpReleaseDate.setText(releaseDate);
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_btnChooseChangeGameProjectMouseClicked
+
+    /**
+    * Calls the database updateHired-method and sends the new info to it.
     */
     public void updateHired()
     {
@@ -2569,7 +2642,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * adds items to a combobox
+     * Adds items to a combo box.
      */
     public void addProjectsToCBUpdate()			
     {   
@@ -2591,7 +2664,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * updates the employment-form
+     * Updates the employment-form.
      */
     public void updateHiredForm()
     {
@@ -2617,7 +2690,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * updates the employment to specialist
+     * Updates the employment to specialist.
      */
     public void updateEmploymentToSpecialist ()   
     {
@@ -2647,7 +2720,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * updates the employment tp projectleader
+     * Updates the employment tp projectleader.
      */
     public void updateEmploymentToProjectleader()
     {
@@ -2694,7 +2767,7 @@ public class MainPage extends javax.swing.JFrame {
     
     
     /**
-     * add items to a combobox
+     * Add items to a combo box.
      */
     public void addPlatformsToUpdateCB()
     {
@@ -2716,7 +2789,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * add items to a combobox
+     * Add items to a combo box.
      */
     public void addProjectsToCB()			
     {       
@@ -2740,7 +2813,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * add items to a combobox
+     * Add items to a combo box.
      */
     public void addPlatformsToCB ()
     {
@@ -2763,7 +2836,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * add items to a combobox
+     * Add items to a combo box.
      */
     public void addGamesPlatformToCB()
     {
@@ -2786,7 +2859,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * add items to a combobox
+     * Add items to a combo box.
      */
     public void addGamesToCB()
     {
@@ -2809,7 +2882,7 @@ public class MainPage extends javax.swing.JFrame {
     }
 
     /**
-     * add items to a combobox
+     * Add items to a combo box.
      */
     public void addSpecialistToCBUpdate()			
     {      
@@ -2832,7 +2905,7 @@ public class MainPage extends javax.swing.JFrame {
         }
     }
     /**
-     * changes the position of a hired
+     * Changes the position of a hired.
      */
     public void addHiredPosition()
     {
@@ -2930,7 +3003,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Shows who has been leading a specific project
+     * Shows who has been leading a specific project.
      */
     private void showLeader ()
     {
@@ -2939,15 +3012,9 @@ public class MainPage extends javax.swing.JFrame {
             String currentGame = cbAllGameProjects.getSelectedItem().toString();
             int gameID = Integer.parseInt(currentGame.split(",")[0]);
 
-            
-            tasearchResultGameProject.setText("");        
-
-                ArrayList<HashMap<String, String>> listLeader = database.listLeaderOnProject(gameID);
-                for (int i = 0; i < listLeader.size(); i++)
-                {
-                    String leader = listLeader.get(i).get("NAMN");
-                    tasearchResultGameProject.append(leader + "\n");
-                }
+                String leader = database.listLeaderOnProject(gameID);
+                    tasearchResultGameProject.setText(leader);
+                    lblHeaderGameProject.setText(leader);
         }
         catch (Exception e)
         {
@@ -2957,7 +3024,7 @@ public class MainPage extends javax.swing.JFrame {
     }
             
     /**
-     * lists all the platforms a game is made for
+     * Lists all the platforms a game is made for.
      */
     private void listPlatforms()
     {
@@ -3000,7 +3067,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * lists the platforma a game is developed for
+     * Lists the platform a game is developed for.
      */
     private void listGameForPlatform ()
     {
@@ -3027,7 +3094,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * adds items to a combobox
+     * Adds projects to a combo box.
      */
     public void addGameProjectsToCB ()
     {
@@ -3049,6 +3116,10 @@ public class MainPage extends javax.swing.JFrame {
         }
     }
     
+    
+    /**
+     * Adds items to the choose hired combo box.
+     */
     private void listHiredInProjects()
     {
         
@@ -3078,7 +3149,7 @@ public class MainPage extends javax.swing.JFrame {
     
     
     /**
-     * Lists the projects a person is leading
+     * Lists the projects a person is leading.
      */
     private void listProjects()
     {
@@ -3121,7 +3192,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * adds items to a combobox
+     * Adds items to a combo box.
      */
     public void addLeadersToCbNewProjLeader()			
     {   
@@ -3190,7 +3261,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * A method that generates all the hired staff in a combobox-list.
+     * A method that generates all the hired staff in a combo box-list.
      */
     private void addHiredToCB()
     {
@@ -3217,7 +3288,7 @@ public class MainPage extends javax.swing.JFrame {
             
         
         
-            //loops through all admins and checks if the person choosen in the combobox is an admin
+            //Loops through all admins and checks if the person choosen in the combobox is an admin.
             ArrayList<HashMap<String, String>> admins = database.listAdmin(AID);
             
             if(admins != null)
@@ -3231,7 +3302,7 @@ public class MainPage extends javax.swing.JFrame {
      * Lets you change information about the chosen one.
      * @param AID 
      */
-    private void changeInfoAboutHired (int AID)             //Validering krävs 
+    private void changeInfoAboutHired (int AID)              
     {
         try
         {
@@ -3241,6 +3312,7 @@ public class MainPage extends javax.swing.JFrame {
             //Gets the current info from the database and the new typed in to the boxes
             String existingName = hired.get("NAMN");
             String setName = tfChangeFirstNameHired.getText();
+            String setLastName = tfChangeLastNameHired.getText();
             //String firstName = setName.split(" ")[0];
             //String lastName = setName.split(" ")[1];
             String existingTelephone = hired.get("TELEFON");
@@ -3249,14 +3321,15 @@ public class MainPage extends javax.swing.JFrame {
             String setMail = tfChangeMailHired.getText();
             String setPassword = new String(pfPassword.getPassword());
                 
-            if (isAdmin(AID))       //checks if the user they want to change is administrator and lets u change the password
+            if (isAdmin(AID))       //checks if the user they want to change is administrator and lets you change the password.
             {
                 database.changeAdmin(AID, setPassword);
             }
             
-            if (Validation.textBoxTextIsRequired(tfChangeFirstNameHired) && Validation.textBoxTextIsRequired(tfChangeTelephoneHired) && Validation.textBoxTextIsRequired(tfChangeMailHired))
+            if (Validation.textBoxTextIsRequired(tfChangeFirstNameHired) && Validation.textBoxTextIsRequired(tfChangeTelephoneHired) 
+                    && Validation.textBoxTextIsRequired(tfChangeMailHired))
             {
-                //checks so that the new info doesn't already excist and sends in the new info to the database
+                //checks so that the new info doesn't already exist and sends in the new info to the database
                 if (!setName.equals(existingName) || !setPhone.equals(existingTelephone) || !setMail.equals(existingMail))
                 {
                     database.changeHired(setName, setPhone, setMail, AID);
@@ -3279,9 +3352,10 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Lets you change information about the choosen game
+     * Lets you change information about the chosen game
      */
-    private void changeInfoAboutGame (int sid)                  //VALIDERING
+
+    private void changeInfoAboutGame (int sid)                 
     {
         try
         {HashMap<String, String> game = database.listProject(sid);
@@ -3387,7 +3461,9 @@ public class MainPage extends javax.swing.JFrame {
             //Sets the leaders AID that was fetched from the loop to int.
             int leaderAID = Integer.parseInt(strLeaderAID);
         
-            if (startDatumTotal < releaseDatumTotal && nameExists == false)
+            //Validation check.
+            if (startDatumTotal < releaseDatumTotal && nameExists == false && Validation.checkDate(startDay, startMonth, startYear) 
+                    && Validation.checkDate(releaseDay, releaseMonth, releaseYear))
             {
                  database.addProject(newSID, beteckning, startDatum, releaseDatum, leaderAID);
                 lblAddProjectText.setText(beteckning + " är nu tillagd!");
@@ -3406,7 +3482,7 @@ public class MainPage extends javax.swing.JFrame {
     
                                                     
     /**
-    * list all specilist-competences
+    * List all specialist competences.
     */
     private void listSpecialistCompetence()
     {
@@ -3443,7 +3519,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * adds items to combobox
+     * Adds items to combo box.
      */
     public void addSpecialistsToCBCompetence()
     {
@@ -3465,7 +3541,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-    * Throws the new info about a hired to the database-class
+    * Throws the new info about a hired to the database-class.
     */
     public void addNewHired ()
     {
@@ -3477,14 +3553,14 @@ public class MainPage extends javax.swing.JFrame {
             String phone = tfAddTelephone.getText();
             String mail = tfAddMail.getText();
 	
-            //Gets the info from the textboxes and validates it
+            //Gets the info from the textboxes and validates it.
             if (Validation.textBoxTextIsRequired(tfAddFirstName) && Validation.textBoxTextIsRequired(tfAddLastName) && Validation.textBoxTextIsRequired(tfAddTelephone) && Validation.textBoxTextIsRequired(tfAddMail))
             {                
                 //Create a username based on the firstnames first letter, the lastnames first and last letter.
                 String sistaBokstaven = lastname.substring(lastname.length()-1, lastname.length());
                 String username = firstname.substring(0,1) + lastname.substring(0,1) + sistaBokstaven;       
 
-                //checks if there is any text in the textfields and then adds the text in them to the database
+                //checks if there is any text in the textfields and then adds the text in them to the database.
                 if (Validation.checkName(firstname, lastname) && Validation.checkNumber(phone) && Validation.checkMail(mail))
                 {
                     String name = firstname + " " + lastname;
@@ -3505,7 +3581,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Updates the platforms a game is developed for
+     * Updates the platforms a game is developed for.
      */
     private void updatePlatformGame()
     {
@@ -3535,7 +3611,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * gets the comptenecelevel from the database
+     * Gets the competence level from the database.
      * @param name
      * @param benamning
      * @param plattform 
@@ -3561,7 +3637,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * adds items to a combobox
+     * Adds competences to a combo box.
      */
     private void addCompetenceToCB()
     {
@@ -3575,7 +3651,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * adds items to a combobox
+     * Adds items to a combo box for choosing a specialist to change their competence.
      */
     public void addSpecialistsToCBCompetenceChange()
     {
@@ -3603,7 +3679,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Shows the fields about a Hired when someone with full access is logged in
+     * Shows the fields about a Hired when someone with full access is logged in.
      */
     private void showHiredChangeFields()
     {
@@ -3628,7 +3704,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Hides the fields about a Hired when someone without full access is using the program
+     * Hides the fields about a Hired when someone without full access is using the program.
      */
     private void hideHiredChangeFields()
     {     
@@ -3652,7 +3728,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Shows the fields for removing a Hired when someone with full access is using the program
+     * Shows the fields for removing a Hired when someone with full access is using the program.
      */
     private void showHiredRemoveFields ()
     {
@@ -3666,7 +3742,7 @@ public class MainPage extends javax.swing.JFrame {
     }
 
     /**
-     * Hides the fields for removing a Hired when someone without full access is using the program
+     * Hides the fields for removing a Hired when someone without full access is using the program.
      */
     private void hideHiredRemoveFields ()
     {
@@ -3680,7 +3756,7 @@ public class MainPage extends javax.swing.JFrame {
     }
 
     /**
-     * Shows the fields for adding a hired when someone with full access is using the program
+     * Shows the fields for adding a hired when someone with full access is using the program.
      */
     private void showHiredAddFields ()
     {
@@ -3699,7 +3775,7 @@ public class MainPage extends javax.swing.JFrame {
     }
 
     /**
-     * Hides the fields for adding a hired when someone without full access is using the program
+     * Hides the fields for adding a hired when someone without full access is using the program.
      */
     private void hideHiredAddFields ()
     {
@@ -3719,7 +3795,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Shows the fields for updating a Hired when someone with full access is using the program
+     * Shows the fields for updating a Hired when someone with full access is using the program.
      */
     private void showHiredUpdateFields ()
     {
@@ -3738,7 +3814,7 @@ public class MainPage extends javax.swing.JFrame {
     }
 
     /**
-     * Hides the fields for updating a Hired when someone without full access is using the program
+     * Hides the fields for updating a Hired when someone without full access is using the program.
      */
     private void hideHiredUpdateFields ()
     {
@@ -3757,7 +3833,7 @@ public class MainPage extends javax.swing.JFrame {
     }
 
     /**
-     * shows the fields for adding a gameproject when someone with full access is using the program
+     * Shows the fields for adding a game project when someone with full access is using the program.
      */
     private void showGpAddFields ()
     {
@@ -3787,7 +3863,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Hides the fields for adding a gameproject when someone without full access is using the program
+     * Hides the fields for adding a game project when someone without full access is using the program.
      */
     private void hideGpAddFields ()
     {
@@ -3817,7 +3893,7 @@ public class MainPage extends javax.swing.JFrame {
 	}
     
     /**
-     * Shows the fields for changing a Gameproject when someone with full access is using the program
+     * Shows the fields for changing a game project when someone with full access is using the program.
      */
     private void showGpChangeFields()
     {
@@ -3846,10 +3922,11 @@ public class MainPage extends javax.swing.JFrame {
         cbReleaseChangeMonth.setVisible(true);
         lblReleaseChangeYear.setVisible(true);
         tfReleaseChangeYear.setVisible(true);
+        lblMessageChangeProject.setVisible(true);
     }
 
     /**
-     * Hides the fields for changing a gameproject when someone without full access is using the program
+     * Hides the fields for changing a game project when someone without full access is using the program.
      */
     private void hideGpChangeFields()
     {
@@ -3877,10 +3954,11 @@ public class MainPage extends javax.swing.JFrame {
         cbReleaseChangeMonth.setVisible(false);
         lblReleaseChangeYear.setVisible(false);
         tfReleaseChangeYear.setVisible(false);
+        lblMessageChangeProject.setVisible(false);
     }
     
     /**
-     * Shows the fields for changing a Platform when someone with full access is using the program
+     * Shows the fields for changing a platform when someone with full access is using the program.
      */
     private void showPlatformUpdateFields ()
     {
@@ -3893,7 +3971,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Hides the fields for changing a platform when someone without full access is using the program
+     * Hides the fields for changing a platform when someone without full access is using the program.
      */
     private void hidePlatformUpdateFields ()
     {
@@ -3906,7 +3984,7 @@ public class MainPage extends javax.swing.JFrame {
     }
 
     /**
-     * Shows the fields for changing a competence when someone without full access is using the program
+     * Shows the fields for changing a competence when someone without full access is using the program.
      */
     private void showCompetenceUpdate()
     {
@@ -3928,7 +4006,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Hides the fields for changing a competence when someone without full access is using the program
+     * Hides the fields for changing a competence when someone without full access is using the program.
      */
     private void hideCompetenceUpdate()
     {
@@ -4004,6 +4082,11 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbStartDateChangeMonth;
     private javax.swing.JComboBox<String> cbStartDateDay;
     private javax.swing.JComboBox<String> cbStartDateMonth;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.Box.Filler filler2;
+    private javax.swing.Box.Filler filler3;
+    private javax.swing.Box.Filler filler4;
+    private javax.swing.Box.Filler filler5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblAddDay;
     private javax.swing.JLabel lblAddDayRelease;
@@ -4062,6 +4145,7 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel lblHeaderGameProject;
     private javax.swing.JLabel lblHeaderPlatform;
     private javax.swing.JLabel lblHeaderRemove;
+    private javax.swing.JLabel lblMessageChangeProject;
     private javax.swing.JLabel lblNote;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblPlatformUpdateHeader;

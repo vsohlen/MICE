@@ -85,15 +85,13 @@ public class MainPage extends javax.swing.JFrame {
         tfChangeTelephoneHired = new javax.swing.JTextField();
         lblChangeTelephoneHired = new javax.swing.JLabel();
         lblChangeFirstNameHired = new javax.swing.JLabel();
-        tfChangeFirstNameHired = new javax.swing.JTextField();
+        tfChangeNameHired = new javax.swing.JTextField();
         lblHeaderChangeHired = new javax.swing.JLabel();
         lblChooseHired = new javax.swing.JLabel();
         cbListAllHired = new javax.swing.JComboBox<>();
         btnChooseChangeHired = new javax.swing.JButton();
         lblPassword = new javax.swing.JLabel();
         pfPassword = new javax.swing.JPasswordField();
-        tfChangeLastNameHired = new javax.swing.JTextField();
-        lblChangeLastNameHired = new javax.swing.JLabel();
         pfVerifyPassword = new javax.swing.JPasswordField();
         lblVerifyPassword = new javax.swing.JLabel();
         lblChangeHiredMessage = new javax.swing.JLabel();
@@ -106,14 +104,12 @@ public class MainPage extends javax.swing.JFrame {
         paneAddHired = new javax.swing.JPanel();
         lblHeaderAdd = new javax.swing.JLabel();
         lblAddFirstName = new javax.swing.JLabel();
-        tfAddFirstName = new javax.swing.JTextField();
+        tfAddName = new javax.swing.JTextField();
         lblAddTelephone = new javax.swing.JLabel();
         tfAddTelephone = new javax.swing.JTextField();
         lblAddMail = new javax.swing.JLabel();
         tfAddMail = new javax.swing.JTextField();
         btnChangeHiredAdd = new javax.swing.JButton();
-        lblAddLastName = new javax.swing.JLabel();
-        tfAddLastName = new javax.swing.JTextField();
         paneUpdateHired = new javax.swing.JPanel();
         lblChooseGameProject = new javax.swing.JLabel();
         cbListAllGameProjects = new javax.swing.JComboBox<>();
@@ -276,19 +272,28 @@ public class MainPage extends javax.swing.JFrame {
         lblChangeMailHired.setText("Mail:");
 
         tfChangeMailHired.setText("Mailadress");
+        tfChangeMailHired.setMinimumSize(new java.awt.Dimension(100, 20));
 
         tfChangeTelephoneHired.setText("Telefonnummer");
+        tfChangeTelephoneHired.setMinimumSize(new java.awt.Dimension(100, 20));
 
         lblChangeTelephoneHired.setText("Telefon: ");
 
-        lblChangeFirstNameHired.setText("Förnamn:");
+        lblChangeFirstNameHired.setText("Namn");
 
-        tfChangeFirstNameHired.setText("Förnamn");
+        tfChangeNameHired.setText("Namn");
+        tfChangeNameHired.setMinimumSize(new java.awt.Dimension(100, 20));
 
         lblHeaderChangeHired.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblHeaderChangeHired.setText("Ändra anställd");
 
         lblChooseHired.setText("Välj en anställd i listan att ändra information om: ");
+
+        cbListAllHired.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbListAllHiredActionPerformed(evt);
+            }
+        });
 
         btnChooseChangeHired.setText("Välj");
         btnChooseChangeHired.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -301,12 +306,10 @@ public class MainPage extends javax.swing.JFrame {
 
         pfPassword.setText("asda3123b");
         pfPassword.setToolTipText("");
-
-        tfChangeLastNameHired.setText("Efternamn");
-
-        lblChangeLastNameHired.setText("Efternamn:");
+        pfPassword.setMinimumSize(new java.awt.Dimension(100, 20));
 
         pfVerifyPassword.setText("2iubavwda");
+        pfVerifyPassword.setMinimumSize(new java.awt.Dimension(100, 20));
 
         lblVerifyPassword.setText("Verifiera:");
 
@@ -331,22 +334,20 @@ public class MainPage extends javax.swing.JFrame {
                             .addComponent(lblChangeMailHired)
                             .addComponent(lblChangeTelephoneHired)
                             .addComponent(lblChangeFirstNameHired)
-                            .addComponent(lblChangeLastNameHired)
                             .addComponent(lblPassword)
                             .addComponent(lblVerifyPassword))
-                        .addGap(26, 26, 26)
+                        .addGap(32, 32, 32)
                         .addGroup(paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(pfVerifyPassword)
-                            .addComponent(tfChangeTelephoneHired, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(tfChangeFirstNameHired, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(tfChangeMailHired, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(tfChangeLastNameHired, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(pfPassword, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(pfVerifyPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tfChangeTelephoneHired, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(tfChangeNameHired, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tfChangeMailHired, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pfPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnChangeHired)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblChangeHiredMessage)))
-                .addContainerGap(482, Short.MAX_VALUE))
+                .addContainerGap(462, Short.MAX_VALUE))
         );
         paneChangeHiredLayout.setVerticalGroup(
             paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -361,12 +362,8 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(btnChooseChangeHired))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfChangeFirstNameHired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfChangeNameHired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblChangeFirstNameHired))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblChangeLastNameHired)
-                    .addComponent(tfChangeLastNameHired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblChangeTelephoneHired)
@@ -385,8 +382,10 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(lblVerifyPassword)
                     .addComponent(btnChangeHired)
                     .addComponent(lblChangeHiredMessage))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
+
+        lblChangeFirstNameHired.getAccessibleContext().setAccessibleDescription("");
 
         tpSubMenuHired.addTab("Ändra", paneChangeHired);
 
@@ -442,9 +441,9 @@ public class MainPage extends javax.swing.JFrame {
         lblHeaderAdd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblHeaderAdd.setText("Lägg till anställd");
 
-        lblAddFirstName.setText("Förnamn:");
+        lblAddFirstName.setText("Namn:");
 
-        tfAddFirstName.setText("Förnamn");
+        tfAddName.setText("Förnamn");
 
         lblAddTelephone.setText("Telefon: ");
 
@@ -461,17 +460,13 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
-        lblAddLastName.setText("Efternamn:");
-
-        tfAddLastName.setText("Efternamn");
-
         javax.swing.GroupLayout paneAddHiredLayout = new javax.swing.GroupLayout(paneAddHired);
         paneAddHired.setLayout(paneAddHiredLayout);
         paneAddHiredLayout.setHorizontalGroup(
             paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paneAddHiredLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblHeaderAdd)
                     .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(btnChangeHiredAdd, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -487,13 +482,9 @@ public class MainPage extends javax.swing.JFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                             .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(tfAddTelephone)
-                                .addComponent(tfAddFirstName)
-                                .addComponent(tfAddMail, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneAddHiredLayout.createSequentialGroup()
-                        .addComponent(lblAddLastName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfAddLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(tfAddName)
+                                .addComponent(tfAddMail, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(574, Short.MAX_VALUE))
         );
         paneAddHiredLayout.setVerticalGroup(
             paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -502,13 +493,9 @@ public class MainPage extends javax.swing.JFrame {
                 .addComponent(lblHeaderAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5)
                 .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfAddFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfAddName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAddFirstName))
-                .addGap(4, 4, 4)
-                .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfAddLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAddLastName))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(paneAddHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAddTelephone)
                     .addComponent(tfAddTelephone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -518,7 +505,7 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(tfAddMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnChangeHiredAdd)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         tpSubMenuHired.addTab("Lägg till", paneAddHired);
@@ -1403,7 +1390,7 @@ public class MainPage extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnSearchCompetence))
                     .addComponent(spCompetence))
-                .addContainerGap(229, Short.MAX_VALUE))
+                .addContainerGap(232, Short.MAX_VALUE))
         );
         paneCompetenceLayout.setVerticalGroup(
             paneCompetenceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1908,8 +1895,7 @@ public class MainPage extends javax.swing.JFrame {
         try
         {
             lblChangeHiredMessage.setText("");
-            tfChangeFirstNameHired.setText("");
-            tfChangeLastNameHired.setText("");
+            tfChangeNameHired.setText("");
             tfChangeTelephoneHired.setText("");
             tfChangeMailHired.setText("");    
                     
@@ -1917,9 +1903,9 @@ public class MainPage extends javax.swing.JFrame {
             int aid = Integer.parseInt(currentHired.split(",")[0]);
             //populate textfields with existing data
             HashMap<String, String> hired = database.listHired(aid);
+            
             String existingName = hired.get("NAMN");
-            tfChangeFirstNameHired.setText(existingName.split(" ")[0]);
-            tfChangeLastNameHired.setText(existingName.split(" ")[1]);
+            tfChangeNameHired.setText(existingName);
 
             String phone = hired.get("TELEFON");
             tfChangeTelephoneHired.setText(phone);
@@ -1928,19 +1914,23 @@ public class MainPage extends javax.swing.JFrame {
             boolean admin = isAdmin(aid);
 
             //if the person choosen in the combobox is admin shows/hides the comboxes
-            if (!admin)
+            if (admin)
+            {
+                lblPassword.setVisible(true);
+                pfPassword.setVisible(true);
+                lblVerifyPassword.setVisible(true);
+                pfVerifyPassword.setVisible(true);                
+                
+                HashMap<String, String> adminFields = database.getOneAdminAID(aid);                
+                pfPassword.setText(adminFields.get("LOSENORD"));
+                pfVerifyPassword.setText(adminFields.get("LOSENORD"));                   
+            }
+            else
             {
                 lblPassword.setVisible(false);
                 pfPassword.setVisible(false);
                 lblVerifyPassword.setVisible(false);
                 pfVerifyPassword.setVisible(false);
-            }
-            else
-            {
-                lblPassword.setVisible(true);
-                pfPassword.setVisible(true);
-                lblVerifyPassword.setVisible(true);
-                pfVerifyPassword.setVisible(true);
             }
         }
         catch(Exception e)
@@ -1954,7 +1944,7 @@ public class MainPage extends javax.swing.JFrame {
      * @param evt 
      */
     private void btnChangeHiredMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChangeHiredMouseClicked
-         lblErrorMessageHired.setText("");
+        lblErrorMessageHired.setText("");
         lblChangeHiredMessage.setText("");
         try
         {
@@ -1962,28 +1952,28 @@ public class MainPage extends javax.swing.JFrame {
             String password2 = new String(pfVerifyPassword.getPassword());
             
             String currentHired = cbListAllHired.getSelectedItem().toString();
-                    int aid = Integer.parseInt(currentHired.split(",")[0]);
+            int aid = Integer.parseInt(currentHired.split(",")[0]);            
             
-           String admin = database.getOneAdminAID(currentHired.split(",")[0]);
-
+            HashMap<String, String> admin = database.getOneAdminAID(Integer.parseInt(currentHired.split(",")[0]));
             
-            if (!admin.equals(""))
+            if(admin.isEmpty())
             {
-               if (password1.equals(password2))
+                changeInfoAboutHired(aid);
+                lblChangeHiredMessage.setText("Ändringar genomförda.");   
+            }
+            else
+            {         
+                if(password1.equals(password2))
                 {
                     changeInfoAboutHired(aid);
                     lblChangeHiredMessage.setText("Ändringar genomförda.");
-                } 
-            }
-            else if (admin.equals(""))
-            {
-                changeInfoAboutHired(aid);
-                lblChangeHiredMessage.setText("Ändringar genomförda.");
-            }
-            else
-            {
-                lblChangeHiredMessage.setText("Lösenorden stämmer inte.");
-            }
+                    updateCBs();
+                }   
+                else
+                {                
+                    lblChangeHiredMessage.setText("Lösenorden stämmer inte överens. Inga ändringar utförda.");
+                }
+            }       
         }
         catch(Exception e)
         {
@@ -2675,6 +2665,16 @@ public class MainPage extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnChooseChangeGameProjectMouseClicked
 
+    private void cbListAllHiredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbListAllHiredActionPerformed
+        tfChangeNameHired.setText("");                                          
+        tfChangeMailHired.setText("");                                          
+        tfChangeTelephoneHired.setText("");                                  
+        pfPassword.setText("");                               
+        pfVerifyPassword.setText("");
+        
+       
+    }//GEN-LAST:event_cbListAllHiredActionPerformed
+
     /**
     * Calls the database updateHired-method and sends the new info to it.
     */
@@ -3362,18 +3362,15 @@ public class MainPage extends javax.swing.JFrame {
     
     private boolean isAdmin(int AID)
     {
-        boolean admin = false;
-            
-        
-        
-            //Loops through all admins and checks if the person choosen in the combobox is an admin.
-            ArrayList<HashMap<String, String>> admins = database.listAdmin(AID);
-            
-            if(admins != null)
-            {
-                admin = true;
-            }
-            return admin;
+        boolean admin = false;       
+        //Loops through all admins and checks if the person choosen in the combobox is an admin.
+        ArrayList<HashMap<String, String>> admins = database.listAdmin(AID);
+
+        if(admins != null)
+        {
+            admin = true;
+        }
+        return admin;
     }
     
     /**
@@ -3382,31 +3379,28 @@ public class MainPage extends javax.swing.JFrame {
      */
     private void changeInfoAboutHired (int AID)              
     {
-        try
-        {
-            
-            HashMap<String, String> hired = database.listHired(AID);
+        if(Validation.textBoxTextIsRequired(tfChangeNameHired) &&
+            Validation.textBoxTextIsRequired(tfChangeTelephoneHired) &&
+            Validation.textBoxTextIsRequired(tfChangeMailHired))
+        {        
+            try
+            {
+                HashMap<String, String> hired = database.listHired(AID);
 
-            //Gets the current info from the database and the new typed in to the boxes
-            String existingName = hired.get("NAMN");
-            String setName = tfChangeFirstNameHired.getText();
-            String setLastName = tfChangeLastNameHired.getText();
-            //String firstName = setName.split(" ")[0];
-            //String lastName = setName.split(" ")[1];
-            String existingTelephone = hired.get("TELEFON");
-            String setPhone = tfChangeTelephoneHired.getText();
-            String existingMail = hired.get("MAIL");
-            String setMail = tfChangeMailHired.getText();
-            String setPassword = new String(pfPassword.getPassword());
-                
-            if (isAdmin(AID))       //checks if the user they want to change is administrator and lets you change the password.
-            {
-                database.changeAdmin(AID, setPassword);
-            }
-            
-            if (Validation.textBoxTextIsRequired(tfChangeFirstNameHired) && Validation.textBoxTextIsRequired(tfChangeTelephoneHired) 
-                    && Validation.textBoxTextIsRequired(tfChangeMailHired))
-            {
+                //Gets the current info from the database and the new typed in to the boxes
+                String existingName = hired.get("NAMN");
+                String existingTelephone = hired.get("TELEFON");
+                String existingMail = hired.get("MAIL");
+
+                String setName = tfChangeNameHired.getText();
+                String setPhone = tfChangeTelephoneHired.getText();
+                String setMail = tfChangeMailHired.getText();            
+
+                if (isAdmin(AID))       //checks if the user they want to change is administrator and lets you change the password.
+                {
+                    String setPassword = new String(pfPassword.getPassword());
+                    database.changeAdmin(AID, setPassword);
+                }                
                 //checks so that the new info doesn't already exist and sends in the new info to the database
                 if (!setName.equals(existingName) || !setPhone.equals(existingTelephone) || !setMail.equals(existingMail))
                 {
@@ -3416,16 +3410,16 @@ public class MainPage extends javax.swing.JFrame {
                 else
                 {
                     lblErrorMessageHired.setText("Ändringen kunde ej genomföras");
-                }
-            } 
-            else
+                }  
+            }
+            catch (Exception e)
             {
-                lblErrorMessageHired.setText("En textruta får aldrig lämnas tom.");
+                System.out.println(e.getMessage());
             }
         }
-        catch (Exception e)
+        else
         {
-            System.out.println(e.getMessage());
+            lblErrorMessageHired.setText("En textruta får aldrig lämnas tom.");
         }
     }
     
@@ -3546,39 +3540,38 @@ public class MainPage extends javax.swing.JFrame {
     */
     public void addNewHired ()
     {
-        try
-        {
-            int newAID = database.generateAID();
-            String firstname = tfAddFirstName.getText();
-            String lastname = tfAddLastName.getText();
-            String phone = tfAddTelephone.getText();
-            String mail = tfAddMail.getText();
-	
-            //Gets the info from the textboxes and validates it.
-            if (Validation.textBoxTextIsRequired(tfAddFirstName) && Validation.textBoxTextIsRequired(tfAddLastName) && Validation.textBoxTextIsRequired(tfAddTelephone) && Validation.textBoxTextIsRequired(tfAddMail))
-            {                
+        if(Validation.textBoxTextIsRequired(tfAddName) && 
+                Validation.textBoxTextIsRequired(tfAddTelephone) && 
+                Validation.textBoxTextIsRequired(tfAddMail))
+        {            
+            try
+            {
+                int newAID = database.generateAID();
+                String name = tfAddName.getText();
+                String phone = tfAddTelephone.getText();
+                String mail = tfAddMail.getText();
+                String lastname = name.split(" ")[1];
+                  
                 //Create a username based on the firstnames first letter, the lastnames first and last letter.
                 String sistaBokstaven = lastname.substring(lastname.length()-1, lastname.length());
-                String username = firstname.substring(0,1) + lastname.substring(0,1) + sistaBokstaven;       
+                String username = name.substring(0,1) + lastname.substring(0,1) + sistaBokstaven;       
 
                 //checks if there is any text in the textfields and then adds the text in them to the database.
-                if (Validation.checkName(firstname, lastname) && Validation.checkNumber(phone) && Validation.checkMail(mail))
+                if (Validation.checkName(name) && Validation.checkNumber(phone) && Validation.checkMail(mail))
                 {
-                    String name = firstname + " " + lastname;
                     database.addHired(newAID, name, phone, mail, username);
                     lblErrorMessageHired.setText(name + " är nu tillagd!");
                 }
                 else
                 {
                     lblErrorMessageHired.setText("Personen kunde inte läggas till");
-                }
+                }                
             }
-        }
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-        }
-	
+            catch (Exception e)
+            {
+                System.out.println(e.getMessage());
+            }
+        }	
     }
     
     /**
@@ -3695,7 +3688,7 @@ public class MainPage extends javax.swing.JFrame {
 	cbListAllHired.setVisible(true);
 	btnChooseChangeHired.setVisible(true);
 	lblChangeFirstNameHired.setVisible(true);
-	tfChangeFirstNameHired.setVisible(true);
+	tfChangeNameHired.setVisible(true);
 	lblChangeTelephoneHired.setVisible(true);
 	tfChangeTelephoneHired.setVisible(true);
 	lblChangeMailHired.setVisible(true);
@@ -3720,7 +3713,7 @@ public class MainPage extends javax.swing.JFrame {
 	cbListAllHired.setVisible(false);
 	btnChooseChangeHired.setVisible(false);
 	lblChangeFirstNameHired.setVisible(false);
-	tfChangeFirstNameHired.setVisible(false);
+	tfChangeNameHired.setVisible(false);
 	lblChangeTelephoneHired.setVisible(false);
 	tfChangeTelephoneHired.setVisible(false);
 	lblChangeMailHired.setVisible(false);
@@ -3770,9 +3763,7 @@ public class MainPage extends javax.swing.JFrame {
 	paneAddHired.setVisible(true);
 	tfAddMail.setVisible(true);
 	lblAddFirstName.setVisible(true);
-	tfAddFirstName.setVisible(true);
-        lblAddLastName.setVisible(true);
-        tfAddLastName.setVisible(true);
+	tfAddName.setVisible(true);
 	lblAddTelephone.setVisible(true);
 	tfAddTelephone.setVisible(true);
 	lblAddMail.setVisible(true);
@@ -3789,9 +3780,7 @@ public class MainPage extends javax.swing.JFrame {
 	paneAddHired.setVisible(false);
 	tfAddMail.setVisible(false);
 	lblAddFirstName.setVisible(false);
-	tfAddFirstName.setVisible(false);
-        lblAddLastName.setVisible(false);
-        tfAddLastName.setVisible(false);
+	tfAddName.setVisible(false);
 	lblAddTelephone.setVisible(false);
 	tfAddTelephone.setVisible(false);
 	lblAddMail.setVisible(false);
@@ -4096,7 +4085,6 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel lblAddDay;
     private javax.swing.JLabel lblAddDayRelease;
     private javax.swing.JLabel lblAddFirstName;
-    private javax.swing.JLabel lblAddLastName;
     private javax.swing.JLabel lblAddMail;
     private javax.swing.JLabel lblAddMonth;
     private javax.swing.JLabel lblAddMonthRelease;
@@ -4104,7 +4092,6 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel lblAddTelephone;
     private javax.swing.JLabel lblChangeFirstNameHired;
     private javax.swing.JLabel lblChangeHiredMessage;
-    private javax.swing.JLabel lblChangeLastNameHired;
     private javax.swing.JLabel lblChangeLevel;
     private javax.swing.JLabel lblChangeMailHired;
     private javax.swing.JLabel lblChangeTelephoneHired;
@@ -4188,15 +4175,13 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JTextArea tasearchResultCompetence;
     private javax.swing.JTextArea tasearchResultGameProject;
     private javax.swing.JTextArea tasearchResultPlatform;
-    private javax.swing.JTextField tfAddFirstName;
-    private javax.swing.JTextField tfAddLastName;
     private javax.swing.JTextField tfAddMail;
+    private javax.swing.JTextField tfAddName;
     private javax.swing.JTextField tfAddTelephone;
-    private javax.swing.JTextField tfChangeFirstNameHired;
     private javax.swing.JTextField tfChangeGpReleaseDate;
     private javax.swing.JTextField tfChangeGpStartDate;
-    private javax.swing.JTextField tfChangeLastNameHired;
     private javax.swing.JTextField tfChangeMailHired;
+    private javax.swing.JTextField tfChangeNameHired;
     private javax.swing.JTextField tfChangeTelephoneHired;
     private javax.swing.JTextField tfCurrentLevelChange;
     private javax.swing.JTextField tfGpAddName;

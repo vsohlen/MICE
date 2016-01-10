@@ -925,17 +925,17 @@ public class DbClass {
      * Lists all administrators. Returns them in a String.
      * @return 
      */
-    public String getOneAdminAID(String aid)
+    public HashMap<String, String> getOneAdminAID(int aid)
     {
-        String sqlFraga = "select anstalld.aid from ADMINISTRATOR " +
+        String sqlFraga = "select anstalld.aid, ADMINISTRATOR.LOSENORD from ADMINISTRATOR " +
                            "join anstalld on anstalld.aid = administrator.AID " +
                            "where anstalld.aid = '"+aid+"'";
         
-        String admin = "";
+        HashMap<String, String> admin = new HashMap<>();
         
         try
         {
-            admin = idb.fetchSingle(sqlFraga);
+            admin = idb.fetchRow(sqlFraga);
             return admin;
         }
         catch (InfException e)

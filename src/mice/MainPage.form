@@ -197,17 +197,15 @@
                                           <Component id="lblChangeMailHired" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="lblChangeTelephoneHired" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="lblChangeFirstNameHired" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblChangeLastNameHired" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="lblPassword" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="lblVerifyPassword" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="pfVerifyPassword" max="32767" attributes="0"/>
-                                          <Component id="tfChangeTelephoneHired" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="tfChangeFirstNameHired" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="tfChangeTelephoneHired" alignment="1" pref="100" max="32767" attributes="0"/>
+                                          <Component id="tfChangeNameHired" alignment="1" max="32767" attributes="0"/>
                                           <Component id="tfChangeMailHired" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="tfChangeLastNameHired" alignment="1" max="32767" attributes="0"/>
                                           <Component id="pfPassword" alignment="1" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -216,7 +214,7 @@
                                       <Component id="lblChangeHiredMessage" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="482" max="32767" attributes="0"/>
+                              <EmptySpace pref="462" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -234,13 +232,8 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="tfChangeFirstNameHired" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tfChangeNameHired" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblChangeFirstNameHired" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblChangeLastNameHired" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tfChangeLastNameHired" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -264,7 +257,7 @@
                                   <Component id="btnChangeHired" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblChangeHiredMessage" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="15" max="32767" attributes="0"/>
+                              <EmptySpace pref="41" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -286,11 +279,17 @@
                     <Component class="javax.swing.JTextField" name="tfChangeMailHired">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Mailadress"/>
+                        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                          <Dimension value="[100, 20]"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="tfChangeTelephoneHired">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Telefonnummer"/>
+                        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                          <Dimension value="[100, 20]"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblChangeTelephoneHired">
@@ -300,12 +299,18 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblChangeFirstNameHired">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="F&#xf6;rnamn:"/>
+                        <Property name="text" type="java.lang.String" value="Namn"/>
                       </Properties>
+                      <AccessibilityProperties>
+                        <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
+                      </AccessibilityProperties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="tfChangeFirstNameHired">
+                    <Component class="javax.swing.JTextField" name="tfChangeNameHired">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="F&#xf6;rnamn"/>
+                        <Property name="text" type="java.lang.String" value="Namn"/>
+                        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                          <Dimension value="[100, 20]"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblHeaderChangeHired">
@@ -327,6 +332,9 @@
                           <StringArray count="0"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbListAllHiredActionPerformed"/>
+                      </Events>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
@@ -348,21 +356,17 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="asda3123b"/>
                         <Property name="toolTipText" type="java.lang.String" value=""/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="tfChangeLastNameHired">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Efternamn"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="lblChangeLastNameHired">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Efternamn:"/>
+                        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                          <Dimension value="[100, 20]"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JPasswordField" name="pfVerifyPassword">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="2iubavwda"/>
+                        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                          <Dimension value="[100, 20]"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblVerifyPassword">
@@ -479,7 +483,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="lblHeaderAdd" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                                       <Component id="btnChangeHiredAdd" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -499,18 +503,13 @@
                                           </Group>
                                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                               <Component id="tfAddTelephone" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="tfAddFirstName" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="tfAddName" alignment="1" max="32767" attributes="0"/>
                                               <Component id="tfAddMail" alignment="1" min="-2" pref="97" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="lblAddLastName" max="32767" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="tfAddLastName" min="-2" pref="97" max="-2" attributes="0"/>
-                                  </Group>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="574" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -521,15 +520,10 @@
                               <Component id="lblHeaderAdd" min="-2" pref="21" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="tfAddFirstName" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tfAddName" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblAddFirstName" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="tfAddLastName" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblAddLastName" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="lblAddTelephone" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="tfAddTelephone" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -541,7 +535,7 @@
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="btnChangeHiredAdd" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="101" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -557,10 +551,10 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblAddFirstName">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="F&#xf6;rnamn:"/>
+                        <Property name="text" type="java.lang.String" value="Namn:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="tfAddFirstName">
+                    <Component class="javax.swing.JTextField" name="tfAddName">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="F&#xf6;rnamn"/>
                       </Properties>
@@ -592,16 +586,6 @@
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnChangeHiredAddMouseClicked"/>
                       </Events>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="lblAddLastName">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Efternamn:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="tfAddLastName">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Efternamn"/>
-                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -2173,7 +2157,7 @@
                           </Group>
                           <Component id="spCompetence" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="229" max="32767" attributes="0"/>
+                      <EmptySpace pref="232" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

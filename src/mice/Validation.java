@@ -62,29 +62,24 @@ public class Validation {
     
     /**
      * Checks that a name entered contains the valid requirements.
-     * @param name1
-     * @param name2
+     * @param name
      * @return 
      */
-     public static boolean checkName(String name1, String name2)
+     public static boolean checkName(String name)
     {
        boolean match;
         
-        String firstName = name1;
-        String lastName = name2;
+        String Name = name;
         
-        if (firstName.length() < 1 && lastName.length() < 1 && firstName.contains("\\s+") && lastName.contains("\\s+"))
+        if (Name.length() < 1 && Name.contains("\\s+"))
         {  
             match = false;
         }
         else
-        {
-            
+        {            
             match = true;
-        }
-        
-        return match;
-  
+        }        
+        return match;  
     }
      /**
       * checks the mail if its valid

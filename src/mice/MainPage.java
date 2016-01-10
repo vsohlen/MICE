@@ -1109,29 +1109,32 @@ public class MainPage extends javax.swing.JFrame {
         paneProject.setLayout(paneProjectLayout);
         paneProjectLayout.setHorizontalGroup(
             paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneProjectLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(lblHeaderGameProject)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(paneProjectLayout.createSequentialGroup()
-                        .addComponent(cbFunctionsGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfsearchFieldGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(spGameProject))
-                .addGap(10, 10, 10)
-                .addComponent(cbAllGameProjects, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSearchGameProject)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblErrorMessageGameProject, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(21, 21, 21))
             .addGroup(paneProjectLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tpSubMenuGameProject)
                     .addComponent(separatorGameProject))
                 .addContainerGap())
+            .addGroup(paneProjectLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(lblHeaderGameProject)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(paneProjectLayout.createSequentialGroup()
+                        .addComponent(lblErrorMessageGameProject, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(paneProjectLayout.createSequentialGroup()
+                        .addGroup(paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(paneProjectLayout.createSequentialGroup()
+                                .addComponent(cbFunctionsGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfsearchFieldGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(spGameProject))
+                        .addGap(10, 10, 10)
+                        .addComponent(cbAllGameProjects, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnSearchGameProject)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         paneProjectLayout.setVerticalGroup(
             paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1142,18 +1145,18 @@ public class MainPage extends javax.swing.JFrame {
                 .addComponent(separatorGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21)
                 .addGroup(paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblHeaderGameProject)
-                            .addComponent(cbFunctionsGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfsearchFieldGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(lblErrorMessageGameProject, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE))
+                    .addGroup(paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblHeaderGameProject)
+                        .addComponent(cbFunctionsGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfsearchFieldGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(paneProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnSearchGameProject)
                         .addComponent(cbAllGameProjects, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(spGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblErrorMessageGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
         );
 
         tpMenu.addTab("Spelprojekt", paneProject);
@@ -1596,7 +1599,7 @@ public class MainPage extends javax.swing.JFrame {
             cbFunctionsGameProject.addItem("Lista de spelprojekt som har släppts");
             cbFunctionsGameProject.addItem("Lista de spelprojekt som är under utveckling");
             cbFunctionsGameProject.addItem("Visa vilka plattformar ett spel utvecklas till");
-            cbFunctionsGameProject.addItem("Visa vem som leder/har lett ett specifikt projekt");
+            cbFunctionsGameProject.addItem("Visa vem som leder ett specifikt projekt");
         }
         catch(Exception e)
         {
@@ -1954,20 +1957,22 @@ public class MainPage extends javax.swing.JFrame {
             String password1 = new String(pfPassword.getPassword());
             String password2 = new String(pfVerifyPassword.getPassword());
             
-            if (isAdmin == true)
+            String currentHired = cbListAllHired.getSelectedItem().toString();
+                    int aid = Integer.parseInt(currentHired.split(",")[0]);
+            
+           String admin = database.getOneAdminAID(currentHired.split(",")[0]);
+
+            
+            if (!admin.equals(""))
             {
                if (password1.equals(password2))
                 {
-                    String currentHired = cbListAllHired.getSelectedItem().toString();
-                    int aid = Integer.parseInt(currentHired.split(",")[0]);
                     changeInfoAboutHired(aid);
                     lblChangeHiredMessage.setText("Ändringar genomförda.");
                 } 
             }
-            else if (isAdmin == false)
+            else if (admin.equals(""))
             {
-                String currentHired = cbListAllHired.getSelectedItem().toString();
-                int aid = Integer.parseInt(currentHired.split(",")[0]);
                 changeInfoAboutHired(aid);
                 lblChangeHiredMessage.setText("Ändringar genomförda.");
             }
@@ -2035,7 +2040,7 @@ public class MainPage extends javax.swing.JFrame {
                
             switch (selectedFunction)
             {
-            case "Visa vem som leder/har lett ett specifikt projekt" :
+            case "Visa vem som leder ett specifikt projekt" :
                 showLeader();
                 updateCBs();
                 break;
@@ -2204,7 +2209,7 @@ public class MainPage extends javax.swing.JFrame {
         
         switch (selectedFunction)
         {
-            case "Visa vem som leder/har lett ett specifikt projekt" :
+            case "Visa vem som leder ett specifikt projekt" :
                 tfsearchFieldGameProject.setVisible(false);
                 btnSearchGameProject.setText("OK");
                 cbAllGameProjects.setVisible(true);
@@ -2292,22 +2297,22 @@ public class MainPage extends javax.swing.JFrame {
          switch (selectedFunction)
         {
             case "Art" : 
-                tasearchResultGameProject.setText("");
+                tasearchResultCompetence.setText("");
                 getCompetenceLevel(name, benamning, plattform);
                 break;
              
             case "Audio" :
-                tasearchResultGameProject.setText("");
+                tasearchResultCompetence.setText("");
                 getCompetenceLevel(name, benamning, plattform);     
                 break;
                 
             case "Programming" :
-                tasearchResultGameProject.setText("");
+                tasearchResultCompetence.setText("");
                 getCompetenceLevel(name, benamning, plattform);
                 break;
                 
             case "Design" :
-                tasearchResultGameProject.setText("");
+                tasearchResultCompetence.setText("");
                 getCompetenceLevel(name, benamning, plattform);
                 break;
          }
@@ -2993,13 +2998,19 @@ public class MainPage extends javax.swing.JFrame {
     private void showLeader ()
     {
         try
-        {
+        {   lblErrorMessageGameProject.setText("");
             String currentGame = cbAllGameProjects.getSelectedItem().toString();
-            int gameID = Integer.parseInt(currentGame.split(",")[0]);
+                int gameID = Integer.parseInt(currentGame.split(",")[0]);
 
-                String leader = database.listLeaderOnProject(gameID);
-                    tasearchResultGameProject.setText(leader);
-                    lblHeaderGameProject.setText("Projektledare: "+leader);
+                    String leader = database.listLeaderOnProject(gameID);
+            if(!leader.equals(""))
+            {
+                        tasearchResultGameProject.setText("Projektledare: "+leader);
+            }
+            else
+            {
+                tasearchResultGameProject.setText("Projektet har ingen ledare ännu.");
+            }
         }
         catch (Exception e)
         {

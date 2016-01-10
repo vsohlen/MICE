@@ -580,6 +580,8 @@ public class DbClass {
         
     }
     
+   
+    
     /**
      * List all the platforms for a game where the parameter is the name of the
      * game and returns them in the form of an ArrayList<HashMap<String, String>>.
@@ -916,6 +918,30 @@ public class DbClass {
         {
             System.out.println(e.getMessage());
             return allAdmin;
+        }
+    }
+    
+    /**
+     * Lists all administrators. Returns them in a String.
+     * @return 
+     */
+    public String getOneAdminAID(String aid)
+    {
+        String sqlFraga = "select anstalld.aid from ADMINISTRATOR " +
+                           "join anstalld on anstalld.aid = administrator.AID " +
+                           "where anstalld.aid = '"+aid+"'";
+        
+        String admin = "";
+        
+        try
+        {
+            admin = idb.fetchSingle(sqlFraga);
+            return admin;
+        }
+        catch (InfException e)
+        {
+            System.out.println(e.getMessage());
+            return admin;
         }
     }
     

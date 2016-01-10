@@ -1770,21 +1770,6 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     /**
-     * Clears the text fields so that the latest changes are showing.
-     */
-    public void clearTFs()
-    {
-        try
-        {
-            tasearchResultGameProject.setText("");
-        }
-        catch(Exception e)
-        {
-            System.out.println(e.getMessage());
-        }
-    }
-    
-    /**
      * Button for confirming an update of an employee.
      * @param evt 
      */
@@ -2059,12 +2044,12 @@ public class MainPage extends javax.swing.JFrame {
                 break;  
              case "Lista de spelprojekt som är under utveckling":
                 updateCBs();
-                clearTFs();
+                tasearchResultGameProject.setText("");
                 listProjectsUnderDevelopment();
                 break;
             case "Lista de spelprojekt som har släppts" :
                 updateCBs();
-                clearTFs();
+                tasearchResultGameProject.setText("");
                 listReleases(); 
                 break;
             case "Lägg till spelutvecklingsprojekt" :
@@ -2307,22 +2292,22 @@ public class MainPage extends javax.swing.JFrame {
          switch (selectedFunction)
         {
             case "Art" : 
-                clearTFs();
+                tasearchResultGameProject.setText("");
                 getCompetenceLevel(name, benamning, plattform);
                 break;
              
             case "Audio" :
-                clearTFs(); 
+                tasearchResultGameProject.setText("");
                 getCompetenceLevel(name, benamning, plattform);     
                 break;
                 
             case "Programming" :
-                clearTFs();
+                tasearchResultGameProject.setText("");
                 getCompetenceLevel(name, benamning, plattform);
                 break;
                 
             case "Design" :
-                clearTFs();
+                tasearchResultGameProject.setText("");
                 getCompetenceLevel(name, benamning, plattform);
                 break;
          }
@@ -3014,7 +2999,7 @@ public class MainPage extends javax.swing.JFrame {
 
                 String leader = database.listLeaderOnProject(gameID);
                     tasearchResultGameProject.setText(leader);
-                    lblHeaderGameProject.setText(leader);
+                    lblHeaderGameProject.setText("Projektledare: "+leader);
         }
         catch (Exception e)
         {

@@ -40,6 +40,8 @@ public class MiceForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        lblWelcome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblWelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblWelcome.setText("Välkommen till MICE interactive");
 
         btnAdmin.setText("Administratör");
@@ -61,23 +63,26 @@ public class MiceForm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(93, 93, 93)
+                .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 93, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(148, 148, 148)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnHired)
-                    .addComponent(btnAdmin)
-                    .addComponent(lblWelcome))
-                .addContainerGap(204, Short.MAX_VALUE))
+                    .addComponent(btnHired, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdmin))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(lblWelcome)
-                .addGap(18, 18, 18)
+                .addGap(52, 52, 52)
+                .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
                 .addComponent(btnAdmin)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnHired)
-                .addContainerGap(155, Short.MAX_VALUE))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
 
         pack();

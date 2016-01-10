@@ -2174,17 +2174,38 @@ public class MainPage extends javax.swing.JFrame {
             if (Validation.checkYear(strStartYear) && Validation.checkYear(strReleaseYear))
             {
                 startYear = Integer.parseInt(strStartYear);
-                releaseYear = Integer.parseInt(strStartYear);
+                releaseYear = Integer.parseInt(strReleaseYear);
 
                 //Adds the combo box values in to one date, x2.
                 String startDatum = startDay + "." + startMonth + "." + startYear;
                 String releaseDatum = releaseDay + "." + releaseMonth + "." + releaseYear;
 
-                //Adds the combo box values in to one number, to check dates.
-                int startDatumTotal = startDay + startMonth + startYear * 1000;
-                int releaseDatumTotal = releaseDay + releaseMonth + releaseYear * 1000;
-
-                // Checks if the name allready exists in the database.
+                //Checks dates.
+                boolean datumCheck = false;
+                
+                    if (startYear >= releaseYear)
+                    {
+                            if (startMonth >= releaseMonth)
+                            {
+                                    if(startDay >= releaseDay)
+                                    {
+                                        datumCheck = false;
+                                    }
+                                    else
+                                    {
+                                        datumCheck = true;
+                                    }
+                            }
+                            else
+                            {
+                                datumCheck = true;
+                            }
+                    }
+                    else
+                    {
+                        datumCheck = true;
+                    }
+// Checks if the name allready exists in the database.
                 boolean nameExists = false;
 
                 ArrayList<HashMap<String, String>> listProjectNames = database.listAllProjectNames();
@@ -2197,8 +2218,7 @@ public class MainPage extends javax.swing.JFrame {
                         {
                             nameExists = true;
                         }
-                    }  
-
+                    }
                 String strLeaderAID = "";
 
                 //Adds a new leader to the project.
@@ -2221,7 +2241,7 @@ public class MainPage extends javax.swing.JFrame {
                 int leaderAID = Integer.parseInt(strLeaderAID);
 
                 //Validation check.
-                    if (startDatumTotal < releaseDatumTotal && nameExists == false && Validation.checkDate(startYear, startMonth, startDay) &&
+                    if (datumCheck == true && nameExists == false && Validation.checkDate(startYear, startMonth, startDay) &&
                             Validation.checkDate(releaseYear, releaseMonth, releaseDay) && Validation.textBoxTextIsRequired(tfGpAddName))
                 {
                      database.addProject(newSID, beteckning, startDatum, releaseDatum, leaderAID);
@@ -2230,7 +2250,8 @@ public class MainPage extends javax.swing.JFrame {
                 else
                 {
                     lblAddProjectText.setText(beteckning + " kunde inte läggas till. \n"
-                        + "Se till att namnet är unikt och att startdatumet är innan releasedatumet.");
+                        + "Se till att namnet är unikt, att startdatumet är innan releasedatumet"
+                            + " och att månad och antalet dagar stämmer.");
                 }
             }
             else
@@ -2606,31 +2627,77 @@ public class MainPage extends javax.swing.JFrame {
     private void btnChangeGameProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChangeGameProjectMouseClicked
         try
         {
+            lblMessageChangeProject.setText("");
             // Changes the info about the game.
 
             //Fetches the values of the text fields and combo boxes. Used in validation.
-            int startYear = Integer.parseInt(tfStartDateChangeYear.getText());
+            //Gets the combo box values and puts them in strings.
+            //Reason for having this separate from the added strings is that we
+            //are going to use these in multiple places.
+            int startDay = Integer.parseInt(cbStartDateChangeDay.getSelectedItem().toString());
             int startMonth = Integer.parseInt(cbStartDateChangeMonth.getSelectedItem().toString());
-            int startDay = Integer.parseInt(cbStartDateDay.getSelectedItem().toString());
-
-            int releaseYear = Integer.parseInt(tfReleaseChangeYear.getText());
-            int releaseMonth = Integer.parseInt(cbReleaseChangeMonth.getSelectedItem().toString());
+            String strStartYear = tfStartDateChangeYear.getText();
+            int startYear = 0;
+            
             int releaseDay = Integer.parseInt(cbReleaseChangeDay.getSelectedItem().toString());
+            int releaseMonth = Integer.parseInt(cbReleaseChangeMonth.getSelectedItem().toString());
+            String strReleaseYear = tfReleaseChangeYear.getText();
+            int releaseYear = 0;
 
-            if(Validation.checkDate(startYear, startMonth, startDay) && Validation.checkDate(releaseYear, releaseMonth, releaseDay) &&
-                Validation.checkYear(tfStartDateChangeYear.getText()) && Validation.checkYear(tfReleaseChangeYear.getText()) &&
-                Validation.containsString(tfGpChangeName.getText()) && Validation.textBoxTextIsRequired(tfGpChangeName))
+            if (Validation.checkYear(strStartYear) && Validation.checkYear(strReleaseYear))
             {
-                String currentGames = cbListAllGames.getSelectedItem().toString();
-                int sid = Integer.parseInt(currentGames.split(",")[0]);
-                changeInfoAboutGame(sid);
-                lblMessageChangeProject.setText("Ändringen genomförd! Projektnamnet är nu "+tfGpChangeName.getText()+" med datumen "+
-                    releaseYear+"/"+releaseMonth+"/"+releaseDay+".");
+                startYear = Integer.parseInt(strStartYear);
+                releaseYear = Integer.parseInt(strReleaseYear);
+            
+                
+                //Checks dates.
+                boolean datumCheck = false;
+                
+                    if (startYear >= releaseYear)
+                    {
+                            if (startMonth >= releaseMonth)
+                            {
+                                    if(startDay >= releaseDay)
+                                    {
+                                        datumCheck = false;
+                                    }
+                                    else
+                                    {
+                                        datumCheck = true;
+                                    }
+                            }
+                            else
+                            {
+                                datumCheck = true;
+                            }
+                    }
+                    else
+                    {
+                        datumCheck = true;
+                    }
+                
+                
+                    
+                if(datumCheck == true && Validation.checkDate(startYear, startMonth, startDay) && Validation.checkDate(releaseYear, releaseMonth, releaseDay) &&
+                    Validation.checkYear(tfStartDateChangeYear.getText()) && Validation.checkYear(tfReleaseChangeYear.getText()) &&
+                    Validation.containsString(tfGpChangeName.getText()) && Validation.textBoxTextIsRequired(tfGpChangeName))
+                {
+                    String currentGames = cbListAllGames.getSelectedItem().toString();
+                    int sid = Integer.parseInt(currentGames.split(",")[0]);
+                    changeInfoAboutGame(sid);
+                    lblMessageChangeProject.setText("Ändringen genomförd! Projektnamnet är nu "+tfGpChangeName.getText()+" med startdatum "+
+                        startYear+"/"+startMonth+"/"+startDay+" och releasedatum: " + releaseYear+"/"+releaseMonth+"/"+releaseDay+ ".");
+                }
+                else
+                {
+                    lblMessageChangeProject.setText("Ändringen genomfördes ej. Kontrollera så att datumen och namnet är korrekt skrivet"
+                            + " och att månad och antalet dagar stämmer.");
+                }
             }
             else
             {
-                lblMessageChangeProject.setText("Ändringen genomfördes ej. Kontrollera så att datumen och namnet är korrekt skrivet.");
-            }
+                lblMessageChangeProject.setText("Använd endast siffror vid inmatning av årtal.");
+            }  
         }
         catch(Exception e)
         {

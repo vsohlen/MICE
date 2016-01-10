@@ -64,29 +64,22 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="lblHeader" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="382" max="-2" attributes="0"/>
-                                              <Component id="lblErrorMessageHired" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="spHired" alignment="0" max="32767" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Component id="cbFunctions" min="-2" pref="364" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="tfsearchField" min="-2" pref="98" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="spHired" alignment="0" max="32767" attributes="0"/>
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="cbFunctions" min="-2" pref="364" max="-2" attributes="0"/>
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="tfsearchField" min="-2" pref="98" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="cbChooseProjectHiredIn" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="btnSearch" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="lblErrorMessageHired" alignment="0" max="32767" attributes="0"/>
                                       </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cbChooseProjectHiredIn" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnSearch" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
@@ -1928,20 +1921,6 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="sepPlatform" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="lblChoosePlatform" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="cbListAllPlatforms" min="-2" pref="153" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="lblChooseGameProjectPlatform" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="cbListAllGamesPlatform" min="-2" pref="190" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="btnConfirmUpdatePlatform" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                              <Component id="lblErrorMessagePlatform" pref="79" max="32767" attributes="0"/>
-                          </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
@@ -1966,6 +1945,24 @@
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblErrorMessagePlatform" pref="734" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="lblChoosePlatform" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="cbListAllPlatforms" min="-2" pref="153" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="lblChooseGameProjectPlatform" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="cbListAllGamesPlatform" min="-2" pref="190" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="btnConfirmUpdatePlatform" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -1976,31 +1973,28 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
                       <Component id="lblPlatformUpdateHeader" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblChoosePlatform" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cbListAllPlatforms" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblChooseGameProjectPlatform" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cbListAllGamesPlatform" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnConfirmUpdatePlatform" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                              <Component id="sepPlatform" min="-2" pref="10" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblHeaderPlatform" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cbFunctionsPlatform" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnSearchPlatform" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cbListPlatforms" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="lblErrorMessagePlatform" min="-2" pref="23" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblChoosePlatform" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbListAllPlatforms" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblChooseGameProjectPlatform" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbListAllGamesPlatform" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnConfirmUpdatePlatform" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblErrorMessagePlatform" min="-2" pref="23" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="sepPlatform" min="-2" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblHeaderPlatform" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbFunctionsPlatform" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSearchPlatform" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbListPlatforms" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Component id="spPlatform" min="-2" pref="225" max="-2" attributes="0"/>
-                      <EmptySpace pref="218" max="32767" attributes="0"/>
+                      <EmptySpace pref="137" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2118,10 +2112,12 @@
                                       <Component id="tfCurrentLevelChange" min="-2" pref="50" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="btnLevelUpCompetence" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="lblErrorMessageCompetenceChange" pref="127" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="lblChangeLevel" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="466" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -2146,16 +2142,15 @@
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
                                               <Component id="cbChoosePlattformChange" min="-2" pref="107" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="btnRemoveCompetence" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                                               <Component id="btnAddCompetence" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="lblErrorMessageCompetenceChange" max="32767" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
-                                          <Component id="lblErrorMessageCompetence" pref="412" max="32767" attributes="0"/>
+                                          <Component id="lblErrorMessageCompetence" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                   </Group>
@@ -2182,7 +2177,7 @@
                           </Group>
                           <Component id="spCompetence" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="229" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2201,23 +2196,23 @@
                           <Component id="lblChoosePlatformChange" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="cbListSpecialistChange" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cbChooseCompetenceChange" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnRemoveCompetence" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnAddCompetence" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cbChoosePlattformChange" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="lblErrorMessageCompetenceChange" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cbListSpecialistChange" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbChooseCompetenceChange" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnRemoveCompetence" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnAddCompetence" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbChoosePlattformChange" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="lblChangeLevel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnLevelDownCompetence" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfCurrentLevelChange" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnLevelUpCompetence" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnLevelDownCompetence" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfCurrentLevelChange" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnLevelUpCompetence" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="lblErrorMessageCompetenceChange" min="-2" pref="23" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="sepCompetence" min="-2" pref="9" max="-2" attributes="0"/>
@@ -2229,8 +2224,8 @@
                           <Component id="cbCompetenceSpecialists" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="spCompetence" min="-2" pref="183" max="-2" attributes="0"/>
-                      <EmptySpace pref="182" max="32767" attributes="0"/>
+                      <Component id="spCompetence" min="-2" pref="320" max="-2" attributes="0"/>
+                      <EmptySpace pref="45" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

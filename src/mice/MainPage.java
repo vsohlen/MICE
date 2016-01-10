@@ -1016,7 +1016,7 @@ public class MainPage extends javax.swing.JFrame {
             paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paneAddGameProjectLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblHeaderAddGameProject, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(paneAddGameProjectLayout.createSequentialGroup()
                         .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1045,12 +1045,9 @@ public class MainPage extends javax.swing.JFrame {
                                     .addGroup(paneAddGameProjectLayout.createSequentialGroup()
                                         .addComponent(cbStartDateDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(35, 35, 35)
-                                        .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(paneAddGameProjectLayout.createSequentialGroup()
-                                                .addComponent(lblAddMonth)
-                                                .addGap(36, 36, 36)
-                                                .addComponent(cbStartDateMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(lblAddProjectText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(lblAddMonth)
+                                        .addGap(36, 36, 36)
+                                        .addComponent(cbStartDateMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(51, 51, 51)
                                         .addComponent(lblDateYear)
                                         .addGap(18, 18, 18)
@@ -1058,7 +1055,8 @@ public class MainPage extends javax.swing.JFrame {
                             .addGroup(paneAddGameProjectLayout.createSequentialGroup()
                                 .addComponent(cbNewProjLeader, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(101, 101, 101)
-                                .addComponent(btnAddGameProject)))))
+                                .addComponent(btnAddGameProject))))
+                    .addComponent(lblAddProjectText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(272, Short.MAX_VALUE))
         );
         paneAddGameProjectLayout.setVerticalGroup(
@@ -1094,9 +1092,9 @@ public class MainPage extends javax.swing.JFrame {
                     .addGroup(paneAddGameProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblChooseLeaderAddGP)
                         .addComponent(cbNewProjLeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(lblAddProjectText)
-                .addGap(115, 115, 115))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblAddProjectText, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(124, Short.MAX_VALUE))
         );
 
         tpSubMenuGameProject.addTab("Lägg till", paneAddGameProject);
@@ -2163,12 +2161,94 @@ public class MainPage extends javax.swing.JFrame {
      * @param evt 
      */
     private void btnAddGameProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddGameProjectMouseClicked
-        try
+            try
         {
-            //Lägg till nytt spelprojekt.
-            addNewProject();
+            int newSID = database.generateSID();
+        
+            String beteckning = tfGpAddName.getText();
+       
+            //Gets the combo box values and puts them in strings.
+            //Reason for having this separate from the added strings is that we
+            //are going to use these in multiple places.
+            int startDay = Integer.parseInt(cbStartDateDay.getSelectedItem().toString());
+            int startMonth = Integer.parseInt(cbStartDateMonth.getSelectedItem().toString());
+            String strStartYear = tfStartDateYear.getText();
+            int startYear = 0;
+            
+            int releaseDay = Integer.parseInt(cbReleaseDateDay.getSelectedItem().toString());
+            int releaseMonth = Integer.parseInt(cbReleaseDateMonth.getSelectedItem().toString());
+            String strReleaseYear = tfReleaseDateYear.getText();
+            int releaseYear = 0;
+            
+            
+            if (Validation.checkYear(strStartYear) && Validation.checkYear(strReleaseYear))
+            {
+                startYear = Integer.parseInt(strStartYear);
+                releaseYear = Integer.parseInt(strStartYear);
+
+                //Adds the combo box values in to one date, x2.
+                String startDatum = startDay + "." + startMonth + "." + startYear;
+                String releaseDatum = releaseDay + "." + releaseMonth + "." + releaseYear;
+
+                //Adds the combo box values in to one number, to check dates.
+                int startDatumTotal = startDay + startMonth + startYear * 1000;
+                int releaseDatumTotal = releaseDay + releaseMonth + releaseYear * 1000;
+
+                // Checks if the name allready exists in the database.
+                boolean nameExists = false;
+
+                ArrayList<HashMap<String, String>> listProjectNames = database.listAllProjectNames();
+
+                    for(int i = 0; i < listProjectNames.size(); i++)
+                    {
+                        String beteckningen = listProjectNames.get(i).get("BETECKNING");
+
+                        if (beteckningen.equals(beteckning))
+                        {
+                            nameExists = true;
+                        }
+                    }  
+
+                String strLeaderAID = "";
+
+                //Adds a new leader to the project.
+                ArrayList<HashMap<String, String>> listLeaders = database.listAllLeaders();
+
+                    for(int i = 0; i < listLeaders.size(); i++)
+                    {
+                        //Gets the current name.
+                        String leaderName = listLeaders.get(i).get("NAMN");
+
+                        //Compares the combo box name to the current leader in the loop.
+                        //if it's a match, it sets the strLeaderAID to that leaders AID.
+                        if (cbNewProjLeader.getSelectedItem().toString().equals(leaderName))
+                        {
+                            strLeaderAID = listLeaders.get(i).get("AID");
+                        }
+                    } 
+
+                //Sets the leaders AID that was fetched from the loop to int.
+                int leaderAID = Integer.parseInt(strLeaderAID);
+
+                //Validation check.
+                    if (startDatumTotal < releaseDatumTotal && nameExists == false && Validation.checkDate(startYear, startMonth, startDay) &&
+                            Validation.checkDate(releaseYear, releaseMonth, releaseDay) && Validation.textBoxTextIsRequired(tfGpAddName))
+                {
+                     database.addProject(newSID, beteckning, startDatum, releaseDatum, leaderAID);
+                    lblAddProjectText.setText(beteckning + " är nu tillagd!");
+                }
+                else
+                {
+                    lblAddProjectText.setText(beteckning + " kunde inte läggas till. \n"
+                        + "Se till att namnet är unikt och att startdatumet är innan releasedatumet.");
+                }
+            }
+            else
+            {
+                lblAddProjectText.setText("Använd endast siffror vid inmatning av årtal.");
+            }  
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             System.out.println(e.getMessage());
         }
@@ -3398,84 +3478,7 @@ public class MainPage extends javax.swing.JFrame {
      */
     public void addNewProject()            
     {
-        try
-        {
-            int newSID = database.generateSID();
         
-            String beteckning = tfGpAddName.getText();
-       
-            //Gets the combo box values and puts them in strings.
-            //Reason for having this separate from the added strings is that we
-            //are going to use these in multiple places.
-            int startDay = Integer.parseInt(cbStartDateDay.getSelectedItem().toString());
-            int startMonth = Integer.parseInt(cbStartDateMonth.getSelectedItem().toString());
-            int startYear = Integer.parseInt(tfStartDateYear.getText());
-        
-            int releaseDay = Integer.parseInt(cbReleaseDateDay.getSelectedItem().toString());
-            int releaseMonth = Integer.parseInt(cbReleaseDateMonth.getSelectedItem().toString());
-            int releaseYear = Integer.parseInt(tfReleaseDateYear.getText());
-        
-            //Adds the combo box values in to one date, x2.
-            String startDatum = startDay + "." + startMonth + "." + startYear;
-            String releaseDatum = releaseDay + "." + releaseMonth + "." + releaseYear;
-        
-            //Adds the combo box values in to one number, to check dates.
-            int startDatumTotal = startDay + startMonth + startYear * 1000;
-            int releaseDatumTotal = releaseDay + releaseMonth + releaseYear * 1000;
-        
-            // Checks if the name allready exists in the database.
-            boolean nameExists = false;
-        
-            ArrayList<HashMap<String, String>> listProjectNames = database.listAllProjectNames();
-
-                for(int i = 0; i < listProjectNames.size(); i++)
-                {
-                    String beteckningen = listProjectNames.get(i).get("BETECKNING");
-                    
-                    if (beteckningen.equals(beteckning))
-                    {
-                        nameExists = true;
-                    }
-                }  
-        
-            String strLeaderAID = "";
-        
-            //Adds a new leader to the project.
-            ArrayList<HashMap<String, String>> listLeaders = database.listAllLeaders();
-
-                for(int i = 0; i < listLeaders.size(); i++)
-                {
-                    //Gets the current name.
-                    String leaderName = listLeaders.get(i).get("NAMN");
-                    
-                    //Compares the combo box name to the current leader in the loop.
-                    //if it's a match, it sets the strLeaderAID to that leaders AID.
-                    if (cbNewProjLeader.getSelectedItem().toString().equals(leaderName))
-                    {
-                        strLeaderAID = listLeaders.get(i).get("AID");
-                    }
-                } 
-        
-            //Sets the leaders AID that was fetched from the loop to int.
-            int leaderAID = Integer.parseInt(strLeaderAID);
-        
-            //Validation check.
-                if (startDatumTotal < releaseDatumTotal && nameExists == false && Validation.checkDate(startYear, startMonth, startDay) &&
-                        Validation.checkDate(releaseYear, releaseMonth, releaseDay) && Validation.textBoxTextIsRequired(tfGpAddName))
-            {
-                 database.addProject(newSID, beteckning, startDatum, releaseDatum, leaderAID);
-                lblAddProjectText.setText(beteckning + " är nu tillagd!");
-            }
-            else
-            {
-                lblAddProjectText.setText(beteckning + " kunde inte läggas till. \n"
-                    + "Se till att namnet är unikt och att startdatumet är innan releasedatumet.");
-            }
-        }
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-        }
     }
     
                                                     

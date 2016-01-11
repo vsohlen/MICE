@@ -90,7 +90,7 @@ public class Validation {
     {
       //String regex = "^[a-zåäöA-ZÅÄÖ0-9.-]+@[a-zåäöA-ZÅÄÖ0-9.-]+\\.[A-Z]{2,6}+$";
         boolean match;
-        if (mail.contains("@"))
+        if (mail.contains("@") && mail.contains("."))
             {
                 match = true;
             }
@@ -107,9 +107,9 @@ public class Validation {
     */
     public static boolean checkNumber(String number)
     {
-    String regex = "^[0-9]+$";
+    String regex = "^[0-9\\-]+$";
         boolean match;
-        if (number.matches(regex) && !number.contains("\\s+") && number.length() >= 4)
+        if (number.matches(regex) && !number.contains("\\s+"))
             {
                 match = true;
             }

@@ -1956,17 +1956,15 @@ public class MainPage extends javax.swing.JFrame {
             
             HashMap<String, String> admin = database.getOneAdminAID(Integer.parseInt(currentHired.split(",")[0]));
             
-            if(admin.isEmpty())
+            if(admin == null)
             {
-                changeInfoAboutHired(aid);
-                lblChangeHiredMessage.setText("Ändringar genomförda.");   
+                changeInfoAboutHired(aid); 
             }
             else
             {         
                 if(password1.equals(password2))
                 {
                     changeInfoAboutHired(aid);
-                    lblChangeHiredMessage.setText("Ändringar genomförda.");
                     updateCBs();
                 }   
                 else
@@ -3446,48 +3444,62 @@ public class MainPage extends javax.swing.JFrame {
      */
     private void changeInfoAboutHired (int AID)              
     {
-        if(Validation.textBoxTextIsRequired(tfChangeNameHired) &&
-            Validation.textBoxTextIsRequired(tfChangeTelephoneHired) &&
-            Validation.textBoxTextIsRequired(tfChangeMailHired))
-        {        
-            try
-            {
-                HashMap<String, String> hired = database.listHired(AID);
+        
+        if(Validation.checkNumber(tfChangeTelephoneHired.getText()) &&
+           Validation.checkMail(tfChangeMailHired.getText()) &&
+           Validation.checkName(tfChangeNameHired.getText()))
+        {
+            if(Validation.textBoxTextIsRequired(tfChangeNameHired) &&
+               Validation.textBoxTextIsRequired(tfChangeTelephoneHired) &&
+               Validation.textBoxTextIsRequired(tfChangeMailHired))
 
-                //Gets the current info from the database and the new typed in to the boxes
-                String existingName = hired.get("NAMN");
-                String existingTelephone = hired.get("TELEFON");
-                String existingMail = hired.get("MAIL");
-
-                String setName = tfChangeNameHired.getText();
-                String setPhone = tfChangeTelephoneHired.getText();
-                String setMail = tfChangeMailHired.getText();            
-
-                if (isAdmin(AID))       //checks if the user they want to change is administrator and lets you change the password.
+            {        
+                try
                 {
-                    String setPassword = new String(pfPassword.getPassword());
-                    database.changeAdmin(AID, setPassword);
-                }                
-                //checks so that the new info doesn't already exist and sends in the new info to the database
-                if (!setName.equals(existingName) || !setPhone.equals(existingTelephone) || !setMail.equals(existingMail))
-                {
-                    database.changeHired(setName, setPhone, setMail, AID);
-                    lblErrorMessageHired.setText("Ändringen genomförd");
+                    HashMap<String, String> hired = database.listHired(AID);
+
+                    //Gets the current info from the database and the new typed in to the boxes
+                    String existingName = hired.get("NAMN");
+                    String existingTelephone = hired.get("TELEFON");
+                    String existingMail = hired.get("MAIL");
+
+                    String setName = tfChangeNameHired.getText();
+                    String setPhone = tfChangeTelephoneHired.getText();
+                    String setMail = tfChangeMailHired.getText();            
+
+                    if (isAdmin(AID))       //checks if the user they want to change is administrator and lets you change the password.
+                    {
+                        String setPassword = new String(pfPassword.getPassword());
+                        database.changeAdmin(AID, setPassword);
+                    }                
+                    //checks so that the new info doesn't already exist and sends in the new info to the database
+                    if (!setName.equals(existingName) || !setPhone.equals(existingTelephone) || !setMail.equals(existingMail))
+                    {
+                        database.changeHired(setName, setPhone, setMail, AID);
+                        lblChangeHiredMessage.setText("Ändringar genomförda.");  
+                    }
+                    else
+                    {
+                        lblChangeHiredMessage.setText("Ändringen kunde ej genomföras");
+                    }  
                 }
-                else
+                catch (Exception e)
                 {
-                    lblErrorMessageHired.setText("Ändringen kunde ej genomföras");
-                }  
-            }
-            catch (Exception e)
+                    System.out.println(e.getMessage());
+                }
+            }    
+            else
             {
-                System.out.println(e.getMessage());
+                lblChangeHiredMessage.setText("En textruta får aldrig lämnas tom.");
             }
         }
         else
         {
-            lblErrorMessageHired.setText("En textruta får aldrig lämnas tom.");
+           lblChangeHiredMessage.setText("Kontrollera inmatningen på namn, telefonnummer och email "
+                   + "och se till att det är i korrekt format.");     
         }
+        
+        
     }
     
     /**

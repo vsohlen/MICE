@@ -52,7 +52,7 @@ public class Validation {
         
         try
         {
-            String regex = "^[a-zA-Z0-9åäöÅÄÖ ]+$";
+            String regex = "^[a-zA-Z0-9åäöÅÄÖ\\- ]+$";
             if (str.matches(regex))
             {
                 match = true;

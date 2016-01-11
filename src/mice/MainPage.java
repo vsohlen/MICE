@@ -409,14 +409,14 @@ public class MainPage extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addGroup(paneRemoveHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblHeaderRemove)
-                    .addComponent(lblNote, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(paneRemoveHiredLayout.createSequentialGroup()
                         .addGroup(paneRemoveHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblChooseHiredRemove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cbListAllHiredRemove, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addComponent(btnRemove)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnRemove))
+                    .addComponent(lblNote, javax.swing.GroupLayout.PREFERRED_SIZE, 675, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         paneRemoveHiredLayout.setVerticalGroup(
             paneRemoveHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

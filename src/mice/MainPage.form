@@ -394,7 +394,6 @@
                               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="lblHeaderRemove" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblNote" min="-2" pref="325" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="lblChooseHiredRemove" max="32767" attributes="0"/>
@@ -403,8 +402,9 @@
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="btnRemove" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="lblNote" alignment="0" min="-2" pref="675" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="57" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>

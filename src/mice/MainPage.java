@@ -313,8 +313,6 @@ public class MainPage extends javax.swing.JFrame {
 
         lblVerifyPassword.setText("Verifiera:");
 
-        lblChangeHiredMessage.setText("aaaa");
-
         javax.swing.GroupLayout paneChangeHiredLayout = new javax.swing.GroupLayout(paneChangeHired);
         paneChangeHired.setLayout(paneChangeHiredLayout);
         paneChangeHiredLayout.setHorizontalGroup(
@@ -347,7 +345,7 @@ public class MainPage extends javax.swing.JFrame {
                         .addComponent(btnChangeHired)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblChangeHiredMessage)))
-                .addContainerGap(462, Short.MAX_VALUE))
+                .addContainerGap(486, Short.MAX_VALUE))
         );
         paneChangeHiredLayout.setVerticalGroup(
             paneChangeHiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -792,8 +790,6 @@ public class MainPage extends javax.swing.JFrame {
         tfStartDateChangeYear.setText("ÅÅÅÅ");
 
         lblStartDateChangeYear.setText("År:");
-
-        lblMessageChangeProject.setText("lblMessageChangeProject");
 
         javax.swing.GroupLayout paneChangeGameProjectLayout = new javax.swing.GroupLayout(paneChangeGameProject);
         paneChangeGameProject.setLayout(paneChangeGameProjectLayout);
@@ -1811,7 +1807,8 @@ public class MainPage extends javax.swing.JFrame {
             for(int i = 0; i < projects.size(); i++)
             {
                 String currentDescription = projects.get(i).get("BETECKNING");
-                if(gameName.equals(currentDescription)){
+                if(gameName.equals(currentDescription))
+                {
                     database.deleteSpecialistProject(aid, sid);
                     deletePreformed = true;
                 }
@@ -2146,10 +2143,9 @@ public class MainPage extends javax.swing.JFrame {
      * @param evt 
      */
     private void btnAddGameProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddGameProjectMouseClicked
-            try
+        try
         {
             int newSID = database.generateSID();
-        
             String beteckning = tfGpAddName.getText();
        
             //Gets the combo box values and puts them in strings.
@@ -2165,7 +2161,6 @@ public class MainPage extends javax.swing.JFrame {
             String strReleaseYear = tfReleaseDateYear.getText();
             int releaseYear = 0;
             
-            
             if (Validation.checkYear(strStartYear) && Validation.checkYear(strReleaseYear))
             {
                 startYear = Integer.parseInt(strStartYear);
@@ -2180,21 +2175,21 @@ public class MainPage extends javax.swing.JFrame {
                 
                     if (startYear >= releaseYear)
                     {
-                            if (startMonth >= releaseMonth)
+                        if (startMonth >= releaseMonth)
+                        {
+                            if(startDay >= releaseDay)
                             {
-                                    if(startDay >= releaseDay)
-                                    {
-                                        datumCheck = false;
-                                    }
-                                    else
-                                    {
-                                        datumCheck = true;
-                                    }
+                                datumCheck = false;
                             }
                             else
                             {
                                 datumCheck = true;
                             }
+                        }
+                        else
+                        {
+                            datumCheck = true;
+                        }
                     }
                     else
                     {
@@ -2238,16 +2233,16 @@ public class MainPage extends javax.swing.JFrame {
                 //Validation check.
                     if (datumCheck == true && nameExists == false && Validation.checkDate(startYear, startMonth, startDay) &&
                             Validation.checkDate(releaseYear, releaseMonth, releaseDay) && Validation.textBoxTextIsRequired(tfGpAddName))
-                {
-                     database.addProject(newSID, beteckning, startDatum, releaseDatum, leaderAID);
-                    lblAddProjectText.setText(beteckning + " är nu tillagd!");
-                }
-                else
-                {
-                    lblAddProjectText.setText(beteckning + " kunde inte läggas till. \n"
+                    {
+                        database.addProject(newSID, beteckning, startDatum, releaseDatum, leaderAID);
+                        lblAddProjectText.setText(beteckning + " är nu tillagd!");
+                    }
+                    else
+                    {
+                        lblAddProjectText.setText(beteckning + " kunde inte läggas till. \n"
                         + "Se till att namnet är unikt, att startdatumet är innan releasedatumet"
-                            + " och att månad och antalet dagar stämmer.");
-                }
+                        + " och att månad och antalet dagar stämmer.");
+                    }
             }
             else
             {
@@ -2267,21 +2262,21 @@ public class MainPage extends javax.swing.JFrame {
     private void btnSearchCompetenceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCompetenceActionPerformed
         try
         {
-            String selectedFunction = cbFunctionsCompetence.getSelectedItem().toString();
-               
-            switch (selectedFunction)
-            {
-                case "Uppdatera information om vilka domäner en specialist har kompetens för" :
-                    showCompetenceUpdate();
-                    updateCBs();
-                    break;
+        String selectedFunction = cbFunctionsCompetence.getSelectedItem().toString();
 
-                case "Lista den kompetens en specifik specialist har" :
-                    tasearchResultCompetence.setText("");
-                    listSpecialistCompetence();
-                    updateCBs();
-                    hideCompetenceUpdate();
-                    break;
+        switch (selectedFunction)
+        {
+            case "Uppdatera information om vilka domäner en specialist har kompetens för" :
+                showCompetenceUpdate();
+                updateCBs();
+                break;
+
+            case "Lista den kompetens en specifik specialist har" :
+                tasearchResultCompetence.setText("");
+                listSpecialistCompetence();
+                updateCBs();
+                hideCompetenceUpdate();
+                break;
             }
         }
         catch(Exception e)
@@ -2296,44 +2291,51 @@ public class MainPage extends javax.swing.JFrame {
      * @param evt 
      */
     private void cbFunctionsGameProjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFunctionsGameProjectActionPerformed
-        //changes the btn text based on what action is selected and hides/shows the search-field
-        String selectedFunction = cbFunctionsGameProject.getSelectedItem().toString();
-        
-        switch (selectedFunction)
+        try
         {
-            case "Visa vem som leder ett specifikt projekt" :
-                tfsearchFieldGameProject.setVisible(false);
-                btnSearchGameProject.setText("OK");
-                cbAllGameProjects.setVisible(true);
-                addGameProjectsToCB();
-                break;
-            case "Visa vilka plattformar ett spel utvecklas till" :
-                tfsearchFieldGameProject.setVisible(true);
-                tfsearchFieldGameProject.setText("Sök spel..");
-                btnSearchGameProject.setText("OK");
-                cbAllGameProjects.setVisible(false);
-                break;
-            case "Lista de spelprojekt som är under utveckling" :
-                tfsearchFieldGameProject.setVisible(false);
-                btnSearchGameProject.setText("OK");
-                cbAllGameProjects.setVisible(false);
-                break;
-            case "Lista de spelprojekt som har släppts" :
-                tfsearchFieldGameProject.setVisible(false);
-                btnSearchGameProject.setText("OK");
-                cbAllGameProjects.setVisible(false);
-                break;
-            case "Lägg till spelutvecklingsprojekt" :
-                tfsearchFieldGameProject.setVisible(false);
-                btnSearchGameProject.setText("Gå");
-                cbAllGameProjects.setVisible(false);
-                break;
-            case "Uppdatera information om ett specifikt projekt" :
-                tfsearchFieldGameProject.setVisible(false);
-                btnSearchGameProject.setText("Gå");
-                cbAllGameProjects.setVisible(false);
-                break;
-        }                                     
+            //changes the btn text based on what action is selected and hides/shows the search-field
+            String selectedFunction = cbFunctionsGameProject.getSelectedItem().toString();
+
+            switch (selectedFunction)
+            {
+                case "Visa vem som leder ett specifikt projekt" :
+                    tfsearchFieldGameProject.setVisible(false);
+                    btnSearchGameProject.setText("OK");
+                    cbAllGameProjects.setVisible(true);
+                    addGameProjectsToCB();
+                    break;
+                case "Visa vilka plattformar ett spel utvecklas till" :
+                    tfsearchFieldGameProject.setVisible(true);
+                    tfsearchFieldGameProject.setText("Sök spel..");
+                    btnSearchGameProject.setText("OK");
+                    cbAllGameProjects.setVisible(false);
+                    break;
+                case "Lista de spelprojekt som är under utveckling" :
+                    tfsearchFieldGameProject.setVisible(false);
+                    btnSearchGameProject.setText("OK");
+                    cbAllGameProjects.setVisible(false);
+                    break;
+                case "Lista de spelprojekt som har släppts" :
+                    tfsearchFieldGameProject.setVisible(false);
+                    btnSearchGameProject.setText("OK");
+                    cbAllGameProjects.setVisible(false);
+                    break;
+                case "Lägg till spelutvecklingsprojekt" :
+                    tfsearchFieldGameProject.setVisible(false);
+                    btnSearchGameProject.setText("Gå");
+                    cbAllGameProjects.setVisible(false);
+                    break;
+                case "Uppdatera information om ett specifikt projekt" :
+                    tfsearchFieldGameProject.setVisible(false);
+                    btnSearchGameProject.setText("Gå");
+                    cbAllGameProjects.setVisible(false);
+                    break;
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }                                   
     }//GEN-LAST:event_cbFunctionsGameProjectActionPerformed
 
     /**
@@ -2341,15 +2343,14 @@ public class MainPage extends javax.swing.JFrame {
      * @param evt 
      */
     private void btnAddCompetenceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddCompetenceMouseClicked
-          
-            //Get specialist name and competence name.
-            String name = cbListSpecialistChange.getSelectedItem().toString();
-            String benamning = cbChooseCompetenceChange.getSelectedItem().toString();
-            String plattform = cbChoosePlattformChange.getSelectedItem().toString();
-            //Get AID, KID and PID from names.
-            String aid = database.getAidFromSpecialist(name);
-            String kid = database.getKidFromCompetenceName(benamning);
-            String pid = database.getPidFromPlattformName(plattform);
+        //Get specialist name and competence name.
+        String name = cbListSpecialistChange.getSelectedItem().toString();
+        String benamning = cbChooseCompetenceChange.getSelectedItem().toString();
+        String plattform = cbChoosePlattformChange.getSelectedItem().toString();
+        //Get AID, KID and PID from names.
+        String aid = database.getAidFromSpecialist(name);
+        String kid = database.getKidFromCompetenceName(benamning);
+        String pid = database.getPidFromPlattformName(plattform);
             
         try
         {  
@@ -2386,29 +2387,29 @@ public class MainPage extends javax.swing.JFrame {
         
         lblErrorMessageCompetenceChange.setText("");
         
-         switch (selectedFunction)
-        {
-            case "Art" : 
-                getCompetenceLevel(name, benamning, plattform);
-                break;
-             
-            case "Audio" :
-                getCompetenceLevel(name, benamning, plattform);     
-                break;
-                
-            case "Programming" :
-                getCompetenceLevel(name, benamning, plattform);
-                break;
-                
-            case "Design" :
-                getCompetenceLevel(name, benamning, plattform);
-                break;
-         }
-       }
-         catch(Exception e)
+            switch (selectedFunction)
             {
-            System.out.println(e.getMessage());
+                case "Art" : 
+                    getCompetenceLevel(name, benamning, plattform);
+                    break;
+
+                case "Audio" :
+                    getCompetenceLevel(name, benamning, plattform);     
+                    break;
+
+                case "Programming" :
+                    getCompetenceLevel(name, benamning, plattform);
+                    break;
+
+                case "Design" :
+                    getCompetenceLevel(name, benamning, plattform);
+                    break;
             }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }//GEN-LAST:event_cbChooseCompetenceChangeActionPerformed
 
     /**
@@ -2420,18 +2421,18 @@ public class MainPage extends javax.swing.JFrame {
         // Runs the level display method while changing person.
         try
         {
-        String name = cbListSpecialistChange.getSelectedItem().toString();
-        String benamning = cbChooseCompetenceChange.getSelectedItem().toString();
-        String plattform = cbChoosePlattformChange.getSelectedItem().toString();
-        
-        lblErrorMessageCompetenceChange.setText("");
-        
-        getCompetenceLevel(name, benamning, plattform);
+            String name = cbListSpecialistChange.getSelectedItem().toString();
+            String benamning = cbChooseCompetenceChange.getSelectedItem().toString();
+            String plattform = cbChoosePlattformChange.getSelectedItem().toString();
+
+            lblErrorMessageCompetenceChange.setText("");
+
+            getCompetenceLevel(name, benamning, plattform);
         }
         catch(Exception e)
-            {
+        {
             System.out.println(e.getMessage());
-            }
+        }
     }//GEN-LAST:event_cbListSpecialistChangeActionPerformed
 
     /**
@@ -2452,7 +2453,7 @@ public class MainPage extends javax.swing.JFrame {
             
         if (!strCurrentLevel.equals(""))
             {
-            currentLevel = Integer.parseInt(tfCurrentLevelChange.getText());
+                currentLevel = Integer.parseInt(tfCurrentLevelChange.getText());
             }
 
             //Get specialist name and competence name.
@@ -2467,7 +2468,7 @@ public class MainPage extends javax.swing.JFrame {
         {
            if (strCurrentLevel.equals(""))
             {
-            lblErrorMessageCompetenceChange.setText("Använd 'Ta bort' för att ta bort en existerande kompetens.");
+                lblErrorMessageCompetenceChange.setText("Använd 'Ta bort' för att ta bort en existerande kompetens.");
             }    
             else if (currentLevel != 1 )
             {
@@ -2483,7 +2484,7 @@ public class MainPage extends javax.swing.JFrame {
         }
         catch(Exception e)
         {
-        System.out.println(e.getMessage());
+            System.out.println(e.getMessage());
         }
     }//GEN-LAST:event_btnLevelDownCompetenceMouseClicked
 
@@ -2503,7 +2504,7 @@ public class MainPage extends javax.swing.JFrame {
             
         if (!strCurrentLevel.equals(""))
             {
-            currentLevel = Integer.parseInt(tfCurrentLevelChange.getText());
+                currentLevel = Integer.parseInt(tfCurrentLevelChange.getText());
             }
          
             //Get specialist name and competence name.
@@ -2519,7 +2520,7 @@ public class MainPage extends javax.swing.JFrame {
         {
             if (strCurrentLevel.equals(""))
             {
-            lblErrorMessageCompetenceChange.setText("Använd 'Lägg Till' för att lägga till en ny kompetens.");
+                lblErrorMessageCompetenceChange.setText("Använd 'Lägg Till' för att lägga till en ny kompetens.");
             }    
             else if (currentLevel != 5)
             {
@@ -2531,8 +2532,7 @@ public class MainPage extends javax.swing.JFrame {
             else
             {
                 lblErrorMessageCompetenceChange.setText("En specialists nivå kan inte vara över 5.");
-            }
-            
+            } 
         }
         catch(Exception e)
         {
@@ -2548,18 +2548,18 @@ public class MainPage extends javax.swing.JFrame {
         
         try
         {
-        String name = cbListSpecialistChange.getSelectedItem().toString();
-        String benamning = cbChooseCompetenceChange.getSelectedItem().toString();
-        String plattform = cbChoosePlattformChange.getSelectedItem().toString();
+            String name = cbListSpecialistChange.getSelectedItem().toString();
+            String benamning = cbChooseCompetenceChange.getSelectedItem().toString();
+            String plattform = cbChoosePlattformChange.getSelectedItem().toString();
         
-        lblErrorMessageCompetenceChange.setText("");
+            lblErrorMessageCompetenceChange.setText("");
         
-        getCompetenceLevel(name, benamning, plattform);
+            getCompetenceLevel(name, benamning, plattform);
         }
         catch(Exception e)
-            {
+        {
             System.out.println(e.getMessage());
-            }
+        }
     }//GEN-LAST:event_cbChoosePlattformChangeActionPerformed
 
     /**
@@ -2568,14 +2568,14 @@ public class MainPage extends javax.swing.JFrame {
     */
     private void btnRemoveCompetenceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRemoveCompetenceMouseClicked
         
-            //Get specialist name and competence name.
-            String name = cbListSpecialistChange.getSelectedItem().toString();
-            String benamning = cbChooseCompetenceChange.getSelectedItem().toString();
-            String plattform = cbChoosePlattformChange.getSelectedItem().toString();
-            //Get AID, KID and PID from names.
-            String aid = database.getAidFromSpecialist(name);
-            String kid = database.getKidFromCompetenceName(benamning);
-            String pid = database.getPidFromPlattformName(plattform);
+        //Get specialist name and competence name.
+        String name = cbListSpecialistChange.getSelectedItem().toString();
+        String benamning = cbChooseCompetenceChange.getSelectedItem().toString();
+        String plattform = cbChoosePlattformChange.getSelectedItem().toString();
+        //Get AID, KID and PID from names.
+        String aid = database.getAidFromSpecialist(name);
+        String kid = database.getKidFromCompetenceName(benamning);
+        String pid = database.getPidFromPlattformName(plattform);
             
         try
         {  
@@ -2592,7 +2592,7 @@ public class MainPage extends javax.swing.JFrame {
         }
         catch (Exception e)
         {
-        System.out.println(e.getMessage());
+            System.out.println(e.getMessage());
         }
     }//GEN-LAST:event_btnRemoveCompetenceMouseClicked
 
@@ -2601,18 +2601,26 @@ public class MainPage extends javax.swing.JFrame {
      * @param evt 
      */
     private void cbFunctionsCompetenceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFunctionsCompetenceActionPerformed
-        String competence = cbFunctionsCompetence.getSelectedItem().toString();
-            switch (competence)
-            {
-            case "Uppdatera information om vilka domäner en specialist har kompetens för" :
+        try
+        {
+            String competence = cbFunctionsCompetence.getSelectedItem().toString();
+                switch (competence)
+                {
+                case "Uppdatera information om vilka domäner en specialist har kompetens för" :
                     btnSearchCompetence.setText("Gå");
                     cbCompetenceSpecialists.setVisible(false);
                     break;
-            case "Lista den kompetens en specifik specialist har" :
-                btnSearchCompetence.setText("Sök");
-                cbCompetenceSpecialists.setVisible(true);
-                break;
-            }
+                case "Lista den kompetens en specifik specialist har" :
+                    btnSearchCompetence.setText("Sök");
+                    cbCompetenceSpecialists.setVisible(true);
+                    break;
+                }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+        
     }//GEN-LAST:event_cbFunctionsCompetenceActionPerformed
 
     /**
@@ -2650,28 +2658,26 @@ public class MainPage extends javax.swing.JFrame {
                 
                     if (startYear >= releaseYear)
                     {
-                            if (startMonth >= releaseMonth)
+                        if (startMonth >= releaseMonth)
+                        {
+                            if(startDay >= releaseDay)
                             {
-                                    if(startDay >= releaseDay)
-                                    {
-                                        datumCheck = false;
-                                    }
-                                    else
-                                    {
-                                        datumCheck = true;
-                                    }
+                                datumCheck = false;
                             }
                             else
                             {
                                 datumCheck = true;
                             }
+                        }
+                        else
+                        {
+                            datumCheck = true;
+                        }
                     }
                     else
                     {
                         datumCheck = true;
                     }
-                
-                
                     
                 if(datumCheck == true && Validation.checkDate(startYear, startMonth, startDay) && Validation.checkDate(releaseYear, releaseMonth, releaseDay) &&
                     Validation.checkYear(tfStartDateChangeYear.getText()) && Validation.checkYear(tfReleaseChangeYear.getText()) &&
@@ -2728,13 +2734,18 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnChooseChangeGameProjectMouseClicked
 
     private void cbListAllHiredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbListAllHiredActionPerformed
-        tfChangeNameHired.setText("");                                          
-        tfChangeMailHired.setText("");                                          
-        tfChangeTelephoneHired.setText("");                                  
-        pfPassword.setText("");                               
-        pfVerifyPassword.setText("");
-        
-       
+        try
+        {
+            tfChangeNameHired.setText("");                                          
+            tfChangeMailHired.setText("");                                          
+            tfChangeTelephoneHired.setText("");                                  
+            pfPassword.setText("");                               
+            pfVerifyPassword.setText("");
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }//GEN-LAST:event_cbListAllHiredActionPerformed
 
     /**
@@ -2879,6 +2890,7 @@ public class MainPage extends javax.swing.JFrame {
             System.out.println(e.getMessage());
         }
     }
+    
       /**
        * Adds projects to the cbChooseProjectHiredIn combo box.
        */
@@ -2958,9 +2970,9 @@ public class MainPage extends javax.swing.JFrame {
             ArrayList<HashMap<String, String>> allPlatforms = database.listPlatforms();
             for (int i = 0; i < allPlatforms.size(); i++)
             {
-                    String pid = allPlatforms.get(i).get("PID");
-                    String benamning = allPlatforms.get(i).get("BENAMNING");
-                    cbListPlatforms.addItem(pid + "," + benamning);
+                String pid = allPlatforms.get(i).get("PID");
+                String benamning = allPlatforms.get(i).get("BENAMNING");
+                cbListPlatforms.addItem(pid + "," + benamning);
             }
         }
         catch(Exception e)
@@ -2976,8 +2988,6 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            
-        
             ArrayList<HashMap<String,String>> allGames = database.listAllProjects();
             for(int i = 0; i<allGames.size(); i++)
             {
@@ -2999,14 +3009,12 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            
-	
             ArrayList<HashMap<String, String>> allProjects = database.listAllProjects();
             for (int i = 0; i < allProjects.size(); i++)
             {
-                    String sid = allProjects.get(i).get("SID");
-                    String beteckning = allProjects.get(i).get("BETECKNING");
-                    cbListAllGames.addItem(sid + "," + beteckning);
+                String sid = allProjects.get(i).get("SID");
+                String beteckning = allProjects.get(i).get("BETECKNING");
+                cbListAllGames.addItem(sid + "," + beteckning);
             }
         }
         catch(Exception e)
@@ -3022,15 +3030,13 @@ public class MainPage extends javax.swing.JFrame {
     {      
         try
         {
-            
-	
             ArrayList<HashMap<String, String>> allSpecialists = database.listAllSpecialists();
             for (int i = 0; i < allSpecialists.size(); i++)
             {
-                    //String sid = allProjects.get(i).get("SID");
-                    String namn = allSpecialists.get(i).get("NAMN");
-                    String aid = allSpecialists.get(i).get("AID");
-                    cbListAllSpecialists.addItem(aid + "," + namn);
+                //String sid = allProjects.get(i).get("SID");
+                String namn = allSpecialists.get(i).get("NAMN");
+                String aid = allSpecialists.get(i).get("AID");
+                cbListAllSpecialists.addItem(aid + "," + namn);
             }
         }
         catch(Exception e)
@@ -3038,6 +3044,7 @@ public class MainPage extends javax.swing.JFrame {
             System.out.println(e.getMessage());
         }
     }
+    
     /**
      * Changes the position of a hired.
      */
@@ -3144,12 +3151,12 @@ public class MainPage extends javax.swing.JFrame {
         try
         {   lblErrorMessageGameProject.setText("");
             String currentGame = cbAllGameProjects.getSelectedItem().toString();
-                int gameID = Integer.parseInt(currentGame.split(",")[0]);
-
-                    String leader = database.listLeaderOnProject(gameID);
+            int gameID = Integer.parseInt(currentGame.split(",")[0]);
+            String leader = database.listLeaderOnProject(gameID);
+                
             if(!leader.equals(""))
             {
-                        tasearchResultGameProject.setText("Projektledare: "+leader);
+                tasearchResultGameProject.setText("Projektledare: "+leader);
             }
             else
             {
@@ -3159,8 +3166,7 @@ public class MainPage extends javax.swing.JFrame {
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-        }
-        
+        } 
     }
             
     /**
@@ -3215,8 +3221,6 @@ public class MainPage extends javax.swing.JFrame {
         {
             String currentPlatform = cbListPlatforms.getSelectedItem().toString();
             int PID = Integer.parseInt(currentPlatform.split(",")[0]);
-
-            
             tasearchResultPlatform.setText("");
 
                 ArrayList<HashMap<String, String>> listGame = database.listGamesForPlatform(PID);
@@ -3240,8 +3244,6 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            
-        
             ArrayList<HashMap<String, String>> allProjects = database.listAllProjects();
             for (int i = 0; i < allProjects.size(); i++)
             {
@@ -3262,15 +3264,12 @@ public class MainPage extends javax.swing.JFrame {
      */
     private void listHiredInProjects()
     {
-        
         try
         {
             String project = cbChooseProjectHiredIn.getSelectedItem().toString();
             //Hämtar SIDt från ett projekt med hjälp av beteckningen.
             String sid = database.getSidFromBeteckning(project);
-            
             ArrayList<HashMap<String, String>> allHiredInProject = database.listWorksInProjects(sid);
-            
             tasearchResult.setText("");
             
             for(int i = 0; i < allHiredInProject.size(); i++)
@@ -3278,8 +3277,6 @@ public class MainPage extends javax.swing.JFrame {
                     String namn = allHiredInProject.get(i).get("NAMN");
                     tasearchResult.append(namn + "\n");
                 }
-
-            
         }
         catch (Exception e)
         {
@@ -3323,7 +3320,6 @@ public class MainPage extends javax.swing.JFrame {
             {
                 lblErrorMessageHired.setText("Använd endast a-ö, A-Ö, var noga med versaler och gemener");
             }
-         
         }
         catch (Exception e)
         {
@@ -3339,14 +3335,12 @@ public class MainPage extends javax.swing.JFrame {
         try
         {
             //Adds a new leader to the selected project
-            
-
             ArrayList<HashMap<String, String>> allProjects = database.listAllLeaders();
             for (int i = 0; i < allProjects.size(); i++)
             {
-                    //String sid = allProjects.get(i).get("SID");
-                    String namn = allProjects.get(i).get("NAMN");
-                    cbNewProjLeader.addItem(namn);
+                //String sid = allProjects.get(i).get("SID");
+                String namn = allProjects.get(i).get("NAMN");
+                cbNewProjLeader.addItem(namn);
             }
         }
         catch (Exception e)
@@ -3364,18 +3358,17 @@ public class MainPage extends javax.swing.JFrame {
         {
             ArrayList<HashMap<String, String>> listReleases = database.listReleasedGames();
 
-                for(int i = 0; i < listReleases.size(); i++)
-                {
-                    String beteckningen = listReleases.get(i).get("BETECKNING");
-                    String sid = listReleases.get(i).get("SID");
-                    tasearchResultGameProject.append(sid + " " + beteckningen + "\n");
-                }  
+            for(int i = 0; i < listReleases.size(); i++)
+            {
+                String beteckningen = listReleases.get(i).get("BETECKNING");
+                String sid = listReleases.get(i).get("SID");
+                tasearchResultGameProject.append(sid + " " + beteckningen + "\n");
+            }  
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-        }
-               
+        }    
     }
     
     /**
@@ -3387,12 +3380,12 @@ public class MainPage extends javax.swing.JFrame {
         {
             ArrayList<HashMap<String, String>> listDeveloping = database.listUnderDevelopment();
 
-                for(int i = 0; i < listDeveloping.size(); i++)
-                {
-                    String beteckningen = listDeveloping.get(i).get("BETECKNING");
-                    String sid = listDeveloping.get(i).get("SID");
-                    tasearchResultGameProject.append(sid + " " + beteckningen + "\n");
-                }
+            for(int i = 0; i < listDeveloping.size(); i++)
+            {
+                String beteckningen = listDeveloping.get(i).get("BETECKNING");
+                String sid = listDeveloping.get(i).get("SID");
+                tasearchResultGameProject.append(sid + " " + beteckningen + "\n");
+            }
         }
         catch (Exception e)
         {
@@ -3442,15 +3435,9 @@ public class MainPage extends javax.swing.JFrame {
     private void changeInfoAboutHired (int AID)              
     {
         
-        if (Validation.textBoxTextIsRequired(tfChangeNameHired) &&
-            Validation.textBoxTextIsRequired(tfChangeTelephoneHired) &&
-            Validation.textBoxTextIsRequired(tfChangeMailHired))
+        if (Validation.textBoxTextIsRequired(tfChangeNameHired) && Validation.textBoxTextIsRequired(tfChangeTelephoneHired) && Validation.textBoxTextIsRequired(tfChangeMailHired))
         {
-            if
-                (Validation.checkNumber(tfChangeTelephoneHired.getText()) &&
-                Validation.checkMail(tfChangeMailHired.getText()) &&
-                Validation.checkName(tfChangeNameHired.getText()))
-
+            if (Validation.checkNumber(tfChangeTelephoneHired.getText()) && Validation.checkMail(tfChangeMailHired.getText()) && Validation.checkName(tfChangeNameHired.getText()))
             {        
                 try
                 {
@@ -3488,7 +3475,6 @@ public class MainPage extends javax.swing.JFrame {
             }    
             else
             {
-                
                 lblChangeHiredMessage.setText("Kontrollera inmatningen på namn, telefonnummer och email "
                    + "och se till att det är i korrekt format."); 
             }
@@ -3497,8 +3483,6 @@ public class MainPage extends javax.swing.JFrame {
         {
             lblChangeHiredMessage.setText("En textruta får aldrig lämnas tom.");
         }
-        
-        
     }
     
     /**
@@ -3508,7 +3492,8 @@ public class MainPage extends javax.swing.JFrame {
     private void changeInfoAboutGame (int sid)                 
     {
         try
-        {HashMap<String, String> game = database.listProject(sid);
+        {
+            HashMap<String, String> game = database.listProject(sid);
         
             //Gets the current name from the database
             String existingName = game.get("BETECKNING");
@@ -3536,23 +3521,12 @@ public class MainPage extends javax.swing.JFrame {
             {
                 System.out.println("nope");
             }
-            
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
         }
-        
-    }
-    
-     /**
-     * Adds a new project to the database. Validates name and dates.
-     */
-    public void addNewProject()            
-    {
-        
-    }
-    
+    } 
                                                     
     /**
     * List all specialist competences.
@@ -3560,7 +3534,6 @@ public class MainPage extends javax.swing.JFrame {
     private void listSpecialistCompetence()
     {
         //Adds all the competences a specialist has.
-        
         String kid;
         String pid;
         String kompetensniva;
@@ -3572,18 +3545,18 @@ public class MainPage extends javax.swing.JFrame {
         
         try
         {
-	ArrayList<HashMap<String, String>> allCompetences = database.getSpecialistCompetence(aid);
-	for (int i = 0; i < allCompetences.size(); i++)
+            ArrayList<HashMap<String, String>> allCompetences = database.getSpecialistCompetence(aid);
+            for (int i = 0; i < allCompetences.size(); i++)
             {
-                    kid = allCompetences.get(i).get("KID");
-                    kompetensniva = allCompetences.get(i).get("KOMPETENSNIVA");
-                    pid = allCompetences.get(i).get("PID");
-                    plattform = database.getPlatformFromPid(pid);
-                    beteckning = database.getCompetenceName(kid);
-                    String textHolder = tasearchResultCompetence.getText();
-                    tasearchResultCompetence.setText(textHolder + "Avdelning: " + beteckning + "\nPlattform: " + plattform + "\nKompetensnivå: " + kompetensniva + "\n" + "\n");
+                kid = allCompetences.get(i).get("KID");
+                kompetensniva = allCompetences.get(i).get("KOMPETENSNIVA");
+                pid = allCompetences.get(i).get("PID");
+                plattform = database.getPlatformFromPid(pid);
+                beteckning = database.getCompetenceName(kid);
+                String textHolder = tasearchResultCompetence.getText();
+                tasearchResultCompetence.setText(textHolder + "Avdelning: " + beteckning + "\nPlattform: " + plattform + "\nKompetensnivå: " + kompetensniva + "\n" + "\n");
             }
-        updateCBs();
+            updateCBs();
         }
         catch(Exception e)
         {
@@ -3598,13 +3571,11 @@ public class MainPage extends javax.swing.JFrame {
     {
         try
         {
-            
-	
             ArrayList<HashMap<String, String>> specialists = database.listAllSpecialists();
             for (int i = 0; i < specialists.size(); i++)
             {
-                    String name = specialists.get(i).get("NAMN");
-                    cbCompetenceSpecialists.addItem(name);
+                String name = specialists.get(i).get("NAMN");
+                cbCompetenceSpecialists.addItem(name);
             }
         }
 	catch(Exception e)
@@ -3618,17 +3589,15 @@ public class MainPage extends javax.swing.JFrame {
     */
     public void addNewHired ()
     {
-        if(Validation.textBoxTextIsRequired(tfAddName) && 
-                Validation.textBoxTextIsRequired(tfAddTelephone) && 
-                Validation.textBoxTextIsRequired(tfAddMail))
+        if(Validation.textBoxTextIsRequired(tfAddName) && Validation.textBoxTextIsRequired(tfAddTelephone) && Validation.textBoxTextIsRequired(tfAddMail))
         {            
             try
             {
                 int newAID = database.generateAID();
-                    String name = tfAddName.getText();
-                    String phone = tfAddTelephone.getText();
-                    String mail = tfAddMail.getText();
-                    String lastname = "";
+                String name = tfAddName.getText();
+                String phone = tfAddTelephone.getText();
+                String mail = tfAddMail.getText();
+                String lastname = "";
                     
                 if (tfAddName.getText().contains(" "))
                 {
@@ -3703,7 +3672,6 @@ public class MainPage extends javax.swing.JFrame {
      */
     private void getCompetenceLevel(String name, String benamning, String plattform)
     {
-        
         try
         {
             String aid = database.getAidFromSpecialist(name);
@@ -3713,12 +3681,11 @@ public class MainPage extends javax.swing.JFrame {
             String competenceLevel  = database.getCompetenceLevel(aid, kid, pid);
 
             tfCurrentLevelChange.setText(competenceLevel);
-     
         }
         catch(Exception e)
-            {
+        {
             System.out.println(e.getMessage());
-            }       
+        }       
     }
     
     /**
@@ -3729,9 +3696,8 @@ public class MainPage extends javax.swing.JFrame {
 	ArrayList<HashMap<String, String>> competenceNames = database.getCompetenceNames();
 	for (int i = 0; i < competenceNames.size(); i++)
 	{
-		String competenceName = competenceNames.get(i).get("BENAMNING");
-		cbChooseCompetenceChange.addItem(competenceName);
-                
+            String competenceName = competenceNames.get(i).get("BENAMNING");
+            cbChooseCompetenceChange.addItem(competenceName);   
 	}
     }
     
@@ -3740,12 +3706,11 @@ public class MainPage extends javax.swing.JFrame {
      */
     public void addSpecialistsToCBCompetenceChange()
     {
-	
 	ArrayList<HashMap<String, String>> specialists = database.listAllSpecialists();
 	for (int i = 0; i < specialists.size(); i++)
 	{
-		String name = specialists.get(i).get("NAMN");
-                cbListSpecialistChange.addItem(name);
+            String name = specialists.get(i).get("NAMN");
+            cbListSpecialistChange.addItem(name);
 	}
     }
     
@@ -3754,12 +3719,11 @@ public class MainPage extends javax.swing.JFrame {
      */
     public void addPlatformsToCBChange()
     {
-	
 	ArrayList<HashMap<String, String>>platformNames = database.listPlatformNames();
 	for (int i = 0; i < platformNames.size(); i++)
 	{
-		String name = platformNames.get(i).get("BENAMNING");
-                cbChoosePlattformChange.addItem(name);
+            String name = platformNames.get(i).get("BENAMNING");
+            cbChoosePlattformChange.addItem(name);
 	}
     }
     

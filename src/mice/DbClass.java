@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package mice;
 
 import java.util.ArrayList;
@@ -18,7 +14,7 @@ import oru.inf.InfException;
 public class DbClass {
 
     private InfDB idb;
-    
+
     /**
      * The constructor. Connects to the database.
      */
@@ -60,7 +56,7 @@ public class DbClass {
     }
     
     /**
-     * Lists the projects as a project leader leads.
+     * Lists the projects that a project leader is the leader of.
      * @param searchProject
      * @return 
      */
@@ -126,8 +122,8 @@ public class DbClass {
      
      try
      {
-     uname = idb.fetchSingle(sqlUsername);
-     pass = idb.fetchSingle(sqlPass);
+         uname = idb.fetchSingle(sqlUsername);
+         pass = idb.fetchSingle(sqlPass);
      }
      catch(InfException e)
      {
@@ -348,7 +344,7 @@ public class DbClass {
     
      /**
       * Lists all projects and returns them in the form of an 
-     * ArrayList<HashMap<String, String>>.
+      * ArrayList<HashMap<String, String>>.
       * @return 
       */
     public ArrayList<HashMap<String, String>> listAllProjects()			
@@ -411,7 +407,7 @@ public class DbClass {
     
     /**
     *Generates a new AID to be used when adding a new hired.
-    * @return 
+    *@return 
     */
     public int generateAID ()
     {
@@ -982,8 +978,8 @@ public class DbClass {
         }
         catch(InfException e)
         {
-        System.out.println(e.getMessage());
-        return null;
+            System.out.println(e.getMessage());
+            return null;
         }
     }
     
@@ -1028,7 +1024,7 @@ public class DbClass {
 	}
 	catch (InfException e)
 	{
-		System.out.println(e.getMessage());
+            System.out.println(e.getMessage());
 	}
     }
     
@@ -1047,7 +1043,7 @@ public class DbClass {
 	}
 	catch (InfException e)
 	{
-		System.out.println(e.getMessage());
+            System.out.println(e.getMessage());
 	}
     }
     
@@ -1091,7 +1087,7 @@ public class DbClass {
 	}
 	catch (InfException e)
 	{
-		System.out.println(e.getMessage());
+            System.out.println(e.getMessage());
 	}
     }
     
@@ -1159,3 +1155,5 @@ public class DbClass {
     }
 }
     
+
+

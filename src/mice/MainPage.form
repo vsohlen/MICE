@@ -214,7 +214,7 @@
                                       <Component id="lblChangeHiredMessage" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="462" max="32767" attributes="0"/>
+                              <EmptySpace pref="486" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -375,9 +375,6 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblChangeHiredMessage">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="aaaa"/>
-                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -1513,9 +1510,6 @@
                       </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblMessageChangeProject">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="lblMessageChangeProject"/>
-                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>

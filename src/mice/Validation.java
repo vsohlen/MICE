@@ -13,23 +13,32 @@ import javax.swing.JTextField;
 public class Validation {
     
     /**
-     * checks if the textField contains a string of text or not
+     * checks if the textField contains a string of text or not.
      * @param textField
      * @return 
      */
     public static boolean textBoxTextIsRequired (JTextField textField)
     {
-        if (textField.getText().isEmpty())
+        try
         {
-            textField.requestFocus();
-            textField.setBackground(Color.red);
+            if (textField.getText().isEmpty())
+            {
+                textField.requestFocus();
+                textField.setBackground(Color.red);
+                return false;
+            }
+            else
+            {
+                textField.setBackground(Color.white);
+                return true;
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
             return false;
         }
-        else
-        {
-            textField.setBackground(Color.white);
-            return true;
-        }
+        
     }
 
     /**
@@ -39,19 +48,19 @@ public class Validation {
      */
     public static boolean containsString(String str)
     {
-        Boolean match= false;
+        Boolean match = false;
         
         try
         {
-        String regex = "^[a-zA-Z0-9åäöÅÄÖ ]+$";
-        if (str.matches(regex))
+            String regex = "^[a-zA-Z0-9åäöÅÄÖ ]+$";
+            if (str.matches(regex))
             {
                 match = true;
             }
-        else
-        {
-            match = false;
-        }
+            else
+            {
+                match = false;
+            }
         }
         catch(Exception e)
         {
@@ -69,20 +78,26 @@ public class Validation {
     {
        boolean match;
         
-        String Name = name;
-        
-        if (Name.length() < 1 && Name.contains("\\s+"))
-        {  
-            match = false;
+        try
+        {
+            if (name.length() < 1 && name.contains("\\s+"))
+            {  
+                match = false;
+            }
+            else
+            {            
+                match = true;
+            }        
+            return match;  
         }
-        else
-        {            
-            match = true;
-        }        
-        return match;  
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+            return false;
+        }
     }
      /**
-      * checks the mail if its valid
+      * Checks if the mail is valid.
       * @param mail
       * @return 
       */  
@@ -90,18 +105,26 @@ public class Validation {
     {
       //String regex = "^[a-zåäöA-ZÅÄÖ0-9.-]+@[a-zåäöA-ZÅÄÖ0-9.-]+\\.[A-Z]{2,6}+$";
         boolean match;
-        if (mail.contains("@") && mail.contains("."))
+        try
+        {
+            if (mail.contains("@") && mail.contains("."))
             {
                 match = true;
             }
-        else
-        {
-            match = false;
+            else
+            {
+                match = false;
+            }
+            return match;
         }
-        return match;
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+            return false;
+        }
     }
     /**
-     * checks the in-phone number
+     * Checks the telephone number.
      * @param number
      * @return 
     */
@@ -109,15 +132,23 @@ public class Validation {
     {
     String regex = "^[0-9\\-]+$";
         boolean match;
-        if (number.matches(regex) && !number.contains("\\s+"))
+        try
+        {
+            if (number.matches(regex) && !number.contains("\\s+"))
             {
                 match = true;
             }
-        else
-        {
-            match = false;
+            else
+            {
+                match = false;
+            }
+            return match;
         }
-        return match;
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+            return false;
+        }
     }
     
     /**
@@ -148,15 +179,15 @@ public class Validation {
         }
         
         catch(Exception e)
-            {
-                System.out.println(e.getMessage());
-                return false;
-            }
+        {
+            System.out.println(e.getMessage());
+            return false;
+        }
     }
     
     /**
      * Checks that the date entered is valid. Checks for leap years and different
-     * nummer of days days in different months.
+     * number of days in different months.
      * @param year
      * @param month
      * @param day
@@ -166,39 +197,45 @@ public class Validation {
     {
         boolean validDate = false;
         boolean leapYear = false;
-        
-        if ((month >= 1 && month <= 12) && (day >= 1 && day <= 31))
+        try
         {
-            if((month == 4 || month == 6 || month == 9 || month == 11) && (day <= 30))
+            //Checks if the dates are within a year.
+            if ((month >= 1 && month <= 12) && (day >= 1 && day <= 31))
             {
-                validDate = true;
-            }
-            if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && (day <= 31))
-            {
-                validDate = true;
-            }
-            if ((month == 2) && (day < 30))
-            {
-                leapYear = false;
-                if ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0)))
-                {
-                    leapYear = true;
-                }
-                if (leapYear == true && day <= 29)
+                //Checks the number of days for months with 30 days.
+                if((month == 4 || month == 6 || month == 9 || month == 11) && (day <= 30))
                 {
                     validDate = true;
                 }
-                else if (leapYear == false && day <= 28)
+                //Checks the number of days for months with 31 days.
+                if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && (day <= 31))
                 {
                     validDate = true;
                 }
+                //Checks the number of days for February, takes account of leap years.
+                if ((month == 2) && (day < 30))
+                {
+                    leapYear = false;
+                    if ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0)))
+                    {
+                        leapYear = true;
+                    }
+                    if (leapYear == true && day <= 29)
+                    {
+                        validDate = true;
+                    }
+                    else if (leapYear == false && day <= 28)
+                    {
+                        validDate = true;
+                    }
+                }
             }
+            return validDate;
         }
-        return validDate;
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+            return false;
+        }
     }
-    
-    
 }
-
-
-
